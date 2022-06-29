@@ -5,26 +5,29 @@ import yaml
 def generate_cookbook_gallery_yaml(url='https://api.github.com/users/ProjectPythiaCookbooks/repos', yaml_filepath='cookbook_gallery.yaml'):
     response = requests.get(url).json()
 
-    unwanted_repos=['.github', 'projectpythiacookbooks.github.io', 'cookbook-template', 'test-cookbook']
+    unwanted_repos=['.github', 'projectpythiacookbooks.github.io', 'cookbook-template', 'test-cookbook', 'cookbook-actions']
 
     repos_list = []
     for repo in response:
         root = repo['name']
         if root not in unwanted_repos:  
-            title = root.replace('-', ' ').title()
             cookbook_url = f'https://cookbooks.projectpythia.org/{root}/README.html'
             description = repo['description']
 
             github_url = f'https://github.com/ProjectPythiaCookbooks/{root}'
-            thumbnail = f'{github_url}/thumbnail.svg'
 
-            #authors_dict = {'names':author_names} #this needs some work
-            #author_names = [] #grab this from github README.md (add - before each one)
+            #configuration_url = f'{github_url}/blob/main/_config.yml'
+            #config = response = requests.get(configuration_url).json()
+            #title = config['title']
+            title = root.replace('-', ' ')
+
+            thumbnail = f'https://raw.githubusercontent.com/ProjectPythiaCookbooks/{root}/main/thumbnail.png'
 
             domains = repo['topics']
-            tags_dict = {'domains': domains}
+            packages = []
+            tag_dict = {'domains': domains, 'packages': packages}
 
-            repo_dict = {'title': title, 'repo': root, 'url': cookbook_url, 'github_url': github_url, 'description': description, 'thumbnail': thumbnail, 'tags': tags_dict}# 'authors': authors_dict, , 'tags': tags_dict}
+            repo_dict = {'title': title, 'repo': root, 'url': cookbook_url, 'github_url': github_url, 'description': description, 'thumbnail': thumbnail, 'tags': tag_dict}
             repos_list.append(repo_dict)
             
     with open(yaml_filepath, 'w') as outfile:
