@@ -5,24 +5,9 @@ from textwrap import dedent
 from truncatehtml import truncate
 
 
-def _generate_url_from_repo(repo):
-    cookbook_url = f'https://cookbooks.projectpythia.org/{repo}/README.html'
-    return cookbook_url
 
 
-def _generate_github_url_from_repo(repo):
-    github_url = f'https://github.com/ProjectPythiaCookbooks/{repo}'
-    return github_url
-
-
-#def _get_thumbnail_url(repo):
-#    github_url = _generate_github_url_from_repo(repo)
-#    return f'{github_url}/thumbnail.png'
-
-
-def _generate_status_badge_html(repo):
-    github_url = _generate_github_url_from_repo(repo)
-
+def _generate_status_badge_html(repo, github_url):
     return f"""
     <a class="reference external" href="{github_url}/actions/workflows/nightly-build.yaml"><img alt="nightly-build" src="{github_url}/actions/workflows/nightly-build.yaml/badge.svg" /></a>
     <a class="reference external" href="https://binder-staging.2i2c.cloud/v2/gh/ProjectPythiaTutorials/{repo}.git/main"><img alt="Binder" src="https://binder-staging.2i2c.cloud/badge_logo.svg" /></a>
@@ -94,10 +79,8 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
     # Build the gallery file
     panels_body = []
     for item in items:
-        repo = item['repo']
-        #thumbnail = _get_thumbnail_url(repo)
-        cookbook_url = _generate_url_from_repo(repo)
-        status_badges = _generate_status_badge_html(repo)
+        cookbook_url = item['url']
+        status_badges = _generate_status_badge_html(item['repo'], item['github_url'])
 
         if not item.get('thumbnail'):
             item['thumbnail'] = '/_static/images/ebp-logo.png'
