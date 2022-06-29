@@ -1,4 +1,5 @@
 import requests
+import yaml
 
 url = 'https://api.github.com/users/ProjectPythiaCookbooks/repos'
 
@@ -15,10 +16,10 @@ def _get_cookbook_repo_names(url):
     return repos
 
 
-def _generate_cookbook_gallery_yaml(repos, filepath='../cookbook_gallery.yaml'):
+def _generate_cookbook_gallery_yaml(repos, filepath='cookbook_gallery.yaml'):
     yaml_dict = []
     for repo in repos:
-        title = deslug(repo).capitalize() #need to create a deslug fx
+        title = repo.replace('-', ' ').title()
         cookbook_url = f'https://cookbooks.projectpythia.org/{repo}/README.html'
         github_url = f'https://github.com/ProjectPythiaCookbooks/{repo}'
         description = ''
@@ -33,7 +34,9 @@ def _generate_cookbook_gallery_yaml(repos, filepath='../cookbook_gallery.yaml'):
         yaml_dict_item = {'title': title, 'repo':repo, 'url': cookbook_url, 'description': description, 'authors': authors_dict, 'thumbnail': thumbnail, 'tags': tags_dict}
         yaml_dict.append(yaml_dict_item)
 
-        yaml_dict.to_yaml(filepath)
+        with open(f"{filepath}", "w") as file:
+            yaml.dump(yaml.load(yaml_dict))
+
         return
 
 
