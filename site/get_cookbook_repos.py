@@ -18,15 +18,13 @@ def generate_cookbook_gallery_yaml(url='https://api.github.com/users/ProjectPyth
             github_url = f'https://github.com/ProjectPythiaCookbooks/{root}'
             thumbnail = f'{github_url}/thumbnail.svg'
 
-            #author_names = [] #grab this from github README.md (add - before each one)
-        
-            #domains = [] #grab this from github README.md (add - before each one)
-            #packages = [] #grab this from github README.md (add - before each one)
-
             #authors_dict = {'names':author_names} #this needs some work
-            #tags_dict = {'domains': domains, 'packages': packages}
+            #author_names = [] #grab this from github README.md (add - before each one)
 
-            repo_dict = {'title': title, 'repo': root, 'url': cookbook_url, 'github_url': github_url, 'description': description, 'thumbnail': thumbnail}# 'authors': authors_dict, , 'tags': tags_dict}
+            domains = repo['topics']
+            tags_dict = {'domains': domains}
+
+            repo_dict = {'title': title, 'repo': root, 'url': cookbook_url, 'github_url': github_url, 'description': description, 'thumbnail': thumbnail, 'tags': tags_dict}# 'authors': authors_dict, , 'tags': tags_dict}
             repos_list.append(repo_dict)
             
     with open(yaml_filepath, 'w') as outfile:

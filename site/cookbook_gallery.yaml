@@ -4,42 +4,60 @@
   github_url: https://github.com/ProjectPythiaCookbooks/cmip6-cookbook
   description: Examples of analysis of Google Cloud CMIP6 data using Pangeo tools
   thumbnail: https://github.com/ProjectPythiaCookbooks/cmip6-cookbook/thumbnail.svg
+  tags:
+    domains:
+    - climate
+    - intake-esm
 - title: Cookbook Actions
   repo: cookbook-actions
   url: https://cookbooks.projectpythia.org/cookbook-actions/README.html
   github_url: https://github.com/ProjectPythiaCookbooks/cookbook-actions
   description: Reusable workflows used by Project Pythia Cookbooks
   thumbnail: https://github.com/ProjectPythiaCookbooks/cookbook-actions/thumbnail.svg
+  tags:
+    domains: []
 - title: Hrrr Aws Cookbook
   repo: HRRR-AWS-cookbook
   url: https://cookbooks.projectpythia.org/HRRR-AWS-cookbook/README.html
   github_url: https://github.com/ProjectPythiaCookbooks/HRRR-AWS-cookbook
   description: A cookbook for working with AWS-served HRRR model output data
   thumbnail: https://github.com/ProjectPythiaCookbooks/HRRR-AWS-cookbook/thumbnail.svg
+  tags:
+    domains: []
 - title: Mpl Colorbar Cookbook
   repo: mpl-colorbar-cookbook
   url: https://cookbooks.projectpythia.org/mpl-colorbar-cookbook/README.html
   github_url: https://github.com/ProjectPythiaCookbooks/mpl-colorbar-cookbook
   description: null
   thumbnail: https://github.com/ProjectPythiaCookbooks/mpl-colorbar-cookbook/thumbnail.svg
+  tags:
+    domains: []
 - title: Packaging Cookbook
   repo: packaging-cookbook
   url: https://cookbooks.projectpythia.org/packaging-cookbook/README.html
   github_url: https://github.com/ProjectPythiaCookbooks/packaging-cookbook
   description: null
   thumbnail: https://github.com/ProjectPythiaCookbooks/packaging-cookbook/thumbnail.svg
+  tags:
+    domains: []
 - title: Physical Oceanography Cookbook
   repo: physical-oceanography-cookbook
   url: https://cookbooks.projectpythia.org/physical-oceanography-cookbook/README.html
   github_url: https://github.com/ProjectPythiaCookbooks/physical-oceanography-cookbook
   description: null
   thumbnail: https://github.com/ProjectPythiaCookbooks/physical-oceanography-cookbook/thumbnail.svg
+  tags:
+    domains: []
 - title: Radar Cookbook
   repo: radar-cookbook
   url: https://cookbooks.projectpythia.org/radar-cookbook/README.html
   github_url: https://github.com/ProjectPythiaCookbooks/radar-cookbook
   description: A cookbook meant to work with various weather radar data
   thumbnail: https://github.com/ProjectPythiaCookbooks/radar-cookbook/thumbnail.svg
+  tags:
+    domains:
+    - py-art
+    - radar
 - title: Xgcm Cookbook
   repo: xgcm-cookbook
   url: https://cookbooks.projectpythia.org/xgcm-cookbook/README.html
@@ -47,3 +65,5 @@
   description: The cookbook for xgcm examples and use cases that were originally housed
     by Pangeo Gallery.
   thumbnail: https://github.com/ProjectPythiaCookbooks/xgcm-cookbook/thumbnail.svg
+  tags:
+    domains: []
