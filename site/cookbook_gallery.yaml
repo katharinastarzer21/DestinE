@@ -1,13 +1,80 @@
-- title: Radar Cookbook
-  repo: radar-cookbook
-  description: |
-    This Project Pythia Cookbook covers the basics of working with weather radar data in Python.
+Cmip6 Cookbook:
   authors:
-  - name: Max Grover
-  thumbnail: _static/images/thumbnails/arm_logo.png
+    names: []
+  description: ''
+  repo: cmip6-cookbook
   tags:
-    domains:
-    - radar
-    packages:
-    - Py-ART
-    
+    domains: []
+    packages: []
+  thumbnail: https://github.com/ProjectPythiaCookbooks/cmip6-cookbook/thumbnail.svg
+  url: https://cookbooks.projectpythia.org/cmip6-cookbook/README.html
+Cookbook Actions:
+  authors:
+    names: []
+  description: ''
+  repo: cookbook-actions
+  tags:
+    domains: []
+    packages: []
+  thumbnail: https://github.com/ProjectPythiaCookbooks/cookbook-actions/thumbnail.svg
+  url: https://cookbooks.projectpythia.org/cookbook-actions/README.html
+Hrrr Aws Cookbook:
+  authors:
+    names: []
+  description: ''
+  repo: HRRR-AWS-cookbook
+  tags:
+    domains: []
+    packages: []
+  thumbnail: https://github.com/ProjectPythiaCookbooks/HRRR-AWS-cookbook/thumbnail.svg
+  url: https://cookbooks.projectpythia.org/HRRR-AWS-cookbook/README.html
+Mpl Colorbar Cookbook:
+  authors:
+    names: []
+  description: ''
+  repo: mpl-colorbar-cookbook
+  tags:
+    domains: []
+    packages: []
+  thumbnail: https://github.com/ProjectPythiaCookbooks/mpl-colorbar-cookbook/thumbnail.svg
+  url: https://cookbooks.projectpythia.org/mpl-colorbar-cookbook/README.html
+Packaging Cookbook:
+  authors:
+    names: []
+  description: ''
+  repo: packaging-cookbook
+  tags:
+    domains: []
+    packages: []
+  thumbnail: https://github.com/ProjectPythiaCookbooks/packaging-cookbook/thumbnail.svg
+  url: https://cookbooks.projectpythia.org/packaging-cookbook/README.html
+Physical Oceanography Cookbook:
+  authors:
+    names: []
+  description: ''
+  repo: physical-oceanography-cookbook
+  tags:
+    domains: []
+    packages: []
+  thumbnail: https://github.com/ProjectPythiaCookbooks/physical-oceanography-cookbook/thumbnail.svg
+  url: https://cookbooks.projectpythia.org/physical-oceanography-cookbook/README.html
+Radar Cookbook:
+  authors:
+    names: []
+  description: ''
+  repo: radar-cookbook
+  tags:
+    domains: []
+    packages: []
+  thumbnail: https://github.com/ProjectPythiaCookbooks/radar-cookbook/thumbnail.svg
+  url: https://cookbooks.projectpythia.org/radar-cookbook/README.html
+Xgcm Cookbook:
+  authors:
+    names: []
+  description: ''
+  repo: xgcm-cookbook
+  tags:
+    domains: []
+    packages: []
+  thumbnail: https://github.com/ProjectPythiaCookbooks/xgcm-cookbook/thumbnail.svg
+  url: https://cookbooks.projectpythia.org/xgcm-cookbook/README.html
