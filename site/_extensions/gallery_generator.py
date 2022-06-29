@@ -5,24 +5,9 @@ from textwrap import dedent
 from truncatehtml import truncate
 
 
-def _generate_url_from_repo(repo):
-    cookbook_url = f'https://cookbooks.projectpythia.org/{repo}/README.html'
-    return cookbook_url
 
 
-def _generate_github_url_from_repo(repo):
-    github_url = f'https://github.com/ProjectPythiaCookbooks/{repo}'
-    return github_url
-
-
-#def _get_thumbnail_url(repo):
-#    github_url = _generate_github_url_from_repo(repo)
-#    return f'{github_url}/thumbnail.png'
-
-
-def _generate_status_badge_html(repo):
-    github_url = _generate_github_url_from_repo(repo)
-
+def _generate_status_badge_html(repo, github_url):
     return f"""
     <a class="reference external" href="{github_url}/actions/workflows/nightly-build.yaml"><img alt="nightly-build" src="{github_url}/actions/workflows/nightly-build.yaml/badge.svg" /></a>
     <a class="reference external" href="https://binder-staging.2i2c.cloud/v2/gh/ProjectPythiaTutorials/{repo}.git/main"><img alt="Binder" src="https://binder-staging.2i2c.cloud/badge_logo.svg" /></a>
@@ -94,10 +79,8 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
     # Build the gallery file
     panels_body = []
     for item in items:
-        repo = item['repo']
-        #thumbnail = _get_thumbnail_url(repo)
-        cookbook_url = _generate_url_from_repo(repo)
-        status_badges = _generate_status_badge_html(repo)
+        cookbook_url = item['url']
+        status_badges = _generate_status_badge_html(item['repo'], item['github_url'])
 
         if not item.get('thumbnail'):
             item['thumbnail'] = '/_static/images/ebp-logo.png'
@@ -111,32 +94,6 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
 
         tag_class_str = ' '.join(tag_list_f)
 
-        author_strs = set()
-        institution_strs = set()
-        for a in item['authors']:
-            author_name = a.get('name', 'Anonymous')
-            author_email = a.get('email', None)
-            if author_email:
-                _str = f'<a href="mailto:{author_email}">{author_name}</a>'
-            else:
-                _str = author_name
-            author_strs.add(_str)
-
-            institution_name = a.get('institution', None)
-            if institution_name:
-                institution_url = a.get('institution_url', None)
-                if institution_url:
-                    _str = f'<a href="{institution_url}">{institution_name}</a>'
-                else:
-                    _str = institution_name
-                institution_strs.add(_str)
-
-        authors_str = f"<strong>Author:</strong> {', '.join(author_strs)}"
-        if institution_strs:
-            institutions_str = f"<strong>Institution:</strong> {' '.join(institution_strs)}"
-        else:
-            institutions_str = ''
-
         ellipsis_str = '<a class="modal-btn"> ... more</a>'
         short_description = truncate(item['description'], max_descr_len, ellipsis=ellipsis_str)
 
@@ -146,9 +103,7 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
 <div class="content">
 <img src="{thumbnail}" class="modal-img" />
 <h3 class="display-3">{item["title"]}</h3>
-{authors_str}
-<br/>
-{institutions_str}
+
 <p class="my-2">{item['description']}</p>
 <p class="my-2">{tags}</p>
 <p class="mt-3 mb-0"><a href="{cookbook_url}" class="btn btn-outline-primary btn-block">Visit Website</a></p>
@@ -167,7 +122,6 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
 <img src="{thumbnail}" class="gallery-thumbnail" />
 <div class="container">
 <a href="{cookbook_url}" class="text-decoration-none"><h4 class="display-4 p-0">{item["title"]}</h4></a>
-<p class="card-subtitle">{authors_str}<br/>{institutions_str}</p>
 <p class="my-2">{short_description}</p>
 </div>
 </div>
