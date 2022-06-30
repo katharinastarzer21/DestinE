@@ -1,3 +1,15 @@
+- title: CMIP6 Cookbook
+  repo: cmip6-cookbook
+  url: https://cookbooks.projectpythia.org/cmip6-cookbook/README.html
+  github_url: https://github.com/ProjectPythiaCookbooks/cmip6-cookbook
+  description: Examples of analysis of Google Cloud CMIP6 data using Pangeo tools
+  thumbnail: https://raw.githubusercontent.com/ProjectPythiaCookbooks/cmip6-cookbook/main/thumbnail.png
+  authors: the <a href="https://projectpythia.org/">Project Pythia</a> Community
+  tags:
+    domains:
+    - climate
+    packages:
+    - intake-esm
 - title: Maplotlib Colorbars Cookbook
   repo: mpl-colorbar-cookbook
   url: https://cookbooks.projectpythia.org/mpl-colorbar-cookbook/README.html
