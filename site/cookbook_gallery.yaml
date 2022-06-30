@@ -1,57 +1,19 @@
-- title: cmip6 cookbook
-  repo: cmip6-cookbook
-  url: https://cookbooks.projectpythia.org/cmip6-cookbook/README.html
-  github_url: https://github.com/ProjectPythiaCookbooks/cmip6-cookbook
-  description: Examples of analysis of Google Cloud CMIP6 data using Pangeo tools
-  thumbnail: https://raw.githubusercontent.com/ProjectPythiaCookbooks/cmip6-cookbook/main/thumbnail.png
-  tags:
-    domains:
-    - climate
-    - intake-esm
-    packages: []
-- title: HRRR AWS cookbook
-  repo: HRRR-AWS-cookbook
-  url: https://cookbooks.projectpythia.org/HRRR-AWS-cookbook/README.html
-  github_url: https://github.com/ProjectPythiaCookbooks/HRRR-AWS-cookbook
-  description: A cookbook for working with AWS-served HRRR model output data
-  thumbnail: https://raw.githubusercontent.com/ProjectPythiaCookbooks/HRRR-AWS-cookbook/main/thumbnail.png
-  tags:
-    domains:
-    - visualization
-    packages: []
-- title: mpl colorbar cookbook
+- title: Maplotlib Colorbars Cookbook
   repo: mpl-colorbar-cookbook
   url: https://cookbooks.projectpythia.org/mpl-colorbar-cookbook/README.html
   github_url: https://github.com/ProjectPythiaCookbooks/mpl-colorbar-cookbook
   description: This Project Pythia Cookbook covers colorbars.
   thumbnail: https://raw.githubusercontent.com/ProjectPythiaCookbooks/mpl-colorbar-cookbook/main/thumbnail.png
+  authors: the <a href="https://projectpythia.org/">Project Pythia</a> Community
   tags:
     domains:
     - visualization
-    packages: []
-- title: packaging cookbook
-  repo: packaging-cookbook
-  url: https://cookbooks.projectpythia.org/packaging-cookbook/README.html
-  github_url: https://github.com/ProjectPythiaCookbooks/packaging-cookbook
-  description: This Project Pythia Cookbook covers Python packaging.
-  thumbnail: https://raw.githubusercontent.com/ProjectPythiaCookbooks/packaging-cookbook/main/thumbnail.png
-  tags:
-    domains:
-    - packages
-    packages: []
-- title: physical oceanography cookbook
-  repo: physical-oceanography-cookbook
-  url: https://cookbooks.projectpythia.org/physical-oceanography-cookbook/README.html
-  github_url: https://github.com/ProjectPythiaCookbooks/physical-oceanography-cookbook
-  description: Examples of how to use Xarray, Dask, and Holoviews to load, process,
-    and visualize cloud-based ocean data. Datasets include satellite observations
-    (gridded sea-surface height) and ocean model output (POP, MOM6).
-  thumbnail: https://raw.githubusercontent.com/ProjectPythiaCookbooks/physical-oceanography-cookbook/main/thumbnail.png
-  tags:
-    domains:
-    - oceanography
-    packages: []
-- title: radar cookbook
+    packages:
+    - matplotlib
+    - cartopy
+    - xarray
+    - geocat
+- title: Radar Cookbook
   repo: radar-cookbook
   url: https://cookbooks.projectpythia.org/radar-cookbook/README.html
   github_url: https://github.com/ProjectPythiaCookbooks/radar-cookbook
@@ -60,18 +22,6 @@
   authors: Max Grover, Zachary Sherman
   tags:
     domains:
-    - py-art
     - radar
     packages:
     - Py-Art
-- title: xgcm cookbook
-  repo: xgcm-cookbook
-  url: https://cookbooks.projectpythia.org/xgcm-cookbook/README.html
-  github_url: https://github.com/ProjectPythiaCookbooks/xgcm-cookbook
-  description: The cookbook for xgcm examples and use cases that were originally housed
-    by Pangeo Gallery.
-  thumbnail: https://raw.githubusercontent.com/ProjectPythiaCookbooks/xgcm-cookbook/main/thumbnail.png
-  tags:
-    domains:
-    - xgcm
-    packages: []
