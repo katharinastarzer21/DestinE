@@ -23,7 +23,9 @@ def generate_cookbook_gallery_yaml(url='https://api.github.com/users/ProjectPyth
             authors = config_dict['author']
             thumbnail = config_dict['thumbnail']
             thumbnail_path = f'https://raw.githubusercontent.com/ProjectPythiaCookbooks/{root}/main/{thumbnail}'
-            tag_dict = config_dict['tags']
+            
+            tags = config_dict['tags']
+            tag_dict = {k: v for k, v in tags.items() if v[0] != None}
 
             repo_dict = {'title': title, 'repo': root, 'url': cookbook_url, 'github_url': github_url, 'description': description, 'thumbnail': thumbnail_path, 'authors': authors, 'tags': tag_dict}
             repos_list.append(repo_dict)
