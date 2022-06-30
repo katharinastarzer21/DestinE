@@ -6,8 +6,6 @@ import urllib
 def generate_cookbook_gallery_yaml(url='https://api.github.com/users/ProjectPythiaCookbooks/repos', yaml_filepath='cookbook_gallery.yaml'):
     response = requests.get(url).json()
 
-    unwanted_repos=['.github', 'projectpythiacookbooks.github.io', 'cookbook-template', 'test-cookbook', 'cookbook-actions', 'mpl-colorbar-cookbook']
-
     repos_list = []
     for repo in response:
         if "accepted" in repo['topics']:
