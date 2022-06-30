@@ -38,7 +38,7 @@ def _generate_tag_menu(all_items, tag_key):
     tag_list = sorted(tag_set)
 
     options = ''.join(
-        f'<li><label class="dropdown-item checkbox {tag_key}"><input type="checkbox" rel={tag.replace(" ", "-")} onchange="change();">&nbsp;{tag.capitalize()}</label></li>'
+        f'<li><label class="dropdown-item checkbox {tag_key}"><input type="checkbox" rel={tag.replace(" ", "-")} onchange="change();">&nbsp;{tag}</label></li>'
         for tag in tag_list
     )
 
@@ -86,6 +86,9 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
             item['thumbnail'] = '/_static/images/ebp-logo.png'
         thumbnail = item['thumbnail']
 
+        authors = item['authors']
+        authors_str = f"<strong>Author:</strong> {authors}"
+
         tag_list = sorted((itertools.chain(*item['tags'].values())))
         tag_list_f = [tag.replace(' ', '-') for tag in tag_list]
 
@@ -103,7 +106,7 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
 <div class="content">
 <img src="{thumbnail}" class="modal-img" />
 <h3 class="display-3">{item["title"]}</h3>
-
+{authors_str}
 <p class="my-2">{item['description']}</p>
 <p class="my-2">{tags}</p>
 <p class="mt-3 mb-0"><a href="{cookbook_url}" class="btn btn-outline-primary btn-block">Visit Website</a></p>
@@ -122,6 +125,8 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
 <img src="{thumbnail}" class="gallery-thumbnail" />
 <div class="container">
 <a href="{cookbook_url}" class="text-decoration-none"><h4 class="display-4 p-0">{item["title"]}</h4></a>
+<p class="card-subtitle">{authors_str}</p>
+<br/>
 <p class="my-2">{short_description}</p>
 </div>
 </div>

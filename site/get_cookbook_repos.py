@@ -1,33 +1,33 @@
 import requests
 import yaml
+import urllib
 
 
 def generate_cookbook_gallery_yaml(url='https://api.github.com/users/ProjectPythiaCookbooks/repos', yaml_filepath='cookbook_gallery.yaml'):
     response = requests.get(url).json()
 
-    unwanted_repos=['.github', 'projectpythiacookbooks.github.io', 'cookbook-template', 'test-cookbook', 'cookbook-actions']
+    unwanted_repos=['.github', 'projectpythiacookbooks.github.io', 'cookbook-template', 'test-cookbook', 'cookbook-actions', 'mpl-colorbar-cookbook']
 
     repos_list = []
     for repo in response:
-        root = repo['name']
-        if root not in unwanted_repos:  
-            cookbook_url = f'https://cookbooks.projectpythia.org/{root}/README.html'
+        if "accepted" in repo['topics']:
+            root = repo['name']
             description = repo['description']
 
             github_url = f'https://github.com/ProjectPythiaCookbooks/{root}'
+            cookbook_url = f'https://cookbooks.projectpythia.org/{root}/README.html'
+            
+            config_url = f'https://raw.githubusercontent.com/ProjectPythiaCookbooks/{root}/main/_config.yml'
+            config = urllib.request.urlopen(config_url)
+            config_dict = yaml.safe_load(config)
 
-            #configuration_url = f'{github_url}/blob/main/_config.yml'
-            #config = response = requests.get(configuration_url).json()
-            #title = config['title']
-            title = root.replace('-', ' ')
+            title = config_dict['title']
+            authors = config_dict['author']
+            thumbnail = config_dict['thumbnail']
+            thumbnail_path = f'https://raw.githubusercontent.com/ProjectPythiaCookbooks/{root}/main/{thumbnail}'
+            tag_dict = config_dict['tags']
 
-            thumbnail = f'https://raw.githubusercontent.com/ProjectPythiaCookbooks/{root}/main/thumbnail.png'
-
-            domains = repo['topics']
-            packages = []
-            tag_dict = {'domains': domains, 'packages': packages}
-
-            repo_dict = {'title': title, 'repo': root, 'url': cookbook_url, 'github_url': github_url, 'description': description, 'thumbnail': thumbnail, 'tags': tag_dict}
+            repo_dict = {'title': title, 'repo': root, 'url': cookbook_url, 'github_url': github_url, 'description': description, 'thumbnail': thumbnail_path, 'authors': authors, 'tags': tag_dict}
             repos_list.append(repo_dict)
             
     with open(yaml_filepath, 'w') as outfile:
