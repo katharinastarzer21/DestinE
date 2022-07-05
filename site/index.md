@@ -6,6 +6,7 @@ Pythia Cookbooks provide example workflows on more advanced and domain-specific 
 
 <div class="d-sm-flex mt-3 mb-4">
 <div class="d-flex gallery-menu">
+<div><a role="button" class="btn btn-primary btn-sm mx-1" href=https://github.com/ProjectPythiaCookbooks/projectpythiacookbooks.github.io/issues/new?assignees=&labels=resource-gallery-submission&template=update-cookbook.md&title=>Submit a new Cookbook</a></div>
 </div>
 <div class="ml-auto d-flex">
 <div><button class="btn btn-link btn-sm mx-1" onclick="clearCbs()">Clear all filters</button></div>
