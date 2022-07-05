@@ -49,10 +49,10 @@ Packages
 <div class="d-flex gallery-card">
 <img src="https://raw.githubusercontent.com/ProjectPythiaCookbooks/cmip6-cookbook/main/thumbnail.png" class="gallery-thumbnail" />
 <div class="container">
-<a href="https://cookbooks.projectpythia.org/cmip6-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">CMIP6 Cookbook</h4></a>
+<a href="https://cookbooks.projectpythia.org/cmip6-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">Cookbooks Gallery</h4></a>
 <p class="card-subtitle"><strong>Author:</strong> the <a href="https://projectpythia.org/">Project Pythia</a> Community</p>
 <br/>
-<p class="my-2">Examples of analysis of Google Cloud CMIP6 data using Pangeo tools</p>
+<p class="my-2">Examples of analysis of Google Cloud CMIP6 data using Pangeo tools.</p>
 </div>
 </div>
 
@@ -74,10 +74,10 @@ Packages
 <div class="d-flex gallery-card">
 <img src="https://raw.githubusercontent.com/ProjectPythiaCookbooks/HRRR-AWS-cookbook/main/thumbnail.png" class="gallery-thumbnail" />
 <div class="container">
-<a href="https://cookbooks.projectpythia.org/HRRR-AWS-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">HRRR-AWS-Cookbook</h4></a>
+<a href="https://cookbooks.projectpythia.org/HRRR-AWS-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">Cookbooks Gallery</h4></a>
 <p class="card-subtitle"><strong>Author:</strong> the <a href="https://projectpythia.org/">Project Pythia</a> Community</p>
 <br/>
-<p class="my-2">A cookbook for working with AWS-served HRRR model output data</p>
+<p class="my-2">A cookbook for working with AWS-served HRRR model output data.</p>
 </div>
 </div>
 
@@ -101,10 +101,10 @@ Packages
 <div class="d-flex gallery-card">
 <img src="https://raw.githubusercontent.com/ProjectPythiaCookbooks/mpl-colorbar-cookbook/main/thumbnail.png" class="gallery-thumbnail" />
 <div class="container">
-<a href="https://cookbooks.projectpythia.org/mpl-colorbar-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">Maplotlib Colorbars Cookbook</h4></a>
+<a href="https://cookbooks.projectpythia.org/mpl-colorbar-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">Cookbooks Gallery</h4></a>
 <p class="card-subtitle"><strong>Author:</strong> the <a href="https://projectpythia.org/">Project Pythia</a> Community</p>
 <br/>
-<p class="my-2">This Project Pythia Cookbook covers colorbars.</p>
+<p class="my-2">Examples of analysis of Google Cloud CMIP6 data using Pangeo tools</p>
 </div>
 </div>
 
@@ -129,7 +129,7 @@ Packages
 <div class="d-flex gallery-card">
 <img src="https://raw.githubusercontent.com/ProjectPythiaCookbooks/packaging-cookbook/main/thumbnail.png" class="gallery-thumbnail" />
 <div class="container">
-<a href="https://cookbooks.projectpythia.org/packaging-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">Packaging Cookbook</h4></a>
+<a href="https://cookbooks.projectpythia.org/packaging-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">Cookbooks Gallery</h4></a>
 <p class="card-subtitle"><strong>Author:</strong> the <a href="https://projectpythia.org/">Project Pythia</a> Community</p>
 <br/>
 <p class="my-2">This Project Pythia Cookbook covers Python packaging.</p>
@@ -153,7 +153,7 @@ Packages
 <div class="d-flex gallery-card">
 <img src="https://raw.githubusercontent.com/ProjectPythiaCookbooks/physical-oceanography-cookbook/main/thumbnail.png" class="gallery-thumbnail" />
 <div class="container">
-<a href="https://cookbooks.projectpythia.org/physical-oceanography-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">Physical Oceanography Cookbook</h4></a>
+<a href="https://cookbooks.projectpythia.org/physical-oceanography-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">Cookbooks Gallery</h4></a>
 <p class="card-subtitle"><strong>Author:</strong> the <a href="https://projectpythia.org/">Project Pythia</a> Community</p>
 <br/>
 <p class="my-2">Examples of how to use Xarray, Dask, and Holoviews to load, process, and visualize cloud-based ocean data. Datasets include satellite observations (gridded sea-surface height) and ocean model output (POP, MOM6).</p>
@@ -180,10 +180,10 @@ Packages
 <div class="d-flex gallery-card">
 <img src="https://raw.githubusercontent.com/ProjectPythiaCookbooks/radar-cookbook/main/thumbnail.png" class="gallery-thumbnail" />
 <div class="container">
-<a href="https://cookbooks.projectpythia.org/radar-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">Radar Cookbook</h4></a>
+<a href="https://cookbooks.projectpythia.org/radar-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">Cookbooks Gallery</h4></a>
 <p class="card-subtitle"><strong>Author:</strong> Max Grover, Zachary Sherman</p>
 <br/>
-<p class="my-2">A cookbook meant to work with various weather radar data</p>
+<p class="my-2">A cookbook meant to work with various weather radar data.</p>
 </div>
 </div>
 
@@ -205,7 +205,7 @@ Packages
 <div class="d-flex gallery-card">
 <img src="https://raw.githubusercontent.com/ProjectPythiaCookbooks/xgcm-cookbook/main/thumbnail.png" class="gallery-thumbnail" />
 <div class="container">
-<a href="https://cookbooks.projectpythia.org/xgcm-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">XGCM Cookbook</h4></a>
+<a href="https://cookbooks.projectpythia.org/xgcm-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">Cookbooks Gallery</h4></a>
 <p class="card-subtitle"><strong>Author:</strong> the <a href="https://projectpythia.org/">Project Pythia</a> Community</p>
 <br/>
 <p class="my-2">The cookbook for xgcm examples and use cases that were originally housed by Pangeo Gallery.</p>
