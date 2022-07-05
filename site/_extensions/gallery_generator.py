@@ -24,7 +24,7 @@ def generate_repo_dicts(all_items):
         config = urllib.request.urlopen(config_url)
         config_dict = yaml.safe_load(config)
 
-        title = config_dict['title']
+        cookbook_title = config_dict['title']
         authors = config_dict['author']
         thumbnail = config_dict['thumbnail']
         description = config_dict['description']
@@ -33,7 +33,7 @@ def generate_repo_dicts(all_items):
         repo_dict = {'repo': item,
             'github_url': github_url,
             'cookbook_url': cookbook_url,
-            'title': title,
+            'cookbook_title': cookbook_title,
             'authors': authors,
             'thumbnail': thumbnail,
             'description': description,
@@ -116,7 +116,7 @@ def build_from_repos(repo_dicts, filename, title='Gallery', subtitle=None, subte
         status_badges = _generate_status_badge_html(repo, github_url)
 
         cookbook_url = repo_dict['cookbook_url']
-        repo_title = repo_dict['title']
+        cookbook_title = repo_dict['cookbook_title']
 
         authors = repo_dict['authors']
         authors_str = f"<strong>Author:</strong> {authors}"
@@ -140,7 +140,7 @@ def build_from_repos(repo_dicts, filename, title='Gallery', subtitle=None, subte
 <div class="modal">
 <div class="content">
 <img src="{thumbnail_url}" class="modal-img" />
-<h3 class="display-3">{repo_title}</h3>
+<h3 class="display-3">{cookbook_title}</h3>
 {authors_str}
 <p class="my-2">{description}</p>
 <p class="my-2">{tags}</p>
@@ -159,7 +159,7 @@ def build_from_repos(repo_dicts, filename, title='Gallery', subtitle=None, subte
 <div class="d-flex gallery-card">
 <img src="{thumbnail_url}" class="gallery-thumbnail" />
 <div class="container">
-<a href="{cookbook_url}" class="text-decoration-none"><h4 class="display-4 p-0">{title}</h4></a>
+<a href="{cookbook_url}" class="text-decoration-none"><h4 class="display-4 p-0">{cookbook_title}</h4></a>
 <p class="card-subtitle">{authors_str}</p>
 <br/>
 <p class="my-2">{short_description}</p>
