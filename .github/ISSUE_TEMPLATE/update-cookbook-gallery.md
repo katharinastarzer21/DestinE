@@ -2,7 +2,7 @@
 name: Update Cookbook Gallery
 about: For submitting a new Cookbook repository for acceptance into the gallery
 title: Update Gallery with new Cookbook
-labels: content
+labels: content, cookbook-gallery-submission
 assignees: ''
 
 ---
