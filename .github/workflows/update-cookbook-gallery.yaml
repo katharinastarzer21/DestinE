@@ -6,6 +6,17 @@ on:
       - opened
       - edited
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo repo name
+        run: echo "${{ github.repository }}"
+      - name: Echo issue labels
+        run: echo "${{ github.event.issue.labels }}"
+      - name: Test repo name
+        run: echo "${{ github.repository == 'ProjectPythiaCookbooks/projectpythiacookbooks.github.io' }}
+      - name: Test label name
+        run: echo "${{ contains(github.event.issue.labels.*.name, 'cookbook-gallery-submission') }}
   validate-user-submission:
     if: github.repository == 'ProjectPythiaCookbooks/projectpythiacookbooks.github.io' && contains(github.event.issue.labels.*.name, 'cookbook-gallery-submission')
     runs-on: ubuntu-latest
