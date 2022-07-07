@@ -4,8 +4,8 @@ from gallery_generator import build_from_repos, generate_menu, generate_repo_dic
 
 def main(app):
 
-    with open('cookbook_gallery.yaml') as fid:
-        all_items = yaml.safe_load(fid)[0]['repos']
+    with open('cookbook_gallery.txt') as fid:
+        all_items = fid.readlines()
 
     repo_dicts = generate_repo_dicts(all_items)
 
