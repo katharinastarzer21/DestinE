@@ -103,7 +103,7 @@ jobs:
 
           with open(cookbook_gallery_file, 'w') as f:
               cookbook_gallery.append(repo)
-              f.writelines(cookbook-gallery)
+              f.writelines(cookbook_gallery)
 
       - name: Run pre-commit hooks
         run: |
