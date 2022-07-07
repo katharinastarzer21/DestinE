@@ -19,6 +19,7 @@ class IssueInfo:
     def __post_init_post_parse__(self):
         with open(self.gh_event_path) as f:
             self.data = json.load(f)
+        print(self.data)
 
     def create_submission(self):
         self._get_inputs()
