@@ -6,17 +6,6 @@ on:
       - opened
       - edited
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Echo repo name
-        run: echo "${{ github.repository }}"
-      - name: Echo issue labels
-        run: echo "${{ github.event.issue.labels }}"
-      - name: Test repo name
-        run: echo "${{ github.repository == 'ProjectPythiaCookbooks/projectpythiacookbooks.github.io' }}"
-      - name: Test label name
-        run: echo "${{ contains(github.event.issue.labels.*.name, 'cookbook-gallery-submission') }}"
   validate-user-submission:
     if: github.repository == 'ProjectPythiaCookbooks/projectpythiacookbooks.github.io' && contains(github.event.issue.labels.*.name, 'cookbook-gallery-submission')
     runs-on: ubuntu-latest
@@ -31,6 +20,7 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           comment-author: 'github-actions[bot]'
           body-includes: Thank you for your contribution
+
       - name: Create comment
         if: steps.fc.outputs.comment-id == ''
         uses: peter-evans/create-or-update-comment@v1
@@ -40,6 +30,7 @@ jobs:
             Thank you for your contribution 🎉, @${{ github.actor }}!
 
             We're currently running [validation checks](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}) to make sure the contents of your submission are okay. An update will be posted here shortly once the validation checks are passing.
+
       - name: Update comment
         if: steps.fc.outputs.comment-id != ''
         uses: peter-evans/create-or-update-comment@v1
@@ -50,6 +41,7 @@ jobs:
             Thank you for your contribution 🎉, @${{ github.actor }}!
 
             We're currently running [validation checks](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}) to make sure the contents of your submission are okay. An update will be posted here shortly once the validation checks are passing.
+
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
@@ -77,9 +69,11 @@ jobs:
         shell: bash -l {0}
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-python@v2
         with:
           python-version: 3.8
+
       - uses: actions/download-artifact@v2
         with:
           name: submission
