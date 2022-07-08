@@ -25,4 +25,10 @@ body:
       multiple: true
       options:
         - 'yes'
-        - 'no'        
+        - 'no'       
+  - type: textarea
+    id: comments
+    attributes:
+      label: Additional comments
+      description: Please add any additional comments on this issue here.
+      
