@@ -9,4 +9,5 @@ __pycache__/
 # Distribution / packaging
 .Python
 site/_build/
+site/index.md
 dist/

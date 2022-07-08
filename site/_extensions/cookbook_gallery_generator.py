@@ -1,4 +1,3 @@
-import yaml
 from gallery_generator import build_from_repos, generate_menu, generate_repo_dicts
 
 
@@ -11,9 +10,10 @@ def main(app):
 
     title = 'Cookbooks Gallery'
 
-    stext1 = "Pythia Cookbooks provide example workflows on more advanced and domain-specific problems developed by the Pythia community. Cookbooks build on top of skills you learn in Pythia Foundations."
-    stext2 = "Interested in contributing a new Cookbook or contributing to an existing Cookbook? Great! Please see the [Project Pythia Contributor's Guide](https://projectpythia.org/contributing.html) and Cookbook-specific information [here](https://github.com/ProjectPythiaCookbooks/.github/blob/main/CONTRIBUTING.md)."
-    subtext = stext1 + '<br><br>' + stext2
+    subtext = ''
+    with open('cookbook_gallery_subtext.md') as fid:
+        for line in fid:
+            subtext = subtext + line
 
     submit_btn_link = 'https://github.com/ProjectPythiaCookbooks/projectpythiacookbooks.github.io/issues/new?assignees=ProjectPythiaCookbooks%2Feducation&labels=content%2Ccookbook-gallery-submission&template=update-cookbook-gallery.yaml&title=Update+Gallery+with+new+Cookbook'
     submit_btn_txt = 'Submit a new Cookbook'
