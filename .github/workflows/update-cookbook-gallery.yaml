@@ -116,6 +116,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v4
         with:
+          repo-token: ${{ secrets.NEW_COOKBOOK_TOKEN }}
           commit-message: 'Update cookbook gallery'
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
