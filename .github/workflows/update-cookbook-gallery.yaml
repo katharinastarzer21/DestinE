@@ -120,6 +120,7 @@ jobs:
       - name: Create pull request
         id: cpr
         uses: peter-evans/create-pull-request@v4
+        if: github.event.pull_request.head.repo.full_name == github.repository
         env:
           GITHUB_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
         with:
