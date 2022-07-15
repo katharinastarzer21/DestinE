@@ -122,7 +122,7 @@ jobs:
           title: 'Update cookbook gallery'
           body: |
             Update cookbook gallery as requested in #${{ github.event.issue.number }}. Closes #${{ github.event.issue.number }}.
-          token: ${{ github.PAT }}
+          token: ${{ secrets.PAT }}
           branch: upstream-changes
 
       - name: Find Comment
