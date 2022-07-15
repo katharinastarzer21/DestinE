@@ -118,12 +118,12 @@ jobs:
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: "auto-pr-branch"
           base: main
           title: 'Update cookbook gallery'
           body: |
             Update cookbook gallery as requested in #${{ github.event.issue.number }}. Closes #${{ github.event.issue.number }}.
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT }}
+          branch: upstream-changes
 
       - name: Find Comment
         uses: peter-evans/find-comment@v1
