@@ -119,12 +119,11 @@ jobs:
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
           base: main
-          title: 'Update cookbook gallery'
+          title: 'Update cookbook gallery per #${{ github.event.issue.number }}'
           body: |
             Update cookbook gallery as requested in #${{ github.event.issue.number }}. Closes #${{ github.event.issue.number }}.
           token: ${{ secrets.PAT }}
-          repository: ProjectPythiaCookbooks/projectpythiacookbooks.github.io
-          branch: upstream-changes
+          branch: cookbook-gallery-${{ github.event.issue.number }}
 
       - name: Find Comment
         uses: peter-evans/find-comment@v1
