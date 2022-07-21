@@ -11,3 +11,5 @@ __pycache__/
 site/_build/
 site/index.md
 dist/
+cookbook-submission-input.txt
+
