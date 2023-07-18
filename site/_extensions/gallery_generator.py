@@ -240,7 +240,7 @@ def build_from_repos(
 +++
 <div class="tagsandbadges">
 {tags}
-<div{status_badges}</div>
+<div>{status_badges}</div>
 </div>
 
 """
