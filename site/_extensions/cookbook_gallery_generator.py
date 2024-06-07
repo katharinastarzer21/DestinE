@@ -1,6 +1,5 @@
 from gallery_generator import build_from_repos, generate_menu, generate_repo_dicts
 
-
 def main(app):
 
     with open("cookbook_gallery.txt") as fid:
@@ -24,7 +23,6 @@ def main(app):
     build_from_repos(
         repo_dicts, "index", title=title, subtext=subtext, menu_html=menu_html
     )
-
 
 def setup(app):
     app.connect("builder-inited", main)
