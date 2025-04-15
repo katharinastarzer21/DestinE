@@ -1,0 +1,1382 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Destination Earth - High rate SEVIRI Level 1.5 Image Data MSG - Data Access using DEDL HDA &#8212; DestinE DataLake Lab</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.MSG-1.5';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Destination Earth - OLCI Level 1B Reduced Resolution - Sentinel-3 - Data Access using DEDL HDA" href="DEDL-HDA-EO.EUM.DAT.SENTINEL-3.OL_1_ERR___.html" />
+    <link rel="prev" title="Destination Earth - AVHRR Level 1B Metop Global - Data Access using DEDL HDA" href="DEDL-HDA-EO.EUM.DAT.METOP.AVHRRL1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">DestinE DataLake Lab</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    DestinE Data Lake Lab
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../CDS_data/DEDL-HDA-EO.ECMWF.DAT.REANALYSIS_ERA5_SINGLE_LEVELS.html">Destination Earth - ERA5 hourly data on single levels from 1940 to present - Data Access using DEDL HDA</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DestinE%20Digital%20Twins/ClimateDT-ParameterPlotter.html">DEDL - HDA Climate DT Parameter Plotter - Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DestinE%20Digital%20Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE-Series.html">Destination Earth - Climate Change Adaptation Digital Twin Series Plot- Data Access using DEDL HDA</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DestinE%20Digital%20Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE.html">Destination Earth - Climate Change Adaptation Digital Twin - Data Access using DEDL HDA</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DestinE%20Digital%20Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES-Series.html">Destination Earth - Weather-Induced Extremes Digital Twin - Data Access using DEDL HDA</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DestinE%20Digital%20Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES.html">Destination Earth - Weather-Induced Extremes Digital Twin - Data Access using DEDL HDA</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../DestinE%20Digital%20Twins/ExtremeDT-ParameterPlotter.html">DEDL - HDA Extreme DT Parameter Plotter - Tutorial</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../EODAG/HDA-EODAG-full-version.html">DEDL - EODAG - DestinE Data Lake Provider (DEDL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EODAG/HDA-EODAG-quick-start.html">DEDL - EODAG - A quick start with DEDL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DEDL-HDA-EO.EUM.DAT.METOP.AVHRRL1.html">Destination Earth - AVHRR Level 1B Metop Global - Data Access using DEDL HDA</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Destination Earth - High rate SEVIRI Level 1.5 Image Data MSG - Data Access using DEDL HDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DEDL-HDA-EO.EUM.DAT.SENTINEL-3.OL_1_ERR___.html">Destination Earth - OLCI Level 1B Reduced Resolution - Sentinel-3 - Data Access using DEDL HDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PySTAC/HDA-PyStac-Client.html">HDA PySTAC-Client Introduction</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../REST/DEDL-HDA-EO.ESA.DAT.SENTINEL-1.L1_GRD.html">Example of Using HDA to Find and Download Data for Urban Area Monitoring Using Sentinel-1 Data</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../REST/DEDL-HDA-EO.ESA.DAT.SENTINEL-2.MSI.L2A.html">Example of how to use HDA to find and download data for conducting monitoring of Śniadrwy lake</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../REST/HDA-REST-Queryables.html">DEDL - HDA Tutorial - Queryables</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../REST/HDA-REST-full-version.html">DEDL - HDA Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../REST/HDA-REST-quick-start.html">DEDL - HDA Tutorial - quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../HOOK/DEDL-Hook_access.html">Access to Hook services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../HOOK/Tutorial.html">DEDL - Hook Tutorial - Data Harvest (data-harvest)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../STACK/DEDL_StackService_Dask.html">DestinE Data Lake - Stack Service Dask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../STACK/ExtremeDT-DataCube-xViewer.html">Create a dashboard based on Data Cube populated with data obtained from Weather and Geophysical Extremes Digital Twin (DT) - ExtremeDT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../STACK/ExtremeDT-DataCube.html">Data Cube populated with data obtained from Weather and Geophysical Extremes Digital Twin (DT) - ExtremeDT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../STACK/STACK-Dask-101.html">STACK service - Dask 101</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../STACK/STACK-Python-Client-Dask.html">STACK service - Python Client Dask</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/katharinastarzer21/DestinE" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.MSG-1.5.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Destination Earth - High rate SEVIRI Level 1.5 Image Data MSG - Data Access using DEDL HDA</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authenticate-on-desp">Authenticate on DESP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-msg-data">Search MSG data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-msg">Download MSG</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#satpy">satpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-and-load-data">Read and load data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-data-combining-bands">Visualize data combining bands</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><img alt="" src="https://github.com/destination-earth/DestinE-DataLake-Lab/blob/main/img/DestinE-banner.jpg?raw=true" /></p>
+<section class="tex2jax_ignore mathjax_ignore" id="destination-earth-high-rate-seviri-level-1-5-image-data-msg-data-access-using-dedl-hda">
+<h1>Destination Earth - High rate SEVIRI Level 1.5 Image Data MSG - Data Access using DEDL HDA<a class="headerlink" href="#destination-earth-high-rate-seviri-level-1-5-image-data-msg-data-access-using-dedl-hda" title="Link to this heading">#</a></h1>
+<p><strong>Author</strong>: EUMETSAT <br>
+<strong>Copyright</strong>: 2024 EUMETSAT <br>
+<strong>Licence</strong>: MIT <br></p>
+<p>The Spinning Enhanced Visible and InfraRed Imager (SEVIRI) is MSG’s primary instrument and has the capacity to observe the Earth in 12 spectral channels.</p>
+<p><a class="reference external" href="https://hda.data.destination-earth.eu/ui/dataset/EO.EUM.DAT.MSG.HRSEVIRI">Documentation DestinE Data Lake HDA</a></p>
+<p><a class="reference external" href="https://navigator.eumetsat.int/product/EO:EUM:DAT:MSG:HRSEVIRI">High Rate SEVIRI Level 1.5 Image Data - MSG - 0 degree</a></p>
+<section id="authenticate-on-desp">
+<h2>Authenticate on DESP<a class="headerlink" href="#authenticate-on-desp" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">destinelab</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">deauth</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">zipfile</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">getpass</span><span class="w"> </span><span class="kn">import</span> <span class="n">getpass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DESP_USERNAME</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please input your DESP username or email: &quot;</span><span class="p">)</span>
+<span class="n">DESP_PASSWORD</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">(</span><span class="s2">&quot;Please input your DESP password: &quot;</span><span class="p">)</span>
+
+<span class="n">auth</span> <span class="o">=</span> <span class="n">deauth</span><span class="o">.</span><span class="n">AuthHandler</span><span class="p">(</span><span class="n">DESP_USERNAME</span><span class="p">,</span> <span class="n">DESP_PASSWORD</span><span class="p">)</span>
+<span class="n">access_token</span> <span class="o">=</span> <span class="n">auth</span><span class="o">.</span><span class="n">get_token</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">access_token</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DEDL/DESP Access Token Obtained Successfully&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to Obtain DEDL/DESP Access Token&quot;</span><span class="p">)</span>
+
+<span class="n">auth_headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">access_token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Response code: 200
+DEDL/DESP Access Token Obtained Successfully
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="search-msg-data">
+<h2>Search MSG data<a class="headerlink" href="#search-msg-data" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://hda.data.destination-earth.eu/stac/search&quot;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">auth_headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;collections&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;EO.EUM.DAT.MSG.HRSEVIRI&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;datetime&quot;</span><span class="p">:</span> <span class="s2">&quot;2023-08-06T08:00:00Z/2023-08-07T00:00:00Z&quot;</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">JSON</span>
+
+<span class="n">product</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;features&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">JSON</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IPython.core.display.JSON object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="download-msg">
+<h3>Download MSG<a class="headerlink" href="#download-msg" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="c1"># Define a list of assets to download</span>
+<span class="c1">#assets = [&quot;Oa08_radiance.nc&quot;, &quot;Oa06_radiance.nc&quot;, &quot;Oa02_radiance.nc&quot;]</span>
+<span class="n">assets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;downloadLink&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">asset</span> <span class="ow">in</span> <span class="n">assets</span><span class="p">:</span>
+    <span class="n">download_url</span> <span class="o">=</span> <span class="n">product</span><span class="p">[</span><span class="s2">&quot;assets&quot;</span><span class="p">][</span><span class="n">asset</span><span class="p">][</span><span class="s2">&quot;href&quot;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">download_url</span><span class="p">)</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">asset</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">download_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">auth_headers</span><span class="p">)</span>
+    <span class="n">total_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;content-length&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;downloading </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">total_size</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="n">unit_scale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">progress_bar</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="mi">1024</span><span class="p">):</span>
+                <span class="n">progress_bar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://hda.data.destination-earth.eu/stac/collections/EO.EUM.DAT.MSG.HRSEVIRI/items/MSG3-SEVI-MSG15-0100-NA-20230806081241.839000000Z-NA/download?provider=eumetsat
+downloadLink
+downloading downloadLink
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 174M/174M [00:00&lt;00:00, 600MB/s] 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zf</span><span class="o">=</span><span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
+    <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="satpy">
+<h2>satpy<a class="headerlink" href="#satpy" title="Link to this heading">#</a></h2>
+<p>The Python package satpy supports reading and loading data from many input files.
+For MSG data and the Native format, we can use the satpy reader ‘seviri_l1b_native.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">quiet</span> <span class="n">satpy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Import required libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">satpy.scene</span><span class="w"> </span><span class="kn">import</span> <span class="n">Scene</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">satpy.composites</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericCompositor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">satpy.writers</span><span class="w"> </span><span class="kn">import</span> <span class="n">to_image</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">satpy.resample</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_area_def</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">satpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">available_readers</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span> <span class="o">=</span> <span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span> <span class="o">=</span> <span class="ne">RuntimeWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">=</span><span class="s1">&#39;MSG3-SEVI-MSG15-0100-NA-20230806081241.839000000Z-NA.nat&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="read-and-load-data">
+<h3>Read and load data<a class="headerlink" href="#read-and-load-data" title="Link to this heading">#</a></h3>
+<p>We use the Scene constructor from the satpy library, a Scene object represents a single geographic region of data.
+Once loaded we can list all the available bands (spectral channel) for that scene.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read the file</span>
+<span class="n">scn</span> <span class="o">=</span> <span class="n">Scene</span><span class="p">(</span><span class="n">reader</span><span class="o">=</span><span class="s1">&#39;seviri_l1b_native&#39;</span><span class="p">,</span> <span class="n">filenames</span><span class="o">=</span><span class="p">[</span><span class="n">file</span><span class="p">])</span>
+<span class="c1"># print available datasets</span>
+<span class="n">scn</span><span class="o">.</span><span class="n">available_dataset_names</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;HRV&#39;,
+ &#39;IR_016&#39;,
+ &#39;IR_039&#39;,
+ &#39;IR_087&#39;,
+ &#39;IR_097&#39;,
+ &#39;IR_108&#39;,
+ &#39;IR_120&#39;,
+ &#39;IR_134&#39;,
+ &#39;VIS006&#39;,
+ &#39;VIS008&#39;,
+ &#39;WV_062&#39;,
+ &#39;WV_073&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>With the function <em>load()</em>, you can specify an individual band by name. If you then select the loaded band, you see the xarray.DataArray band object</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load bands </span>
+<span class="n">scn</span><span class="o">.</span><span class="n">load</span><span class="p">([</span><span class="s1">&#39;HRV&#39;</span><span class="p">,</span><span class="s1">&#39;IR_108&#39;</span><span class="p">])</span>
+<span class="n">scn</span><span class="p">[</span><span class="s1">&#39;IR_108&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body[data-theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;reshape-8f1cfe9b5a499c4823a77cddd1be9b1d&#x27; (y: 3712, x: 3712)&gt;
+dask.array&lt;truediv, shape=(3712, 3712), dtype=float32, chunksize=(461, 3712), chunktype=numpy.ndarray&gt;
+Coordinates:
+    acq_time  (y) datetime64[ns] NaT NaT NaT NaT NaT NaT ... NaT NaT NaT NaT NaT
+    crs       object PROJCRS[&quot;unknown&quot;,BASEGEOGCRS[&quot;unknown&quot;,DATUM[&quot;unknown&quot;,...
+  * y         (y) float64 -5.566e+06 -5.563e+06 ... 5.566e+06 5.569e+06
+  * x         (x) float64 5.566e+06 5.563e+06 5.56e+06 ... -5.566e+06 -5.569e+06
+Attributes: (12/18)
+    orbital_parameters:       {&#x27;projection_longitude&#x27;: 0.0, &#x27;projection_latit...
+    units:                    K
+    wavelength:               10.8 µm (9.8-11.8 µm)
+    standard_name:            toa_brightness_temperature
+    platform_name:            Meteosat-10
+    sensor:                   seviri
+    ...                       ...
+    name:                     IR_108
+    resolution:               3000.403165817
+    calibration:              brightness_temperature
+    modifiers:                ()
+    _satpy_id:                DataID(name=&#x27;IR_108&#x27;, wavelength=WavelengthRang...
+    ancillary_variables:      []</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'reshape-8f1cfe9b5a499c4823a77cddd1be9b1d'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>y</span>: 3712</li><li><span class='xr-has-index'>x</span>: 3712</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-c608d4cd-1b5f-46f5-9f3f-d066e92c9373' class='xr-array-in' type='checkbox' checked><label for='section-c608d4cd-1b5f-46f5-9f3f-d066e92c9373' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>dask.array&lt;chunksize=(460, 3712), meta=np.ndarray&gt;</span></div><div class='xr-array-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 52.56 MiB </td>
+                        <td> 6.53 MiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (3712, 3712) </td>
+                        <td> (461, 3712) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 12 chunks in 47 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="170" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="14" x2="120" y2="14" />
+  <line x1="0" y1="29" x2="120" y2="29" />
+  <line x1="0" y1="44" x2="120" y2="44" />
+  <line x1="0" y1="59" x2="120" y2="59" />
+  <line x1="0" y1="74" x2="120" y2="74" />
+  <line x1="0" y1="89" x2="120" y2="89" />
+  <line x1="0" y1="104" x2="120" y2="104" />
+  <line x1="0" y1="119" x2="120" y2="119" />
+  <line x1="0" y1="119" x2="120" y2="119" />
+  <line x1="0" y1="119" x2="120" y2="119" />
+  <line x1="0" y1="119" x2="120" y2="119" />
+  <line x1="0" y1="120" x2="120" y2="120" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="120" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" >3712</text>
+  <text x="140.000000" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,140.000000,60.000000)">3712</text>
+</svg>
+        </td>
+    </tr>
+</table></div></div></li><li class='xr-section-item'><input id='section-45e0931f-d5cd-4018-80ac-8852039e2c3c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-45e0931f-d5cd-4018-80ac-8852039e2c3c' class='xr-section-summary' >Coordinates: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>acq_time</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>NaT NaT NaT NaT ... NaT NaT NaT NaT</div><input id='attrs-8d50b0b9-c77b-47c8-adb0-af2e34a206e0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8d50b0b9-c77b-47c8-adb0-af2e34a206e0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9ab5eaba-b9e0-4656-ba0f-8a833d7b6e03' class='xr-var-data-in' type='checkbox'><label for='data-9ab5eaba-b9e0-4656-ba0f-8a833d7b6e03' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Mean scanline acquisition time</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;NaT&#x27;, &#x27;NaT&#x27;, &#x27;NaT&#x27;, ..., &#x27;NaT&#x27;, &#x27;NaT&#x27;, &#x27;NaT&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>crs</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>PROJCRS[&quot;unknown&quot;,BASEGEOGCRS[&quot;u...</div><input id='attrs-48acbabd-5baf-4738-aacf-eb9abd076204' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-48acbabd-5baf-4738-aacf-eb9abd076204' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5bb69a37-54db-4a67-ba20-5c7078f43401' class='xr-var-data-in' type='checkbox'><label for='data-5bb69a37-54db-4a67-ba20-5c7078f43401' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(&lt;Projected CRS: PROJCRS[&quot;unknown&quot;,BASEGEOGCRS[&quot;unknown&quot;,DATUM[&quot;unk ...&gt;
+Name: unknown
+Axis Info [cartesian]:
+- E[east]: Easting (metre)
+- N[north]: Northing (metre)
+Area of Use:
+- undefined
+Coordinate Operation:
+- name: unknown
+- method: Geostationary Satellite (Sweep Y)
+Datum: unknown
+- Ellipsoid: unknown
+- Prime Meridian: Greenwich
+, dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-5.566e+06 -5.563e+06 ... 5.569e+06</div><input id='attrs-b76e2d7b-8dae-467c-9dea-e756f93438d7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b76e2d7b-8dae-467c-9dea-e756f93438d7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f9556245-2f64-467f-bdac-adacb72da315' class='xr-var-data-in' type='checkbox'><label for='data-f9556245-2f64-467f-bdac-adacb72da315' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>meter</dd></dl></div><div class='xr-var-data'><pre>array([-5565747.872591, -5562747.469425, -5559747.066259, ...,  5562747.469425,
+        5565747.872591,  5568748.275757])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>5.566e+06 5.563e+06 ... -5.569e+06</div><input id='attrs-4ad6560e-41d7-4bf7-b355-d2020821a9bc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4ad6560e-41d7-4bf7-b355-d2020821a9bc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6e385878-17c6-4de9-83b0-f25f95b36f45' class='xr-var-data-in' type='checkbox'><label for='data-6e385878-17c6-4de9-83b0-f25f95b36f45' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>meter</dd></dl></div><div class='xr-var-data'><pre>array([ 5565747.872591,  5562747.469425,  5559747.066259, ..., -5562747.469425,
+       -5565747.872591, -5568748.275757])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3f7f2129-da87-4a72-b608-a9df24b2803b' class='xr-section-summary-in' type='checkbox'  ><label for='section-3f7f2129-da87-4a72-b608-a9df24b2803b' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>y</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-d428d3f4-f4d8-4b07-a0f7-38ba02b85e14' class='xr-index-data-in' type='checkbox'/><label for='index-d428d3f4-f4d8-4b07-a0f7-38ba02b85e14' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-5565747.872591019, -5562747.469425201, -5559747.066259384,
+       -5556746.663093567,  -5553746.25992775, -5550745.856761932,
+       -5547745.453596115, -5544745.050430298, -5541744.647264481,
+       -5538744.244098663,
+       ...
+        5541744.647264481,  5544745.050430298,  5547745.453596115,
+        5550745.856761932,   5553746.25992775,  5556746.663093567,
+        5559747.066259384,  5562747.469425201,  5565747.872591019,
+        5568748.275756836],
+      dtype=&#x27;float64&#x27;, name=&#x27;y&#x27;, length=3712))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>x</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-73bd85fe-6935-42a7-8135-fc88fd43834b' class='xr-index-data-in' type='checkbox'/><label for='index-73bd85fe-6935-42a7-8135-fc88fd43834b' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([ 5565747.872591019,  5562747.469425201,  5559747.066259384,
+        5556746.663093567,   5553746.25992775,  5550745.856761932,
+        5547745.453596115,  5544745.050430298,  5541744.647264481,
+        5538744.244098663,
+       ...
+       -5541744.647264481, -5544745.050430298, -5547745.453596115,
+       -5550745.856761932,  -5553746.25992775, -5556746.663093567,
+       -5559747.066259384, -5562747.469425201, -5565747.872591019,
+       -5568748.275756836],
+      dtype=&#x27;float64&#x27;, name=&#x27;x&#x27;, length=3712))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-4dec0a9b-01da-411a-b59c-c39d12181e9d' class='xr-section-summary-in' type='checkbox'  ><label for='section-4dec0a9b-01da-411a-b59c-c39d12181e9d' class='xr-section-summary' >Attributes: <span>(18)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>orbital_parameters :</span></dt><dd>{&#x27;projection_longitude&#x27;: 0.0, &#x27;projection_latitude&#x27;: 0.0, &#x27;projection_altitude&#x27;: 35785831.0, &#x27;satellite_nominal_longitude&#x27;: 0.0, &#x27;satellite_nominal_latitude&#x27;: 0.0, &#x27;satellite_actual_longitude&#x27;: -0.299172061993007, &#x27;satellite_actual_latitude&#x27;: 0.6775561836368562, &#x27;satellite_actual_altitude&#x27;: 35786244.70311278}</dd><dt><span>units :</span></dt><dd>K</dd><dt><span>wavelength :</span></dt><dd>10.8 µm (9.8-11.8 µm)</dd><dt><span>standard_name :</span></dt><dd>toa_brightness_temperature</dd><dt><span>platform_name :</span></dt><dd>Meteosat-10</dd><dt><span>sensor :</span></dt><dd>seviri</dd><dt><span>georef_offset_corrected :</span></dt><dd>True</dd><dt><span>time_parameters :</span></dt><dd>{&#x27;nominal_start_time&#x27;: datetime.datetime(2023, 8, 6, 8, 0), &#x27;nominal_end_time&#x27;: datetime.datetime(2023, 8, 6, 8, 15), &#x27;observation_start_time&#x27;: datetime.datetime(2023, 8, 6, 8, 0, 9, 597000), &#x27;observation_end_time&#x27;: datetime.datetime(2023, 8, 6, 8, 12, 41, 839000)}</dd><dt><span>start_time :</span></dt><dd>2023-08-06 08:00:00</dd><dt><span>end_time :</span></dt><dd>2023-08-06 08:15:00</dd><dt><span>reader :</span></dt><dd>seviri_l1b_native</dd><dt><span>area :</span></dt><dd>Area ID: msg_seviri_fes_3km
+Description: MSG SEVIRI Full Earth Scanning service area definition with 3 km resolution
+Projection: {&#x27;a&#x27;: &#x27;6378169&#x27;, &#x27;h&#x27;: &#x27;35785831&#x27;, &#x27;lon_0&#x27;: &#x27;0&#x27;, &#x27;no_defs&#x27;: &#x27;None&#x27;, &#x27;proj&#x27;: &#x27;geos&#x27;, &#x27;rf&#x27;: &#x27;295.488065897014&#x27;, &#x27;type&#x27;: &#x27;crs&#x27;, &#x27;units&#x27;: &#x27;m&#x27;, &#x27;x_0&#x27;: &#x27;0&#x27;, &#x27;y_0&#x27;: &#x27;0&#x27;}
+Number of columns: 3712
+Number of rows: 3712
+Area extent: (5567248.0742, 5570248.4773, -5570248.4773, -5567248.0742)</dd><dt><span>name :</span></dt><dd>IR_108</dd><dt><span>resolution :</span></dt><dd>3000.403165817</dd><dt><span>calibration :</span></dt><dd>brightness_temperature</dd><dt><span>modifiers :</span></dt><dd>()</dd><dt><span>_satpy_id :</span></dt><dd>DataID(name=&#x27;IR_108&#x27;, wavelength=WavelengthRange(min=9.8, central=10.8, max=11.8, unit=&#x27;µm&#x27;), resolution=3000.403165817, calibration=&lt;2&gt;, modifiers=())</dd><dt><span>ancillary_variables :</span></dt><dd>[]</dd></dl></div></li></ul></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scn</span><span class="p">[</span><span class="s1">&#39;IR_108&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;orbital_parameters&#39;, &#39;units&#39;, &#39;wavelength&#39;, &#39;standard_name&#39;, &#39;platform_name&#39;, &#39;sensor&#39;, &#39;georef_offset_corrected&#39;, &#39;time_parameters&#39;, &#39;start_time&#39;, &#39;end_time&#39;, &#39;reader&#39;, &#39;area&#39;, &#39;name&#39;, &#39;resolution&#39;, &#39;calibration&#39;, &#39;modifiers&#39;, &#39;_satpy_id&#39;, &#39;ancillary_variables&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scn</span><span class="p">[</span><span class="s1">&#39;IR_108&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;wavelength&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WavelengthRange(min=9.8, central=10.8, max=11.8, unit=&#39;µm&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize-data-combining-bands">
+<h3>Visualize data combining bands<a class="headerlink" href="#visualize-data-combining-bands" title="Link to this heading">#</a></h3>
+<p>The Satpy function <em>available_composite_ids()</em>  returns a list of available composite IDs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scn</span> <span class="o">=</span> <span class="n">Scene</span><span class="p">(</span><span class="n">reader</span><span class="o">=</span><span class="s2">&quot;seviri_l1b_native&quot;</span><span class="p">,</span> 
+             <span class="n">filenames</span><span class="o">=</span><span class="p">[</span><span class="n">file</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scn</span><span class="o">.</span><span class="n">available_composite_ids</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[DataID(name=&#39;24h_microphysics&#39;),
+ DataID(name=&#39;airmass&#39;),
+ DataID(name=&#39;ash&#39;),
+ DataID(name=&#39;cloud_phase_distinction&#39;),
+ DataID(name=&#39;cloud_phase_distinction_raw&#39;),
+ DataID(name=&#39;cloudtop&#39;),
+ DataID(name=&#39;cloudtop_daytime&#39;),
+ DataID(name=&#39;colorized_ir_clouds&#39;),
+ DataID(name=&#39;convection&#39;),
+ DataID(name=&#39;day_microphysics&#39;),
+ DataID(name=&#39;day_microphysics_winter&#39;),
+ DataID(name=&#39;dust&#39;),
+ DataID(name=&#39;fog&#39;),
+ DataID(name=&#39;green_snow&#39;),
+ DataID(name=&#39;hrv_clouds&#39;),
+ DataID(name=&#39;hrv_fog&#39;),
+ DataID(name=&#39;hrv_severe_storms&#39;),
+ DataID(name=&#39;hrv_severe_storms_masked&#39;),
+ DataID(name=&#39;ir108_3d&#39;),
+ DataID(name=&#39;ir_cloud_day&#39;),
+ DataID(name=&#39;ir_overview&#39;),
+ DataID(name=&#39;ir_sandwich&#39;),
+ DataID(name=&#39;natural_color&#39;),
+ DataID(name=&#39;natural_color_nocorr&#39;),
+ DataID(name=&#39;natural_color_raw&#39;),
+ DataID(name=&#39;natural_color_raw_with_night_ir&#39;),
+ DataID(name=&#39;natural_color_with_night_ir&#39;),
+ DataID(name=&#39;natural_color_with_night_ir_hires&#39;),
+ DataID(name=&#39;natural_enh&#39;),
+ DataID(name=&#39;natural_enh_with_night_ir&#39;),
+ DataID(name=&#39;natural_enh_with_night_ir_hires&#39;),
+ DataID(name=&#39;natural_with_night_fog&#39;),
+ DataID(name=&#39;night_fog&#39;),
+ DataID(name=&#39;night_ir_alpha&#39;),
+ DataID(name=&#39;night_ir_with_background&#39;),
+ DataID(name=&#39;night_ir_with_background_hires&#39;),
+ DataID(name=&#39;night_microphysics&#39;),
+ DataID(name=&#39;overview&#39;),
+ DataID(name=&#39;overview_raw&#39;),
+ DataID(name=&#39;realistic_colors&#39;),
+ DataID(name=&#39;rocket_plume_day&#39;),
+ DataID(name=&#39;rocket_plume_night&#39;),
+ DataID(name=&#39;snow&#39;),
+ DataID(name=&#39;vis_sharpened_ir&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">composite_id</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;natural_color&quot;</span><span class="p">]</span>
+<span class="n">scn</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">composite_id</span><span class="p">,</span> <span class="n">upper_right_corner</span><span class="o">=</span><span class="s2">&quot;NE&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scn_cropped</span> <span class="o">=</span> <span class="n">scn</span><span class="o">.</span><span class="n">crop</span><span class="p">(</span><span class="n">ll_bbox</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">51</span><span class="p">))</span>
+<span class="n">scn_cropped</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;natural_color&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/12b3feeefca20b0501dbaa43f9979355244b7dad9d906db42a3ef31fa92b24b2.png" src="../../_images/12b3feeefca20b0501dbaa43f9979355244b7dad9d906db42a3ef31fa92b24b2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">composite_id</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;colorized_ir_clouds&quot;</span><span class="p">]</span>
+<span class="n">scn</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">composite_id</span><span class="p">,</span> <span class="n">upper_right_corner</span><span class="o">=</span><span class="s2">&quot;NE&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scn_cropped</span> <span class="o">=</span> <span class="n">scn</span><span class="o">.</span><span class="n">crop</span><span class="p">(</span><span class="n">ll_bbox</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">51</span><span class="p">))</span>
+<span class="n">scn_cropped</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;colorized_ir_clouds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/845e1783e903eb5b8887b79be5893e13d5539663c267512cec68b4f30752f8f2.png" src="../../_images/845e1783e903eb5b8887b79be5893e13d5539663c267512cec68b4f30752f8f2.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python_dedl",
+            path: "./HDA/EUM_data"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python_dedl'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="DEDL-HDA-EO.EUM.DAT.METOP.AVHRRL1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Destination Earth - AVHRR Level 1B Metop Global - Data Access using DEDL HDA</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="DEDL-HDA-EO.EUM.DAT.SENTINEL-3.OL_1_ERR___.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Destination Earth - OLCI Level 1B Reduced Resolution - Sentinel-3 - Data Access using DEDL HDA</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authenticate-on-desp">Authenticate on DESP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-msg-data">Search MSG data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-msg">Download MSG</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#satpy">satpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-and-load-data">Read and load data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-data-combining-bands">Visualize data combining bands</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Destination Earth Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
