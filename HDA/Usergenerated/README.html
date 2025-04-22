@@ -1,0 +1,748 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>User Generated Data - Process &#8212; DEDL Notebook Gallery</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'HDA/Usergenerated/README';</script>
+    <link rel="icon" href="https://hda.data.destination-earth.eu/ui/images/favicon.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+     
+  
+
+<a class="navbar-brand logo" href="https://destination-earth.eu/">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://hda.data.destination-earth.eu/ui/images/destination_earth_logo_W.svg" class="logo__image only-light" alt="Destination Earth"/>
+    <script>document.write(`<img src="https://hda.data.destination-earth.eu/ui/images/destination_earth_logo_W.svg" class="logo__image only-dark" alt="Destination Earth"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/destination-earth" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/destination-earth" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">User...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="user-generated-data-process">
+<h1>User Generated Data - Process<a class="headerlink" href="#user-generated-data-process" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>This project demonstrates the integration of a <strong>User Generated</strong> Collection into Destination Earth Data Lake - HDA (Harmonised Data Access)</p>
+<ul>
+<li><p>Using this project to propose <strong>new data</strong> assumes you have already contacted the Destination Earth Data Lake Support Team and that your proposal has been accepted by the <strong>Data Lake - Review Board</strong>.</p></li>
+<li><p><strong>Note</strong>: Proposing new data is a manual process, and requires review with the ‘Data Lake - Review Board’. For this reason data cannot be continually updated. Each update will require a new request.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="user-generated-data-example">
+<h1>User Generated Data Example<a class="headerlink" href="#user-generated-data-example" title="Link to this heading">#</a></h1>
+<ul>
+<li><p>Note:</p>
+<blockquote>
+<div><p>A full example representing a Collection and associated Items is found in the folder <strong>EO.XXX.YYY.ZZZ</strong> in this project</p>
+</div></blockquote>
+</li>
+<li><p>The following describes the steps to follow to assure that you provide <strong>data</strong> and <strong>metadata</strong> that is ready to integrate into the HDA.</p></li>
+<li><p>You will be expected to provide (in a dedicated Bucket e.g. usergenerated-proposal-EO.XXX.YYY.ZZZ on your DEDL Islet Storage):</p>
+<ul class="simple">
+<li><p>A root folder whose name is the same as the <em>collection id</em> that will be used in HDA. In this project we domonstrate with the collection id <strong>EO.XXX.YYY.ZZZ</strong>. This id will need to have been previously discussed and agreed with the Data Lake review board.</p></li>
+<li><p>The folder should contain</p>
+<ul>
+<li><p>a <strong>metadata</strong> subfolder, containing STAC ‘Collection’ and ‘Item’ metatdata</p></li>
+<li><p>a <strong>data</strong> folder (YYYY/MM/DD) containing the data associated with ‘Items’ normally structured in folders YYYY/MM/DD (folder representing year, month, day that data is associated with)</p>
+<ul>
+<li><p>Note: Depending on the granularity of your data the Item folders can be found at either the YYYY, MM or DD level (e.g. data that is specific to a given day would be found in the DD folder)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>In order to provide data and metadata in the expected format, you will likely need a VM with adequate storage to allow you to:</p>
+<ul class="simple">
+<li><p>Manipulate/Move files into the expected folders</p></li>
+<li><p>Generate preliminary item specific metadata (See item_config.json) that will later be used to generate the final STAC Item metadata.</p></li>
+</ul>
+</li>
+<li><p>Given you now have a folder e.g. <strong>EO.XXX.YYY.ZZZ</strong> with <strong>Collection</strong> metadata and <strong>data</strong> in the expected structure, the file <em>generate_item_metadata.py</em> gives an example of generating the expected Item metadata.</p>
+<ul class="simple">
+<li><p>generate_item_metadata.py is intended to be a generic python script ready to navigate through the prepared data and then generate STAC Item metadata appropriate for the collection and DEDL HDA.</p></li>
+<li><p>When this script is launched the last step uploads the prepared data to a private bucket in your Data Lake tenant. The bucket name is standardised and set by the code ‘usergenerated-proposal-[your collection id]’</p>
+<ul>
+<li><p>The upload requires that you have created a <strong>.env</strong> file at the root of the project with previously created ec2 credentials (See https://destine-data-lake-docs.data.destination-earth.eu/en/latest/cloud/How-to-generate-ec2-credentials.html)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># .env file at root of project. generate_item_metadata.py will need these credentials to push your Collection (data and metadata) to the private bucket.</span>
+
+<span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span><span class="s2">&quot;[Replace with your ec2 credentials access_key_id]&quot;</span>
+<span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span><span class="s2">&quot;[Replace with your ec2 credentials secret_access_key]&quot;</span>
+</pre></div>
+</div>
+<section id="collection-definition">
+<h2>Collection - Definition<a class="headerlink" href="#collection-definition" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>https://stacspec.org/en/about/stac-spec/ Collection</p>
+<blockquote>
+<div><p>A STAC Collection provides additional information about a spatio-temporal collection of data. It extends Catalog directly, layering on additional fields to enable description of things like the spatial and temporal extent of the data, the license, keywords, providers, etc. It in turn can easily be extended for additional collection level metadata. It is used standalone by parts of the STAC community, as a lightweight way to describe data holdings.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="item-definition">
+<h2>Item - Definition<a class="headerlink" href="#item-definition" title="Link to this heading">#</a></h2>
+<ul>
+<li><p>https://stacspec.org/en/about/stac-spec/ Item</p>
+<blockquote>
+<div><p>Fundamental to any STAC, a STAC Item represents an atomic collection of inseparable data and metadata. A STAC Item is a GeoJSON feature and can be easily read by any modern GIS or geospatial library. The STAC Item JSON specification includes additional fields for:</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  - the time the asset represents
+  - a thumbnail for quick browsing
+  - asset links, links to the described data
+  - relationship links, allowing users to traverse other related STAC Items
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="structure-of-project">
+<h2>Structure of Project<a class="headerlink" href="#structure-of-project" title="Link to this heading">#</a></h2>
+<p>Here we show the structure of this project which contains a Collection, associated Items and Data. For a demonstration collection, ready for integration into HDA, see the folder ‘EO.XXX.YYY.ZZZ’ at the root of this project</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>└──<span class="w"> </span><span class="o">[</span>MY_COLLECTION_ID<span class="o">]</span><span class="w">                           </span><span class="c1"># e.g. EO.XXX.YYY.ZZZ (HIGH_LEVEL_DATA_TYPE.DATA_PROVIDER.DATATYPE.DATASET_NAME)</span>
+<span class="w">    </span>└──<span class="w"> </span>metadata
+<span class="w">        </span>├──<span class="w"> </span>collection_config.json<span class="w">               </span><span class="c1"># Global configuration that can be used when generating items. This can be overloaded at the item level in item_config.json (see below). e.g. &quot;thumbnail_regex&quot; (to identify thumbnails)</span>
+<span class="w">        </span>├──<span class="w"> </span>collection.json<span class="w">                      </span><span class="c1"># A STAC file of type &#39;Collection&#39; in json format gives an overview of the collection. The name of the file is simply collection.json</span>
+<span class="w">        </span>└──<span class="w"> </span>items
+<span class="w">            </span>└──<span class="w"> </span>ITEM_1_ID.json<span class="w">                   </span><span class="c1"># A STAC file representing individual Items of type &#39;Feature&#39; in json format gives information on the &#39;Item&#39;</span>
+<span class="w">            </span>└──<span class="w"> </span>ITEM_2_ID.json
+<span class="w">    </span>└──<span class="w"> </span>data<span class="w">                                             </span><span class="c1"># The data associated with Items is stored in folders YYYY/MM/DD/...</span>
+<span class="w">        </span>└──<span class="w"> </span><span class="m">2024</span><span class="w">                                         </span><span class="c1"># 2024</span>
+<span class="w">            </span>└──<span class="w"> </span><span class="m">11</span><span class="w">                                       </span><span class="c1"># 11 = November</span>
+<span class="w">                </span>└──<span class="w"> </span><span class="m">15</span><span class="w">                                   </span><span class="c1"># 15 = 15th (of November)</span>
+<span class="w">                    </span>└──<span class="w"> </span>ITEM_1_ID<span class="w">                        </span><span class="c1"># a folder containing 1-n files/folders: naming convention [MY_COLLECTION_ID]_[start_datetime]_[end_datetime] or [MY_COLLECTION_ID]_[datetime]</span>
+<span class="w">                        </span>└──<span class="w"> </span>item_config.json<span class="w">             </span><span class="c1"># Item level configuration. Overides Collection level config if any. e.g. &quot;bbox&quot;</span>
+<span class="w">                        </span>└──<span class="w"> </span>datafile1<span class="w">                    </span><span class="c1"># Each file in this folder/subfolders is an &#39;Asset&#39; of the Item (Possibility of ignoring some files using configuration). Each Asset should have a role &quot;data&quot;, &quot;metadata&quot;, &quot;thumbnail&quot;, &quot;overview&quot;</span>
+<span class="w">                        </span>└──<span class="w"> </span>datafile2
+<span class="w">                        </span>└──<span class="w"> </span>...
+
+<span class="w">            </span>
+</pre></div>
+</div>
+</section>
+<section id="collection-example">
+<h2>Collection Example<a class="headerlink" href="#collection-example" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Here we give an example of a STAC Collection describing high level information about your data Items</p>
+<ul>
+<li><p>path = MY_COLLECTION_ID/metadata/collection.json</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="c1">// One of the files you will need to provide is a &#39;Collection&#39; type STAC file</span>
+<span class="c1">// The &#39;Collection&#39; type STAC file is in json format and represents the high level overview of your individual Items</span>
+<span class="c1">// (Remember to remove comments - which are not allowed in json format)</span>
+
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collection&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EO.XXX.YYY.ZZZ&quot;</span><span class="p">,</span><span class="w">                                                  </span><span class="c1">// Replace this e.g. EO.CLMS.DAT.CORINE</span>
+<span class="w">  </span><span class="nt">&quot;stac_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Text describing the dataset. This text will be shown in the Overview section of hda catalogue and can be a paragraph of text.&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;license&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LICENCE_URL_LINK&quot;</span><span class="p">,</span><span class="w">                                      </span><span class="c1">// Replace this e.g. https://land.copernicus.eu/en/data-policy</span>
+<span class="w">          </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LICENCE_NAME&quot;</span><span class="w">                                          </span><span class="c1">// Replace this e.g. Copernicus Land Data Policy</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cite-as&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DOI_URL&quot;</span><span class="p">,</span><span class="w">                                               </span><span class="c1">// Replace this e.g. https://doi.org/10.2909/17ab2088-6907-470f-90b6-8c1364865803</span>
+<span class="w">          </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DOI_DATASET_TITLE&quot;</span><span class="w">                                     </span><span class="c1">// Replace this e.g. CORINE Land Cover Change 1990-2000 (vector), Europe, 6-yearly - version 2020_20u1, May 2020</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;describedby&quot;</span><span class="p">,</span><span class="w">                                            </span>
+<span class="w">          </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OTHER_DATASET_URL&quot;</span><span class="p">,</span><span class="w">                                     </span><span class="c1">// Replace this e.g. https://land.copernicus.eu/en/products/corine-land-cover</span>
+<span class="w">          </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DATASET_TITLE&quot;</span><span class="w">                                         </span><span class="c1">// Replace this e.g. CORINE Land Cover</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">                                                                           </span><span class="c1">// NOTE: Other links will be added dynamically when integrating the collection into DEDL HDA (e.g. Parent, Self etc...)</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;stac_extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;https://stac-extensions.github.io/scientific/v1.0.0/schema.json&quot;</span><span class="w">    </span><span class="c1">// e.g. Optional extension e.g. to expose Digital Object Identifiers</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;sci:publications&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;sci:doi&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DOI_CODE&quot;</span><span class="p">,</span><span class="w">                                           </span><span class="c1">// Replace this e.g. 10.2909/c62bb056-5ac3-4512-b642-7f484175d951</span>
+<span class="w">          </span><span class="nt">&quot;sci:citation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DOI_DATASET_TITLE&quot;</span><span class="w">                              </span><span class="c1">// Replace this e.g. European Union&#39;s Copernicus Land Monitoring Service information (CORINE Land Cover Change 1990-2000 (raster 100 m), Europe, 6-yearly)</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DATASET_TITLE&quot;</span><span class="p">,</span><span class="w">                                                </span><span class="c1">// Replace this (A short description of the collection) e.g. CORRINE Land Cover</span>
+<span class="w">  </span><span class="nt">&quot;extent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;spatial&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;bbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">                                                        </span><span class="c1">// Replace these values with your spatial bbox coordinates</span>
+<span class="w">              </span><span class="p">[</span>
+<span class="w">                  </span><span class="mf">-31.561261</span><span class="p">,</span>
+<span class="w">                  </span><span class="mf">27.405827</span><span class="p">,</span>
+<span class="w">                  </span><span class="mf">44.820775</span><span class="p">,</span>
+<span class="w">                  </span><span class="mf">71.409109</span>
+<span class="w">              </span><span class="p">]</span>
+<span class="w">          </span><span class="p">]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;temporal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;interval&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">                                                    </span><span class="c1">// Replace these values with your temporal extent (covering the temporal extent of the planned Items you are exposing). if no end date the second date can be replaced with null (no quotation marks)</span>
+<span class="w">              </span><span class="p">[</span>
+<span class="w">                  </span><span class="s2">&quot;2024-11-01T00:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="s2">&quot;2024-11-30T23:59:59Z&quot;</span>
+<span class="w">              </span><span class="p">]</span>
+<span class="w">          </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;proprietary&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">                                                            </span><span class="c1">// Replace these keywords - refer to https://hda.central.data.destination-earth.eu/ui/catalog to see existing. Use these where possible</span>
+<span class="w">      </span><span class="s2">&quot;Satellite Image Interpretation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Land Cover Change&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;geospatial data&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;landscape alteration&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Land cover&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;European&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;Copernicus&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;providers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PROVIDER_NAME&quot;</span><span class="p">,</span><span class="w">                                         </span><span class="c1">// Replace this e.g. European Environment Agency</span>
+<span class="w">          </span><span class="nt">&quot;roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">                                                       </span><span class="c1">// Replace these values as appropriate</span>
+<span class="w">              </span><span class="s2">&quot;producer&quot;</span><span class="p">,</span>
+<span class="w">              </span><span class="s2">&quot;processor&quot;</span><span class="p">,</span>
+<span class="w">              </span><span class="s2">&quot;licensor&quot;</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PROVIDER_URL&quot;</span><span class="w">                                            </span><span class="c1">// Replace this e.g. https://www.eea.europa.eu/</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;assets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;thumbnail&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;URL_TO_DATASET_IMAGE&quot;</span><span class="p">,</span><span class="w">                                  </span><span class="c1">// Replace this e.g. https://land.copernicus.eu/en/products/corine-land-cover/@@images/image-400-7d8e8dfc63d50c9bf89ff5a7475dcd46.png</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/png&quot;</span><span class="p">,</span><span class="w">                                             </span><span class="c1">// Replace this with the correct Mime type</span>
+<span class="w">          </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;overview&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="s2">&quot;thumbnail&quot;</span>
+<span class="w">          </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="items-example">
+<h2>Items Example<a class="headerlink" href="#items-example" title="Link to this heading">#</a></h2>
+<p>This is an example of a generated Item from this project. This is a possible starting point and can enriched as needed</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;stac_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;stac_extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EO.XXX.YYY.ZZZ_20241115T000000_20241115T235959&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;geometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">[</span>
+<span class="w">                </span><span class="p">[</span>
+<span class="w">                    </span><span class="mf">10.0</span><span class="p">,</span>
+<span class="w">                    </span><span class="mf">35.0</span>
+<span class="w">                </span><span class="p">],</span>
+<span class="w">                </span><span class="p">[</span>
+<span class="w">                    </span><span class="mf">10.0</span><span class="p">,</span>
+<span class="w">                    </span><span class="mf">60.0</span>
+<span class="w">                </span><span class="p">],</span>
+<span class="w">                </span><span class="p">[</span>
+<span class="w">                    </span><span class="mf">-10.0</span><span class="p">,</span>
+<span class="w">                    </span><span class="mf">60.0</span>
+<span class="w">                </span><span class="p">],</span>
+<span class="w">                </span><span class="p">[</span>
+<span class="w">                    </span><span class="mf">-10.0</span><span class="p">,</span>
+<span class="w">                    </span><span class="mf">35.0</span>
+<span class="w">                </span><span class="p">],</span>
+<span class="w">                </span><span class="p">[</span>
+<span class="w">                    </span><span class="mf">10.0</span><span class="p">,</span>
+<span class="w">                    </span><span class="mf">35.0</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;bbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="mf">-10.0</span><span class="p">,</span>
+<span class="w">        </span><span class="mf">35.0</span><span class="p">,</span>
+<span class="w">        </span><span class="mf">10.0</span><span class="p">,</span>
+<span class="w">        </span><span class="mf">60.0</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;start_datetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-11-15T00:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;end_datetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-11-15T23:59:59Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;datetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-11-15T00:00:00Z&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;collection&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://hda.data.destination-earth.eu/stac/collections/EO.XXX.YYY.ZZZ&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DATASET_TITLE&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;self&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://hda.data.destination-earth.eu/stac/collections/EO.XXX.YYY.ZZZ/items/EO.XXX.YYY.ZZZ_20241115T000000_20241115T235959&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;assets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;metadata1.json&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data/2024/11/15/EO.XXX.YYY.ZZZ_20241115T000000_20241115T235959/metadata1.json&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;metadata&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;thumbnail.jpg&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data/2024/11/15/EO.XXX.YYY.ZZZ_20241115T000000_20241115T235959/thumbnail.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/jpeg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;thumbnail&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;overview.jpg&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data/2024/11/15/EO.XXX.YYY.ZZZ_20241115T000000_20241115T235959/overview.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/jpeg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;overview&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;20241115.png&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;data/2024/11/15/EO.XXX.YYY.ZZZ_20241115T000000_20241115T235959/20241115.png&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image/png&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;data&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;collection&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EO.XXX.YYY.ZZZ&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">User Generated Data - Process</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#user-generated-data-example">User Generated Data Example</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-definition">Collection - Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#item-definition">Item - Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-project">Structure of Project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-example">Collection Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#items-example">Items Example</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/HDA/Usergenerated/README.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Destination Earth Data Lake.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
