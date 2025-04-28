@@ -43,7 +43,7 @@ and apply on the DestinE Data Lake data.
 
 :::{grid-item-card} My awesome Cookbook
 :shadow: md
-:link: https://github.com/katharinastarzer21/repository_bsp/README.html
+:link: https://katharinastarzer21.github.io/DestinE/BSPTEST/index.html
 :img-top: https://github.com/destination-earth/DestinE-DataLake-Lab/blob/main/img/EUMETSAT-icon.png
 test for automatisation
 :::
