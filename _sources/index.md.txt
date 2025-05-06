@@ -59,7 +59,7 @@ testing automatisation
 
 :::{grid-item-card} New Cookbook
 :shadow: md
-:link: https://katharinastarzer21.github.io/DestinE/_build/html/PROBE/README.html
+:link: https://katharinastarzer21.github.io/DestinE/PROBE/README.html
 :img-top: _No response_
 about tests
 :::
