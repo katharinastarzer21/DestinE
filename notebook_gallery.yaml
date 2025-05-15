@@ -47,3 +47,10 @@ domains:
     description: test for automatisation
     thumbnail: https://github.com/destination-earth/DestinE-DataLake-Lab/blob/main/img/EUMETSAT-icon.png
     url: https://katharinastarzer21.github.io/DestinE/BSPTEST/README.html
+  TESTTEMPLATE:
+    title: First REal Template
+    branch: main
+    root_path: TESTTEMPLATE
+    description: first rea template
+    thumbnail: _No response_
+    url: https://katharinastarzer21.github.io/DestinE/TESTTEMPLATE/index.html

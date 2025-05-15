@@ -67,4 +67,12 @@ testing automatisation
 test for automatisation
 :::
 
+
+:::{grid-item-card} First REal Template
+:shadow: md
+:link: https://katharinastarzer21.github.io/DestinE/TESTTEMPLATE/index.html
+:img-top: _No response_
+first rea template
+:::
+
 ::::
