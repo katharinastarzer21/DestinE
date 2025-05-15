@@ -60,7 +60,7 @@ jobs:
           git pull
 
           mkdir -p $PREVIEW_PATH
-          cp -r $PREVIEW_PATH/* $PREVIEW_PATH/
+          cp -r $PREVIEW_PATH/* previews/${{ github.event.issue.number }}/
 
           git add $PREVIEW_PATH/
           git commit -m "Add preview for issue #${{ github.event.issue.number }}" || echo "No changes"
