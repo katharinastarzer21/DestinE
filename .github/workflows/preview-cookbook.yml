@@ -52,6 +52,7 @@ jobs:
       - name: Publish to gh-pages
         run: |
           git fetch origin gh-pages
+          git clean -fdx
           git checkout gh-pages
           git pull
 
