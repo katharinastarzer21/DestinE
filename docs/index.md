@@ -44,30 +44,6 @@ and apply on the DestinE Data Lake data.
 :::
 
 
-:::{grid-item-card} New Cookbook
-:shadow: md
-:link: https://katharinastarzer21.github.io/DestinE/PROBE/index.html
-:img-top: _No response_
-about tests
-:::
-
-
-:::{grid-item-card} tests_Notebooks
-:shadow: md
-:link: https://katharinastarzer21.github.io/DestinE/COOKBOOKBSP/README.html
-:img-top: https://github.com/katharinastarzer21/repository_bsp/blob/main/STACK_test/img/DEDL_Dask_multicloud.png
-testing automatisation
-:::
-
-
-:::{grid-item-card} My awesome Cookbook
-:shadow: md
-:link: https://katharinastarzer21.github.io/DestinE/BSPTEST/README.html
-:img-top: https://github.com/destination-earth/DestinE-DataLake-Lab/blob/main/img/EUMETSAT-icon.png
-test for automatisation
-:::
-
-
 :::{grid-item-card} First REal Template
 :shadow: md
 :link: https://katharinastarzer21.github.io/DestinE/TESTTEMPLATE/index.html
