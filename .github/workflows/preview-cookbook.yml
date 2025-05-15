@@ -47,23 +47,19 @@ jobs:
 
       - name: Build preview with Sphinx
         run: |
-          mkdir -p $PREVIEW_PATH
-          sphinx-build -b html submitted_repo $PREVIEW_PATH -c docs
+          sphinx-build -b html submitted_repo _preview_output -c docs
 
-      - name: Publish preview to gh-pages
+      - name: Publish to gh-pages
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-
           git fetch origin gh-pages
           git checkout gh-pages
           git pull
 
-          mkdir -p $PREVIEW_PATH
-          cp -r $PREVIEW_PATH/* previews/${{ github.event.issue.number }}/
+          mkdir -p previews/${{ github.event.issue.number }}
+          cp -r _preview_output/* previews/${{ github.event.issue.number }}/
 
-          git add $PREVIEW_PATH/
-          git commit -m "Add preview for issue #${{ github.event.issue.number }}" || echo "No changes"
+          git add previews/${{ github.event.issue.number }}/
+          git commit -m "Preview für Issue #${{ github.event.issue.number }}" || echo "No changes"
           git push origin gh-pages
 
       - name: Comment with preview link
