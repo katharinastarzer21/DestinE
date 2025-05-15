@@ -50,12 +50,17 @@ jobs:
           sphinx-build -b html docs _temp_gallery -c docs
           cp -r _temp_gallery/index.html cookbooks/index.html
 
-      - name: Merge gallery and cookbooks for deployment
-        run: |
-              mkdir -p _site
-              cp -r _temp_gallery/* _site/
-              cp -r cookbooks/* _site/
-             
+      - name: Clean previous site folder
+        run: rm -rf _site && mkdir _site
+
+      - name: Copy built gallery
+        run: cp -r _temp_gallery/* _site/
+
+      - name: Copy built cookbooks
+        run: cp -r cookbooks/* _site/
+
+      - name: Disable Jekyll
+        run: touch _site/.nojekyll
 
       - name: Commit changes
         run: |
