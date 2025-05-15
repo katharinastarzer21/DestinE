@@ -1,7 +1,13 @@
 import yaml
+import sys
+import os
 
-with open('notebook_gallery.yaml') as f:
-    gallery = yaml.safe_load(f)
+preview_mode = "--preview" in sys.argv
+
+# Load gallery YAML only if not in preview
+if not preview_mode:
+    with open('notebook_gallery.yaml') as f:
+        gallery = yaml.safe_load(f)
 
 with open('issue_body.txt') as f:
     body = f.read()
@@ -21,7 +27,7 @@ lines = body.splitlines()
 
 current_label = None
 for line in lines:
-    line = line.strip().lstrip("#").strip()  
+    line = line.strip().lstrip("#").strip()
     if line in fields:
         current_label = line
     elif current_label and line:
@@ -43,19 +49,21 @@ print(f"Root Path: {root_path}")
 if not root_path:
     raise ValueError("Root Path konnte nicht extrahiert werden – Abbruch.")
 
-gallery['domains'][root_path] = {
-    'title': title,
-    'branch': 'main',
-    'root_path': root_path,
-    'description': description,
-    'thumbnail': thumbnail,
-    'url': f"https://katharinastarzer21.github.io/DestinE/{root_path}/index.html"
-}
+# Update gallery YAML only if NOT preview
+if not preview_mode:
+    gallery['domains'][root_path] = {
+        'title': title,
+        'branch': 'main',
+        'root_path': root_path,
+        'description': description,
+        'thumbnail': thumbnail,
+        'url': f"https://katharinastarzer21.github.io/DestinE/cookbooks/{root_path}/index.html"
+    }
 
-with open('notebook_gallery.yaml', 'w') as f:
-    yaml.dump(gallery, f, sort_keys=False)
+    with open('notebook_gallery.yaml', 'w') as f:
+        yaml.dump(gallery, f, sort_keys=False)
 
-import os
+# Export values to GitHub Actions
 with open(os.environ['GITHUB_ENV'], 'a') as env_file:
     env_file.write(f"REPO_URL={repo_url}\n")
     env_file.write(f"ROOT_PATH={root_path}\n")

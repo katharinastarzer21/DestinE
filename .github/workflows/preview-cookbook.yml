@@ -32,7 +32,7 @@ jobs:
         run: echo "${{ github.event.issue.body }}" > issue_body.txt
 
       - name: Parse issue and extract info
-        run: python parse_issue.py
+        run: python parse_issue.py --preview
         env:
           GITHUB_ENV: ${{ github.env }}
 
