@@ -56,13 +56,13 @@ jobs:
 
       - name: Build cookbook and gallery with Sphinx
         run: |
-          mkdir -p cookbooks/$ROOT_PATH
-          sphinx-build -b html submitted_repo cookbooks/$ROOT_PATH -c docs
-          sphinx-build -b html docs _temp_gallery -c docs
-          mkdir -p _site
-          cp -r _temp_gallery/* _site/
-          cp -r cookbooks/* _site/cookbooks/
-          touch _site/.nojekyll
+            mkdir -p cookbooks/$ROOT_PATH
+            sphinx-build -b html submitted_repo cookbooks/$ROOT_PATH -c docs
+            sphinx-build -b html docs _temp_gallery -c docs
+            mkdir -p _site/cookbooks
+            cp -r _temp_gallery/* _site/
+            cp -r cookbooks/* _site/cookbooks/
+            touch _site/.nojekyll
 
       - name: Deploy to gh-pages
         run: |
