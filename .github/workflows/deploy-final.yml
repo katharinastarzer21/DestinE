@@ -75,9 +75,7 @@ jobs:
           cp -r cookbooks/$ROOT_PATH $TMP_PATH/
           echo "TMP_PATH=$TMP_PATH" >> $GITHUB_ENV
 
-      # 🔄 Entfernt: reset + clean (damit alte Cookbooks erhalten bleiben)
-
-      - name: Checkout gh-pages (safe without clean)
+      - name: Checkout gh-pages
         run: |
           git fetch origin gh-pages
           git config --global user.name "github-actions"
@@ -85,7 +83,7 @@ jobs:
           git switch gh-pages
           git pull
 
-      - name: Restore and copy production files
+      - name: Copy final files to gh-pages
         run: |
           cp $TMP_PATH/notebook_gallery.yaml .
           cp $TMP_PATH/index.html .
