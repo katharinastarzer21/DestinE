@@ -107,7 +107,7 @@ jobs:
 
       - name: Commit and push to gh-pages
         run: |
-          git add notebook_gallery.yaml index.html cookbooks/$ROOT_PATH .nojekyll
+          git add notebook_gallery.yaml index.html cookbooks .nojekyll
           git add previews/ || echo "No preview folder staged"
           git commit -m "Promote $ROOT_PATH to production (issue #${{ github.event.issue.number }})" || echo "No changes"
           git push origin gh-pages
