@@ -6,8 +6,12 @@ preview_mode = "--preview" in sys.argv
 
 # Load gallery YAML only if not in preview
 if not preview_mode:
-    with open('notebook_gallery.yaml') as f:
-        gallery = yaml.safe_load(f)
+    if os.path.exists("notebook_gallery.yaml"):
+        with open('notebook_gallery.yaml') as f:
+            gallery = yaml.safe_load(f)
+    else:
+        gallery = {"domains": {}}
+
 
 with open('issue_body.txt') as f:
     body = f.read()
