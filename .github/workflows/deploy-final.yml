@@ -75,12 +75,9 @@ jobs:
           cp -r cookbooks/$ROOT_PATH $TMP_PATH/
           echo "TMP_PATH=$TMP_PATH" >> $GITHUB_ENV
 
-      - name: Clean working directory before switching branches
-        run: |
-          git reset --hard
-          git clean -fdx
+      # 🔄 Entfernt: reset + clean (damit alte Cookbooks erhalten bleiben)
 
-      - name: Checkout gh-pages
+      - name: Checkout gh-pages (safe without clean)
         run: |
           git fetch origin gh-pages
           git config --global user.name "github-actions"
