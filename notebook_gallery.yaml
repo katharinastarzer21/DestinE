@@ -33,10 +33,10 @@ domains:
     description: first rea template
     thumbnail: _No response_
     url: https://katharinastarzer21.github.io/DestinE/TESTTEMPLATE/index.html
-  ZUSATZ:
-    title: zusatz
+  VERSUCH:
+    title: Versuch1
     branch: main
-    root_path: ZUSATZ
-    description: zusatz
+    root_path: VERSUCH
+    description: ths is a test
     thumbnail: _No response_
-    url: https://katharinastarzer21.github.io/DestinE/cookbooks/ZUSATZ/index.html
+    url: https://katharinastarzer21.github.io/DestinE/cookbooks/VERSUCH/index.html
