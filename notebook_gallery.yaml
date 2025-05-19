@@ -1,0 +1,8 @@
+domains:
+  ZUSATZ:
+    title: zusatz
+    branch: main
+    root_path: ZUSATZ
+    description: zusatz
+    thumbnail: _No response_
+    url: https://katharinastarzer21.github.io/DestinE/cookbooks/ZUSATZ/index.html
