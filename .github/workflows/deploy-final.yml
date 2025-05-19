@@ -47,9 +47,8 @@ jobs:
       - name: DEBUG – check gallery file & root path
         run: |
           echo "✅ Did parse_issue.py run?"
-          echo "→ Does notebook_gallery.yaml exist?"
-          ls -la notebook_gallery.yaml || echo "❌ Missing"
-          echo "→ Value of ROOT_PATH: $ROOT_PATH"
+          ls -la notebook_gallery.yaml || echo "❌ notebook_gallery.yaml missing!"
+          echo "→ ROOT_PATH: $ROOT_PATH"
 
       - name: Clone submitted cookbook
         run: git clone $REPO_URL submitted_repo
@@ -67,12 +66,14 @@ jobs:
           sphinx-build -b html docs _temp_gallery -c docs
           touch _temp_gallery/.nojekyll
 
-      - name: Backup build artifacts
+      - name: Backup build artifacts (to /tmp)
         run: |
-          mkdir -p _deploy_temp
-          cp notebook_gallery.yaml _deploy_temp/
-          cp _temp_gallery/index.html _deploy_temp/
-          cp -r cookbooks/$ROOT_PATH _deploy_temp/
+          export TMP_PATH=/tmp/deploy_${{ github.run_id }}
+          mkdir -p $TMP_PATH
+          cp notebook_gallery.yaml $TMP_PATH/
+          cp _temp_gallery/index.html $TMP_PATH/
+          cp -r cookbooks/$ROOT_PATH $TMP_PATH/
+          echo "TMP_PATH=$TMP_PATH" >> $GITHUB_ENV
 
       - name: Clean working directory before switching branches
         run: |
@@ -89,15 +90,19 @@ jobs:
 
       - name: Restore and copy production files
         run: |
-          cp _deploy_temp/notebook_gallery.yaml .
-          cp _deploy_temp/index.html .
+          cp $TMP_PATH/notebook_gallery.yaml .
+          cp $TMP_PATH/index.html .
           mkdir -p cookbooks/$ROOT_PATH
-          cp -r _deploy_temp/$ROOT_PATH/* cookbooks/$ROOT_PATH/
+          cp -r $TMP_PATH/$ROOT_PATH/* cookbooks/$ROOT_PATH/
           touch .nojekyll
 
       - name: Remove preview for this issue
         run: |
-          rm -rf previews/${{ github.event.issue.number }} || echo "No preview to remove"
+          if [ -d "previews/${{ github.event.issue.number }}" ]; then
+            git rm -r previews/${{ github.event.issue.number }}
+          else
+            echo "No preview to remove"
+          fi
 
       - name: Commit and push to gh-pages
         run: |
