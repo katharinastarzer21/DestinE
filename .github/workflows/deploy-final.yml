@@ -44,6 +44,13 @@ jobs:
         env:
           GITHUB_ENV: ${{ github.env }}
 
+      - name: DEBUG – check gallery file & root path
+        run: |
+          echo "✅ Did parse_issue.py run?"
+          echo "→ Does notebook_gallery.yaml exist?"
+          ls -la notebook_gallery.yaml || echo "❌ Missing"
+          echo "→ Value of ROOT_PATH: $ROOT_PATH"
+
       - name: Clone submitted cookbook
         run: git clone $REPO_URL submitted_repo
 
