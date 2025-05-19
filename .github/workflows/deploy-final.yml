@@ -53,6 +53,12 @@ jobs:
             cp submitted_repo/README.md submitted_repo/index.md
           fi
 
+      - name: Ensure gallery file exists
+        run: |
+          if [ ! -f notebook_gallery.yaml ]; then
+            echo "domains: {}" > notebook_gallery.yaml
+          fi
+
       - name: Build cookbook and gallery
         run: |
           mkdir -p cookbooks/$ROOT_PATH
@@ -86,5 +92,5 @@ jobs:
           git config --global user.email "actions@github.com"
 
           git add notebook_gallery.yaml cookbooks/$ROOT_PATH
-          git commit -m "✅ Add final cookbook $ROOT_PATH (issue #${{ github.event.issue.number }})" || echo "No changes"
+          git commit -m "Add final cookbook $ROOT_PATH (issue #${{ github.event.issue.number }})" || echo "No changes"
           git push origin main

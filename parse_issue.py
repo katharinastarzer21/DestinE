@@ -6,8 +6,9 @@ preview_mode = "--preview" in sys.argv
 
 # Load gallery YAML only if not in preview
 if not preview_mode:
-    if os.path.exists("notebook_gallery.yaml"):
-        with open('notebook_gallery.yaml') as f:
+    gallery_path = "notebook_gallery.yaml"
+    if os.path.exists(gallery_path):
+        with open(gallery_path) as f:
             gallery = yaml.safe_load(f)
     else:
         gallery = {"domains": {}}
