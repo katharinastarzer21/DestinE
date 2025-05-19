@@ -21,7 +21,7 @@ jobs:
             exit 1
           fi
 
-      - name: Checkout main
+      - name: Checkout main branch
         uses: actions/checkout@v4
         with:
           ref: main
@@ -39,7 +39,7 @@ jobs:
       - name: Save issue body
         run: echo "${{ github.event.issue.body }}" > issue_body.txt
 
-      - name: Parse issue and update config
+      - name: Parse issue and update gallery config
         run: python parse_issue.py
         env:
           GITHUB_ENV: ${{ github.env }}
@@ -53,44 +53,43 @@ jobs:
             cp submitted_repo/README.md submitted_repo/index.md
           fi
 
-      - name: Ensure gallery file exists
-        run: |
-          if [ ! -f notebook_gallery.yaml ]; then
-            echo "domains: {}" > notebook_gallery.yaml
-          fi
-
-      - name: Build cookbook and gallery
+      - name: Build cookbook and gallery HTML
         run: |
           mkdir -p cookbooks/$ROOT_PATH
           sphinx-build -b html submitted_repo cookbooks/$ROOT_PATH -c docs
-          sphinx-build -b html docs _site -c docs
-          touch _site/.nojekyll
+          sphinx-build -b html docs _temp_gallery -c docs
+          touch _temp_gallery/.nojekyll
 
-      - name: Backup final build
+      - name: Backup build files
         run: |
           mkdir _deploy_temp
           cp notebook_gallery.yaml _deploy_temp/
-          cp _site/index.html _deploy_temp/
+          cp _temp_gallery/index.html _deploy_temp/
           cp -r cookbooks/$ROOT_PATH _deploy_temp/
 
-      - name: Prepare gh-pages
+      - name: Checkout gh-pages branch
         run: |
           git fetch origin gh-pages
-          git reset --hard
-          git clean -fdx
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
           git switch gh-pages
           git pull
 
-      - name: Configure Git identity
+      - name: Restore files into gh-pages
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
+          cp _deploy_temp/notebook_gallery.yaml .
+          cp _deploy_temp/index.html .
+          mkdir -p cookbooks/$ROOT_PATH
+          cp -r _deploy_temp/$ROOT_PATH/* cookbooks/$ROOT_PATH/
+          touch .nojekyll
 
-      - name: Commit final cookbook to main
+      - name: Remove preview for this issue
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
+          rm -rf previews/${{ github.event.issue.number }} || echo "no preview to remove"
 
-          git add notebook_gallery.yaml cookbooks/$ROOT_PATH
-          git commit -m "Add final cookbook $ROOT_PATH (issue #${{ github.event.issue.number }})" || echo "No changes"
-          git push origin main
+      - name: Commit and push to gh-pages
+        run: |
+          git add notebook_gallery.yaml index.html cookbooks/$ROOT_PATH .nojekyll
+          git add previews/ || echo "no previews to remove"
+          git commit -m "Promote $ROOT_PATH to production (issue #${{ github.event.issue.number }})" || echo "No changes"
+          git push origin gh-pages
