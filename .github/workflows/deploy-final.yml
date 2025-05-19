@@ -39,6 +39,11 @@ jobs:
       - name: Save issue body
         run: echo "${{ github.event.issue.body }}" > issue_body.txt
 
+      - name: Fetch current gh-pages gallery config
+        run: |
+          git clone --branch gh-pages --depth 1 https://github.com/${{ github.repository }} temp-gh-pages
+          cp temp-gh-pages/notebook_gallery.yaml .
+
       - name: Parse issue and update gallery config
         run: python parse_issue.py
         env:
