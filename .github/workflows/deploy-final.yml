@@ -11,18 +11,17 @@ jobs:
 
     env:
       ALLOWED_USERS: "katharinastarzer21"
-      COOKBOOK_PATH: cookbooks/${{ github.event.issue.number }}
 
     steps:
-      - name: Check if user is authorized to close the issue
+      - name: Check if user is authorized
         run: |
           echo "Closed by: ${{ github.actor }}"
           if [[ ",${ALLOWED_USERS}," != *",${{ github.actor }},"* ]]; then
-            echo "User ${{ github.actor }} is not authorized to deploy."
+            echo "User ${{ github.actor }} is not allowed to deploy."
             exit 1
           fi
 
-      - name: Checkout main branch
+      - name: Checkout main
         uses: actions/checkout@v4
         with:
           ref: main
@@ -37,15 +36,15 @@ jobs:
           pip install -r requirements.txt
           pip install pyyaml
 
-      - name: Save issue body to file
+      - name: Save issue body
         run: echo "${{ github.event.issue.body }}" > issue_body.txt
 
-      - name: Parse issue and update notebook_gallery.yaml
+      - name: Parse issue and update config
         run: python parse_issue.py
         env:
           GITHUB_ENV: ${{ github.env }}
 
-      - name: Clone submitted repository
+      - name: Clone submitted cookbook
         run: git clone $REPO_URL submitted_repo
 
       - name: Prepare submitted repo
@@ -54,30 +53,41 @@ jobs:
             cp submitted_repo/README.md submitted_repo/index.md
           fi
 
-      - name: Build cookbook and gallery with Sphinx
+      - name: Build cookbook and gallery
         run: |
-            mkdir -p cookbooks/$ROOT_PATH
-            sphinx-build -b html submitted_repo cookbooks/$ROOT_PATH -c docs
-            sphinx-build -b html docs _temp_gallery -c docs
-            mkdir -p _site/cookbooks
-            cp -r _temp_gallery/* _site/
-            cp -r cookbooks/* _site/cookbooks/
-            touch _site/.nojekyll
+          mkdir -p cookbooks/$ROOT_PATH
+          sphinx-build -b html submitted_repo cookbooks/$ROOT_PATH -c docs
+          sphinx-build -b html docs _site -c docs
+          touch _site/.nojekyll
 
-      - name: Deploy to gh-pages
+      - name: Backup final build
+        run: |
+          mkdir _deploy_temp
+          cp notebook_gallery.yaml _deploy_temp/
+          cp _site/index.html _deploy_temp/
+          cp -r cookbooks/$ROOT_PATH _deploy_temp/
+
+      - name: Prepare gh-pages
+        run: |
+          git fetch origin gh-pages
+          git reset --hard
+          git clean -fdx
+          git switch gh-pages
+          git pull
+
+      - name: Configure Git identity
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
 
-          git fetch origin gh-pages
-          git checkout gh-pages
-          git pull
+      - name: Restore and commit production gallery
+        run: |
+          cp _deploy_temp/notebook_gallery.yaml .
+          cp _deploy_temp/index.html .
+          mkdir -p cookbooks/$ROOT_PATH
+          cp -r _deploy_temp/$ROOT_PATH/* cookbooks/$ROOT_PATH/
+          touch .nojekyll
 
-          rm -rf cookbooks/
-          cp -r _site/cookbooks ./
-          cp _site/index.html ./
-          cp _site/.nojekyll ./
-
-          git add cookbooks/ index.html .nojekyll notebook_gallery.yaml
-          git commit -m "Final deployment of cookbook $ROOT_PATH from issue #${{ github.event.issue.number }}" || echo "No changes"
+          git add notebook_gallery.yaml index.html cookbooks/$ROOT_PATH .nojekyll
+          git commit -m "Final deployment of $ROOT_PATH from issue #${{ github.event.issue.number }}" || echo "No changes"
           git push origin gh-pages
