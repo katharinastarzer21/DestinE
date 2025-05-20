@@ -26,10 +26,3 @@ domains:
       \ their applications \nand apply on the DestinE Data Lake data.\n"
     thumbnail: https://platform.destine.eu/wp-content/uploads/2024/03/hook-de-01.jpg
     url: https://destination-earth.github.io/DestinE-DataLake-Lab/HOOK/README.html
-  TESTTEMPLATE:
-    title: First REal Template
-    branch: main
-    root_path: TESTTEMPLATE
-    description: first rea template
-    thumbnail: _No response_
-    url: https://katharinastarzer21.github.io/DestinE/TESTTEMPLATE/index.html
