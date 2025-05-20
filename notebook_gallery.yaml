@@ -6,3 +6,10 @@ domains:
     description: stack third test
     thumbnail: _No response_
     url: https://katharinastarzer21.github.io/DestinE/cookbooks/THIRDTESET/index.html
+  VERSUCH:
+    title: Versuch1
+    branch: main
+    root_path: VERSUCH
+    description: ths is a test
+    thumbnail: _No response_
+    url: https://katharinastarzer21.github.io/DestinE/cookbooks/VERSUCH/index.html
