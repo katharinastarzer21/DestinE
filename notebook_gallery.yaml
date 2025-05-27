@@ -20,3 +20,10 @@ domains:
     description: zusatz
     thumbnail: _No response_
     url: https://katharinastarzer21.github.io/DestinE/cookbooks/ZUSATZ/index.html
+  TESTTHREE:
+    title: TESTTHREE
+    branch: main
+    root_path: TESTTHREE
+    description: TESTTHREE
+    thumbnail: _No response_
+    url: https://katharinastarzer21.github.io/DestinE/cookbooks/TESTTHREE/index.html
