@@ -27,3 +27,10 @@ domains:
     description: TESTTHREE
     thumbnail: _No response_
     url: https://katharinastarzer21.github.io/DestinE/cookbooks/TESTTHREE/index.html
+  TESTFOUR:
+    title: TEST four
+    branch: main
+    root_path: TESTFOUR
+    description: next test four
+    thumbnail: _No response_
+    url: https://katharinastarzer21.github.io/DestinE/cookbooks/TESTFOUR/index.html
