@@ -1,0 +1,13 @@
+version: 1
+project:
+  title: My Test Gallery
+  toc:
+    - file: index.md
+    - title: Notebooks
+      children:
+        - file: notebooks/example1.ipynb
+          tags: [satellite, analysis]
+        - file: notebooks/example2.ipynb
+          tags: [climate, statistics]
+site:
+  template: book-theme
