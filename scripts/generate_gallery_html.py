@@ -1,92 +1,140 @@
+import os
+import nbformat
 import yaml
 from pathlib import Path
+from collections import defaultdict
 
-with open("myst.yml", "r") as f:
-    config = yaml.safe_load(f)
+ROOT_DIR = Path("notebooks")
 
-entries = []
+def extract_metadata_from_notebook(nb_path):
+    try:
+        nb = nbformat.read(nb_path, as_version=4)
+        first_cell = nb.cells[0]
+        if first_cell.cell_type == "markdown" and first_cell.source.strip().startswith("---"):
+            parts = first_cell.source.strip().split('---')
+            if len(parts) >= 3:
+                yaml_content = parts[1]
+                metadata = yaml.safe_load(yaml_content)
+                metadata["file"] = str(nb_path).replace("\\", "/").replace(".ipynb", ".html")
+                return metadata
+    except Exception as e:
+        print(f"[WARN] Failed to read {nb_path}: {e}")
+    return None
 
-def extract_entries(children, parent=None):
-    for item in children:
-        if isinstance(item, dict):
-            file = item.get("file")
-            tags = item.get("tags", [])
-            title = item.get("title", Path(file).stem if file else None)
-            if file and file.endswith(".ipynb"):
-                entries.append({
-                    "title": title,
-                    "file": file,
-                    "tags": tags,
-                    "parent": parent
-                })
-            elif "children" in item:
-                extract_entries(item["children"], parent=item.get("title", parent))
+def build_html(metadata_list):
+    all_tags = sorted({tag for md in metadata_list for tag in md.get("tags", [])})
 
-toc = config.get("project", {}).get("toc", [])
-extract_entries(toc)
+    # HTML Head + Styles + FilterBar
+    html = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notebook Gallery</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      background-color: #f4f8fc;
+    }
+    .filter-bar {
+      margin-bottom: 2em;
+    }
+    .filter-bar button {
+      background: #e0ecf7;
+      border: none;
+      padding: 6px 12px;
+      margin: 4px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .filter-bar button:hover {
+      background: #c5dff3;
+    }
+    .card {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 6px;
+      border: 1px solid #cddff1;
+      box-shadow: 1px 1px 4px #dfeaf5;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    .card img {
+      width: 100px;
+      height: 80px;
+      object-fit: contain;
+      margin-right: 24px;
+    }
+    .card h3 {
+      margin: 0 0 6px 0;
+    }
+    .card p {
+      margin: 0 0 6px 0;
+    }
+    .card .tags span {
+      background: #e6f0fa;
+      padding: 2px 10px;
+      border-radius: 10px;
+      margin-right: 5px;
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
 
-html = ['<div id="tag-filter-buttons" style="margin-bottom: 1rem;"></div>']
-html.append('<div id="gallery-container" class="gallery"></div>')
-html.append("<script>const galleryData = " + str(entries).replace("'", '"') + ";</script>")
-html.append("""
+<div class="filter-bar">
+  <button onclick="filterCards('all')">All</button>"""
+
+    for tag in all_tags:
+        html += f'<button onclick="filterCards(\'{tag}\')">{tag}</button>'
+    html += "</div>\n"
+
+    # Notebook Cards
+    html += '<div class="gallery">\n'
+    for md in metadata_list:
+        tags = md.get("tags", [])
+        tag_str = ",".join(tags)
+        html += f"""
+  <div class="card" data-tags="{tag_str}">
+    <img src="{md.get('thumbnail', 'img/thumbs/default.png')}" alt="thumbnail">
+    <div>
+      <h3><a href="{md['file']}">{md.get('title', 'Untitled')}</a></h3>
+      <p>{md.get('description', '')}</p>
+      <div class="tags">{" ".join(f"<span>{t}</span>" for t in tags)}</div>
+    </div>
+  </div>
+"""
+    html += "</div>\n"
+
+    # JS Filtering
+    html += """
 <script>
-function buildGallery(data) {
-  const container = document.getElementById("gallery-container");
-  const filterContainer = document.getElementById("tag-filter-buttons");
-  const allTags = new Set();
-  data.forEach(entry => entry.tags.forEach(tag => allTags.add(tag)));
-
-  const allButton = document.createElement("button");
-  allButton.textContent = "Alle";
-  allButton.onclick = () => updateGallery("");
-  filterContainer.appendChild(allButton);
-
-  Array.from(allTags).sort().forEach(tag => {
-    const btn = document.createElement("button");
-    btn.textContent = tag;
-    btn.onclick = () => updateGallery(tag);
-    filterContainer.appendChild(btn);
+function filterCards(tag) {
+  document.querySelectorAll('.card').forEach(card => {
+    const tags = card.dataset.tags;
+    if (tag === 'all' || tags.includes(tag)) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
   });
-
-  data.forEach(entry => {
-    const card = document.createElement("div");
-    card.className = "gallery-card";
-    card.setAttribute("data-tags", entry.tags.join(","));
-    const link = entry.file.replace(".ipynb", ".html");
-    card.innerHTML = `<h3><a href="${link}">${entry.title}</a></h3>
-      <p><strong>Pfad:</strong> ${entry.file}</p>
-      <p><strong>Tags:</strong> ${entry.tags.join(", ")}</p>`;
-    container.appendChild(card);
-  });
-
-  function updateGallery(tag) {
-    document.querySelectorAll(".gallery-card").forEach(card => {
-      const tags = card.getAttribute("data-tags").split(",");
-      card.style.display = tag === "" || tags.includes(tag) ? "block" : "none";
-    });
-  }
-
-  updateGallery("");
 }
-document.addEventListener("DOMContentLoaded", () => buildGallery(galleryData));
 </script>
+</body>
+</html>"""
+    return html
 
-<style>
-#tag-filter-buttons button {
-  margin: 0.3em;
-  padding: 0.4em 0.8em;
-  border-radius: 6px;
-  border: 1px solid #aaa;
-  background: #f1f1f1;
-  cursor: pointer;
-}
-.gallery-card {
-  border: 1px solid #ddd;
-  padding: 1em;
-  border-radius: 8px;
-  margin-bottom: 1em;
-  background: #fcfcfc;
-}
-</style>
-""")
-Path("gallery_fragment.html").write_text("\n".join(html))
+def main():
+    metadata_list = []
+    for nb_path in ROOT_DIR.rglob("*.ipynb"):
+        md = extract_metadata_from_notebook(nb_path)
+        if md:
+            metadata_list.append(md)
+
+    html = build_html(metadata_list)
+    print(html)
+
+if __name__ == "__main__":
+    main()

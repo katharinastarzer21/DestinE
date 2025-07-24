@@ -1,4 +1,4 @@
-name: Build MyST Gallery
+name: Build MyST Gallery with Custom Filter Index
 
 on:
   push:
@@ -12,6 +12,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -23,25 +24,25 @@ jobs:
         with:
           node-version: 18.x
 
-      - run: pip install pyyaml mystmd
+      - name: Install dependencies
+        run: |
+          pip install pyyaml nbformat
+          npm install -g mystmd
 
-      - run: npm install -g mystmd
-
-      - name: Generate static gallery index
+      - name: Generate static index.html with filtering
         run: python scripts/generate_gallery_html.py > index.html
 
-      - name: Build MyST HTML (notebooks only)
-        run: myst build --html notebooks/
+      - name: Convert notebooks to HTML with myst
+        run: myst build --html production/
 
-      - name: Prepare full_site folder
+      - name: Prepare deployment folder
         run: |
           mkdir -p full_site
           cp -r _build/html/* full_site/
-          cp index.html full_site/index.html  # ⬅️ wichtig! HTML-Galerie reinlegen
+          cp index.html full_site/index.html
 
       - uses: actions/upload-pages-artifact@v3
         with:
           path: full_site
 
       - uses: actions/deploy-pages@v4
-      - run: echo "✅ Your site is live at ${{ steps.deployment.outputs.page_url }}"
