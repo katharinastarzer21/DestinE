@@ -44,3 +44,4 @@ jobs:
           path: full_site
 
       - uses: actions/deploy-pages@v4
+      - run: echo "✅ Your site is live at ${{ steps.deployment.outputs.page_url }}"
