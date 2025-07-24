@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 18.x
 
-      - run: pip install pyyaml
+      - run: pip install pyyaml mystmd
 
       - run: npm install -g mystmd
 
