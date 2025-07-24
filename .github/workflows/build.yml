@@ -27,11 +27,17 @@ jobs:
 
       - run: npm install -g mystmd
 
-      - run: python scripts/generate_gallery_html.py
+      - name: Generate static gallery index
+        run: python scripts/generate_gallery_html.py > index.html
 
-      - run: myst build --html
+      - name: Build MyST HTML (notebooks only)
+        run: myst build --html notebooks/
 
-      - run: mkdir full_site && cp -r _build/html/* full_site/
+      - name: Prepare full_site folder
+        run: |
+          mkdir -p full_site
+          cp -r _build/html/* full_site/
+          cp index.html full_site/index.html  # ⬅️ wichtig! HTML-Galerie reinlegen
 
       - uses: actions/upload-pages-artifact@v3
         with:
