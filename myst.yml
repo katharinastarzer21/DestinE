@@ -2,7 +2,7 @@ version: 1
 project:
   title: My Test Gallery
   toc:
-    - file: index.md
+    - file: index.html
     - title: Notebooks
       children:
         - file: notebooks/example1.ipynb
