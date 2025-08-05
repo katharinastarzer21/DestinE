@@ -2,7 +2,7 @@ name: MyST Deploy & Cookbook Integration
 
 on:
   push:
-    branches: [main]
+    branches: [lol]
   workflow_dispatch:
 
 permissions:
