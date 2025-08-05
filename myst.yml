@@ -6,7 +6,8 @@ project:
   - title: HDA
   - file: production/HDA/gallery.md
     children:
-    - includehidden: production/HDA/PySTAC/HDA-PyStac-Client.ipynb
+    - file: production/HDA/PySTAC/HDA-PyStac-Client.ipynb
+      hidden: true
     - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-dataAvailability.ipynb
     - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES.ipynb
     - file: production/HDA/DestinE_Digital_Twins/ClimateDT-ParameterPlotter.ipynb
