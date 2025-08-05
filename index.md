@@ -35,3 +35,5 @@ Further information available in DestinE Data Lake documentation: https://destin
 {button}`Stack <galleries/STACK.md>`
 {button}`HDA <galleries/HDA.md>`
 {button}`HOOK <galleries/HOOK.md>`
+{button}`WORKFLOW <galleries_by_tag/tag-workflow.md>`
+

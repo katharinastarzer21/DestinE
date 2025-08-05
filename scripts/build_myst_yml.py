@@ -3,17 +3,31 @@ import os
 
 root = "production"
 main_sections = ["HDA", "HOOK", "STACK"]
-toc = [{"file": "index.md"}]
+
+toc = [{"file": "index.md"}]  
 
 for section in main_sections:
+    entry = {
+        "title": section,
+        "file": f"galleries/{section}.md",  
+        "children": []
+    }
+
     section_path = os.path.join(root, section)
-    entry = {"title": section, "file": f"{section_path}/gallery.md", "children": []}
     for dirpath, _, filenames in os.walk(section_path):
         for f in sorted(filenames):
             if f.endswith(".ipynb"):
                 full_path = os.path.join(dirpath, f)
-                relative_path = os.path.normpath(full_path)
-                entry["children"].append({"file": relative_path})
+                rel_path = os.path.relpath(full_path, ".").replace("\\", "/")
+                entry["children"].append({"file": rel_path})
+
+    tag_gallery_dir = "galleries_by_tag"
+    if os.path.exists(tag_gallery_dir):
+        for fname in sorted(os.listdir(tag_gallery_dir)):
+            if fname.endswith(".md"):
+                toc.append({"hidden": f"{tag_gallery_dir}/{fname}"})
+
+
     toc.append(entry)
 
 config = {
@@ -36,7 +50,8 @@ config = {
     }
 }
 
-with open("myst.yml", "w") as f:
+# === Schreiben in myst.yml ===
+with open("myst.yml", "w", encoding="utf-8") as f:
     yaml.dump(config, f, sort_keys=False)
 
-print("✅ myst.yml updated.")
+print("✅ myst.yml erfolgreich erstellt mit gallery.md-Einträgen.")
