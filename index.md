@@ -1,9 +1,5 @@
 # DEDL Notebook Gallery
 
-::::{tab-set}
-:::{tab-item} Introduction
-:sync: tab1
-
 <!--
 ```{card} Card title
 :header: The _Header_
@@ -14,7 +10,6 @@ Card content
 hallo
 ```
 -->
-
 
 <img style="float:left; width:5%" src="./img/EUMETSAT-icon.png"/>  
 <br>
@@ -33,9 +28,7 @@ Further information available in DestinE Data Lake documentation: https://destin
 >- DataLake Priority services: https://hda.data.destination-earth.eu/ui/services 
 >- HDA SWAGGER UI: https://hda.data.destination-earth.eu/docs/
 
-:::
-:::{tab-item} Overview
-:sync: tab2
+
 
 ## Notebook Filter
 
