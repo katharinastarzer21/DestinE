@@ -1,75 +1,64 @@
-name: Build Gallery from External Repo
+name: MyST Deploy & Cookbook Integration
 
 on:
-  workflow_dispatch:
   push:
-    branches: [lol]
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
   id-token: write
+  pages: write
+
+env:
+  BASE_URL: /${{ github.event.repository.name }}
+  GALLERY_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
-    env:
-      EXTERNAL_REPO: https://github.com/USER/REPO.git
-      GALLERY_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
-
     steps:
-    - name: Checkout current repository
-      uses: actions/checkout@v4
+      - name: Checkout this repository
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.10"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-    - name: Set up Node
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
 
-    - name: Install dependencies
-      run: |
-        pip install pyyaml
-        npm install -g mystmd
+      - name: Install dependencies
+        run: |
+          pip install pyyaml nbformat
+          npm install -g mystmd
 
-    - name: Clone external notebook repo
-      run: |
-        git clone $EXTERNAL_REPO external_repo
-        mkdir -p production/HDA production/HOOK production/STACK
-        cp -r external_repo/HDA/* production/HDA/
-        cp -r external_repo/HOOK/* production/HOOK/
-        cp -r external_repo/STACK/* production/STACK/
-        rm -rf external_repo
+      - name: Clone external notebook repository
+        run: python scripts/clone_repo.py
 
-    - name: Ensure gallery.md files exist
-      run: |
-        for d in HDA HOOK STACK; do
-          mkdir -p production/$d
-          if [ ! -f production/$d/gallery.md ]; then
-            echo "# ${d} Gallery" > production/$d/gallery.md
-          fi
-        done
+      - name: Generate gallery markdown files
+        run: python scripts/generate_gallery_md.py
 
-    - name: Build myst.yml dynamically
-      run: python scripts/build_myst_yml.py
+      - name: Generate myst.yml and TOC
+        run: python scripts/build_myst_yml.py
 
-    - name: Build static site
-      run: myst build --html
+      - name: Build MyST HTML site
+        run: myst build --html
 
-    - name: Prepare full_site folder
-      run: |
-        mkdir -p full_site
-        cp -r _build/html/* full_site/
+      - name: Prepare full_site folder
+        run: |
+          mkdir -p full_site
+          cp -r _build/html/* full_site/
 
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: full_site
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: full_site
 
-    - name: Deploy to GitHub Pages
-      uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        id: deployment

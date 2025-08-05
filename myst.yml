@@ -2,10 +2,6 @@ version: 1
 project:
   title: DEDL Notebook Gallery
   toc:
-  - file: index.md
-  - file: galleries/HDA.md 
-  - file: galleries/STACK.md 
-  - file: galleries/HOOK.md 
   - title: HDA
     file: production/HDA/gallery.md
     children:
