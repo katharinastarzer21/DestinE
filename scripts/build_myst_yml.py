@@ -25,7 +25,7 @@ for section in main_sections:
     if os.path.exists(tag_gallery_dir):
         for fname in sorted(os.listdir(tag_gallery_dir)):
             if fname.endswith(".md"):
-                toc.append({"hidden": f"{tag_gallery_dir}/{fname}"})
+                toc.append({"includehidden:": f"{tag_gallery_dir}/{fname}"})
 
 
     toc.append(entry)
