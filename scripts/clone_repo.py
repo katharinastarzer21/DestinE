@@ -3,7 +3,7 @@ import shutil
 import subprocess
 
 # === Konfiguration ===
-EXTERNAL_REPO = "https://github.com/destination-earth/DestinE-DataLake-Lab.git"
+EXTERNAL_REPO = "https://github.com/katharinastarzer21/myst_DEDL_temp.git"
 CLONE_DIR = "cookbook-gallery"
 PRODUCTION_DIR = "production"
 SUBFOLDERS = ["HDA", "HOOK", "STACK"]
@@ -16,7 +16,8 @@ subprocess.run(["git", "clone", EXTERNAL_REPO, CLONE_DIR], check=True)
 os.makedirs(PRODUCTION_DIR, exist_ok=True)
 
 for subfolder in SUBFOLDERS:
-    src = os.path.join(CLONE_DIR, subfolder)
+    #src = os.path.join(CLONE_DIR, subfolder)
+    src = os.path.join(CLONE_DIR, "production", subfolder)
     dst = os.path.join(PRODUCTION_DIR, subfolder)
     if os.path.exists(src):
         print(f"📁 Copying {subfolder} → {dst}")
