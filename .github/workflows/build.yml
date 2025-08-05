@@ -43,6 +43,9 @@ jobs:
       - name: Generate gallery markdown files
         run: python scripts/generate_gallery_md.py
 
+      - name: Generate keywords markdown files
+        run: python scripts/gallery_keywords.py
+
       - name: Generate myst.yml and TOC
         run: python scripts/build_myst_yml.py
 

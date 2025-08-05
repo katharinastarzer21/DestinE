@@ -21,14 +21,14 @@ for section in main_sections:
                 rel_path = os.path.relpath(full_path, ".").replace("\\", "/")
                 entry["children"].append({"file": rel_path})
 
-    tag_gallery_dir = "galleries_by_tag"
-    if os.path.exists(tag_gallery_dir):
-        for fname in sorted(os.listdir(tag_gallery_dir)):
-            if fname.endswith(".md"):
-                toc.append({"includehidden:": f"{tag_gallery_dir}/{fname}"})
-
-
     toc.append(entry)
+
+tag_gallery_dir = "galleries_by_tag"
+if os.path.exists(tag_gallery_dir):
+    for fname in sorted(os.listdir(tag_gallery_dir)):
+        if fname.endswith(".md"):
+            toc.append({"includehidden:": f"{tag_gallery_dir}/{fname}"})
+
 
 config = {
     "version": 1,

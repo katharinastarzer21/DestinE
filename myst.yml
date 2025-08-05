@@ -3,36 +3,6 @@ project:
   title: DEDL Notebook Gallery
   toc:
   - file: index.md
-  - hidden: galleries_by_tag/tag-access-token.md
-  - hidden: galleries_by_tag/tag-authentication.md
-  - hidden: galleries_by_tag/tag-authentification.md
-  - hidden: galleries_by_tag/tag-avhrr.md
-  - hidden: galleries_by_tag/tag-c3s.md
-  - hidden: galleries_by_tag/tag-cluster.md
-  - hidden: galleries_by_tag/tag-core-api.md
-  - hidden: galleries_by_tag/tag-dask.md
-  - hidden: galleries_by_tag/tag-datacube.md
-  - hidden: galleries_by_tag/tag-digital-twin.md
-  - hidden: galleries_by_tag/tag-earthkit.md
-  - hidden: galleries_by_tag/tag-ecmwf.md
-  - hidden: galleries_by_tag/tag-eodag.md
-  - hidden: galleries_by_tag/tag-gfm.md
-  - hidden: galleries_by_tag/tag-hda.md
-  - hidden: galleries_by_tag/tag-hook.md
-  - hidden: galleries_by_tag/tag-http-requests.md
-  - hidden: galleries_by_tag/tag-metop.md
-  - hidden: galleries_by_tag/tag-olci.md
-  - hidden: galleries_by_tag/tag-pyaviso.md
-  - hidden: galleries_by_tag/tag-satpy.md
-  - hidden: galleries_by_tag/tag-sentinel-1.md
-  - hidden: galleries_by_tag/tag-sentinel-2.md
-  - hidden: galleries_by_tag/tag-sentinel-3.md
-  - hidden: galleries_by_tag/tag-stac.md
-  - hidden: galleries_by_tag/tag-stack.md
-  - hidden: galleries_by_tag/tag-storage.md
-  - hidden: galleries_by_tag/tag-thresholding-techniques.md
-  - hidden: galleries_by_tag/tag-token.md
-  - hidden: galleries_by_tag/tag-workflow.md
   - title: HDA
     file: galleries/HDA.md
     children:
@@ -57,72 +27,12 @@ project:
     - file: production/HDA/REST/HDA-REST-Queryables.ipynb
     - file: production/HDA/REST/HDA-REST-full-version.ipynb
     - file: production/HDA/REST/HDA-REST-quick-start.ipynb
-  - hidden: galleries_by_tag/tag-access-token.md
-  - hidden: galleries_by_tag/tag-authentication.md
-  - hidden: galleries_by_tag/tag-authentification.md
-  - hidden: galleries_by_tag/tag-avhrr.md
-  - hidden: galleries_by_tag/tag-c3s.md
-  - hidden: galleries_by_tag/tag-cluster.md
-  - hidden: galleries_by_tag/tag-core-api.md
-  - hidden: galleries_by_tag/tag-dask.md
-  - hidden: galleries_by_tag/tag-datacube.md
-  - hidden: galleries_by_tag/tag-digital-twin.md
-  - hidden: galleries_by_tag/tag-earthkit.md
-  - hidden: galleries_by_tag/tag-ecmwf.md
-  - hidden: galleries_by_tag/tag-eodag.md
-  - hidden: galleries_by_tag/tag-gfm.md
-  - hidden: galleries_by_tag/tag-hda.md
-  - hidden: galleries_by_tag/tag-hook.md
-  - hidden: galleries_by_tag/tag-http-requests.md
-  - hidden: galleries_by_tag/tag-metop.md
-  - hidden: galleries_by_tag/tag-olci.md
-  - hidden: galleries_by_tag/tag-pyaviso.md
-  - hidden: galleries_by_tag/tag-satpy.md
-  - hidden: galleries_by_tag/tag-sentinel-1.md
-  - hidden: galleries_by_tag/tag-sentinel-2.md
-  - hidden: galleries_by_tag/tag-sentinel-3.md
-  - hidden: galleries_by_tag/tag-stac.md
-  - hidden: galleries_by_tag/tag-stack.md
-  - hidden: galleries_by_tag/tag-storage.md
-  - hidden: galleries_by_tag/tag-thresholding-techniques.md
-  - hidden: galleries_by_tag/tag-token.md
-  - hidden: galleries_by_tag/tag-workflow.md
   - title: HOOK
     file: galleries/HOOK.md
     children:
     - file: production/HOOK/DEDL-Hook_access.ipynb
     - file: production/HOOK/DEDL-Hook_data_harvest.ipynb
     - file: production/HOOK/Tutorial.ipynb
-  - hidden: galleries_by_tag/tag-access-token.md
-  - hidden: galleries_by_tag/tag-authentication.md
-  - hidden: galleries_by_tag/tag-authentification.md
-  - hidden: galleries_by_tag/tag-avhrr.md
-  - hidden: galleries_by_tag/tag-c3s.md
-  - hidden: galleries_by_tag/tag-cluster.md
-  - hidden: galleries_by_tag/tag-core-api.md
-  - hidden: galleries_by_tag/tag-dask.md
-  - hidden: galleries_by_tag/tag-datacube.md
-  - hidden: galleries_by_tag/tag-digital-twin.md
-  - hidden: galleries_by_tag/tag-earthkit.md
-  - hidden: galleries_by_tag/tag-ecmwf.md
-  - hidden: galleries_by_tag/tag-eodag.md
-  - hidden: galleries_by_tag/tag-gfm.md
-  - hidden: galleries_by_tag/tag-hda.md
-  - hidden: galleries_by_tag/tag-hook.md
-  - hidden: galleries_by_tag/tag-http-requests.md
-  - hidden: galleries_by_tag/tag-metop.md
-  - hidden: galleries_by_tag/tag-olci.md
-  - hidden: galleries_by_tag/tag-pyaviso.md
-  - hidden: galleries_by_tag/tag-satpy.md
-  - hidden: galleries_by_tag/tag-sentinel-1.md
-  - hidden: galleries_by_tag/tag-sentinel-2.md
-  - hidden: galleries_by_tag/tag-sentinel-3.md
-  - hidden: galleries_by_tag/tag-stac.md
-  - hidden: galleries_by_tag/tag-stack.md
-  - hidden: galleries_by_tag/tag-storage.md
-  - hidden: galleries_by_tag/tag-thresholding-techniques.md
-  - hidden: galleries_by_tag/tag-token.md
-  - hidden: galleries_by_tag/tag-workflow.md
   - title: STACK
     file: galleries/STACK.md
     children:
@@ -131,6 +41,36 @@ project:
     - file: production/STACK/ExtremeDT-DataCube.ipynb
     - file: production/STACK/STACK-Dask-101.ipynb
     - file: production/STACK/STACK-Python-Client-Dask.ipynb
+  - 'includehidden:': galleries_by_tag/tag-access-token.md
+  - 'includehidden:': galleries_by_tag/tag-authentication.md
+  - 'includehidden:': galleries_by_tag/tag-authentification.md
+  - 'includehidden:': galleries_by_tag/tag-avhrr.md
+  - 'includehidden:': galleries_by_tag/tag-c3s.md
+  - 'includehidden:': galleries_by_tag/tag-cluster.md
+  - 'includehidden:': galleries_by_tag/tag-core-api.md
+  - 'includehidden:': galleries_by_tag/tag-dask.md
+  - 'includehidden:': galleries_by_tag/tag-datacube.md
+  - 'includehidden:': galleries_by_tag/tag-digital-twin.md
+  - 'includehidden:': galleries_by_tag/tag-earthkit.md
+  - 'includehidden:': galleries_by_tag/tag-ecmwf.md
+  - 'includehidden:': galleries_by_tag/tag-eodag.md
+  - 'includehidden:': galleries_by_tag/tag-gfm.md
+  - 'includehidden:': galleries_by_tag/tag-hda.md
+  - 'includehidden:': galleries_by_tag/tag-hook.md
+  - 'includehidden:': galleries_by_tag/tag-http-requests.md
+  - 'includehidden:': galleries_by_tag/tag-metop.md
+  - 'includehidden:': galleries_by_tag/tag-olci.md
+  - 'includehidden:': galleries_by_tag/tag-pyaviso.md
+  - 'includehidden:': galleries_by_tag/tag-satpy.md
+  - 'includehidden:': galleries_by_tag/tag-sentinel-1.md
+  - 'includehidden:': galleries_by_tag/tag-sentinel-2.md
+  - 'includehidden:': galleries_by_tag/tag-sentinel-3.md
+  - 'includehidden:': galleries_by_tag/tag-stac.md
+  - 'includehidden:': galleries_by_tag/tag-stack.md
+  - 'includehidden:': galleries_by_tag/tag-storage.md
+  - 'includehidden:': galleries_by_tag/tag-thresholding-techniques.md
+  - 'includehidden:': galleries_by_tag/tag-token.md
+  - 'includehidden:': galleries_by_tag/tag-workflow.md
 site:
   template: book-theme
   options:
