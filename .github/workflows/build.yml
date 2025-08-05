@@ -1,8 +1,9 @@
-name: Build MyST Gallery with Custom Filter Index
+name: Build Gallery from External Repo
 
 on:
+  workflow_dispatch:
   push:
-    branches: [main]
+    branches: [lol]
 
 permissions:
   contents: write
@@ -10,39 +11,65 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
+    env:
+      EXTERNAL_REPO: https://github.com/USER/REPO.git
+      GALLERY_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+
     steps:
-      - uses: actions/checkout@v4
+    - name: Checkout current repository
+      uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18.x
+    - name: Set up Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
 
-      - name: Install dependencies
-        run: |
-          pip install pyyaml nbformat
-          npm install -g mystmd
+    - name: Install dependencies
+      run: |
+        pip install pyyaml
+        npm install -g mystmd
 
-      - name: Generate static index.html with filtering
-        run: python scripts/generate_gallery_html.py > index.html
+    - name: Clone external notebook repo
+      run: |
+        git clone $EXTERNAL_REPO external_repo
+        mkdir -p production/HDA production/HOOK production/STACK
+        cp -r external_repo/HDA/* production/HDA/
+        cp -r external_repo/HOOK/* production/HOOK/
+        cp -r external_repo/STACK/* production/STACK/
+        rm -rf external_repo
 
-      - name: Convert notebooks to HTML with myst
-        run: myst build --html production/
+    - name: Ensure gallery.md files exist
+      run: |
+        for d in HDA HOOK STACK; do
+          mkdir -p production/$d
+          if [ ! -f production/$d/gallery.md ]; then
+            echo "# ${d} Gallery" > production/$d/gallery.md
+          fi
+        done
 
-      - name: Prepare deployment folder
-        run: |
-          mkdir -p full_site
-          cp -r _build/html/* full_site/
-          cp index.html full_site/index.html
+    - name: Build myst.yml dynamically
+      run: python scripts/build_myst_yml.py
 
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: full_site
+    - name: Build static site
+      run: myst build --html
 
-      - uses: actions/deploy-pages@v4
+    - name: Prepare full_site folder
+      run: |
+        mkdir -p full_site
+        cp -r _build/html/* full_site/
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: full_site
+
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v4

@@ -1,13 +1,50 @@
 version: 1
 project:
-  title: My Test Gallery
+  title: DEDL Notebook Gallery
   toc:
-    - file: index.html
-    - title: Notebooks
-      children:
-        - file: notebooks/example1.ipynb
-          tags: [satellite, analysis]
-        - file: notebooks/example2.ipynb
-          tags: [climate, statistics]
+  - file: index.md
+  - title: HDA
+    file: production/HDA/gallery.md
+    children:
+    - file: production/HDA/CDS_data/DEDL-HDA-EO.ECMWF.DAT.REANALYSIS_ERA5_SINGLE_LEVELS.ipynb
+    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.METOP.AVHRRL1.ipynb
+    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.MSG-1.5.ipynb
+    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.SENTINEL-3.OL_1_ERR___.ipynb
+    - file: production/HDA/DestinE Digital Twins/ClimateDT-ParameterPlotter.ipynb
+    - file: production/HDA/DestinE Digital Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE-Series.ipynb
+    - file: production/HDA/DestinE Digital Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE.ipynb
+    - file: production/HDA/DestinE Digital Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES-Series.ipynb
+    - file: production/HDA/DestinE Digital Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES.ipynb
+    - file: production/HDA/DestinE Digital Twins/ExtremeDT-ParameterPlotter.ipynb
+    - file: production/HDA/DestinE Digital Twins/ExtremeDT-dataAvailability.ipynb
+    - file: production/HDA/PySTAC/HDA-PyStac-Client.ipynb
+    - file: production/HDA/EODAG/HDA-EODAG-full-version.ipynb
+    - file: production/HDA/EODAG/HDA-EODAG-quick-start.ipynb
+    - file: production/HDA/REST/DEDL-HDA-EO.ESA.DAT.SENTINEL-1.L1_GRD.ipynb
+    - file: production/HDA/REST/DEDL-HDA-EO.ESA.DAT.SENTINEL-2.MSI.L2A.ipynb
+    - file: production/HDA/REST/HDA-REST-Queryables.ipynb
+    - file: production/HDA/REST/HDA-REST-full-version.ipynb
+    - file: production/HDA/REST/HDA-REST-quick-start.ipynb
+  - title: HOOK
+    file: production/HOOK/gallery.md
+    children:
+    - file: production/HOOK/DEDL-Hook_access.ipynb
+    - file: production/HOOK/DEDL-Hook_data_harvest.ipynb
+    - file: production/HOOK/Tutorial.ipynb
+  - title: STACK
+    file: production/STACK/gallery.md
+    children:
+    - file: production/STACK/DEDL_StackService_Dask.ipynb
+    - file: production/STACK/ExtremeDT-DataCube-xViewer.ipynb
+    - file: production/STACK/ExtremeDT-DataCube.ipynb
+    - file: production/STACK/STACK-Dask-101.ipynb
+    - file: production/STACK/STACK-Python-Client-Dask.ipynb
 site:
   template: book-theme
+  hide_footer_links: true
+  options:
+    style: _static/custom.css
+    favicon: img/EUMETSAT-icon.ico
+    logo: img/logo_bar.png
+  parts:
+    footer: footer.md
