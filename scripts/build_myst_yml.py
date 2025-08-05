@@ -24,11 +24,11 @@ config = {
     },
     "site": {
         "template": "book-theme",
-        "hide_footer_links": True,
         "options": {
             "style": "_static/custom.css",
             "favicon": "img/EUMETSAT-icon.ico",
-            "logo": "img/logo_bar.png"
+            "logo": "img/logo_bar.png",
+            "hide_footer_links": True,
         },
         "parts": {
             "footer": "footer.md"
