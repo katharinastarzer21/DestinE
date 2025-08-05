@@ -30,7 +30,7 @@ project:
   - title: HOOK
     file: galleries/HOOK.md
     children:
-    - file: production/HOOK/DEDL-Hook_access.ipynb
+    - includehidden: production/HOOK/DEDL-Hook_access.ipynb
     - file: production/HOOK/DEDL-Hook_data_harvest.ipynb
     - file: production/HOOK/Tutorial.ipynb
   - title: STACK
