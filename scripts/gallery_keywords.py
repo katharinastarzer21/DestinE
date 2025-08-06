@@ -2,9 +2,14 @@ import os
 import nbformat
 import yaml
 from collections import defaultdict
+import shutil
 
 PRODUCTION_ROOT = "production"
 GALLERY_DIR = "galleries_by_tag"
+
+if os.path.exists(GALLERY_DIR):
+    shutil.rmtree(GALLERY_DIR) 
+
 os.makedirs(GALLERY_DIR, exist_ok=True)
 
 def extract_yaml_from_notebook(notebook_path):
@@ -36,16 +41,22 @@ def generate_html_card(meta, notebook_path):
     title = meta.get("title", "Untitled")
     subtitle = meta.get("subtitle") or "no description"
     tags = meta.get("tags", [])
-    thumbnail = meta.get("thumbnail", "")
-    href = notebook_path.replace("\\", "/")
-
     tags_html = ''.join(f'<span class="tag">{tag}</span>' for tag in tags)
-    print(href)
+
+    href = notebook_path.replace("\\", "/")
+    if not href.startswith("../"):
+        href = f"../{href}"
+
+    thumbnail = meta.get("thumbnail", "")
+    if "img/" in thumbnail:
+        thumbnail = thumbnail.split("img/", 1)[1].lstrip("/")
+        thumbnail = f"../img/{thumbnail}"
+
 
     return f'''
 <div class="notebook-card" data-tags="{' '.join(tags)}" style="display: flex; align-items: flex-start; border: 1px solid #cddff1; border-radius: 6px; padding: 14px 20px; background-color: #f9fbfe; box-shadow: 1px 1px 4px #dfeaf5;">
   <div style="width: 100px; height: 100px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background-color: #fff; border: 1px solid #e0eaf5; border-radius: 6px; overflow: hidden; margin-right: 32px;">
-    <img src="/{thumbnail}" alt="Notebook Thumbnail" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+    <img src="{thumbnail}" alt="Notebook Thumbnail" style="max-width: 100%; max-height: 100%; object-fit: contain;">
   </div>
   <div style="flex: 1;">
     <strong>{title}</strong><br>

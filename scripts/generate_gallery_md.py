@@ -3,10 +3,14 @@
 import os
 import nbformat
 import yaml
+import shutil
 
 SECTIONS = ["HDA", "HOOK", "STACK"]
 PRODUCTION_ROOT = "production"
 GALLERY_DIR = "galleries"
+
+if os.path.exists(GALLERY_DIR):
+    shutil.rmtree(GALLERY_DIR) 
 
 os.makedirs(GALLERY_DIR, exist_ok=True)
 
@@ -34,19 +38,20 @@ def wrap_gallery_cards(cards_html):
 </div>
 '''.strip()
 
-
 def generate_html_card(meta, notebook_path):
     title = meta.get("title", "Untitled")
     subtitle = meta.get("subtitle") or "no description"
     tags = meta.get("tags", [])
-    thumbnail = meta.get("thumbnail", "")
-    href = notebook_path.replace("\\", "/")
-
-    if "img/" in thumbnail:
-        thumbnail = thumbnail.split("img/", 1)[1]
-        thumbnail = f"img/{thumbnail.lstrip('/')}"
-
     tags_html = ''.join(f'<span class="tag">{tag}</span>' for tag in tags)
+
+    href = notebook_path.replace("\\", "/")
+    if not href.startswith("../"):
+        href = f"../{href}"
+
+    thumbnail = meta.get("thumbnail", "")
+    if "img/" in thumbnail:
+        thumbnail = thumbnail.split("img/", 1)[1].lstrip("/")
+        thumbnail = f"../img/{thumbnail}"
 
     return f'''
 <div class="notebook-card" data-tags="{' '.join(tags)}" style="display: flex; align-items: flex-start; border: 1px solid #cddff1; border-radius: 6px; padding: 14px 20px; background-color: #f9fbfe; box-shadow: 1px 1px 4px #dfeaf5;">
