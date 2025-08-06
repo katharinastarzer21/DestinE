@@ -126,9 +126,11 @@ footer.footer {
 
 /* Style the buttons */
 .btn {
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
   padding: 12px 20px;
-  margin: 12px 8px;  
+  gap: 14px 20px; /* vertikal | horizontal Abstand zwischen Buttons */
+  margin: 36px 0;  
   font-size: 15px;
   font-weight: 500;
   border: 1px solid #cddff1;
@@ -150,12 +152,6 @@ footer.footer {
 .btn.active {
   background-color: #666;
   color: white;
-}
-.button-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 20px; /* vertikal | horizontal Abstand zwischen Buttons */
-  margin: 36px 0;  /* ⬆️⬇️ großer Abstand VOR und NACH dem Block */
 }
 
 } 
