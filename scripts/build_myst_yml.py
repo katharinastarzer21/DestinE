@@ -4,8 +4,8 @@ import os
 if os.path.exists("myst.yml"):
     os.remove("myst.yml")
 
-root = "production"
-main_sections = ["HDA", "HOOK", "STACK"]
+PRODUCTION_ROOT = "production"
+main_sections = [d for d in os.listdir(PRODUCTION_ROOT) if os.path.isdir(os.path.join(PRODUCTION_ROOT, d))]
 
 toc = [{"file": "index.md"}]  
 

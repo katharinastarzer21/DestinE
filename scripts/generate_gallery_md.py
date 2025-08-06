@@ -5,8 +5,9 @@ import nbformat
 import yaml
 import shutil
 
-SECTIONS = ["HDA", "HOOK", "STACK"]
+
 PRODUCTION_ROOT = "production"
+SECTIONS = [d for d in os.listdir(PRODUCTION_ROOT) if os.path.isdir(os.path.join(PRODUCTION_ROOT, d))]
 GALLERY_DIR = "galleries"
 
 if os.path.exists(GALLERY_DIR):
@@ -85,7 +86,7 @@ def generate_gallery_for_section(section):
                     card = generate_html_card(meta, rel_path)
                     cards.append(card)
                 else:
-                    print(f"⚠️  No metadata found in {full_path}")
+                    print(f"No metadata found in {full_path}")
 
     with open(output_md, 'w', encoding='utf-8') as f:
         f.write(f"# {section} Gallery\n\n")
@@ -98,11 +99,4 @@ def generate_gallery_for_section(section):
 if __name__ == "__main__":
     for section in SECTIONS:
         generate_gallery_for_section(section)
-
-    image_path = "img/dask.png"  # ← Pfad anpassen
-
-    if os.path.isfile(image_path):
-        print("✅ Bildpfad ist gültig.")
-    else:
-        print("❌ Bild wurde nicht gefunden.")
 
