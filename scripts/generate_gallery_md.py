@@ -42,6 +42,10 @@ def generate_html_card(meta, notebook_path):
     thumbnail = meta.get("thumbnail", "")
     href = notebook_path.replace("\\", "/")
 
+    if "img/" in thumbnail:
+        thumbnail = thumbnail.split("img/", 1)[1]
+        thumbnail = f"img/{thumbnail.lstrip('/')}"
+
     tags_html = ''.join(f'<span class="tag">{tag}</span>' for tag in tags)
 
     return f'''
@@ -89,3 +93,11 @@ def generate_gallery_for_section(section):
 if __name__ == "__main__":
     for section in SECTIONS:
         generate_gallery_for_section(section)
+
+    image_path = "img/dask.png"  # ← Pfad anpassen
+
+    if os.path.isfile(image_path):
+        print("✅ Bildpfad ist gültig.")
+    else:
+        print("❌ Bild wurde nicht gefunden.")
+
