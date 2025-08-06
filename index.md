@@ -14,20 +14,83 @@ hallo
 <img style="float:left; width:5%" src="./img/EUMETSAT-icon.png"/>  
 <br>
 
-Destination Earth Data Lake Laboratory, which contains additional information for working with DestinE Data Lake services:
-- [Harmonised Data Access](https://github.com/destination-earth/DestinE-DataLake-Lab/tree/main/HDA) (Juypter notebooks examples + Python Tools)
-- [STACK service](https://github.com/destination-earth/DestinE-DataLake-Lab/tree/main/STACK) (Juypter Notebook examples on how to use DASK for near data processing)
-- [HOOK service](https://github.com/destination-earth/DestinE-DataLake-Lab/tree/main/HOOK) (Juypter Notebook examples on how to use HOOK for workflows)
+# DestinE Data Lake Notebook Gallery
 
+<img style="float:left; width:5%; margin-right: 10px;" src="./img/EUMETSAT-icon.png"/>
 
-Further information available in DestinE Data Lake documentation: https://destine-data-lake-docs.data.destination-earth.eu/en/latest/index.html
+Welcome to the **Destination Earth Data Lake Laboratory** – your interactive environment for exploring and working with DestinE Data Lake services.  
+This gallery provides practical Jupyter Notebook examples and tools for accessing, processing, and analyzing Earth observation data using the three core services:
 
+---
 
->**Additional ressources:**
->- DestinE Data Portfolio: https://hda.data.destination-earth.eu/ui/catalog
->- DataLake Priority services: https://hda.data.destination-earth.eu/ui/services 
->- HDA SWAGGER UI: https://hda.data.destination-earth.eu/docs/
+### Harmonised Data Access (HDA)
 
+Easily query and download datasets from the DestinE Data Lake using the **HDA API**.
+
+- 🔹 Access EO data via standardised APIs  
+- 🔹 Explore Python examples for automated querying and downloading  
+- 🔗 [HDA Notebook Gallery](galleries/HDA.md)  
+- 🔗 [HDA GitHub Repository](https://github.com/destination-earth/DestinE-DataLake-Lab/tree/main/HDA)
+
+---
+
+### STACK – Scalable Data Processing
+
+Run heavy data analytics **close to the data** using Dask-powered processing within the Data Lake infrastructure.
+
+- 🔹 Learn how to use Dask for efficient, distributed computations  
+- 🔹 Example notebooks for setting up, scaling, and executing workflows  
+- 🔗 [STACK Notebook Gallery](galleries/STACK.md)  
+- 🔗 [STACK GitHub Repository](https://github.com/destination-earth/DestinE-DataLake-Lab/tree/main/STACK)
+
+---
+
+### HOOK – Workflow Automation
+
+Design and execute reproducible **EO processing workflows** using the HOOK orchestration system.
+
+- 🔹 Discover how to use HOOK for workflow management and automation  
+- 🔹 Create, manage, and monitor processing chains  
+- 🔗 [HOOK Notebook Gallery](galleries/HOOK.md)  
+- 🔗 [HOOK GitHub Repository](https://github.com/destination-earth/DestinE-DataLake-Lab/tree/main/HOOK)
+
+---
+
+## Documentation & Resources
+
+> Find more information and technical documentation in the official DestinE Data Lake Docs:  
+👉 [DestinE Docs](https://destine-data-lake-docs.data.destination-earth.eu/en/latest/index.html)
+
+### 🔗 Useful Links
+
+- **DestinE Data Portfolio**  
+  [https://hda.data.destination-earth.eu/ui/catalog](https://hda.data.destination-earth.eu/ui/catalog)
+
+- **Priority Services Overview**  
+  [https://hda.data.destination-earth.eu/ui/services](https://hda.data.destination-earth.eu/ui/services)
+
+- **HDA Swagger UI**  
+  [https://hda.data.destination-earth.eu/docs/](https://hda.data.destination-earth.eu/docs/)
+
+  ## 🧭 Getting Started on the DestinE Platform (Insula)
+
+To get started on the **DestinE Insula Jupyter environment**, follow these steps and use the kernel `my_env` in all notebooks:
+
+### 1. Open a terminal window (File → New → Terminal) and run:
+
+```bash
+# Create a new virtual environment
+python -m venv /home/jovyan/my_env
+
+# Activate it
+source /home/jovyan/my_env/bin/activate
+
+# Install all required Python dependencies
+pip install -r /home/jovyan/datalake-lab/requirements.txt
+
+# Optional: Verify the destinelab package is installed
+pip list | grep destinelab
+# → Should return: destinelab 0.9
 
 
 ## Notebook Filter

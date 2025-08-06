@@ -1,0 +1,117 @@
+name: Cookbook Integration
+
+on:
+  push:
+    branches: [test]
+  issues:
+    types: [closed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  id-token: write
+  pages: write
+
+env:
+  BASE_URL: /${{ github.event.repository.name }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    if: >
+      github.event_name != 'issues' ||
+      (
+        github.event_name == 'issues' &&
+        github.event.action == 'closed' &&
+        (github.actor == 'katharinastarzer21' || github.actor == 'koenifra')
+      )
+
+
+    env:
+      GALLERY_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+
+      - name: Install required Python packages
+        run: pip install pyyaml nbformat
+
+      - name: Install MyST CLI
+        run: npm install -g mystmd
+
+      - name: Dump issue body to file
+        if: github.event_name == 'issues'
+        run: echo "${{ github.event.issue.body }}" > issue_body.txt
+
+      # Only for issue events: parse the issue and clone submitted repo into production/COOKBOOK_NAME
+      - name: Parse Issue Data
+        if: github.event_name == 'issues'
+        id: parse
+        run: python scripts/parse_issue.py
+
+      - name: Clone submitted repository into production
+        if: github.event_name == 'issues'
+        run: |
+          ROOT_PATH="$ROOT_PATH"
+          COOKBOOK_TITLE="$COOKBOOK_TITLE"
+          git clone "$REPO_URL" "temp_repo"
+          rm -rf "temp_repo/.git"
+          mkdir -p "production/$ROOT_PATH"
+          cp -r temp_repo/* "production/$ROOT_PATH/"
+          rm -rf temp_repo
+        env:
+          REPO_URL: ${{ env.REPO_URL }}
+          
+      - name: Append new cookbook to myst.yml
+        if: github.event_name == 'issues'
+        run: python scripts/rebuild_gallery_toc.py
+        env:
+          COOKBOOK_NAME: ${{ env.ROOT_PATH }}
+
+      - name: Build all notebooks and pages
+        run: myst build --html
+
+      - name: Prepare full_site folder
+        run: |
+          mkdir -p full_site
+          cp -r _build/html/* full_site/
+        # cp index.html full_site/index.html
+        # cp -r gallery full_site/gallery
+
+      - name: Upload deploy artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: full_site
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        id: deployment
+
+      - name: Comment with production link
+        if: github.event_name == 'issues'
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            ✅ **Cookbook deployed!**
+            📘 [${{ env.COOKBOOK_TITLE }}](${{ env.GALLERY_URL }}/production/${{ env.ROOT_PATH }}/index.html)
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add myst.yml production/
+          git commit -m "Update myst.yml and production after issue close [skip ci]" || echo "Nothing to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
