@@ -16,7 +16,7 @@ for section in main_sections:
         "children": []
     }
 
-    section_path = os.path.join(root, section)
+    section_path = os.path.join(PRODUCTION_ROOT , section)
     for dirpath, _, filenames in os.walk(section_path):
         for f in sorted(filenames):
             if f.endswith(".ipynb"):
