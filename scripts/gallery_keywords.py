@@ -40,6 +40,7 @@ def generate_html_card(meta, notebook_path):
     href = notebook_path.replace("\\", "/")
 
     tags_html = ''.join(f'<span class="tag">{tag}</span>' for tag in tags)
+    print(href)
 
     return f'''
 <div class="notebook-card" data-tags="{' '.join(tags)}" style="display: flex; align-items: flex-start; border: 1px solid #cddff1; border-radius: 6px; padding: 14px 20px; background-color: #f9fbfe; box-shadow: 1px 1px 4px #dfeaf5;">
@@ -70,12 +71,12 @@ for dirpath, _, filenames in os.walk(PRODUCTION_ROOT):
                 for tag in tags:
                     tag_to_notebooks[tag].append((rel_path, meta))
             else:
-                print(f"⚠️  No metadata in {rel_path}")
+                print(f"No metadata in {rel_path}")
 
 for tag, notebooks in tag_to_notebooks.items():
     safe_tag = tag.lower().replace(" ", "-")
     tag_md_path = os.path.join(GALLERY_DIR, f"tag-{safe_tag}.md")
-    
+
     cards = [generate_html_card(meta, notebook_path) for notebook_path, meta in notebooks]
     wrapped_html = wrap_gallery_cards(cards)
     
@@ -83,4 +84,4 @@ for tag, notebooks in tag_to_notebooks.items():
         f.write(f"# Notebooks tagged with `{tag}`\n\n")
         f.write(wrapped_html + "\n")
     
-    print(f"✅ Created {tag_md_path} with {len(notebooks)} notebooks.")
+    print(f"Created {tag_md_path} with {len(notebooks)} notebooks.")
