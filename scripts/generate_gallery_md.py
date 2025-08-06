@@ -80,10 +80,11 @@ def generate_gallery_for_section(section):
 
     with open(output_md, 'w', encoding='utf-8') as f:
         f.write(f"# {section} Gallery\n\n")
-        for card in cards:
-            f.write(card + "\n\n")
+        wrapped_html = wrap_gallery_cards(cards)
+        f.write(wrapped_html)
 
     print(f"{output_md} created with {len(cards)} cards.")
+
 
 if __name__ == "__main__":
     for section in SECTIONS:
