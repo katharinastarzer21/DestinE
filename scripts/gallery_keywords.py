@@ -49,7 +49,6 @@ def generate_html_card(meta, notebook_path):
 </div>
 '''.strip()
 
-# 🔍 Alle Notebooks durchgehen und nach Tags gruppieren
 tag_to_notebooks = defaultdict(list)
 
 for dirpath, _, filenames in os.walk(PRODUCTION_ROOT):
@@ -65,7 +64,6 @@ for dirpath, _, filenames in os.walk(PRODUCTION_ROOT):
             else:
                 print(f"⚠️  No metadata in {rel_path}")
 
-# 🧾 Für jeden Tag ein .md erzeugen
 for tag, notebooks in tag_to_notebooks.items():
     safe_tag = tag.lower().replace(" ", "-")
     tag_md_path = os.path.join(GALLERY_DIR, f"tag-{safe_tag}.md")

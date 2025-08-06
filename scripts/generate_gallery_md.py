@@ -75,7 +75,7 @@ def generate_gallery_for_section(section):
         for card in cards:
             f.write(card + "\n\n")
 
-    print(f"✅ {output_md} created with {len(cards)} cards.")
+    print(f"{output_md} created with {len(cards)} cards.")
 
 if __name__ == "__main__":
     for section in SECTIONS:

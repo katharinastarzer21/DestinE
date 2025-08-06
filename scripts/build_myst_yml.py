@@ -1,24 +1,14 @@
 import yaml
 import os
 
+if os.path.exists("myst.yml"):
+    print("🗑️  Vorhandenes myst.yml wird gelöscht ...")
+    os.remove("myst.yml")
+
 root = "production"
 main_sections = ["HDA", "HOOK", "STACK"]
 
 toc = [{"file": "index.md"}]  
-
-tag_gallery_dir = "galleries_by_tag"
-if os.path.exists(tag_gallery_dir):
-    files = sorted(os.listdir(tag_gallery_dir))
-    print(f"📁 {tag_gallery_dir} enthält {len(files)} Datei(en)")
-    for fname in files:
-        print("🔹", fname)
-        if fname.endswith(".md"):
-            toc.append({
-                "file": f"{tag_gallery_dir}/{fname}",
-                "hidden": True
-            })
-else:
-    print("⚠️  Ordner galleries_by_tag/ nicht gefunden!")
 
 for section in main_sections:
     entry = {
@@ -36,6 +26,16 @@ for section in main_sections:
                 entry["children"].append({"file": rel_path})
 
     toc.append(entry)
+
+tag_gallery_dir = "galleries_by_tag"
+
+if os.path.exists(tag_gallery_dir):
+    for fname in sorted(os.listdir(tag_gallery_dir)):
+        if fname.endswith(".md"):
+            toc.append({
+                "file": f"{tag_gallery_dir}/{fname}",
+            })
+
 
 config = {
     "version": 1,
@@ -60,4 +60,4 @@ config = {
 with open("myst.yml", "w", encoding="utf-8") as f:
     yaml.dump(config, f, sort_keys=False)
 
-print("✅ myst.yml erfolgreich erstellt.")
+print("✅ myst.yml erfolgreich erstellt mit gallery.md-Einträgen.")

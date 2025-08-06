@@ -2,17 +2,15 @@ import os
 import shutil
 import subprocess
 
-# === Konfiguration ===
 EXTERNAL_REPO = "https://github.com/katharinastarzer21/myst_DEDL_temp.git"
 CLONE_DIR = "cookbook-gallery"
 PRODUCTION_DIR = "production"
 SUBFOLDERS = ["HDA", "HOOK", "STACK"]
 
-# === Clone Repo ===
-print(f"📥 Cloning {EXTERNAL_REPO} ...")
+
+print(f"Cloning {EXTERNAL_REPO} ...")
 subprocess.run(["git", "clone", EXTERNAL_REPO, CLONE_DIR], check=True)
 
-# === Zielordner vorbereiten ===
 os.makedirs(PRODUCTION_DIR, exist_ok=True)
 
 for subfolder in SUBFOLDERS:
@@ -20,7 +18,7 @@ for subfolder in SUBFOLDERS:
     src = os.path.join(CLONE_DIR, "production", subfolder)
     dst = os.path.join(PRODUCTION_DIR, subfolder)
     if os.path.exists(src):
-        print(f"📁 Copying {subfolder} → {dst}")
+        print(f"Copying {subfolder} → {dst}")
         os.makedirs(dst, exist_ok=True)
         # Inhalte kopieren
         for item in os.listdir(src):
@@ -31,10 +29,10 @@ for subfolder in SUBFOLDERS:
             else:
                 shutil.copy2(s, d)
     else:
-        print(f"⚠️  Skipping {subfolder}: Not found in cloned repo.")
+        print(f"kipping {subfolder}: Not found in cloned repo.")
 
 # === Clone-Repo entfernen ===
-print("🧹 Cleaning up temporary clone")
+print("Cleaning up temporary clone")
 shutil.rmtree(CLONE_DIR)
 
-print("✅ Done.")
+print("Done.")
