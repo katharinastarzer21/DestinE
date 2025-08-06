@@ -102,5 +102,5 @@ jobs:
           git config user.email "github-actions@github.com"
           git add production/ galleries/ index.md myst.yml
           git commit -m "🔁 Update site content after issue integration" || echo "No changes to commit"
-          git push origin test
+          git push origin main
 

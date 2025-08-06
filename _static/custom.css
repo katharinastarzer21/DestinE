@@ -116,20 +116,18 @@ footer.footer {
   line-height: 100px;
   text-align: center;
   margin: 2px;
-  display: none; /* Hidden by default */
+  display: none; 
 }
 
-/* The "show" class is added to the filtered elements */
 .show {
   display: block;
 }
 
-/* Style the buttons */
 .btn {
   display: flex;
   flex-wrap: wrap;
   padding: 12px 20px;
-  gap: 14px 20px; /* vertikal | horizontal Abstand zwischen Buttons */
+  gap: 14px 20px; 
   margin: 36px 0;  
   font-size: 15px;
   font-weight: 500;
@@ -143,12 +141,10 @@ footer.footer {
   box-shadow: 1px 1px 4px #e0eaf5;
 }
 
-/* Add a light grey background on mouse-over */
 .btn:hover {
   background-color: #ddd;
 }
 
-/* Add a dark background to the active button */
 .btn.active {
   background-color: #666;
   color: white;
