@@ -151,7 +151,12 @@ footer.footer {
   background-color: #666;
   color: white;
 }
-
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px; /* vertikal | horizontal Abstand zwischen Buttons */
+  margin: 36px 0;  /* ⬆️⬇️ großer Abstand VOR und NACH dem Block */
+}
 
 } 
 /* article h1:first-of-type {

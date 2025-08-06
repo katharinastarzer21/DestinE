@@ -33,6 +33,8 @@ Further information available in DestinE Data Lake documentation: https://destin
 ## Notebook Filter
 
 
+<div class="button-group">
+
 {button}`Stack <galleries/STACK.md>`
 {button}`HDA <galleries/HDA.md>`
 {button}`HOOK <galleries/HOOK.md>`
@@ -67,3 +69,4 @@ Further information available in DestinE Data Lake documentation: https://destin
 {button}`Thresholding Techniques <galleries_by_tag/tag-thresholding-techniques.md>`
 {button}`Token <galleries_by_tag/tag-token.md>`
 {button}`Workflow <galleries_by_tag/tag-workflow.md>`
+</div>
