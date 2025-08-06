@@ -32,12 +32,11 @@ Further information available in DestinE Data Lake documentation: https://destin
 
 ## Notebook Filter
 
+<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1em;">
 
 {button}`Stack <galleries/STACK.md>`
 {button}`HDA <galleries/HDA.md>`
 {button}`HOOK <galleries/HOOK.md>`
-
-
 {button}`Access Token <galleries_by_tag/tag-access-token.md>`
 {button}`Authentication <galleries_by_tag/tag-authentication.md>`
 {button}`Authentification <galleries_by_tag/tag-authentification.md>`
@@ -69,3 +68,4 @@ Further information available in DestinE Data Lake documentation: https://destin
 {button}`Thresholding Techniques <galleries_by_tag/tag-thresholding-techniques.md>`
 {button}`Token <galleries_by_tag/tag-token.md>`
 {button}`Workflow <galleries_by_tag/tag-workflow.md>`
+</div>
