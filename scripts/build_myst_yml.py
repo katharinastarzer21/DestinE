@@ -2,7 +2,6 @@ import yaml
 import os
 
 if os.path.exists("myst.yml"):
-    print("🗑️  Vorhandenes myst.yml wird gelöscht ...")
     os.remove("myst.yml")
 
 root = "production"

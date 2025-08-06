@@ -27,6 +27,14 @@ def extract_yaml_from_notebook(notebook_path):
             break
     return None
 
+def wrap_gallery_cards(cards_html):
+    return f'''
+<div style="display: flex; flex-direction: column; gap: 20px; max-width: 800px;">
+{chr(10).join(cards_html)}
+</div>
+'''.strip()
+
+
 def generate_html_card(meta, notebook_path):
     title = meta.get("title", "Untitled")
     subtitle = meta.get("subtitle") or "no description"

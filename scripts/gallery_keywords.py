@@ -24,6 +24,14 @@ def extract_yaml_from_notebook(notebook_path):
             break
     return None
 
+def wrap_gallery_cards(cards_html):
+    return f'''
+<div style="display: flex; flex-direction: column; gap: 20px; max-width: 800px;">
+{chr(10).join(cards_html)}
+</div>
+'''.strip()
+
+
 def generate_html_card(meta, notebook_path):
     title = meta.get("title", "Untitled")
     subtitle = meta.get("subtitle") or "no description"
@@ -67,9 +75,12 @@ for dirpath, _, filenames in os.walk(PRODUCTION_ROOT):
 for tag, notebooks in tag_to_notebooks.items():
     safe_tag = tag.lower().replace(" ", "-")
     tag_md_path = os.path.join(GALLERY_DIR, f"tag-{safe_tag}.md")
+    
+    cards = [generate_html_card(meta, notebook_path) for notebook_path, meta in notebooks]
+    wrapped_html = wrap_gallery_cards(cards)
+    
     with open(tag_md_path, "w", encoding="utf-8") as f:
         f.write(f"# Notebooks tagged with `{tag}`\n\n")
-        for notebook_path, meta in notebooks:
-            html = generate_html_card(meta, notebook_path)
-            f.write(html + "\n\n")
+        f.write(wrapped_html + "\n")
+    
     print(f"✅ Created {tag_md_path} with {len(notebooks)} notebooks.")
