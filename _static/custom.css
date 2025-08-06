@@ -150,6 +150,27 @@ footer.footer {
   color: white;
 }
 
+
+.launch-button {
+  background-color: #0073E6;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.launch-button:hover {
+  background-color: #005bb5;
+}
+
+
 } 
 /* article h1:first-of-type {
   display: none;
