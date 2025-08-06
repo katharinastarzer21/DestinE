@@ -12,38 +12,39 @@ tag_files = sorted([
     if f.endswith(".md") and f.startswith("tag-")
 ])
 
-
-buttons = []
-for fname in tag_files:
-    tag = fname.replace("tag-", "").replace(".md", "").replace("-", " ").title()
-    buttons.append(f"{button_prefix}{tag} <{tag_gallery_dir}/{fname}>{button_suffix}")
-
-
 with open(index_path, "r", encoding="utf-8") as f:
     lines = f.readlines()
 
-
-new_lines = []
-inside_button_section = False
+existing_buttons = set()
 for line in lines:
-    if line.strip().startswith(start_marker):
+    if line.strip().startswith(button_prefix):
+        content = line.strip()[len(button_prefix):-len(button_suffix)]
+        if "<" in content and ">" in content:
+            target = content.split("<")[1].split(">")[0].strip()
+            existing_buttons.add(target)
+
+
+new_buttons = []
+for fname in tag_files:
+    path = f"{tag_gallery_dir}/{fname}"
+    if path not in existing_buttons:
+        tag = fname.replace("tag-", "").replace(".md", "").replace("-", " ").title()
+        new_buttons.append(f"{button_prefix}{tag} <{path}>{button_suffix}\n")
+
+if new_buttons:
+    new_lines = []
+    inside_filter_section = False
+    for line in lines:
         new_lines.append(line)
-        inside_button_section = True
-        continue
+        if line.strip().startswith(start_marker):
+            inside_filter_section = True
+    if inside_filter_section:
+        new_lines.append("\n")
+        new_lines.extend(new_buttons)
 
-    if inside_button_section:
-        if not line.strip().startswith("{button}`"):
-            inside_button_section = False
-            new_lines.append("\n")
-        else:
-            continue
+    with open(index_path, "w", encoding="utf-8") as f:
+        f.writelines(new_lines)
 
-    if not inside_button_section:
-        new_lines.append(line)
-
-new_lines.append("\n")
-new_lines.extend(button + "\n" for button in buttons)
-
-with open(index_path, "w", encoding="utf-8") as f:
-    f.writelines(new_lines)
-
+    print(f"{len(new_buttons)} new buttons added.")
+else:
+    print("No new Keywords")
