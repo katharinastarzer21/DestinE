@@ -46,6 +46,9 @@ jobs:
       - name: Generate keywords markdown files
         run: python scripts/gallery_keywords.py
 
+      - name: Generate Buttons in index file
+        run: python scripts/indexbutton.py
+
       - name: Generate myst.yml and TOC
         run: python scripts/build_myst_yml.py
 
