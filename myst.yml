@@ -70,7 +70,7 @@ project:
   - file: galleries_by_tag/tag-storage.md
   - file: galleries_by_tag/tag-thresholding-techniques.md
   - file: galleries_by_tag/tag-token.md
-  - file: galleries_by_tag/tag-workflow.md
+  - hidden: galleries_by_tag/tag-workflow.md
 site:
   template: book-theme
   options:
