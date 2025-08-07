@@ -1,3 +1,8 @@
+---
+site:
+  options:
+    hide_outline: true
+---
 # DestinE Data Lake Gallery
 
 Welcome to the **Destination Earth Data Lake Gallery**! This page provides curated access to interactive Jupyter Notebooks that demonstrate how to work with the various services of the DestinE Data Lake.
