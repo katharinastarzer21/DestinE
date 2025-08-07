@@ -154,7 +154,7 @@ a.button {
   border-radius: 8px;
   border: 1px solid #cddff1;
   background-color: #f9fbfe;
-  color: #1db844;
+  color: #1db844 !important;
   font-size: 15px;
   font-weight: 500;
   text-decoration: none;
