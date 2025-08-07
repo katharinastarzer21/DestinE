@@ -1,18 +1,18 @@
-# 🌍 Welcome to the DestinE Data Lake Gallery
+# DestinE Data Lake Gallery
 
 Welcome to the **Destination Earth Data Lake Gallery**! This page provides curated access to interactive Jupyter Notebooks that demonstrate how to work with the various services of the DestinE Data Lake.
 
-Explore, learn, and contribute to real-world Earth science workflows using the **HDA**, **STACK**, and **HOOK** services.
+Explore, learn, and contribute to real-world Earth science workflows!
 
-## 🚀 Getting Started
+## Services Overview
 
-To get started with one of the services:
+[Harmonised Data Access (HDA)](https://hda.data.destination-earth.eu/stac)  – Jupyter notebook examples + Python tools
 
-``{button}`HDA <galleries/HDA.md>`
-``{button}`STACK <galleries/STACK.md>`
-\`\`\`{button}`HOOK <galleries/HOOK.md>`
+[STACK service]( https://s3.central.data.destination-earth.eu/swift/v1/dedl_datacube) – Use DASK for near-data processing
 
-## 🧩 Filter Notebooks by Tags
+[HOOK service](https://odp.data.destination-earth.eu/odata/v1/) – Create and manage workflows via HOOK
+
+## Filter Notebooks by Tags
 
 Use the filter buttons below to explore notebooks by topic or functionality:
 
@@ -52,7 +52,7 @@ Use the filter buttons below to explore notebooks by topic or functionality:
 {button}`Workflow <galleries_by_tag/tag-workflow.md>`
 ---
 
-## 🧪 How to Use Notebooks on the DestinE Platform
+## How to Use Notebooks on the DestinE Platform
 
 If you're using the DestinE JupyterLab environment, please follow these steps:
 
@@ -74,16 +74,16 @@ Then select `my_env` from the Jupyter kernel menu.
 
 ---
 
-## 💬 Want to Contribute?
+## Want to Contribute?
 
-Do you have a useful notebook to share? [Submit your repository](https://github.com/destination-earth/DestinE/issues/new?template=cookbook_submission.md) and it will be reviewed and added to the gallery!
+Do you have a useful notebooks to share? [Submit your repository](https://github.com/destination-earth/DestinE/issues/new?template=cookbook_submission.md) and it will be reviewed and added to the gallery!
 
 ---
 
-## 📚 More Information
+## More Information
 
-* 📄 [DestinE Documentation](https://destine-data-lake-docs.data.destination-earth.eu/en/latest/index.html)
-* 📦 [DestinE Data Portfolio](https://hda.data.destination-earth.eu/ui/catalog)
-* 🔐 [Access the API (Swagger)](https://hda.data.destination-earth.eu/docs/)
+* [DestinE Documentation](https://destine-data-lake-docs.data.destination-earth.eu/en/latest/index.html)
+* [DestinE Data Portfolio](https://hda.data.destination-earth.eu/ui/catalog)
+* [Access the API (Swagger)](https://hda.data.destination-earth.eu/docs/)
 
 
