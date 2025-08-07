@@ -147,32 +147,27 @@ footer.footer {
   display: block;
 }
 
-.button {
-  display: flex;
-  flex-wrap: wrap;
+a.button {
+  display: inline-block;
   padding: 12px 20px;
-  gap: 14px 20px; 
-  margin: 36px 0;  
+  margin: 10px;
+  border-radius: 8px;
+  border: 1px solid #cddff1;
+  background-color: #f9fbfe;
+  color: #1db844;
   font-size: 15px;
   font-weight: 500;
-  border: 1px solid #cddff1;
-  border-radius: 8px;
-  background-color: #f9fbfe;
-  color: #2ab81d;
-  cursor: pointer;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
   box-shadow: 1px 1px 4px #e0eaf5;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
-.button:hover {
-  background-color: #ddd;
+a.button:hover {
+  background-color: #e6f0fa;
+  color: #003078;
 }
 
-.button.active {
-  background-color: #666;
-  color: white;
-}
 
 
 :root {
