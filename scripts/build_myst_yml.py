@@ -53,6 +53,7 @@ config = {
             "favicon": "img/EUMETSAT-icon.ico",
             "logo": "img/logo_bar.png",
             "hide_footer_links": True,
+            "hide_outline": True
         },
         "parts": {
             "footer": "footer.md"
