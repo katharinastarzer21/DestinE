@@ -7,18 +7,13 @@ if os.path.exists("myst.yml"):
 PRODUCTION_ROOT = "production"
 main_sections = [d for d in os.listdir(PRODUCTION_ROOT) if os.path.isdir(os.path.join(PRODUCTION_ROOT, d))]
 
-# Navigation list – not toc!
-nav = [
-    {
-        "file": "index.md",
-        "hide_outline": True
-    },
-    {
-        "file": "contribute.md"
-    }
-]
+# ✔ Korrekt geschriebener Index-Eintrag mit hide_sidebar + children
+toc = [{
+    "file": "index.md",
+    "file": "contribute.md"
+}]
 
-# Add galleries
+# ✔ Erzeuge TOC-Einträge für jede Hauptsektion (STACK, HDA, HOOK, ...)
 for section in main_sections:
     entry = {
         "title": section,
@@ -26,7 +21,7 @@ for section in main_sections:
         "children": []
     }
 
-    section_path = os.path.join(PRODUCTION_ROOT, section)
+    section_path = os.path.join(PRODUCTION_ROOT , section)
     for dirpath, _, filenames in os.walk(section_path):
         for f in sorted(filenames):
             if f.endswith(".ipynb"):
@@ -34,22 +29,23 @@ for section in main_sections:
                 rel_path = os.path.relpath(full_path, ".").replace("\\", "/")
                 entry["children"].append({"file": rel_path})
 
-    nav.append(entry)
+    toc.append(entry)
 
-# Add tag galleries
+# ✔ Füge alle Tag-Seiten als separate TOC-Einträge hinzu
 tag_gallery_dir = "galleries_by_tag"
 if os.path.exists(tag_gallery_dir):
     for fname in sorted(os.listdir(tag_gallery_dir)):
         if fname.endswith(".md"):
-            nav.append({
-                "file": f"{tag_gallery_dir}/{fname}"
+            toc.append({
+                "file": f"{tag_gallery_dir}/{fname}",
             })
 
-# Final config
+# ✔ Konfigurationsblock mit book-theme, Logo, CSS etc.
 config = {
     "version": 1,
     "project": {
-        "title": "DEDL Notebook Gallery"
+        "title": "DEDL Notebook Gallery",
+        "toc": toc
     },
     "site": {
         "template": "book-theme",
@@ -57,16 +53,16 @@ config = {
             "style": "_static/custom.css",
             "favicon": "img/EUMETSAT-icon.ico",
             "logo": "img/logo_bar.png",
-            "hide_footer_links": True
+            "hide_footer_links": True,
         },
         "parts": {
             "footer": "footer.md"
-        },
-        "nav": nav
+        }
     }
 }
 
+# ✔ Speichere myst.yml
 with open("myst.yml", "w", encoding="utf-8") as f:
     yaml.dump(config, f, sort_keys=False)
 
-print("✅ myst.yml erfolgreich erstellt mit gültiger Navigation.")
+print("✅ myst.yml erfolgreich erstellt mit index, hide_sidebar und contribute.md.")

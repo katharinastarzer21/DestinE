@@ -1,18 +1,7 @@
 version: 1
 project:
   title: DEDL Notebook Gallery
-site:
-  template: book-theme
-  options:
-    style: _static/custom.css
-    favicon: img/EUMETSAT-icon.ico
-    logo: img/logo_bar.png
-    hide_footer_links: true
-  parts:
-    footer: footer.md
-  nav:
-  - file: index.md
-    hide_outline: true
+  toc:
   - file: contribute.md
   - title: HOOK
     file: galleries/HOOK.md
@@ -83,3 +72,12 @@ site:
   - file: galleries_by_tag/tag-thresholding-techniques.md
   - file: galleries_by_tag/tag-token.md
   - file: galleries_by_tag/tag-workflow.md
+site:
+  template: book-theme
+  options:
+    style: _static/custom.css
+    favicon: img/EUMETSAT-icon.ico
+    logo: img/logo_bar.png
+    hide_footer_links: true
+  parts:
+    footer: footer.md
