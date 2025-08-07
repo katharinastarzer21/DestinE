@@ -149,18 +149,18 @@ footer.footer {
 
 a.button {
   display: inline-block;
-  padding: 10px 18px;
-  margin: 4px;
-  border-radius: 8px;
+  padding: 8px 16px;
+  margin: 6px;
+  border-radius: 6px;
   border: 1px solid #cddff1;
-  background-color: #f0f4f9;
+  background-color: #f9fbfe;
   color: #1d70b8;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   text-decoration: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 1px 1px 3px #e0eaf5;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 a.button:hover {
