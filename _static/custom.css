@@ -2,6 +2,10 @@ button.theme-switch-button {
     display: none !important;
 }
 
+button.mode-switch-button {
+    display: none !important;
+}
+
 
 @font-face {
   font-family: 'Greycliff CF Bold';
@@ -161,7 +165,7 @@ footer.footer {
 }
 
 :root {
-  --custom-header-height: 100px;
+  --custom-header-height: 90px;
   color-scheme: light;
 }
 
@@ -176,12 +180,6 @@ div[class*="h-[60px]"] {
 img.h-9 {
   height: calc(var(--custom-header-height) * 0.6) !important;
 }
-
-.theme-toggle,
-[data-md-component="theme"] {
-  display: none !important;
-}
-
 
 
 /* article h1:first-of-type {
