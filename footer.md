@@ -22,7 +22,7 @@
     <a href="https://destination-earth.eu/news/" style="color: #DFEDFF; text-decoration: none;">News</a> |
     <a href="https://destination-earth.eu/event/" style="color: #DFEDFF; text-decoration: none;">Events</a> |
     <a href="https://destination-earth.eu/privacy-policy/" style="color: #DFEDFF; text-decoration: none;">Privacy policy</a> |
-    <a href="https://destination-earth.eu/terms-of-use/" style="color: #DFEDFF; text-decoration: none;">Terms of use</a> |
+    <a href="https://destination-earth.eu/terms-of-use/" style="color: #DFEDFF; text-decoration: none;">Terms of use</a> 
   </div>
 </div>
 

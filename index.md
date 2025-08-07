@@ -32,6 +32,7 @@ TEST2
 
 ## Notebook Filter
 
+<div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; padding: 10px;">
 
 {button}`Stack <galleries/STACK.md>`
 {button}`HDA <galleries/HDA.md>`
