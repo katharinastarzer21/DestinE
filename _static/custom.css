@@ -24,6 +24,10 @@ button.theme{
   src: url('https://koenifra.github.io/GreycliffCF//GreycliffCF-Regular.woff2') format('woff2');
 }
 
+button[aria-haspopup="dialog"] {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
 
 
 h1{
