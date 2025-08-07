@@ -9,8 +9,7 @@ main_sections = [d for d in os.listdir(PRODUCTION_ROOT) if os.path.isdir(os.path
 
 # ✔ Korrekt geschriebener Index-Eintrag mit hide_sidebar + children
 toc = [{
-    "file": "index.md",
-    "file": "contribute.md"
+    "file": "index.md"
 }]
 
 # ✔ Erzeuge TOC-Einträge für jede Hauptsektion (STACK, HDA, HOOK, ...)
