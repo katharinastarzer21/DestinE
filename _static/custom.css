@@ -158,7 +158,7 @@ footer.footer {
   border: 1px solid #cddff1;
   border-radius: 8px;
   background-color: #f9fbfe;
-  color: #1d70b8;
+  color: #2ab81d;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
@@ -173,24 +173,6 @@ footer.footer {
   background-color: #666;
   color: white;
 }
-
-.md-button {
-  padding: 10px 18px;
-  margin: 8px;
-  border-radius: 8px;
-  background-color: #f0f4fa;
-  color: #32b81d;
-  border: 1px solid #cddff1;
-  text-decoration: none;
-  transition: 0.2s ease-in-out;
-  box-shadow: 1px 1px 3px #e2e8f0;
-}
-
-.md-button:hover {
-  background-color: #dbe9f6;
-  color: #003078;
-}
-
 
 :root {
   --custom-header-height: 85px;
