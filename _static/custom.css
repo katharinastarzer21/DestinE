@@ -147,7 +147,7 @@ footer.footer {
   display: block;
 }
 
-.btn {
+.button {
   display: flex;
   flex-wrap: wrap;
   padding: 12px 20px;
@@ -165,35 +165,15 @@ footer.footer {
   box-shadow: 1px 1px 4px #e0eaf5;
 }
 
-.btn:hover {
+.button:hover {
   background-color: #ddd;
 }
 
-.btn.active {
+.button.active {
   background-color: #666;
   color: white;
 }
 
-a[role="button"] {
-  display: inline-block;
-  padding: 12px 20px;
-  margin: 8px;
-  border-radius: 8px;
-  border: 1px solid #cddff1;
-  background-color: #f9fbfe;
-  color: #b81d72;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  box-shadow: 1px 1px 4px #e0eaf5;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-a[role="button"]:hover {
-  background-color: #e6f0fa;
-  color: #003078;
-}
 
 :root {
   --custom-header-height: 85px;
