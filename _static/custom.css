@@ -6,6 +6,10 @@ button.theme{
     display: none !important;
 }
 
+.md-header__inner .md-search {
+  margin-left: 20px !important; 
+}
+
 
 @font-face {
   font-family: 'Greycliff CF Bold';
@@ -165,7 +169,7 @@ footer.footer {
 }
 
 :root {
-  --custom-header-height: 90px;
+  --custom-header-height: 85px;
   color-scheme: light;
 }
 
