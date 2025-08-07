@@ -2,7 +2,7 @@ version: 1
 project:
   title: DEDL Notebook Gallery
   toc:
-  - file: contribute.md
+  - file: index.md
   - title: HOOK
     file: galleries/HOOK.md
     children:
