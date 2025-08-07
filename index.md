@@ -32,9 +32,6 @@ TEST2
 
 ## Notebook Filter
 
-<button class="btn" onclick="window.location.href='galleries/STACK.md'">Stack</button>
-<button class="btn" onclick="window.location.href='galleries/HDA.md'">HDA</button>
-
 {button}`Stack <galleries/STACK.md>`
 {button}`HDA <galleries/HDA.md>`
 {button}`HOOK <galleries/HOOK.md>`
