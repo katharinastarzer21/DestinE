@@ -2,7 +2,7 @@
 <footer style="
   background-color: #1B1F3B; 
   color: white;
-  padding: 1.5rem 2.5rem;
+  padding: 1rem 1.5rem;
   font-family: 'Greycliff CF', sans-serif;
   font-size: 0.75em;
   display: flex;
@@ -19,13 +19,10 @@
 </div>
   <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
     <a href="https://destination-earth.eu/destination-earth/" style="color: #DFEDFF; text-decoration: none;">About us</a> |
-    <a href="#" style="color: #DFEDFF; text-decoration: none;">News</a> |
-    <a href="#" style="color: #DFEDFF; text-decoration: none;">Events</a> |
-    <a href="#" style="color: #DFEDFF; text-decoration: none;">Legal notice</a> |
-    <a href="#" style="color: #DFEDFF; text-decoration: none;">Privacy policy</a> |
-    <a href="#" style="color: #DFEDFF; text-decoration: none;">Cookie policy</a> |
-    <a href="#" style="color: #DFEDFF; text-decoration: none;">Data status</a> |
-    <a href="#" style="color: #DFEDFF; text-decoration: none;">System status</a>
+    <a href="https://destination-earth.eu/news/" style="color: #DFEDFF; text-decoration: none;">News</a> |
+    <a href="https://destination-earth.eu/event/" style="color: #DFEDFF; text-decoration: none;">Events</a> |
+    <a href="https://destination-earth.eu/privacy-policy/" style="color: #DFEDFF; text-decoration: none;">Privacy policy</a> |
+    <a href="https://destination-earth.eu/terms-of-use/" style="color: #DFEDFF; text-decoration: none;">Terms of use</a> |
   </div>
 </div>
 
