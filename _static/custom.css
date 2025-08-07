@@ -7,7 +7,7 @@ button.theme{
 }
 
 .md-header__inner .md-search {
-  margin-left: 20px !important; 
+  margin-right: 1rem !important;  /* Standard sind oft ~2rem oder mehr */
 }
 
 
