@@ -79,5 +79,6 @@ site:
     favicon: img/EUMETSAT-icon.ico
     logo: img/logo_bar.png
     hide_footer_links: true
+    hide_outline: true
   parts:
     footer: footer.md
