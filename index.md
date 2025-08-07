@@ -1,36 +1,20 @@
-# DEDL Notebook Gallery
+# 🌍 Welcome to the DestinE Data Lake Gallery
 
-<!--
-```{card} Card title
-:header: The _Header_
-:footer: Footer
-Card content
+Welcome to the **Destination Earth Data Lake Gallery**! This page provides curated access to interactive Jupyter Notebooks that demonstrate how to work with the various services of the DestinE Data Lake.
 
-![EUMETSAT Logo](img/EUMETSAT-logo.png)
-hallo
-```
--->
+Explore, learn, and contribute to real-world Earth science workflows using the **HDA**, **STACK**, and **HOOK** services.
 
-<img style="float:left; width:5%" src="./img/EUMETSAT-icon.png"/>  
-<br>
+## 🚀 Getting Started
 
-Destination Earth Data Lake Laboratory, which contains additional information for working with DestinE Data Lake services:
-- [Harmonised Data Access](https://github.com/destination-earth/DestinE-DataLake-Lab/tree/main/HDA) (Juypter notebooks examples + Python Tools)
-- [STACK service](https://github.com/destination-earth/DestinE-DataLake-Lab/tree/main/STACK) (Juypter Notebook examples on how to use DASK for near data processing)
-- [HOOK service](https://github.com/destination-earth/DestinE-DataLake-Lab/tree/main/HOOK) (Juypter Notebook examples on how to use HOOK for workflows)
+To get started with one of the services:
 
+``{button}`HDA <galleries/HDA.md>`
+``{button}`STACK <galleries/STACK.md>`
+\`\`\`{button}`HOOK <galleries/HOOK.md>`
 
-Further information available in DestinE Data Lake documentation: https://destine-data-lake-docs.data.destination-earth.eu/en/latest/index.html
+## 🧩 Filter Notebooks by Tags
 
-
->**Additional ressources:**
->- DestinE Data Portfolio: https://hda.data.destination-earth.eu/ui/catalog
->- DataLake Priority services: https://hda.data.destination-earth.eu/ui/services 
->- HDA SWAGGER UI: https://hda.data.destination-earth.eu/docs/
-
-TEST2
-
-## Notebook Filter
+Use the filter buttons below to explore notebooks by topic or functionality:
 
 {button}`Stack <galleries/STACK.md>`
 {button}`HDA <galleries/HDA.md>`
@@ -66,3 +50,40 @@ TEST2
 {button}`Thresholding Techniques <galleries_by_tag/tag-thresholding-techniques.md>`
 {button}`Token <galleries_by_tag/tag-token.md>`
 {button}`Workflow <galleries_by_tag/tag-workflow.md>`
+---
+
+## 🧪 How to Use Notebooks on the DestinE Platform
+
+If you're using the DestinE JupyterLab environment, please follow these steps:
+
+```bash
+# 1. Create a virtual environment
+python -m venv /home/jovyan/my_env
+
+# 2. Activate the environment
+source /home/jovyan/my_env/bin/activate
+
+# 3. Install dependencies
+pip install -r /home/jovyan/datalake-lab/requirements.txt
+
+# 4. Install the kernel
+python -m ipykernel install --name my_env --user
+```
+
+Then select `my_env` from the Jupyter kernel menu.
+
+---
+
+## 💬 Want to Contribute?
+
+Do you have a useful notebook to share? [Submit your repository](https://github.com/destination-earth/DestinE/issues/new?template=cookbook_submission.md) and it will be reviewed and added to the gallery!
+
+---
+
+## 📚 More Information
+
+* 📄 [DestinE Documentation](https://destine-data-lake-docs.data.destination-earth.eu/en/latest/index.html)
+* 📦 [DestinE Data Portfolio](https://hda.data.destination-earth.eu/ui/catalog)
+* 🔐 [Access the API (Swagger)](https://hda.data.destination-earth.eu/docs/)
+
+
