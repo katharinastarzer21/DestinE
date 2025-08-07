@@ -1,7 +1,5 @@
 ---
-site:
-  options:
-    hide_outline: true
+hide_outline: true
 ---
 # DestinE Data Lake Gallery
 
