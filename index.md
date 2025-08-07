@@ -4,6 +4,8 @@ Welcome to the **Destination Earth Data Lake Gallery**! This page provides curat
 
 Explore, learn, and contribute to real-world Earth science workflows!
 
+---
+
 ## Services Overview
 
 [Harmonised Data Access (HDA)](https://hda.data.destination-earth.eu/stac)  – Jupyter notebook examples + Python tools
@@ -11,6 +13,8 @@ Explore, learn, and contribute to real-world Earth science workflows!
 [STACK service]( https://s3.central.data.destination-earth.eu/swift/v1/dedl_datacube) – Use DASK for near-data processing
 
 [HOOK service](https://odp.data.destination-earth.eu/odata/v1/) – Create and manage workflows via HOOK
+
+---
 
 ## Filter Notebooks by Tags
 
