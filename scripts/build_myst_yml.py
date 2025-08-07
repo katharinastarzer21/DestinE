@@ -7,7 +7,13 @@ if os.path.exists("myst.yml"):
 PRODUCTION_ROOT = "production"
 main_sections = [d for d in os.listdir(PRODUCTION_ROOT) if os.path.isdir(os.path.join(PRODUCTION_ROOT, d))]
 
-toc = [{"file": "index.md"}]  
+toc = [{
+    "file": "index.md",
+    "hide_outline": True,
+    "children": [
+        {"file": "contribute.md"}
+    ]
+}]
 
 for section in main_sections:
     entry = {
