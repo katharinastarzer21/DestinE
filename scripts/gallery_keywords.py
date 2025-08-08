@@ -30,7 +30,7 @@ def extract_yaml_from_notebook(notebook_path):
     return None
 
 def wrap_gallery_cards(cards_html):
-    return f'''
+    return f''' ### Filter Notebooks by Tags
 <div style="display: flex; flex-direction: column; gap: 20px; max-width: 800px;">
 {chr(10).join(cards_html)}
 </div>
