@@ -15,7 +15,7 @@ print(body)
 # Parse issue fields
 fields = {
     "Repository URL": "",
-    "Root Path Name": "",
+    "Cookbook Title in capital letters": "",
 }
 
 lines = body.splitlines()
@@ -30,11 +30,11 @@ for line in lines:
         current_label = None
 
 repo_url = fields["Repository URL"]
-root_path = fields["Root Path Name"]
+root_path = fields["Cookbook Title in capital letters"]
 
 print(f"🔍 Extracted Fields:")
 print(f"→ Repo URL     : {repo_url}")
-print(f"→ Root Path    : {root_path}")
+print(f"→ Cookbook Title in capital letters    : {root_path}")
 
 # Abort if root path is missing
 if not root_path:
