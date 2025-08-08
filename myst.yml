@@ -11,6 +11,30 @@ project:
     - file: production/HOOK/DEDL-Hook_access.ipynb
     - file: production/HOOK/DEDL-Hook_data_harvest.ipynb
     - file: production/HOOK/Tutorial.ipynb
+  - title: HDA
+    file: galleries/HDA.md
+    children:
+    - file: production/HDA/PySTAC/HDA-PyStac-Client.ipynb
+    - file: production/HDA/REST/DEDL-HDA-EO.ESA.DAT.SENTINEL-1.L1_GRD.ipynb
+    - file: production/HDA/REST/DEDL-HDA-EO.ESA.DAT.SENTINEL-2.MSI.L2A.ipynb
+    - file: production/HDA/REST/HDA-REST-Queryables.ipynb
+    - file: production/HDA/REST/HDA-REST-full-version.ipynb
+    - file: production/HDA/REST/HDA-REST-quick-start.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/ClimateDT-ParameterPlotter.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE-Series.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES-Series.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-ParameterPlotter.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-dataAvailability.ipynb
+    - file: production/HDA/CDS_data/DEDL-HDA-EO.ECMWF.DAT.REANALYSIS_ERA5_SINGLE_LEVELS.ipynb
+    - file: production/HDA/Fresh_Data_Pool/DEDL-HDA-EO.ESA.DAT.SENTINEL-1.L1_GRD.ipynb
+    - file: production/HDA/Fresh_Data_Pool/DEDL-HDA-EO.ESA.DAT.SENTINEL-2.MSI.L2A.ipynb
+    - file: production/HDA/EODAG/HDA-EODAG-full-version.ipynb
+    - file: production/HDA/EODAG/HDA-EODAG-quick-start.ipynb
+    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.METOP.AVHRRL1.ipynb
+    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.MSG-1.5.ipynb
+    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.SENTINEL-3.OL_1_ERR___.ipynb
   - title: STACK
     file: galleries/STACK.md
     children:
@@ -19,30 +43,6 @@ project:
     - file: production/STACK/ExtremeDT-DataCube.ipynb
     - file: production/STACK/STACK-Dask-101.ipynb
     - file: production/STACK/STACK-Python-Client-Dask.ipynb
-  - title: HDA
-    file: galleries/HDA.md
-    children:
-    - file: production/HDA/Fresh_Data_Pool/DEDL-HDA-EO.ESA.DAT.SENTINEL-1.L1_GRD.ipynb
-    - file: production/HDA/Fresh_Data_Pool/DEDL-HDA-EO.ESA.DAT.SENTINEL-2.MSI.L2A.ipynb
-    - file: production/HDA/CDS_data/DEDL-HDA-EO.ECMWF.DAT.REANALYSIS_ERA5_SINGLE_LEVELS.ipynb
-    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.METOP.AVHRRL1.ipynb
-    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.MSG-1.5.ipynb
-    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.SENTINEL-3.OL_1_ERR___.ipynb
-    - file: production/HDA/DestinE_Digital_Twins/ClimateDT-ParameterPlotter.ipynb
-    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE-Series.ipynb
-    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE.ipynb
-    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES-Series.ipynb
-    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES.ipynb
-    - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-ParameterPlotter.ipynb
-    - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-dataAvailability.ipynb
-    - file: production/HDA/PySTAC/HDA-PyStac-Client.ipynb
-    - file: production/HDA/EODAG/HDA-EODAG-full-version.ipynb
-    - file: production/HDA/EODAG/HDA-EODAG-quick-start.ipynb
-    - file: production/HDA/REST/DEDL-HDA-EO.ESA.DAT.SENTINEL-1.L1_GRD.ipynb
-    - file: production/HDA/REST/DEDL-HDA-EO.ESA.DAT.SENTINEL-2.MSI.L2A.ipynb
-    - file: production/HDA/REST/HDA-REST-Queryables.ipynb
-    - file: production/HDA/REST/HDA-REST-full-version.ipynb
-    - file: production/HDA/REST/HDA-REST-quick-start.ipynb
   - file: galleries_by_tag/tag-access-token.md
   - file: galleries_by_tag/tag-authentication.md
   - file: galleries_by_tag/tag-authentification.md
