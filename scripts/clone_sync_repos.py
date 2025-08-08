@@ -1,11 +1,9 @@
-#!/usr/bin/env python3
 import os
 import shutil
 import subprocess
 import tempfile
 import json
 
-# ---------- Konfiguration ----------
 BASE_REPO = "https://github.com/katharinastarzer21/myst_DEDL_temp.git"
 BASE_CLONE_DIR = "cookbook-gallery" 
 PRODUCTION_DIR = "production"

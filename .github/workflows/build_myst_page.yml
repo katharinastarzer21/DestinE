@@ -1,4 +1,4 @@
-name: MyST Deploy & Cookbook Integration
+name: MyST Deploy
 
 on:
   push:

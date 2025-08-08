@@ -7,7 +7,6 @@ if os.path.exists("myst.yml"):
 PRODUCTION_ROOT = "production"
 main_sections = [d for d in os.listdir(PRODUCTION_ROOT) if os.path.isdir(os.path.join(PRODUCTION_ROOT, d))]
 
-# ✔ Korrekt geschriebener Index-Eintrag mit hide_sidebar + children
 
 toc = [
     {"file": "index.md"},
@@ -15,7 +14,6 @@ toc = [
      "file": "contribute.md"},
 ]
 
-# ✔ Erzeuge TOC-Einträge für jede Hauptsektion (STACK, HDA, HOOK, ...)
 for section in main_sections:
     entry = {
         "title": section,
@@ -33,7 +31,6 @@ for section in main_sections:
 
     toc.append(entry)
 
-# ✔ Füge alle Tag-Seiten als separate TOC-Einträge hinzu
 tag_gallery_dir = "galleries_by_tag"
 if os.path.exists(tag_gallery_dir):
     for fname in sorted(os.listdir(tag_gallery_dir)):
@@ -42,7 +39,6 @@ if os.path.exists(tag_gallery_dir):
                 "file": f"{tag_gallery_dir}/{fname}",
             })
 
-# ✔ Konfigurationsblock mit book-theme, Logo, CSS etc.
 config = {
     "version": 1,
     "project": {
@@ -64,8 +60,5 @@ config = {
     }
 }
 
-# ✔ Speichere myst.yml
 with open("myst.yml", "w", encoding="utf-8") as f:
     yaml.dump(config, f, sort_keys=False)
-
-print("✅ myst.yml erfolgreich erstellt mit index, hide_sidebar und contribute.md.")

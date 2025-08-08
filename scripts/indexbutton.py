@@ -60,5 +60,3 @@ new_lines = lines[:start_idx] + replacement + lines[end_idx:]
 
 with open(index_path, "w", encoding="utf-8") as f:
     f.writelines(new_lines)
-
-print(f"✅ Replaced button block with {len(new_buttons)} buttons (alphabetical).")
