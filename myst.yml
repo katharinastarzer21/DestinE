@@ -35,11 +35,6 @@ project:
     - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.METOP.AVHRRL1.ipynb
     - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.MSG-1.5.ipynb
     - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.SENTINEL-3.OL_1_ERR___.ipynb
-  - title: TEST
-    file: galleries/TEST.md
-    children:
-    - file: production/TEST/notebooks/template1.ipynb
-    - file: production/TEST/notebooks/template2.ipynb
   - title: STACK
     file: galleries/STACK.md
     children:
@@ -75,7 +70,6 @@ project:
   - file: galleries_by_tag/tag-stac.md
   - file: galleries_by_tag/tag-stack.md
   - file: galleries_by_tag/tag-storage.md
-  - file: galleries_by_tag/tag-template.md
   - file: galleries_by_tag/tag-thresholding-techniques.md
   - file: galleries_by_tag/tag-token.md
   - file: galleries_by_tag/tag-workflow.md
