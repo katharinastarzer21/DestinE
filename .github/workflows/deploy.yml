@@ -53,7 +53,7 @@ jobs:
         run: python scripts/parse_issue.py
 
       - name: Sync base sections and external cookbooks
-        run: python scripts/clone_and_sync.py
+        run: python scripts/clone_sync_repos.py
 
       - name: Generate gallery markdown files
         run: python scripts/generate_gallery_md.py
