@@ -10,6 +10,7 @@ If you’ve developed a Jupyter notebook that works with the **DestinE Data Lake
      ```bash
      git clone https://github.com/your-username/your-new-repo.git
      ```
+   - Or use the 'Use this repository" button.
 
 2. **Add your content**
    - Add your Jupyter notebooks to the `notebooks/` folder.
