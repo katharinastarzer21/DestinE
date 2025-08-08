@@ -12,16 +12,9 @@ body:
     validations:
       required: true
   - type: input
-    id: title
-    attributes:
-      label: "Cookbook Title"
-      placeholder: "My Awesome Cookbook"
-    validations:
-      required: true
-  - type: input
     id: root_path
     attributes:
-      label: "Root Path Name"
+      label: "Cookbook Title in capital letters"
       placeholder: "COOKBOOKNAME"
     validations:
       required: true

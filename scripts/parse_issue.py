@@ -15,7 +15,6 @@ print(body)
 # Parse issue fields
 fields = {
     "Repository URL": "",
-    "Cookbook Title": "",
     "Root Path Name": "",
 }
 
@@ -31,12 +30,10 @@ for line in lines:
         current_label = None
 
 repo_url = fields["Repository URL"]
-title = fields["Cookbook Title"]
 root_path = fields["Root Path Name"]
 
 print(f"🔍 Extracted Fields:")
 print(f"→ Repo URL     : {repo_url}")
-print(f"→ Title        : {title}")
 print(f"→ Root Path    : {root_path}")
 
 # Abort if root path is missing
@@ -48,6 +45,5 @@ if not root_path:
 with open(os.environ['GITHUB_ENV'], 'a') as env_file:
     env_file.write(f"REPO_URL={repo_url}\n")
     env_file.write(f"ROOT_PATH={root_path}\n")
-    env_file.write(f"COOKBOOK_TITLE={title}\n")
 
 print("✅ Environment variables exported for GitHub Actions")

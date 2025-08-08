@@ -55,13 +55,22 @@ jobs:
       - name: Parse GitHub Issue and export env
         run: python scripts/parse_issue.py
 
-      - name: Clone submitted repository into production/<root_path>
+      - name: Clone submitted repository into production/<root_path> and copy images
         run: |
           echo "Cloning $REPO_URL into production/$ROOT_PATH"
           git clone "$REPO_URL" temp_repo
           rm -rf temp_repo/.git
+
+          # Notebooks ins production-Unterverzeichnis kopieren
           mkdir -p "production/$ROOT_PATH"
           cp -r temp_repo/* "production/$ROOT_PATH/"
+
+          # Falls es im Repo einen img-Ordner gibt → ins Haupt-img kopieren
+          if [ -d temp_repo/img ]; then
+            mkdir -p img
+            cp -r temp_repo/img/* img/
+          fi
+
           rm -rf temp_repo
         env:
           REPO_URL: ${{ env.REPO_URL }}

@@ -1,27 +1,8 @@
----
-hide:
-  - toc
----
-
 # DestinE Data Lake Gallery
 
 Welcome to the **Destination Earth Data Lake Gallery**! This page provides curated access to interactive Jupyter Notebooks that demonstrate how to work with the various services of the DestinE Data Lake.
 
-Explore, learn, and contribute to real-world Earth science workflows!
-
----
-
-## Services Overview
-
-[Harmonised Data Access (HDA)](https://hda.data.destination-earth.eu/stac)  – Jupyter notebook examples + Python tools
-
-[STACK service]( https://s3.central.data.destination-earth.eu/swift/v1/dedl_datacube) – Use DASK for near-data processing
-
-[HOOK service](https://odp.data.destination-earth.eu/odata/v1/) – Create and manage workflows via HOOK
-
----
-
-## Filter Notebooks by Tags
+### Filter Notebooks by Tags
 
 Use the filter buttons below to explore notebooks by topic or functionality:
 
@@ -59,6 +40,17 @@ Use the filter buttons below to explore notebooks by topic or functionality:
 {button}`Thresholding Techniques <galleries_by_tag/tag-thresholding-techniques.md>`
 {button}`Token <galleries_by_tag/tag-token.md>`
 {button}`Workflow <galleries_by_tag/tag-workflow.md>`
+
+---
+
+## Services Overview
+
+[Harmonised Data Access (HDA)](https://hda.data.destination-earth.eu/stac)  – Jupyter notebook examples + Python tools
+
+[STACK service]( https://s3.central.data.destination-earth.eu/swift/v1/dedl_datacube) – Use DASK for near-data processing
+
+[HOOK service](https://odp.data.destination-earth.eu/odata/v1/) – Create and manage workflows via HOOK
+
 ---
 
 ## How to Use Notebooks on the DestinE Platform
@@ -85,8 +77,7 @@ Then select `my_env` from the Jupyter kernel menu.
 
 ## Want to Contribute?
 
-Do you have a useful notebooks to share? [Submit your repository](https://github.com/destination-earth/DestinE/issues/new?template=cookbook_submission.md) and it will be reviewed and added to the gallery!
-
+Do you have a useful notebooks to share? Have a look at the [Contributing Guide](contribute.md)!
 ---
 
 ## More Information
