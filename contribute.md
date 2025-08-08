@@ -30,9 +30,8 @@ If you’ve developed a Jupyter notebook that works with the **DestinE Data Lake
 
 3. **Submit your repository**
    - Go to the [DestinE GitHub repository](https://github.com/destination-earth/DestinE).
-   - Open a [new issue](https://github.com/destination-earth/DestinE/issues/new?template=cookbook_submission.md) using the `Cookbook Submission` template.
+   - Open a [new issue](https://github.com/destination-earth/DestinE/issues/new?template=cookbook_submission.md) using the `Add Cookbook Repository` template.
    - Fill in the template with:
-     - Title
      - Repository URL
      - Short Title in capital letters for folder structure
 
