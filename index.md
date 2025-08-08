@@ -4,8 +4,6 @@ Welcome to the **Destination Earth Data Lake Gallery**! This page provides curat
 
 ### Filter Notebooks by Tags
 
-Use the filter buttons below to explore notebooks by topic or functionality:
-
 {button}`Stack <galleries/STACK.md>`
 {button}`HDA <galleries/HDA.md>`
 {button}`HOOK <galleries/HOOK.md>`

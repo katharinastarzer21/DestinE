@@ -2,7 +2,7 @@ import os
 
 index_path = "index.md"
 tag_gallery_dir = "galleries_by_tag"
-start_marker = "## Notebook Filter"
+start_marker = "### Filter Notebooks by Tags"
 button_prefix = "{button}`"
 button_suffix = "`"
 
