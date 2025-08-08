@@ -3,36 +3,36 @@
 ### Filter Notebooks by Tags
 
 
-{button}`Access Token <galleries_by_tag/tag-access-token.md>`
-{button}`Authentication <galleries_by_tag/tag-authentication.md>`
-{button}`Avhrr <galleries_by_tag/tag-avhrr.md>`
-{button}`C3S <galleries_by_tag/tag-c3s.md>`
-{button}`Cluster <galleries_by_tag/tag-cluster.md>`
-{button}`Core Api <galleries_by_tag/tag-core-api.md>`
-{button}`Dask <galleries_by_tag/tag-dask.md>`
-{button}`Datacube <galleries_by_tag/tag-datacube.md>`
-{button}`Digital Twin <galleries_by_tag/tag-digital-twin.md>`
-{button}`Earthkit <galleries_by_tag/tag-earthkit.md>`
-{button}`Ecmwf <galleries_by_tag/tag-ecmwf.md>`
-{button}`Eodag <galleries_by_tag/tag-eodag.md>`
-{button}`Gfm <galleries_by_tag/tag-gfm.md>`
-{button}`Hda <galleries_by_tag/tag-hda.md>`
-{button}`Hook <galleries_by_tag/tag-hook.md>`
-{button}`Http Requests <galleries_by_tag/tag-http-requests.md>`
-{button}`Metop <galleries_by_tag/tag-metop.md>`
-{button}`Olci <galleries_by_tag/tag-olci.md>`
-{button}`Pyaviso <galleries_by_tag/tag-pyaviso.md>`
-{button}`Satpy <galleries_by_tag/tag-satpy.md>`
-{button}`Sentinel 1 <galleries_by_tag/tag-sentinel-1.md>`
-{button}`Sentinel 2 <galleries_by_tag/tag-sentinel-2.md>`
-{button}`Sentinel 3 <galleries_by_tag/tag-sentinel-3.md>`
-{button}`Seviri <galleries_by_tag/tag-seviri.md>`
-{button}`Stac <galleries_by_tag/tag-stac.md>`
-{button}`Stack <galleries_by_tag/tag-stack.md>`
-{button}`Storage <galleries_by_tag/tag-storage.md>`
-{button}`Thresholding Techniques <galleries_by_tag/tag-thresholding-techniques.md>`
-{button}`Token <galleries_by_tag/tag-token.md>`
-{button}`Workflow <galleries_by_tag/tag-workflow.md>`
+{button}`Access Token <./tag-access-token.md>`
+{button}`Authentication <./tag-authentication.md>`
+{button}`Avhrr <./tag-avhrr.md>`
+{button}`C3S <./tag-c3s.md>`
+{button}`Cluster <./tag-cluster.md>`
+{button}`Core Api <./tag-core-api.md>`
+{button}`Dask <./tag-dask.md>`
+{button}`Datacube <./tag-datacube.md>`
+{button}`Digital Twin <./tag-digital-twin.md>`
+{button}`Earthkit <./tag-earthkit.md>`
+{button}`Ecmwf <./tag-ecmwf.md>`
+{button}`Eodag <./tag-eodag.md>`
+{button}`Gfm <./tag-gfm.md>`
+{button}`Hda <./tag-hda.md>`
+{button}`Hook <./tag-hook.md>`
+{button}`Http Requests <./tag-http-requests.md>`
+{button}`Metop <./tag-metop.md>`
+{button}`Olci <./tag-olci.md>`
+{button}`Pyaviso <./tag-pyaviso.md>`
+{button}`Satpy <./tag-satpy.md>`
+{button}`Sentinel 1 <./tag-sentinel-1.md>`
+{button}`Sentinel 2 <./tag-sentinel-2.md>`
+{button}`Sentinel 3 <./tag-sentinel-3.md>`
+{button}`Seviri <./tag-seviri.md>`
+{button}`Stac <./tag-stac.md>`
+{button}`Stack <./tag-stack.md>`
+{button}`Storage <./tag-storage.md>`
+{button}`Thresholding Techniques <./tag-thresholding-techniques.md>`
+{button}`Token <./tag-token.md>`
+{button}`Workflow <./tag-workflow.md>`
 
 <div style="display: flex; flex-direction: column; gap: 20px; max-width: 800px;">
 <div class="notebook-card" data-tags="Hook Authentication Workflow Storage" style="display: flex; align-items: flex-start; border: 1px solid #cddff1; border-radius: 6px; padding: 14px 20px; background-color: #f9fbfe; box-shadow: 1px 1px 4px #dfeaf5;">
