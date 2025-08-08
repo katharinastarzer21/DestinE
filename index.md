@@ -80,10 +80,3 @@ Do you have a useful notebooks to share? Have a look at the [Contributing Guide]
 * [DestinE Documentation](https://destine-data-lake-docs.data.destination-earth.eu/en/latest/index.html)
 * [DestinE Data Portfolio](https://hda.data.destination-earth.eu/ui/catalog)
 * [Access the API (Swagger)](https://hda.data.destination-earth.eu/docs/)
-
-<<<<<<< HEAD
-
-
-{button}`Template <galleries_by_tag/tag-template.md>`
-=======
->>>>>>> 84a77da (update(myst) test and index)
