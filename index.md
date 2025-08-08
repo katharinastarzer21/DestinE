@@ -3,13 +3,8 @@
 Welcome to the **Destination Earth Data Lake Gallery**! This page provides curated access to interactive Jupyter Notebooks that demonstrate how to work with the various services of the DestinE Data Lake.
 
 ### Filter Notebooks by Tags
-
-{button}`Stack <galleries/STACK.md>`
-{button}`HDA <galleries/HDA.md>`
-{button}`HOOK <galleries/HOOK.md>`
 {button}`Access Token <galleries_by_tag/tag-access-token.md>`
 {button}`Authentication <galleries_by_tag/tag-authentication.md>`
-{button}`Authentification <galleries_by_tag/tag-authentification.md>`
 {button}`Avhrr <galleries_by_tag/tag-avhrr.md>`
 {button}`C3S <galleries_by_tag/tag-c3s.md>`
 {button}`Cluster <galleries_by_tag/tag-cluster.md>`
@@ -35,9 +30,11 @@ Welcome to the **Destination Earth Data Lake Gallery**! This page provides curat
 {button}`Stac <galleries_by_tag/tag-stac.md>`
 {button}`Stack <galleries_by_tag/tag-stack.md>`
 {button}`Storage <galleries_by_tag/tag-storage.md>`
+{button}`Template <galleries_by_tag/tag-template.md>`
 {button}`Thresholding Techniques <galleries_by_tag/tag-thresholding-techniques.md>`
 {button}`Token <galleries_by_tag/tag-token.md>`
 {button}`Workflow <galleries_by_tag/tag-workflow.md>`
+
 
 ---
 
@@ -84,6 +81,9 @@ Do you have a useful notebooks to share? Have a look at the [Contributing Guide]
 * [DestinE Data Portfolio](https://hda.data.destination-earth.eu/ui/catalog)
 * [Access the API (Swagger)](https://hda.data.destination-earth.eu/docs/)
 
+<<<<<<< HEAD
 
 
 {button}`Template <galleries_by_tag/tag-template.md>`
+=======
+>>>>>>> 84a77da (update(myst) test and index)
