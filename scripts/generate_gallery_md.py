@@ -98,4 +98,3 @@ if __name__ == "__main__":
     for section in SECTIONS:
         generate_gallery_for_section(section)
 
-    image_path = "img/dask.png" 
