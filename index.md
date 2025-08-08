@@ -3,6 +3,7 @@
 Welcome to the **Destination Earth Data Lake Gallery**! This page provides curated access to interactive Jupyter Notebooks that demonstrate how to work with the various services of the DestinE Data Lake.
 
 ### Filter Notebooks by Tags
+
 {button}`Access Token <galleries_by_tag/tag-access-token.md>`
 {button}`Authentication <galleries_by_tag/tag-authentication.md>`
 {button}`Avhrr <galleries_by_tag/tag-avhrr.md>`
@@ -33,7 +34,6 @@ Welcome to the **Destination Earth Data Lake Gallery**! This page provides curat
 {button}`Thresholding Techniques <galleries_by_tag/tag-thresholding-techniques.md>`
 {button}`Token <galleries_by_tag/tag-token.md>`
 {button}`Workflow <galleries_by_tag/tag-workflow.md>`
-
 
 ---
 
@@ -72,6 +72,7 @@ Then select `my_env` from the Jupyter kernel menu.
 ## Want to Contribute?
 
 Do you have a useful notebooks to share? Have a look at the [Contributing Guide](contribute.md)!
+
 ---
 
 ## More Information

@@ -6,55 +6,59 @@ start_marker = "### Filter Notebooks by Tags"
 button_prefix = "{button}`"
 button_suffix = "`"
 
+if not os.path.isdir(tag_gallery_dir):
+    print(f"Directory not found: {tag_gallery_dir}. No changes made.")
+    raise SystemExit(0)
+
 tag_files = sorted(
     f for f in os.listdir(tag_gallery_dir)
-    if f.endswith(".md") and f.startswith("tag-")
+    if f.startswith("tag-") and f.endswith(".md")
 )
-
-with open(index_path, "r", encoding="utf-8") as f:
-    lines = f.readlines()
-
-existing_targets = set()
-for line in lines:
-    s = line.strip()
-    if s.startswith(button_prefix) and s.endswith(button_suffix) and "<" in s and ">" in s:
-        target = s.split("<", 1)[1].split(">", 1)[0].strip()
-        existing_targets.add(target)
 
 new_buttons = []
 for fname in tag_files:
     path = f"{tag_gallery_dir}/{fname}"
-    if path not in existing_targets:
-        tag_label = (
-            fname.replace("tag-", "")
-                 .replace(".md", "")
-                 .replace("-", " ")
-                 .title()
-        )
-        new_buttons.append(f"{button_prefix}{tag_label} <{path}>{button_suffix}\n")
+    tag_label = (
+        fname.replace("tag-", "")
+             .replace(".md", "")
+             .replace("-", " ")
+             .title()
+    )
+    new_buttons.append(f"{button_prefix}{tag_label} <{path}>{button_suffix}\n")
 
-if not new_buttons:
-    print("No new Keywords")
-    raise SystemExit(0)
+with open(index_path, "r", encoding="utf-8") as f:
+    lines = f.readlines()
 
 try:
     marker_idx = next(i for i, ln in enumerate(lines) if ln.strip() == start_marker)
 except StopIteration:
-    print(f"Marker '{start_marker}' not found in {index_path}. No changes made.")
-    raise SystemExit(0)
+    print(f"Marker '{start_marker}' not found in {index_path}.")
+    raise SystemExit(1)
 
-insert_idx = marker_idx + 1
-block = []
+start_idx = marker_idx + 1
 
-if insert_idx >= len(lines) or lines[insert_idx].strip() != "":
-    block.append("\n")  
+if start_idx < len(lines) and lines[start_idx].strip() == "":
+    start_idx += 1
 
-block.extend(new_buttons)
-block.append("\n")  
+end_idx = start_idx
+while end_idx < len(lines):
+    s = lines[end_idx].strip()
+    if not s:
+        end_idx += 1
+        continue
+    if s.startswith(button_prefix) and s.endswith(button_suffix):
+        end_idx += 1
+        continue
+    break
 
-new_lines = lines[:insert_idx] + block + lines[insert_idx:]
+replacement = []
+replacement.append("\n")
+replacement.extend(new_buttons)
+replacement.append("\n")
+
+new_lines = lines[:start_idx] + replacement + lines[end_idx:]
 
 with open(index_path, "w", encoding="utf-8") as f:
     f.writelines(new_lines)
 
-print(f"{len(new_buttons)} new buttons added at the top of the filter section.")
+print(f"✅ Replaced button block with {len(new_buttons)} buttons (alphabetical).")
