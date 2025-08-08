@@ -85,3 +85,5 @@ Do you have a useful notebooks to share? Have a look at the [Contributing Guide]
 * [Access the API (Swagger)](https://hda.data.destination-earth.eu/docs/)
 
 
+
+{button}`Template <galleries_by_tag/tag-template.md>`
