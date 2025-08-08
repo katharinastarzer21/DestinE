@@ -4,6 +4,7 @@ Welcome to the **Destination Earth Data Lake Gallery**! This page provides curat
 
 ### Filter Notebooks by Tags
 
+
 {button}`Access Token <galleries_by_tag/tag-access-token.md>`
 {button}`Authentication <galleries_by_tag/tag-authentication.md>`
 {button}`Avhrr <galleries_by_tag/tag-avhrr.md>`
