@@ -36,10 +36,10 @@ def copy_images_into_central(repo_dir):
                 shutil.copytree(s, d, dirs_exist_ok=True)
             else:
                 shutil.copy2(s, d)
-        print(f"🖼  Copied images from {src_img} → {CENTRAL_IMG}")
+        print(f"Copied images from {src_img} → {CENTRAL_IMG}")
 
 def sync_base_sections():
-    print(f"📥 Cloning base repo: {BASE_REPO}")
+    print(f"Cloning base repo: {BASE_REPO}")
     clean_dir(BASE_CLONE_DIR)
     run(["git", "clone", "--depth", "1", BASE_REPO, BASE_CLONE_DIR])
     os.makedirs(PRODUCTION_DIR, exist_ok=True)
@@ -51,7 +51,7 @@ def sync_base_sections():
             print(f"↻ Updating {dst} from base repo")
             copytree_replace(src, dst)
         else:
-            print(f"⚠️  Skipping {sub}: not found in base repo")
+            print(f"Skipping {sub}: not found in base repo")
 
     base_img = os.path.join(BASE_CLONE_DIR, "img")
     if os.path.isdir(base_img):
@@ -62,7 +62,7 @@ def sync_base_sections():
 
 def sync_external_cookbooks():
     if not os.path.exists(REGISTRY):
-        print(f"ℹ️  No {REGISTRY} found – skipping external cookbooks.")
+        print(f"No {REGISTRY} found – skipping external cookbooks.")
         return
 
     with open(REGISTRY, "r", encoding="utf-8") as f:
@@ -73,7 +73,7 @@ def sync_external_cookbooks():
             return
 
     if not isinstance(items, list) or not items:
-        print(f"ℹ{REGISTRY} empty – nothing to sync.")
+        print(f"{REGISTRY} empty nothing to sync.")
         return
 
     os.makedirs(PRODUCTION_DIR, exist_ok=True)

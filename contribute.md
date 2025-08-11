@@ -6,41 +6,67 @@ If you’ve developed a Jupyter notebook that works with the **DestinE Data Lake
 ### Step-by-Step: Upload Your Repository
 
 1. **Use the template repository**
-   - Clone the official template repository to your own GitHub account:
+
+   * Clone the official template repository to your own GitHub account:
+
      ```bash
      git clone https://github.com/your-username/your-new-repo.git
      ```
-   - Or use the 'Use this repository" button.
+   * Or click the **"Use this template"** button on GitHub to create your own copy.
 
 2. **Add your content**
-   - Add your Jupyter notebooks to the `notebooks/` folder.
-   - Follow the format from the example `notebooks/template.ipynb`, especially the **first Markdown cell**, which must contain a YAML frontmatter block:
-     ````markdown
+
+   * Place your Jupyter Notebooks in the `notebooks/` folder.
+   * Follow the example in `notebooks/template.ipynb`, paying close attention to the **first Markdown cell**, which must contain a YAML front matter block:
+
+     ```markdown
      ---
      title: "Your Notebook Title"
      subtitle: "Brief description of what this notebook does."
      authors: ["Your Name"]
      tags: ["HDA", "Dask", "Workflow"]
-     thumbnail : /img/example.png
+     thumbnail: /img/example.png
      license: MIT
      copyright: "© 2024 EUMETSAT"
      ---
-     ````
-   - Add any relevant images and the thumbnail for the gallery to the `img/` folder.
+     ```
+   * Add a thumbnail image for each notebook, store it in the `img/` folder, and reference it in the notebook metadata.
 
-3. **Submit your repository**
-   - Go to the [DestinE GitHub repository](https://github.com/destination-earth/DestinE).
-   - Open a [new issue](https://github.com/destination-earth/DestinE/issues/new?template=cookbook_submission.md) using the `Add Cookbook Repository` template.
-   - Fill in the template with:
-     - Repository URL
-     - Short Title in capital letters for folder structure
+3. **Configure repository settings**
 
-4. **Review process**
-   - The DestinE team will review your submission.
-   - If accepted, your repository will be integrated into the official gallery and published on the site automatically.
+   * **Enable GitHub Pages**
+
+     * Go to **Settings → Pages**.
+     * Ensure **Branch** is set to `gh-pages` and **Folder** is `(root)`.
+     * If it’s set to `None`, change it to `gh-pages / (root)` and click **Save**.
+   * **Enable Required GitHub Actions Permissions**
+
+     * Go to **Settings → Actions → General**.
+     * Scroll to **Workflow permissions**.
+     * Select **Read and write permissions**.
+     * Click **Save** if you made any changes.
+
+4. **Submit your repository**
+
+   * Open the [Gallery submission issue form](https://github.com/destination-earth/DestinE-DataLake-Gallery/issues/new?template=cookbook_submission.md).
+   * Provide:
+
+     * Repository URL
+     * Short title in **UPPERCASE** (for folder naming)
+
+5. **Review process**
+
+   * The DestinE team will review your submission.
+   * If accepted, it will be integrated into the official gallery and published automatically.
 
 ### Best Practices
-- Use clear titles and headings in your notebooks.
-- Tag your notebooks meaningfully (e.g. `sentinel-1`, `openEO`, `access-token`, etc.).
-- Keep dependencies minimal and well-documented.
-- Test your code to ensure it runs from top to bottom.
+
+* Use clear titles and logical section headings.
+* Tag your notebooks meaningfully. Whenever possible, review the tags already used in the gallery and reuse them to maintain consistency. Pay close attention to correct spelling and case sensitivity (e.g., uppercase/lowercase).
+* Keep dependencies minimal and list them explicitly.
+* Ensure your notebook runs from top to bottom without errors.
+* Add explanations and context so users understand the workflow.
+
+### Attention!
+
+Once accepted, **any changes** you push to your repository will **automatically** appear on the website. Keep your repository clean, well-maintained, and up to date.

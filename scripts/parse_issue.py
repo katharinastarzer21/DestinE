@@ -60,4 +60,4 @@ registry.append({
 with open(REGISTRY, "w", encoding="utf-8") as f:
     json.dump(registry, f, indent=2, ensure_ascii=False)
 
-print(f"✅ {root_path} in {REGISTRY} gespeichert.")
+print(f"{root_path} in {REGISTRY} gespeichert.")
