@@ -37,6 +37,11 @@ project:
     - file: production/STACK/ExtremeDT-DataCube.ipynb
     - file: production/STACK/STACK-Dask-101.ipynb
     - file: production/STACK/STACK-Python-Client-Dask.ipynb
+  - title: TESTING
+    file: galleries/TESTING.md
+    children:
+    - file: production/TESTING/notebooks/template1.ipynb
+    - file: production/TESTING/notebooks/template2.ipynb
   - title: HOOK
     file: galleries/HOOK.md
     children:
@@ -70,6 +75,7 @@ project:
   - file: galleries_by_tag/tag-stac.md
   - file: galleries_by_tag/tag-stack.md
   - file: galleries_by_tag/tag-storage.md
+  - file: galleries_by_tag/tag-template.md
   - file: galleries_by_tag/tag-thresholding-techniques.md
   - file: galleries_by_tag/tag-token.md
   - file: galleries_by_tag/tag-workflow.md
