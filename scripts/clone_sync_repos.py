@@ -4,8 +4,9 @@ import subprocess
 import tempfile
 import json
 
-BASE_REPO = "https://github.com/katharinastarzer21/myst_DEDL_temp.git"
-BASE_CLONE_DIR = "cookbook-gallery" 
+BASE_REPO = "https://github.com/destination-earth/DestinE-DataLake-Lab.git"
+BASE_REPO_BRANCH = "staging"         
+BASE_CLONE_DIR = "cookbook-gallery"
 PRODUCTION_DIR = "production"
 CENTRAL_IMG = "img"
 BASE_SUBFOLDERS = ["HDA", "HOOK", "STACK"]
@@ -20,7 +21,6 @@ def clean_dir(path):
         shutil.rmtree(path)
 
 def copytree_replace(src, dst):
-    
     if os.path.exists(dst):
         shutil.rmtree(dst)
     shutil.copytree(src, dst)
@@ -38,24 +38,39 @@ def copy_images_into_central(repo_dir):
                 shutil.copy2(s, d)
         print(f"Copied images from {src_img} → {CENTRAL_IMG}")
 
+def find_subfolder(repo_root, sub):
+    """
+    Suche zuerst unter <repo_root>/production/<sub>,
+    sonst unter <repo_root>/<sub>. Gib existierenden Pfad zurück oder None.
+    """
+    candidates = [
+        os.path.join(repo_root, "production", sub),
+        os.path.join(repo_root, sub),
+    ]
+    for c in candidates:
+        if os.path.isdir(c):
+            return c
+    return None
+
 def sync_base_sections():
-    print(f"Cloning base repo: {BASE_REPO}")
+    print(f"Cloning base repo: {BASE_REPO} (branch: {BASE_REPO_BRANCH})")
     clean_dir(BASE_CLONE_DIR)
-    run(["git", "clone", "--depth", "1", BASE_REPO, BASE_CLONE_DIR])
+
+    run(["git", "clone", "--depth", "1", "--single-branch",
+         "--branch", BASE_REPO_BRANCH, BASE_REPO, BASE_CLONE_DIR])
+
     os.makedirs(PRODUCTION_DIR, exist_ok=True)
 
     for sub in BASE_SUBFOLDERS:
-        src = os.path.join(BASE_CLONE_DIR, "production", sub)
+        src = find_subfolder(BASE_CLONE_DIR, sub)
         dst = os.path.join(PRODUCTION_DIR, sub)
-        if os.path.exists(src):
-            print(f"↻ Updating {dst} from base repo")
+        if src:
+            print(f"↻ Updating {dst} from {src}")
             copytree_replace(src, dst)
         else:
-            print(f"Skipping {sub}: not found in base repo")
+            print(f"Skipping {sub}: neither 'production/{sub}' nor '{sub}' found in branch '{BASE_REPO_BRANCH}'")
 
-    base_img = os.path.join(BASE_CLONE_DIR, "img")
-    if os.path.isdir(base_img):
-        copy_images_into_central(BASE_CLONE_DIR)
+    copy_images_into_central(BASE_CLONE_DIR)
 
     print("Cleaning temp base clone")
     clean_dir(BASE_CLONE_DIR)
@@ -65,12 +80,12 @@ def sync_external_cookbooks():
         print(f"No {REGISTRY} found – skipping external cookbooks.")
         return
 
-    with open(REGISTRY, "r", encoding="utf-8") as f:
-        try:
+    try:
+        with open(REGISTRY, "r", encoding="utf-8") as f:
             items = json.load(f)
-        except Exception:
-            print(f"Could not parse {REGISTRY}, skipping.")
-            return
+    except Exception:
+        print(f"Could not parse {REGISTRY}, skipping.")
+        return
 
     if not isinstance(items, list) or not items:
         print(f"{REGISTRY} empty nothing to sync.")
@@ -80,18 +95,29 @@ def sync_external_cookbooks():
 
     with tempfile.TemporaryDirectory() as tmp:
         for it in items:
-            repo_url = it.get("repo_url", "").strip()
-            root = it.get("root_path", "").strip()
+            repo_url = (it.get("repo_url") or "").strip()
+            root = (it.get("root_path") or "").strip()
+            branch = (it.get("branch") or "").strip()  
             if not repo_url or not root:
                 print(f"Bad registry entry (missing repo_url/root_path): {it}")
                 continue
 
-            print(f"Sync external: {root} from {repo_url}")
+            print(f"Sync external: {root} from {repo_url} (branch: {branch or 'default'})")
             repo_tmp = os.path.join(tmp, root)
-            run(["git", "clone", "--depth", "1", repo_url, repo_tmp])
 
-            target = os.path.join(PRODUCTION_DIR, root)
-            copytree_replace(repo_tmp, target)
+            clone_cmd = ["git", "clone", "--depth", "1"]
+            if branch:
+                clone_cmd += ["--single-branch", "--branch", branch]
+            clone_cmd += [repo_url, repo_tmp]
+            run(clone_cmd)
+
+            src_path = os.path.join(repo_tmp, root) if root not in (".", "/") else repo_tmp
+            target = os.path.join(PRODUCTION_DIR, os.path.basename(root.rstrip("/")))
+            if os.path.exists(src_path):
+                copytree_replace(src_path, target)
+            else:
+            
+                copytree_replace(repo_tmp, target)
 
             copy_images_into_central(repo_tmp)
 
