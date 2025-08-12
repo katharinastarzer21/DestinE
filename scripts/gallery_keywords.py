@@ -92,7 +92,7 @@ for tag, notebooks in tag_to_notebooks.items():
     wrapped_html = wrap_gallery_cards(cards)
     
     with open(tag_md_path, "w", encoding="utf-8") as f:
-        f.write(f"# Notebooks tagged with `{tag}`\n\n")
+        f.write(f"# Notebooks `{tag}`\n\n")
         f.write(wrapped_html + "\n")
     
     print(f"Created {tag_md_path} with {len(notebooks)} notebooks.")
