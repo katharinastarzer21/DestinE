@@ -1,5 +1,4 @@
-
-## Contribute to the Gallery
+# Contribute to the Gallery
 
 If you’ve developed a Jupyter notebook that works with the **DestinE Data Lake** services and would like to share it with others, follow the steps below to add your repository to the Gallery:
 

@@ -4,7 +4,7 @@
 Explore our collection of interactive Jupyter Notebooks, designed to help you work with the wide range of services offered by the DestinE Data Lake. Each notebook provides hands-on examples and practical guidance that you can adapt for your own projects. <br>
 Use the tag filters to quickly find notebooks relevant to your interests or workflow. Tags group notebooks by topic, data source, or functionality, making it easier to navigate the gallery and locate the examples most useful for your work.
 
-
+---
 
 ### Filter Notebooks by Tags
 
