@@ -9,7 +9,7 @@ If you’ve developed a Jupyter notebook that works with the **DestinE Data Lake
    * Clone the official template repository to your own GitHub account:
 
      ```bash
-     git clone https://github.com/your-username/your-new-repo.git
+     git clone https://github.com/destination-earth/DestinE-DataLake-NotebookTemplate.git
      ```
    * Or click the **"Use this template"** button on GitHub to create your own copy.
 
@@ -23,7 +23,7 @@ If you’ve developed a Jupyter notebook that works with the **DestinE Data Lake
      title: "Your Notebook Title"
      subtitle: "Brief description of what this notebook does."
      authors: ["Your Name"]
-     tags: ["HDA", "Dask", "Workflow"]
+     tags: ["Template"]
      thumbnail: /img/example.png
      license: MIT
      copyright: "© 2024 EUMETSAT"
@@ -36,8 +36,8 @@ If you’ve developed a Jupyter notebook that works with the **DestinE Data Lake
    * **Enable GitHub Pages**
 
      * Go to **Settings → Pages**.
-     * Ensure **Branch** is set to `gh-pages` and **Folder** is `(root)`.
-     * If it’s set to `None`, change it to `gh-pages / (root)` and click **Save**.
+     * Under Build and deployment, set Source to GitHub Actions.
+
    * **Enable Required GitHub Actions Permissions**
 
      * Go to **Settings → Actions → General**.
@@ -50,6 +50,7 @@ If you’ve developed a Jupyter notebook that works with the **DestinE Data Lake
    * Open the [Gallery submission issue form](https://github.com/destination-earth/DestinE-DataLake-Gallery/issues/new?template=cookbook_submission.md).
    * Provide:
 
+     * Title (e.g. action)
      * Repository URL
      * Short title in **UPPERCASE** (for folder naming)
 
