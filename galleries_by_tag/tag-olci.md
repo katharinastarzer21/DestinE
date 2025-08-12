@@ -1,4 +1,4 @@
-# Notebooks tagged with `OLCI`
+# Notebooks `OLCI`
 
 ### Filter Notebooks by Tags
 
@@ -29,7 +29,6 @@
 {button}`Stac <./tag-stac.md>`
 {button}`Stack <./tag-stack.md>`
 {button}`Storage <./tag-storage.md>`
-{button}`Template <./tag-template.md>`
 {button}`Thresholding Techniques <./tag-thresholding-techniques.md>`
 {button}`Token <./tag-token.md>`
 {button}`Workflow <./tag-workflow.md>`
