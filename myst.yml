@@ -29,6 +29,10 @@ project:
     - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES.ipynb
     - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-ParameterPlotter.ipynb
     - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-dataAvailability.ipynb
+  - title: ANOTHER
+    file: galleries/ANOTHER.md
+    children:
+    - file: production/ANOTHER/notebooks/template.ipynb
   - title: STACK
     file: galleries/STACK.md
     children:
@@ -70,6 +74,7 @@ project:
   - file: galleries_by_tag/tag-stac.md
   - file: galleries_by_tag/tag-stack.md
   - file: galleries_by_tag/tag-storage.md
+  - file: galleries_by_tag/tag-template.md
   - file: galleries_by_tag/tag-thresholding-techniques.md
   - file: galleries_by_tag/tag-token.md
   - file: galleries_by_tag/tag-workflow.md
