@@ -2,7 +2,7 @@ name: MyST Deploy
 
 on:
   push:
-    branches: [test]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -66,6 +66,9 @@ jobs:
 
       - name: Run MyST (show version)
         run: node ./mystmd/node_modules/mystmd/dist/myst.cjs --version
+    
+      - name: Build MyST HTML site (PR CLI)
+        run: node ./mystmd/node_modules/mystmd/dist/myst.cjs build --html
 
       - name: Prepare full_site folder
         run: |
