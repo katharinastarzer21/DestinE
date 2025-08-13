@@ -41,6 +41,10 @@ project:
     - file: production/STACK/ExtremeDT-DataCube.ipynb
     - file: production/STACK/STACK-Dask-101.ipynb
     - file: production/STACK/STACK-Python-Client-Dask.ipynb
+  - title: ONE
+    file: galleries/ONE.md
+    children:
+    - file: production/ONE/notebooks/template.ipynb
   - title: HOOK
     file: galleries/HOOK.md
     children:
