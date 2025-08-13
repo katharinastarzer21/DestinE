@@ -2,7 +2,7 @@ name: MyST Deploy
 
 on:
   push:
-    branches: [test]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -31,12 +31,30 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: 20  
 
-      - name: Install dependencies
+      - name: Checkout mystmd (PR branch)
+        uses: actions/checkout@v4
+        with:
+          repository: jupyter-book/mystmd
+          ref: feat/prototype-hidden-in-html
+          path: mystmd-src
+
+      - name: Cache mystmd node_modules
+        uses: actions/cache@v4
+        with:
+          path: mystmd-src/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('mystmd-src/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: Build mystmd from source
+        working-directory: mystmd-src
         run: |
-          pip install pyyaml nbformat
-          npm install -g mystmd
+          npm ci
+          npm run build
+
+      - name: Install Python deps
+        run: pip install pyyaml nbformat
 
       - name: Clone external notebook repository
         run: python scripts/clone_sync_repos.py
@@ -53,8 +71,8 @@ jobs:
       - name: Generate myst.yml and TOC
         run: python scripts/build_myst_yml.py
 
-      - name: Build MyST HTML site
-        run: myst build --html
+      - name: Build MyST HTML site (PR CLI)
+        run: node ./mystmd-src/node_modules/mystmd/dist/myst.cjs build --html
 
       - name: Prepare full_site folder
         run: |
@@ -77,4 +95,3 @@ jobs:
           git add production/ galleries/ galleries_by_tag/ img/ myst.yml index.md
           git commit -m "🔄 Auto-update from GitHub Action" || echo "Nothing to commit"
           git push origin main
-
