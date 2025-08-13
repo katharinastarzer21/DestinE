@@ -3,7 +3,7 @@ name: Deploy MyST to GitHub Pages
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [test]
 
 permissions:
   contents: read
