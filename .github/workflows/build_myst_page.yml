@@ -31,7 +31,7 @@ jobs:
       - name: Checkout MyST repo (PR branch)
         uses: actions/checkout@v4
         with:
-          repository: jupyter-book/mystmd
+          repository:  katharinastarzer21/mystmd_hidden # temporary solution, once mystmd push their newest version --> change
           ref: feat/prototype-hidden-in-html
           path: mystmd
 
