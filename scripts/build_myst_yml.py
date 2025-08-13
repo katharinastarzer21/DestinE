@@ -36,7 +36,8 @@ if os.path.exists(tag_gallery_dir):
     for fname in sorted(os.listdir(tag_gallery_dir)):
         if fname.endswith(".md"):
             toc.append({
-                "hidden": f"{tag_gallery_dir}/{fname}",
+                "file": f"{tag_gallery_dir}/{fname}",
+                "hidden": True,
             })
 
 config = {
