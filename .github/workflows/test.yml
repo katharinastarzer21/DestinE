@@ -3,7 +3,7 @@ name: Deploy MyST to GitHub Pages
 on:
   workflow_dispatch:
   push:
-    branches: [test]
+    branches: [main]
 
 permissions:
   contents: read
@@ -14,8 +14,7 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-env:
-  BASE_URL: /${{ github.event.repository.name }}
+
 
 jobs:
   build-and-deploy:
