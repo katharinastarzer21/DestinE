@@ -1,42 +1,50 @@
-name: MyST Deploy (use branch with hidden-in-html)
+name: Deploy MyST to GitHub Pages
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
-  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 env:
-  MYSTMD_REPO: jupyter-book/mystmd
-  MYSTMD_REF: feat/prototype-hidden-in-html
-  
+  BASE_URL: /${{ github.event.repository.name }}
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your site repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
-      - name: Checkout mystmd (${{ env.MYSTMD_REPO }} @ ${{ env.MYSTMD_REF }})
+      - name: Checkout MyST repo (PR branch)
         uses: actions/checkout@v4
         with:
-          repository: ${{ env.MYSTMD_REPO }}
-          ref: ${{ env.MYSTMD_REF }}
-          path: mystmd-src
+          repository: jupyter-book/mystmd
+          ref: feat/prototype-hidden-in-html
+          path: mystmd
 
       - name: Cache mystmd node_modules
         uses: actions/cache@v4
         with:
-          path: mystmd-src/node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('mystmd-src/package-lock.json') }}
+          path: mystmd/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('mystmd/package-lock.json') }}
           restore-keys: ${{ runner.os }}-node-
 
-      - name: Build mystmd from source
-        working-directory: mystmd-src
+      - name: Install & build MyST
+        working-directory: mystmd
         run: |
           npm ci
           npm run build
@@ -46,8 +54,8 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Python deps
-        run: pip install pyyaml nbformat
+      - name: Install requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Clone external notebook repository
         run: python scripts/clone_sync_repos.py
@@ -64,12 +72,21 @@ jobs:
       - name: Generate myst.yml and TOC
         run: python scripts/build_myst_yml.py
 
-      - name: Build site with PR CLI
-        run: node ./mystmd-src/node_modules/mystmd/dist/myst.cjs build --html
-     
+      - name: Build HTML Assets
+        run: node ../mystmd/node_modules/mystmd/dist/myst.cjs build --execute --html
 
-      - name: Prepare full_site folder
-        run: |
-          mkdir -p full_site
-          cp -r _build/html/* full_site/
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _build/html
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}

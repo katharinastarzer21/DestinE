@@ -5,34 +5,15 @@ project:
   - file: index.md
   - title: contribute
     file: contribute.md
-  - title: HDA
-    file: galleries/HDA.md
+  - title: ONE
+    file: galleries/ONE.md
+    children: []
+  - title: HOOK
+    file: galleries/HOOK.md
     children:
-    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.METOP.AVHRRL1.ipynb
-    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.MSG-1.5.ipynb
-    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.SENTINEL-3.OL_1_ERR___.ipynb
-    - file: production/HDA/EODAG/HDA-EODAG-full-version.ipynb
-    - file: production/HDA/EODAG/HDA-EODAG-quick-start.ipynb
-    - file: production/HDA/CDS_data/DEDL-HDA-EO.ECMWF.DAT.REANALYSIS_ERA5_SINGLE_LEVELS.ipynb
-    - file: production/HDA/REST/DEDL-HDA-EO.ESA.DAT.SENTINEL-1.L1_GRD.ipynb
-    - file: production/HDA/REST/DEDL-HDA-EO.ESA.DAT.SENTINEL-2.MSI.L2A.ipynb
-    - file: production/HDA/REST/HDA-REST-Queryables.ipynb
-    - file: production/HDA/REST/HDA-REST-full-version.ipynb
-    - file: production/HDA/REST/HDA-REST-quick-start.ipynb
-    - file: production/HDA/Fresh_Data_Pool/DEDL-HDA-EO.ESA.DAT.SENTINEL-1.L1_GRD.ipynb
-    - file: production/HDA/Fresh_Data_Pool/DEDL-HDA-EO.ESA.DAT.SENTINEL-2.MSI.L2A.ipynb
-    - file: production/HDA/PySTAC/HDA-PyStac-Client.ipynb
-    - file: production/HDA/DestinE_Digital_Twins/ClimateDT-ParameterPlotter.ipynb
-    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE-Series.ipynb
-    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE.ipynb
-    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES-Series.ipynb
-    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES.ipynb
-    - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-ParameterPlotter.ipynb
-    - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-dataAvailability.ipynb
-  - title: ANOTHER
-    file: galleries/ANOTHER.md
-    children:
-    - file: production/ANOTHER/notebooks/template.ipynb
+    - file: production/HOOK/DEDL-Hook_access.ipynb
+    - file: production/HOOK/DEDL-Hook_data_harvest.ipynb
+    - file: production/HOOK/Tutorial.ipynb
   - title: STACK
     file: galleries/STACK.md
     children:
@@ -41,47 +22,64 @@ project:
     - file: production/STACK/ExtremeDT-DataCube.ipynb
     - file: production/STACK/STACK-Dask-101.ipynb
     - file: production/STACK/STACK-Python-Client-Dask.ipynb
-  - title: ONE
-    file: galleries/ONE.md
+  - title: HDA
+    file: galleries/HDA.md
     children:
-    - file: production/ONE/notebooks/template.ipynb
-  - title: HOOK
-    file: galleries/HOOK.md
-    children:
-    - file: production/HOOK/DEDL-Hook_access.ipynb
-    - file: production/HOOK/DEDL-Hook_data_harvest.ipynb
-    - file: production/HOOK/Tutorial.ipynb
-  - file: galleries_by_tag/tag-access-token.md
-  - file: galleries_by_tag/tag-authentication.md
-  - file: galleries_by_tag/tag-avhrr.md
-  - file: galleries_by_tag/tag-c3s.md
-  - file: galleries_by_tag/tag-cluster.md
-  - file: galleries_by_tag/tag-core-api.md
-  - file: galleries_by_tag/tag-dask.md
-  - file: galleries_by_tag/tag-datacube.md
-  - file: galleries_by_tag/tag-digital-twin.md
-  - file: galleries_by_tag/tag-earthkit.md
-  - file: galleries_by_tag/tag-ecmwf.md
-  - file: galleries_by_tag/tag-eodag.md
-  - file: galleries_by_tag/tag-gfm.md
-  - file: galleries_by_tag/tag-hda.md
-  - file: galleries_by_tag/tag-hook.md
-  - file: galleries_by_tag/tag-http-requests.md
-  - file: galleries_by_tag/tag-metop.md
-  - file: galleries_by_tag/tag-olci.md
-  - file: galleries_by_tag/tag-pyaviso.md
-  - file: galleries_by_tag/tag-satpy.md
-  - file: galleries_by_tag/tag-sentinel-1.md
-  - file: galleries_by_tag/tag-sentinel-2.md
-  - file: galleries_by_tag/tag-sentinel-3.md
-  - file: galleries_by_tag/tag-seviri.md
-  - file: galleries_by_tag/tag-stac.md
-  - file: galleries_by_tag/tag-stack.md
-  - file: galleries_by_tag/tag-storage.md
-  - file: galleries_by_tag/tag-template.md
-  - file: galleries_by_tag/tag-thresholding-techniques.md
-  - file: galleries_by_tag/tag-token.md
-  - file: galleries_by_tag/tag-workflow.md
+    - file: production/HDA/Fresh_Data_Pool/DEDL-HDA-EO.ESA.DAT.SENTINEL-1.L1_GRD.ipynb
+    - file: production/HDA/Fresh_Data_Pool/DEDL-HDA-EO.ESA.DAT.SENTINEL-2.MSI.L2A.ipynb
+    - file: production/HDA/CDS_data/DEDL-HDA-EO.ECMWF.DAT.REANALYSIS_ERA5_SINGLE_LEVELS.ipynb
+    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.METOP.AVHRRL1.ipynb
+    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.MSG-1.5.ipynb
+    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.SENTINEL-3.OL_1_ERR___.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/ClimateDT-ParameterPlotter.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE-Series.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES-Series.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-ParameterPlotter.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-dataAvailability.ipynb
+    - file: production/HDA/PySTAC/HDA-PyStac-Client.ipynb
+    - file: production/HDA/EODAG/HDA-EODAG-full-version.ipynb
+    - file: production/HDA/EODAG/HDA-EODAG-quick-start.ipynb
+    - file: production/HDA/REST/DEDL-HDA-EO.ESA.DAT.SENTINEL-1.L1_GRD.ipynb
+    - file: production/HDA/REST/DEDL-HDA-EO.ESA.DAT.SENTINEL-2.MSI.L2A.ipynb
+    - file: production/HDA/REST/HDA-REST-Queryables.ipynb
+    - file: production/HDA/REST/HDA-REST-full-version.ipynb
+    - file: production/HDA/REST/HDA-REST-quick-start.ipynb
+  - title: ANOTHER
+    file: galleries/ANOTHER.md
+    children: []
+  - hidden: galleries_by_tag/tag-access-token.md
+  - hidden: galleries_by_tag/tag-authentication.md
+  - hidden: galleries_by_tag/tag-avhrr.md
+  - hidden: galleries_by_tag/tag-c3s.md
+  - hidden: galleries_by_tag/tag-cluster.md
+  - hidden: galleries_by_tag/tag-core-api.md
+  - hidden: galleries_by_tag/tag-dask.md
+  - hidden: galleries_by_tag/tag-datacube.md
+  - hidden: galleries_by_tag/tag-digital-twin.md
+  - hidden: galleries_by_tag/tag-earthkit.md
+  - hidden: galleries_by_tag/tag-ecmwf.md
+  - hidden: galleries_by_tag/tag-eodag.md
+  - hidden: galleries_by_tag/tag-gfm.md
+  - hidden: galleries_by_tag/tag-hda.md
+  - hidden: galleries_by_tag/tag-hook.md
+  - hidden: galleries_by_tag/tag-http-requests.md
+  - hidden: galleries_by_tag/tag-metop.md
+  - hidden: galleries_by_tag/tag-olci.md
+  - hidden: galleries_by_tag/tag-pyaviso.md
+  - hidden: galleries_by_tag/tag-satpy.md
+  - hidden: galleries_by_tag/tag-sentinel-1.md
+  - hidden: galleries_by_tag/tag-sentinel-2.md
+  - hidden: galleries_by_tag/tag-sentinel-3.md
+  - hidden: galleries_by_tag/tag-seviri.md
+  - hidden: galleries_by_tag/tag-stac.md
+  - hidden: galleries_by_tag/tag-stack.md
+  - hidden: galleries_by_tag/tag-storage.md
+  - hidden: galleries_by_tag/tag-template.md
+  - hidden: galleries_by_tag/tag-thresholding-techniques.md
+  - hidden: galleries_by_tag/tag-token.md
+  - hidden: galleries_by_tag/tag-workflow.md
 site:
   template: book-theme
   options:
