@@ -118,10 +118,6 @@ project:
     hidden: true
   - file: galleries_by_tag/tag-satpy.md
     hidden: true
-  - file: galleries_by_tag/tag-sentinel-1.md
-    hidden: true
-  - file: galleries_by_tag/tag-sentinel-2.md
-    hidden: true
   - file: galleries_by_tag/tag-sentinel-3.md
     hidden: true
   - file: galleries_by_tag/tag-seviri.md
@@ -133,8 +129,6 @@ project:
   - file: galleries_by_tag/tag-storage.md
     hidden: true
   - file: galleries_by_tag/tag-template.md
-    hidden: true
-  - file: galleries_by_tag/tag-thresholding-techniques.md
     hidden: true
   - file: galleries_by_tag/tag-token.md
     hidden: true
