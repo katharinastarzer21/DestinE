@@ -30,10 +30,6 @@ project:
       hidden: true
     - file: production/HDA/REST/HDA-REST-quick-start.ipynb
       hidden: true
-    - file: production/HDA/Fresh_Data_Pool/DEDL-HDA-EO.ESA.DAT.SENTINEL-1.L1_GRD.ipynb
-      hidden: true
-    - file: production/HDA/Fresh_Data_Pool/DEDL-HDA-EO.ESA.DAT.SENTINEL-2.MSI.L2A.ipynb
-      hidden: true
     - file: production/HDA/PySTAC/HDA-PyStac-Client.ipynb
       hidden: true
     - file: production/HDA/DestinE_Digital_Twins/ClimateDT-ParameterPlotter.ipynb
