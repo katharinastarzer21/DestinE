@@ -4,8 +4,8 @@ import subprocess
 import tempfile
 import json
 
-BASE_REPO = "https://github.com/destination-earth/DestinE-DataLake-Lab.git"
-BASE_REPO_BRANCH = "staging"         
+BASE_REPO = "https://github.com/katharinastarzer21/myst_DEDL_temp.git"
+BASE_REPO_BRANCH = "main"         
 BASE_CLONE_DIR = "cookbook-gallery"
 PRODUCTION_DIR = "production"
 CENTRAL_IMG = "img"
