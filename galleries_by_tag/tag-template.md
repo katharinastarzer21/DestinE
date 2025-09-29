@@ -22,15 +22,12 @@
 {button}`Olci <./tag-olci.md>`
 {button}`Pyaviso <./tag-pyaviso.md>`
 {button}`Satpy <./tag-satpy.md>`
-{button}`Sentinel 1 <./tag-sentinel-1.md>`
-{button}`Sentinel 2 <./tag-sentinel-2.md>`
 {button}`Sentinel 3 <./tag-sentinel-3.md>`
 {button}`Seviri <./tag-seviri.md>`
 {button}`Stac <./tag-stac.md>`
 {button}`Stack <./tag-stack.md>`
 {button}`Storage <./tag-storage.md>`
 {button}`Template <./tag-template.md>`
-{button}`Thresholding Techniques <./tag-thresholding-techniques.md>`
 {button}`Token <./tag-token.md>`
 {button}`Workflow <./tag-workflow.md>`
 
@@ -45,7 +42,7 @@
     <div style="margin: 6px 0;">
       <span class="tag">Template</span>
     </div>
-    <a href="../production/ANOTHER/notebooks/template.ipynb" style="text-decoration: none; color: #1d70b8; font-weight: bold;">View Notebook</a>
+    <a href="../production/ONE/notebooks/template.ipynb" style="text-decoration: none; color: #1d70b8; font-weight: bold;">View Notebook</a>
   </div>
 </div>
 <div class="notebook-card" data-tags="Template" style="display: flex; align-items: flex-start; border: 1px solid #cddff1; border-radius: 6px; padding: 14px 20px; background-color: #f9fbfe; box-shadow: 1px 1px 4px #dfeaf5;">
@@ -58,7 +55,7 @@
     <div style="margin: 6px 0;">
       <span class="tag">Template</span>
     </div>
-    <a href="../production/ONE/notebooks/template.ipynb" style="text-decoration: none; color: #1d70b8; font-weight: bold;">View Notebook</a>
+    <a href="../production/ANOTHER/notebooks/template.ipynb" style="text-decoration: none; color: #1d70b8; font-weight: bold;">View Notebook</a>
   </div>
 </div>
 </div>
