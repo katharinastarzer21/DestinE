@@ -20,28 +20,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout this repository
         uses: actions/checkout@v4
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Install & build MyST
-        working-directory: mystmd
-        run: |
-          npm ci
-          npm run build
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+
       - name: Install dependencies
         run: |
           pip install pyyaml nbformat
+          npm install -g mystmd
 
       - name: Clone external notebook repository
         run: python scripts/clone_sync_repos.py
@@ -56,19 +51,24 @@ jobs:
         run: python scripts/indexbutton.py
 
       - name: Generate myst.yml and TOC
-        run: python scripts/build_myst_yml.pyl
+        run: python scripts/build_myst_yml.py
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
+      - name: Build MyST HTML site
+        run: myst build --html
 
-      - name: Upload artifact
+      - name: Prepare full_site folder
+        run: |
+          mkdir -p full_site
+          cp -r _build/html/* full_site/
+
+      - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _build/html
+          path: full_site
 
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
+        id: deployment
 
       - name: Commit and push updated files
         run: |
@@ -77,4 +77,3 @@ jobs:
           git add production/ galleries/ galleries_by_tag/ img/ myst.yml index.md
           git commit -m "🔄 Auto-update from GitHub Action" || echo "Nothing to commit"
           git push origin main
-
