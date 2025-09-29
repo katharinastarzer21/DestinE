@@ -55,11 +55,6 @@ project:
       hidden: true
     - file: production/HOOK/Tutorial.ipynb
       hidden: true
-  - title: ONE
-    file: galleries/ONE.md
-    children:
-    - file: production/ONE/notebooks/template.ipynb
-      hidden: true
   - title: STACK
     file: galleries/STACK.md
     children:
@@ -72,11 +67,6 @@ project:
     - file: production/STACK/STACK-Dask-101.ipynb
       hidden: true
     - file: production/STACK/STACK-Python-Client-Dask.ipynb
-      hidden: true
-  - title: ANOTHER
-    file: galleries/ANOTHER.md
-    children:
-    - file: production/ANOTHER/notebooks/template.ipynb
       hidden: true
   - file: galleries_by_tag/tag-access-token.md
     hidden: true
@@ -127,8 +117,6 @@ project:
   - file: galleries_by_tag/tag-stack.md
     hidden: true
   - file: galleries_by_tag/tag-storage.md
-    hidden: true
-  - file: galleries_by_tag/tag-template.md
     hidden: true
   - file: galleries_by_tag/tag-token.md
     hidden: true
