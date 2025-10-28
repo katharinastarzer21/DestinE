@@ -34,7 +34,6 @@ Use the tag filters to quickly find notebooks relevant to your interests or work
 {button}`Stac <galleries_by_tag/tag-stac.md>`
 {button}`Stack <galleries_by_tag/tag-stack.md>`
 {button}`Storage <galleries_by_tag/tag-storage.md>`
-{button}`Template <galleries_by_tag/tag-template.md>`
 {button}`Token <galleries_by_tag/tag-token.md>`
 {button}`Workflow <galleries_by_tag/tag-workflow.md>`
 

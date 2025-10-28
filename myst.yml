@@ -120,8 +120,6 @@ project:
     hidden: true
   - file: galleries_by_tag/tag-storage.md
     hidden: true
-  - file: galleries_by_tag/tag-template.md
-    hidden: true
   - file: galleries_by_tag/tag-token.md
     hidden: true
   - file: galleries_by_tag/tag-workflow.md
