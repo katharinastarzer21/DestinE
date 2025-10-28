@@ -38,6 +38,8 @@ project:
       hidden: true
     - file: production/HDA/REST/HDA-REST-full-version.ipynb
       hidden: true
+    - file: production/HDA/REST/HDA-REST-quick-start-test.ipynb
+      hidden: true
     - file: production/HDA/REST/HDA-REST-quick-start.ipynb
       hidden: true
     - file: production/HDA/PySTAC/HDA-PyStac-Client.ipynb
