@@ -78,7 +78,7 @@
     <strong>HDA Climate DT Parameter Plotter - Tutorial</strong><br>
     This notebook provides an interactive workflow to select, query, download, and visualize Climate Digital Twin parameters from the DestinE Data Lake using the DEDL HDA API.
     <div style="margin: 6px 0;">
-      <span class="tag">HDA</span><span class="tag">ECMWF</span><span class="tag">Earthkit</span><span class="tag">Digital Twin</span>
+      <span class="tag">HDA</span><span class="tag">ECMWF</span><span class="tag">earthkit</span><span class="tag">Digital Twin</span>
     </div>
     <a href="../production/HDA/DestinE_Digital_Twins/ClimateDT-ParameterPlotter.ipynb" style="text-decoration: none; color: #1d70b8; font-weight: bold;">View Notebook</a>
   </div>
@@ -89,7 +89,7 @@
   </div>
   <div style="flex: 1;">
     <strong>Climate Change Adaptation Digital Twin Series</strong><br>
-    This notebook authenticates a user with DestinE services, constructs and submits data requests to the DEDL HDA API for Climate Digital Twin projections, polls for availability, downloads GRIB data for multiple years, and visualizes it using EarthKit.
+    This notebook authenticates a user with DestinE services, constructs and submits data requests to the DEDL HDA API for Climate Digital Twin projections, polls for availability, downloads GRIB data for multiple years, and visualizes it using earthkit.
     <div style="margin: 6px 0;">
       <span class="tag">HDA</span><span class="tag">ECMWF</span><span class="tag">Authentication</span><span class="tag">Digital Twin</span>
     </div>
@@ -130,7 +130,7 @@
     <strong>Weather-Induced Extremes - Data Access using DEDL HDA</strong><br>
     This notebook demonstrates how to access and download sea ice coverage data from the Weather-Induced Extremes Digital Twin using the DestinE Data Lake Harmonised Data Access (DEDL HDA) API, including authentication, filtering, polling, and visualizing the result on a map.
     <div style="margin: 6px 0;">
-      <span class="tag">ECMWF</span><span class="tag">Earthkit</span><span class="tag">Digital Twin</span>
+      <span class="tag">ECMWF</span><span class="tag">earthkit</span><span class="tag">Digital Twin</span>
     </div>
     <a href="../production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES.ipynb" style="text-decoration: none; color: #1d70b8; font-weight: bold;">View Notebook</a>
   </div>
@@ -143,7 +143,7 @@
     <strong>HDA Extreme DT Parameter Plotter - Tutorial</strong><br>
     This notebook shows how to select, request, and download Climate Digital Twin Extremes data from the DestinE Data Lake (DEDL HDA), including user-defined parameter, scenario, date, and level selection, followed by secure authentication, API querying, and visualization using EarthKit.
     <div style="margin: 6px 0;">
-      <span class="tag">ECMWF</span><span class="tag">Earthkit</span><span class="tag">Digital Twin</span>
+      <span class="tag">ECMWF</span><span class="tag">earthkit</span><span class="tag">Digital Twin</span>
     </div>
     <a href="../production/HDA/DestinE_Digital_Twins/ExtremeDT-ParameterPlotter.ipynb" style="text-decoration: none; color: #1d70b8; font-weight: bold;">View Notebook</a>
   </div>
