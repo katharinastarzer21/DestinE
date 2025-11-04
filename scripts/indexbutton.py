@@ -42,7 +42,7 @@ def collect_unique_tags():
 
 def make_buttons_block(tags):
     return [
-        f"{BUTTON_PREFIX}{tag} <galleries_by_tag/tag-{tag.replace(' ', '-').replace('/', '-')}.md>{BUTTON_SUFFIX}\n"
+        f"{BUTTON_PREFIX}{tag} <galleries_by_tag/tag-{tag.lower().replace(' ', '-').replace('/', '-')}.md>{BUTTON_SUFFIX}\n"
         for tag in tags
     ]
 
