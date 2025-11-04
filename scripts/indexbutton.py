@@ -90,3 +90,10 @@ if __name__ == "__main__":
 
     buttons_block = make_buttons_block(tags)
     update_file("index.md", buttons_block)
+
+    for gallery_dir in ["galleries", "galleries_by_tag"]:
+        if os.path.isdir(gallery_dir):
+            for md_file in os.listdir(gallery_dir):
+                if md_file.endswith(".md"):
+                    update_file(os.path.join(gallery_dir, md_file), buttons_block)
+
