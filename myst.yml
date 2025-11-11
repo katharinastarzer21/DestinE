@@ -12,7 +12,11 @@ project:
       hidden: true
     - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.MSG-1.5.ipynb
       hidden: true
+    - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.MTG.ipynb
+      hidden: true
     - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.SENTINEL-3.OL_1_ERR___.ipynb
+      hidden: true
+    - file: production/HDA/DestinE_Digital_Twins/ClimateDT-ExtractLocationValues.ipynb
       hidden: true
     - file: production/HDA/DestinE_Digital_Twins/ClimateDT-ParameterPlotter.ipynb
       hidden: true
@@ -37,8 +41,6 @@ project:
     - file: production/HDA/REST/HDA-REST-Queryables.ipynb
       hidden: true
     - file: production/HDA/REST/HDA-REST-full-version.ipynb
-      hidden: true
-    - file: production/HDA/REST/HDA-REST-quick-start-test.ipynb
       hidden: true
     - file: production/HDA/REST/HDA-REST-quick-start.ipynb
       hidden: true
@@ -132,5 +134,6 @@ site:
     logo: img/logo_bar.png
     hide_footer_links: true
     hide_outline: true
+    color_scheme: light
   parts:
     footer: footer.md
