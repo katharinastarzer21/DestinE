@@ -6,6 +6,8 @@ button.theme{
     display: none !important;
 }
 
+ dark:hidden
+ 
 /* Verschiebt die Suchleiste weiter nach links im Header */
 .md-header__inner .md-search {
   margin-left: 1rem !important;   /* verringere ggf. weiter */
