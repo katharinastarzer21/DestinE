@@ -2,8 +2,6 @@
 
 ### Filter Notebooks by Tags
 
-
-
 {button}`Access Token <./tag-access-token.md>`
 {button}`Authentication <./tag-authentication.md>`
 {button}`AVHRR <./tag-avhrr.md>`

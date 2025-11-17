@@ -2,8 +2,6 @@
 
 ### Filter Notebooks by Tags
 
-
-
 {button}`Access Token <./tag-access-token.md>`
 {button}`Authentication <./tag-authentication.md>`
 {button}`AVHRR <./tag-avhrr.md>`
@@ -52,7 +50,7 @@
     <img src="../img/ECMWF.png" alt="Notebook Thumbnail" style="max-width: 100%; max-height: 100%; object-fit: contain;">
   </div>
   <div style="flex: 1;">
-    <strong>Climate Change Adaptation Digital Twin Series</strong><br>
+    <strong>Climate DT Parameter Series Plot- Data Access using DEDL HDA</strong><br>
     This notebook authenticates a user with DestinE services, constructs and submits data requests to the DEDL HDA API for Climate Digital Twin projections, polls for availability, downloads GRIB data for multiple years, and visualizes it using EarthKit.
     <div style="margin: 6px 0;">
       <span class="tag">HDA</span><span class="tag">ECMWF</span><span class="tag">Authentication</span><span class="tag">Digital Twin</span>
@@ -65,7 +63,7 @@
     <img src="../img/ECMWF.png" alt="Notebook Thumbnail" style="max-width: 100%; max-height: 100%; object-fit: contain;">
   </div>
   <div style="flex: 1;">
-    <strong>Climate Change Adaptation</strong><br>
+    <strong>Climate DT Parameter - Data Access using DEDL HDA</strong><br>
     This notebook authenticates with the DestinE API, queries ECMWF Climate Digital Twin adaptation data based on ScenarioMIP parameters, downloads the selected forecast data using a robust retry mechanism, and visualizes it using EarthKit.
     <div style="margin: 6px 0;">
       <span class="tag">ECMWF</span><span class="tag">Authentication</span><span class="tag">Digital Twin</span>
