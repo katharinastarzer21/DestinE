@@ -22,8 +22,8 @@ CENTRAL_IMG = "img"                  # central image folder in gallery
 BASE_SUBFOLDERS = ["HDA", "HOOK", "STACK"]
 
 # The remote JSON in lab repo
-REGISTRY_URL = f"https://raw.githubusercontent.com/katharinastarzer21/myst_DEDL_temp/{BASE_REPO_BRANCH}/cookbook.json"
-REGISTRY = "cookbook.json"            # local downloaded registry
+REGISTRY_URL = "https://raw.githubusercontent.com/katharinastarzer21/myst_DEDL_temp/refs/heads/main/cookbooks.json"
+REGISTRY = "cookbooks.json"            # local downloaded registry
 
 
 # =====================================================
