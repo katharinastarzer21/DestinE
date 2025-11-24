@@ -57,6 +57,14 @@ jobs:
       - name: Generate keywords markdown files
         run: python scripts/gallery_keywords.py
 
+      - name: Commit copied images
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add galleries/ galleries_by_tag/
+          git commit -m "gallery" || echo "No new galleries"
+          git push origin main
+
       - name: Generate Buttons in index file
         run: python scripts/indexbutton.py
 
