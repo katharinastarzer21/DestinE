@@ -41,12 +41,6 @@ jobs:
 
       - name: Sync notebooks from Lab + external cookbooks
         run: python scripts/clone_sync_repos.py
-      
-      - name: DEBUG — show images after sync
-        run: |
-          echo "=== IMAGES FOUND IN img/ ==="
-          ls -R img || echo "No img folder"
-
 
       - name: Generate gallery markdown files
         run: python scripts/generate_gallery_md.py
@@ -57,47 +51,22 @@ jobs:
       - name: Generate Buttons in index file
         run: python scripts/indexbutton.py
 
-      - name: Copy images into final HTML folder
-        run: |
-          echo "Copy dynamic images into HTML folder..."
-          echo "Workspace is: ${{ github.workspace }}"
-          ls -R ${{ github.workspace }}
-
-          mkdir -p "${{ github.workspace }}/_build/html/img"
-          cp -r "${{ github.workspace }}/img/"* "${{ github.workspace }}/_build/html/img/" || true
-
-          echo "--- FINAL IMG CONTENT ---"
-          ls -R "${{ github.workspace }}/_build/html/img" || echo "Still missing"
-
-    
-        
-      - name: DEBUG — check img/ in workspace
-        run: |
-          echo "=== WORKSPACE LOCATION ==="
-          pwd
-          echo "=== LIST OF FILES ==="
-          ls -R .
-          echo "=== LIST OF ./img ==="
-          ls -R img || echo "img not found"
-
-
       - name: Generate myst.yml and TOC
         run: python scripts/build_myst_yml.py
 
       - name: Build MyST HTML site
         run: myst build --html
 
+      - name: Copy images after MyST build
+        run: |
+          echo "Copy images into _build/html/img…"
+          mkdir -p _build/html/img
+          cp -r img/* _build/html/img/ || true
+
       - name: DEBUG — show images in HTML build
         run: |
           echo "=== IMAGES IN _build/html/img ==="
           ls -R _build/html/img || echo "No html img folder"
-
-
-      - name: DEBUG — show final deploy folder images
-        run: |
-          echo "=== IMAGES IN full_site/img ==="
-          ls -R full_site/img || echo "No images in final site"
-
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
