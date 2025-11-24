@@ -60,9 +60,16 @@ jobs:
       - name: Copy images into final HTML folder
         run: |
           echo "Copy dynamic images into HTML folder..."
+          echo "Workspace is: ${{ github.workspace }}"
+          ls -R ${{ github.workspace }}
+
           mkdir -p "${{ github.workspace }}/_build/html/img"
           cp -r "${{ github.workspace }}/img/"* "${{ github.workspace }}/_build/html/img/" || true
-      
+
+          echo "--- FINAL IMG CONTENT ---"
+          ls -R "${{ github.workspace }}/_build/html/img" || echo "Still missing"
+
+    
         
       - name: DEBUG — check img/ in workspace
         run: |
