@@ -29,7 +29,6 @@ for section in main_sections:
                 rel_path = os.path.relpath(full_path, ".").replace("\\", "/")
                 entry["children"].append({"file": rel_path,
                                          "hidden": True,})
-
     toc.append(entry)
 
 tag_gallery_dir = "galleries_by_tag"
@@ -54,8 +53,7 @@ config = {
             "favicon": "img/EUMETSAT-icon.ico",
             "logo": "img/logo_bar.png",
             "hide_footer_links": True,
-            "hide_outline": True,
-            "color_scheme": "light"
+            "hide_outline": True
         },
         "parts": {
             "footer": "footer.md"

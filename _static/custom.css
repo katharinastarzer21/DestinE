@@ -12,6 +12,7 @@ button.theme{
   margin-right: auto !important;  /* schiebt den Rest nach rechts */
 }
 
+
 @font-face {
   font-family: 'Greycliff CF Bold';
   src: url('https://koenifra.github.io/GreycliffCF/GreycliffCF-Bold.woff2') format('woff2');
@@ -37,7 +38,6 @@ h1{
 }
 
 
-
 h2 { font-family:'Greycliff CF', sans-serif;
   font-weight: 700 !important;
   color: #2F3842 !important;
@@ -49,6 +49,7 @@ h3, h4, h5, h6{
   color: #2F3842 !important;
   font-size: 2em !important;
 }
+
 
 body {
   font-family:'Greycliff CF', sans-serif;
@@ -88,7 +89,6 @@ footer.footer {
 .footer a:hover {
   text-decoration: underline;
 }
-
 
 .tag {
   display: inline-block;
