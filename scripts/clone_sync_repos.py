@@ -5,30 +5,19 @@ import tempfile
 import json
 import urllib.request
 
-# =====================================================
-# CONFIGURATION
-# =====================================================
-
-# The Lab repository (Source of Truth)
 BASE_REPO = "https://github.com/katharinastarzer21/myst_DEDL_temp.git"
 
 # Branch depends on: staging gallery => 'staging', main gallery => 'main'
-BASE_REPO_BRANCH = "main"    # override in your Gallery workflow via env
+BASE_REPO_BRANCH = "main"   
 
-BASE_CLONE_DIR = "cookbook-gallery"   # temp folder for lab clone
-PRODUCTION_DIR = "production"         # where notebooks end up
-CENTRAL_IMG = "img"                  # central image folder in gallery
+BASE_CLONE_DIR = "cookbook-gallery"   
+PRODUCTION_DIR = "production"        
+CENTRAL_IMG = "img"                 
 
 BASE_SUBFOLDERS = ["HDA", "HOOK", "STACK"]
 
-# The remote JSON in lab repo
 REGISTRY_URL = "https://raw.githubusercontent.com/katharinastarzer21/myst_DEDL_temp/refs/heads/main/cookbooks.json"
-REGISTRY = "cookbooks.json"            # local downloaded registry
-
-
-# =====================================================
-# UTILITY HELPERS
-# =====================================================
+REGISTRY = "cookbooks.json"            
 
 def run(cmd):
     print("➜", " ".join(cmd))
@@ -47,9 +36,7 @@ def copytree_replace(src, dst):
 
 
 def copy_images_into_central(repo_dir):
-    """
-    Collects all images from 'img/' folder of a repository into the central gallery img folder.
-    """
+
     src_img = os.path.join(repo_dir, "img")
     if os.path.isdir(src_img):
         os.makedirs(CENTRAL_IMG, exist_ok=True)
@@ -60,7 +47,7 @@ def copy_images_into_central(repo_dir):
                 shutil.copytree(s, d, dirs_exist_ok=True)
             else:
                 shutil.copy2(s, d)
-        print(f"📸 Copied images from {src_img} → {CENTRAL_IMG}")
+        print(f"Copied images from {src_img} → {CENTRAL_IMG}")
 
 
 def find_subfolder(repo_root, sub):
@@ -73,29 +60,19 @@ def find_subfolder(repo_root, sub):
             return c
     return None
 
-
-# =====================================================
-# DOWNLOAD cookbook.json FROM LAB REPO
-# =====================================================
-
 def download_registry():
-    print(f"🌐 Downloading cookbook.json from:\n   {REGISTRY_URL}")
+    print(f"Downloading cookbook.json from:\n   {REGISTRY_URL}")
     try:
         urllib.request.urlretrieve(REGISTRY_URL, REGISTRY)
-        print("✓ cookbook.json downloaded")
+        print("cookbook.json downloaded")
     except Exception as e:
-        print(f"⚠️ Could not download cookbook.json: {e}")
-        print("⚠️ No external cookbooks will be synced.")
+        print(f"Could not download cookbook.json: {e}")
+        print("No external cookbooks will be synced.")
         return False
     return True
 
-
-# =====================================================
-# SYNC INTERNAL NOTEBOOKS (HDA, HOOK, STACK)
-# =====================================================
-
 def sync_base_sections():
-    print(f"📦 Cloning Lab repo: {BASE_REPO} (branch: {BASE_REPO_BRANCH})")
+    print(f"Cloning Lab repo: {BASE_REPO} (branch: {BASE_REPO_BRANCH})")
     clean_dir(BASE_CLONE_DIR)
 
     run([
@@ -113,40 +90,35 @@ def sync_base_sections():
         src = find_subfolder(BASE_CLONE_DIR, sub)
         dst = os.path.join(PRODUCTION_DIR, sub)
         if src:
-            print(f"↻ Updating internal section: {dst}")
+            print(f"Updating internal section: {dst}")
             copytree_replace(src, dst)
         else:
-            print(f"⚠️ Skipping {sub}: folder not found in Lab repo branch {BASE_REPO_BRANCH}")
+            print(f"Skipping {sub}: folder not found in Lab repo branch {BASE_REPO_BRANCH}")
 
     copy_images_into_central(BASE_CLONE_DIR)
 
-    print("🧹 Cleaning Lab clone folder")
+    print("Cleaning Lab clone folder")
     clean_dir(BASE_CLONE_DIR)
 
 
-# =====================================================
-# SYNC EXTERNAL COOKBOOKS FROM registry
-# =====================================================
-
 def sync_external_cookbooks():
 
-    # Download remote cookbook.json
     if not download_registry():
-        return  # no external cookbooks
+        return  
 
     if not os.path.exists(REGISTRY):
-        print("⚠️ No cookbook.json found — skipping external syncing.")
+        print("No cookbook.json found — skipping external syncing.")
         return
 
     try:
         with open(REGISTRY, "r", encoding="utf-8") as f:
             items = json.load(f)
     except Exception as e:
-        print(f"⚠️ Could not parse cookbook.json: {e}")
+        print(f"Could not parse cookbook.json: {e}")
         return
 
     if not isinstance(items, list) or not items:
-        print("ℹ️ cookbook.json is empty — no external cookbooks to sync.")
+        print("cookbook.json is empty — no external cookbooks to sync.")
         return
 
     os.makedirs(PRODUCTION_DIR, exist_ok=True)
@@ -158,10 +130,10 @@ def sync_external_cookbooks():
             branch = (it.get("branch") or "").strip()
 
             if not repo_url or not root:
-                print(f"⚠️ Invalid entry in cookbook.json: {it}")
+                print(f"invalid entry in cookbook.json: {it}")
                 continue
 
-            print(f"🌐 Sync external cookbook: {root} from {repo_url} (branch: {branch or 'default'})")
+            print(f"Sync external cookbook: {root} from {repo_url} (branch: {branch or 'default'})")
             repo_tmp = os.path.join(tmp, root)
 
             clone_cmd = ["git", "clone", "--depth", "1"]
@@ -182,18 +154,13 @@ def sync_external_cookbooks():
 
             copy_images_into_central(repo_tmp)
 
-    print("✓ All external cookbooks synced.")
-
-
-# =====================================================
-# MAIN
-# =====================================================
+    print("All external cookbooks synced.")
 
 def main():
     print("\n========== SYNCING NOTEBOOK GALLERY ==========\n")
     sync_base_sections()
     sync_external_cookbooks()
-    print("\n✓ All sources synced into production/ and img/\n")
+    print("\nAll sources synced into production/ and img/\n")
 
 
 if __name__ == "__main__":
