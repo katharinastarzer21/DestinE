@@ -64,6 +64,11 @@ project:
     children:
     - file: production/THIRD/notebooks/Tutorial.ipynb
       hidden: true
+  - title: WORK
+    file: galleries/WORK.md
+    children:
+    - file: production/WORK/notebooks/Tutorial.ipynb
+      hidden: true
   - title: TEST
     file: galleries/TEST.md
     children:
@@ -77,6 +82,11 @@ project:
     - file: production/STACK/STACK-Dask-101.ipynb
       hidden: true
     - file: production/STACK/STACK-Python-Client-Dask.ipynb
+      hidden: true
+  - title: ANOTHER
+    file: galleries/ANOTHER.md
+    children:
+    - file: production/ANOTHER/notebooks/Tutorial.ipynb
       hidden: true
   - file: galleries_by_tag/tag-access-token.md
     hidden: true
