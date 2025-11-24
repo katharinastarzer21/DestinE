@@ -42,6 +42,15 @@ jobs:
       - name: Sync notebooks from Lab + external cookbooks
         run: python scripts/clone_sync_repos.py
 
+      - name: Commit copied images
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add img/
+          git commit -m "📸 Update gallery images" || echo "No new images"
+          git push origin main
+
+
       - name: Generate gallery markdown files
         run: python scripts/generate_gallery_md.py
 
