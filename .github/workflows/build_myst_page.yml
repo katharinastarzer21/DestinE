@@ -65,11 +65,3 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         id: deployment
-
-      - name: Commit and push updated files
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add galleries/ galleries_by_tag/ myst.yml index.md
-          git commit -m "🔄 Auto-update from GitHub Action" || echo "Nothing to commit"
-          git push origin main
