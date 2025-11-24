@@ -56,6 +56,12 @@ jobs:
 
       - name: Build MyST HTML site
         run: myst build --html
+      
+      - name: Copy images into final HTML folder
+        run: |
+          echo "Copying img/ into _build/html/img/ ..."
+          mkdir -p _build/html/img
+          cp -r img/* _build/html/img/ || true
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
