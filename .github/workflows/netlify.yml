@@ -30,6 +30,10 @@ jobs:
         with:
           node-version: 18.x
 
+      - name: Install dependencies
+        run: |
+          pip install pyyaml nbformat
+
       - name: Sync notebooks from Lab + external cookbooks
         run: python scripts/clone_sync_repos.py
 
@@ -59,7 +63,5 @@ jobs:
 
       - name: Check built files
         run: |
-                echo "Files in _build/html:"
-                ls -R _build/html
-
-
+         echo "Files in _build/html:"
+         ls -R _build/html
