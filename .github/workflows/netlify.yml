@@ -51,7 +51,7 @@ jobs:
         run: python scripts/build_myst_yml.py
 
       - name: Build MyST site
-        run: myst build --html --base-url=/
+        run: myst build --html 
 
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
