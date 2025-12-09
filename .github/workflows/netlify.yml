@@ -9,8 +9,8 @@ permissions:
   contents: write
 
 env:
-  BASE_URL: /${{ github.event.repository.name }}
-  GALLERY_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+  BASE_URL: /
+  GALLERY_URL:  https://testforstaging.netlify.app
 
 jobs:
   build-and-deploy:
@@ -51,7 +51,7 @@ jobs:
         run: python scripts/build_myst_yml.py
 
       - name: Build MyST site
-        run: myst build --html
+        run: myst build --html --base-url=/
 
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
