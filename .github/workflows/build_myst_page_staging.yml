@@ -15,7 +15,7 @@ env:
 
 jobs:
   build-and-deploy:
-    if: github.actor != 'github-actions'
+    if: github.triggering_actor != 'github-actions'
     runs-on: ubuntu-latest
 
     steps:
