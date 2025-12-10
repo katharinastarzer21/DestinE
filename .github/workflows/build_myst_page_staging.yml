@@ -1,4 +1,4 @@
-name: MyST Deploy
+name: MyST Deploy Staging
 
 on:
   push:

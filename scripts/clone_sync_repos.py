@@ -8,16 +8,17 @@ import urllib.request
 BASE_REPO = "https://github.com/katharinastarzer21/myst_DEDL_temp.git"
 
 # Branch depends on: staging gallery => 'staging', main gallery => 'main'
-BASE_REPO_BRANCH = os.getenv("BASE_REPO_BRANCH") 
+BASE_REPO_BRANCH = os.getenv("BASE_REPO_BRANCH")
 
-BASE_CLONE_DIR = "cookbook-gallery"   
-PRODUCTION_DIR = "production"        
-CENTRAL_IMG = "img"                 
+BASE_CLONE_DIR = "cookbook-gallery"
+PRODUCTION_DIR = "production"
+CENTRAL_IMG = "img"
 
 BASE_SUBFOLDERS = ["HDA", "HOOK", "STACK"]
 
-REGISTRY_URL = "https://raw.githubusercontent.com/katharinastarzer21/myst_DEDL_temp/refs/heads/main/cookbooks.json"
-REGISTRY = "cookbooks.json"            
+REGISTRY_URL = "cookbooks.json"
+REGISTRY = "cookbooks.json"
+
 
 def run(cmd):
     print("➜", " ".join(cmd))
@@ -36,7 +37,6 @@ def copytree_replace(src, dst):
 
 
 def copy_images_into_central(repo_dir):
-
     src_img = os.path.join(repo_dir, "img")
     if os.path.isdir(src_img):
         os.makedirs(CENTRAL_IMG, exist_ok=True)
@@ -60,6 +60,7 @@ def find_subfolder(repo_root, sub):
             return c
     return None
 
+
 def download_registry():
     print(f"Downloading cookbook.json from:\n   {REGISTRY_URL}")
     try:
@@ -70,6 +71,7 @@ def download_registry():
         print("No external cookbooks will be synced.")
         return False
     return True
+
 
 def sync_base_sections():
     print(f"Cloning Lab repo: {BASE_REPO} (branch: {BASE_REPO_BRANCH})")
@@ -83,8 +85,6 @@ def sync_base_sections():
         BASE_REPO,
         BASE_CLONE_DIR
     ])
-
-    os.makedirs(PRODUCTION_DIR, exist_ok=True)
 
     for sub in BASE_SUBFOLDERS:
         src = find_subfolder(BASE_CLONE_DIR, sub)
@@ -104,7 +104,7 @@ def sync_base_sections():
 def sync_external_cookbooks():
 
     if not download_registry():
-        return  
+        return
 
     if not os.path.exists(REGISTRY):
         print("No cookbook.json found — skipping external syncing.")
@@ -120,8 +120,6 @@ def sync_external_cookbooks():
     if not isinstance(items, list) or not items:
         print("cookbook.json is empty — no external cookbooks to sync.")
         return
-
-    os.makedirs(PRODUCTION_DIR, exist_ok=True)
 
     with tempfile.TemporaryDirectory() as tmp:
         for it in items:
@@ -144,7 +142,6 @@ def sync_external_cookbooks():
             run(clone_cmd)
 
             src_path = os.path.join(repo_tmp, root) if root not in (".", "/") else repo_tmp
-
             target = os.path.join(PRODUCTION_DIR, root)
 
             if os.path.exists(src_path):
@@ -156,7 +153,16 @@ def sync_external_cookbooks():
 
     print("All external cookbooks synced.")
 
+
 def main():
+    # Always rebuild production from scratch
+    if os.path.exists(PRODUCTION_DIR):
+        print(f"Removing existing production folder: {PRODUCTION_DIR}")
+        shutil.rmtree(PRODUCTION_DIR)
+
+    print(f"Creating fresh production folder: {PRODUCTION_DIR}")
+    os.makedirs(PRODUCTION_DIR, exist_ok=True)
+
     sync_base_sections()
     sync_external_cookbooks()
 
