@@ -63,7 +63,7 @@ jobs:
           git config user.email "github-actions@github.com"
           git add galleries/ galleries_by_tag/
           git commit -m "gallery" || echo "No new galleries"
-          git push origin main
+          git push origin staging
 
       - name: Generate Buttons in index file
         run: python scripts/indexbutton.py
@@ -77,7 +77,7 @@ jobs:
           git config user.email "github-actions@github.com"
           git add myst.yml
           git commit -m "myst.yml" || echo "No new myst.yml"
-          git push origin main
+          git push origin staging
 
       - name: Build MyST HTML site
         run: myst build --html
