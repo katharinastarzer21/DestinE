@@ -8,7 +8,7 @@ import urllib.request
 BASE_REPO = "https://github.com/katharinastarzer21/myst_DEDL_temp.git"
 
 # Branch depends on: staging gallery => 'staging', main gallery => 'main'
-BASE_REPO_BRANCH = "staging"   
+BASE_REPO_BRANCH = os.getenv("BASE_REPO_BRANCH") 
 
 BASE_CLONE_DIR = "cookbook-gallery"   
 PRODUCTION_DIR = "production"        

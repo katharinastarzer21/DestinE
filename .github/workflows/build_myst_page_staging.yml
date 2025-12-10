@@ -2,10 +2,8 @@ name: MyST Deploy
 
 on:
   push:
-    branches: [main]
+    branches: [staging]
   workflow_dispatch:
-  schedule:
-       - cron: '0 */2 * * *'  
 
 permissions:
   contents: write
@@ -15,7 +13,7 @@ permissions:
 env:
   BASE_URL: /${{ github.event.repository.name }}
   GALLERY_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
-  BASE_REPO_BRANCH: main
+  BASE_REPO_BRANCH: staging
 
 jobs:
   build-and-deploy:
