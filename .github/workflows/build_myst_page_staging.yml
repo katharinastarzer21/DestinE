@@ -48,7 +48,7 @@ jobs:
           git config user.email "github-actions@github.com"
           git add img/ production/
           git commit -m "Update gallery images" || echo "No new images"
-          git push origin main
+          git push origin staging
 
 
       - name: Generate gallery markdown files
