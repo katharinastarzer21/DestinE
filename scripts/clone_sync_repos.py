@@ -8,7 +8,7 @@ import urllib.request
 BASE_REPO = "https://github.com/katharinastarzer21/myst_DEDL_temp.git"
 
 # Branch depends on: staging gallery => 'staging', main gallery => 'main'
-BASE_REPO_BRANCH = "main"   
+BASE_REPO_BRANCH = "staging"   
 
 BASE_CLONE_DIR = "cookbook-gallery"   
 PRODUCTION_DIR = "production"        
@@ -157,10 +157,8 @@ def sync_external_cookbooks():
     print("All external cookbooks synced.")
 
 def main():
-    print("\n========== SYNCING NOTEBOOK GALLERY ==========\n")
     sync_base_sections()
     sync_external_cookbooks()
-    print("\nAll sources synced into production/ and img/\n")
 
 
 if __name__ == "__main__":
