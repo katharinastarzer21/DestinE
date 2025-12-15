@@ -59,6 +59,11 @@ project:
       hidden: true
     - file: production/HOOK/Tutorial.ipynb
       hidden: true
+  - title: SECOND
+    file: galleries/SECOND.md
+    children:
+    - file: production/SECOND/notebooks/Tutorial.ipynb
+      hidden: true
   - title: TESTING
     file: galleries/TESTING.md
     children:
