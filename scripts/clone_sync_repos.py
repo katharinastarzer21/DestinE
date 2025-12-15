@@ -136,13 +136,23 @@ def sync_external_cookbooks():
 
             run(clone_cmd)
 
-            src_path = repo_tmp if root in (".", "/") else os.path.join(repo_tmp, root)
+            # root_path = TARGET folder name (like HDA / HOOK / STACK)
+            src_path = repo_tmp
             dst = os.path.join(PRODUCTION_DIR, root)
 
+            print(f"Copying repo contents into {dst}")
             copytree_replace(src_path, dst)
+
+            # move images to central img/ folder
             copy_images_into_central(repo_tmp)
 
+            # remove img folder from production copy
+            img_in_production = os.path.join(dst, "img")
+            if os.path.isdir(img_in_production):
+                shutil.rmtree(img_in_production)
+
     print("All external cookbooks synced.")
+
 
 def main():
     if os.path.exists(PRODUCTION_DIR):
