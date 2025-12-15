@@ -139,8 +139,21 @@ def sync_external_cookbooks():
             src_path = repo_tmp
             dst = os.path.join(PRODUCTION_DIR, root)
 
-            print(f"Copying repo contents into {dst}")
             copytree_replace(src_path, dst)
+
+            # IMPORTANT: remove .git to avoid submodules
+            git_dir = os.path.join(dst, ".git")
+            if os.path.isdir(git_dir):
+                shutil.rmtree(git_dir)
+
+            # move images to central img/ folder
+            copy_images_into_central(repo_tmp)
+
+            # remove img folder from production copy
+            img_in_production = os.path.join(dst, "img")
+            if os.path.isdir(img_in_production):
+                shutil.rmtree(img_in_production)
+
 
             # move images to central img/ folder
             copy_images_into_central(repo_tmp)
