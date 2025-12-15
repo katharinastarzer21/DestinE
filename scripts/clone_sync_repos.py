@@ -20,7 +20,7 @@ CENTRAL_IMG = "img"
 BASE_SUBFOLDERS = ["HDA", "HOOK", "STACK"]
 
 # Local registry for additional external cookbooks
-REGISTRY = "cookbooks.json"
+REGISTRY = os.path.join(BASE_CLONE_DIR, "cookbooks.json")
 
 
 
