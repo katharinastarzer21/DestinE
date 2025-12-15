@@ -96,7 +96,8 @@ def sync_base_sections():
 
 
 def sync_external_cookbooks():
-
+    print("Looking for registry at:", REGISTRY)
+    print("Exists:", os.path.exists(REGISTRY))
     if not os.path.exists(REGISTRY):
         print("No cookbooks.json found — skipping external cookbooks.")
         return
@@ -156,14 +157,13 @@ def sync_external_cookbooks():
 
 def main():
     if os.path.exists(PRODUCTION_DIR):
-        print(f"Removing existing production folder: {PRODUCTION_DIR}")
         shutil.rmtree(PRODUCTION_DIR)
 
-    print(f"Creating fresh production folder: {PRODUCTION_DIR}")
     os.makedirs(PRODUCTION_DIR, exist_ok=True)
+    sync_base_sections()        
+    sync_external_cookbooks() 
 
-    sync_base_sections()
-    sync_external_cookbooks()
+    clean_dir(BASE_CLONE_DIR)
 
 
 if __name__ == "__main__":
