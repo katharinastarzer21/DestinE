@@ -70,7 +70,6 @@ def find_subfolder(repo_root, sub):
 
 def sync_base_sections():
     print(f"Cloning aggregate repo: {BASE_REPO} (branch: {BASE_REPO_BRANCH})")
-    clean_dir(BASE_CLONE_DIR)
 
     run([
         "git", "clone",
@@ -92,7 +91,6 @@ def sync_base_sections():
             print(f"Skipping {sub}: not found in aggregate repo")
 
     copy_images_into_central(BASE_CLONE_DIR)
-    clean_dir(BASE_CLONE_DIR)
 
 
 def sync_external_cookbooks():
