@@ -26,6 +26,8 @@
 {button}`STAC <./tag-stac.md>`
 {button}`STACK <./tag-stack.md>`
 {button}`Storage <./tag-storage.md>`
+{button}`template <./tag-template.md>`
+{button}`test <./tag-test.md>`
 {button}`Token <./tag-token.md>`
 {button}`Workflow <./tag-workflow.md>`
 {button}`yolo <./tag-yolo.md>`

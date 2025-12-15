@@ -26,6 +26,8 @@
 {button}`STAC <../galleries_by_tag/tag-stac.md>`
 {button}`STACK <../galleries_by_tag/tag-stack.md>`
 {button}`Storage <../galleries_by_tag/tag-storage.md>`
+{button}`template <../galleries_by_tag/tag-template.md>`
+{button}`test <../galleries_by_tag/tag-test.md>`
 {button}`Token <../galleries_by_tag/tag-token.md>`
 {button}`Workflow <../galleries_by_tag/tag-workflow.md>`
 {button}`yolo <../galleries_by_tag/tag-yolo.md>`
