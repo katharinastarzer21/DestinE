@@ -15,8 +15,11 @@ env:
 
 jobs:
   build-and-deploy:
-    if: github.event.pusher.name != 'github-actions'
+    if: >
+      github.event_name != 'push' ||
+      contains(github.event.head_commit.message, 'Update gallery')
     runs-on: ubuntu-latest
+
 
     steps:
       - name: Checkout Gallery Repo (staging)
