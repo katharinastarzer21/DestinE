@@ -7,12 +7,10 @@ on:
 permissions:
   contents: write
   issues: read
-  pull-requests: write
 
 jobs:
   promote:
     runs-on: ubuntu-latest
-
     if: >
       contains(fromJson('["katharinastarzer21","koenifra","serenaateum","danaele","christophreimer"]'), github.actor) &&
       contains(github.event.issue.labels.*.name, 'promote-to-main')
@@ -29,12 +27,10 @@ jobs:
           git fetch origin staging:refs/remotes/origin/staging
           git checkout origin/staging -- cookbooks.json
 
-      - name: Create PR to main (only cookbooks.json)
-        uses: peter-evans/create-pull-request@v6
-        with:
-          branch: promote-cookbooks-issue-${{ github.event.issue.number }}
-          title: "Promote cookbooks.json (issue #${{ github.event.issue.number }})"
-          body: "Promotes cookbooks.json from staging to main."
-          commit-message: "Promote cookbooks.json from staging (issue #${{ github.event.issue.number }})"
-          add-paths: cookbooks.json
-          base: main
+      - name: Commit and push to main
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add cookbooks.json
+          git commit -m "Promote cookbooks.json from staging (issue #${{ github.event.issue.number }})" || exit 0
+          git push origin main
