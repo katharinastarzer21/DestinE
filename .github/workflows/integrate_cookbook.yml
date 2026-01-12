@@ -34,38 +34,22 @@ jobs:
 
       - name: Export issue labels
         run: echo "ISSUE_LABELS=${{ join(github.event.issue.labels.*.name, ',') }}" >> $GITHUB_ENV
-
-      - name: Debug working directory + files
+      - name: Prove which parse_issue.py is executed
         run: |
-          pwd
-          ls -la
-          echo "Find cookbooks.json:"
-          find . -maxdepth 3 -name "cookbooks.json" -print
+          echo "FILE HASH:"
+          sha256sum .github/scripts/parse_issue.py
+          echo "LOOK FOR OLD STRING:"
+          grep -n "gespeichert" .github/scripts/parse_issue.py || true
+          echo "LOOK FOR NEW STRING:"
+          grep -n "Action=remove" .github/scripts/parse_issue.py || true
+          echo "FIRST 60 LINES:"
+          sed -n '1,60p' .github/scripts/parse_issue.py
 
-      - name: Show current cookbooks.json (before)
+      - name: Parse Issue body
+        id: parse_issue
         run: |
-          if [ -f cookbooks.json ]; then
-            echo "cookbooks.json exists at repo root"
-            cat cookbooks.json
-          else
-            echo "NO cookbooks.json at repo root!"
-          fi
-      - name: Parse issue and update cookbooks.json
-        run: python .github/scripts/parse_issue.py
+          python .github/scripts/parse_issue.py --input-file issue_body.txt
 
-      - name: Show cookbooks.json (after)
-        run: |
-          echo "COOKBOOK_ACTION=$COOKBOOK_ACTION"
-          if [ -f cookbooks.json ]; then
-            echo "---- cookbooks.json AFTER ----"
-            cat cookbooks.json
-            echo "---- git status ----"
-            git status --porcelain
-            echo "---- diff ----"
-            git diff -- cookbooks.json || true
-          else
-            echo "NO cookbooks.json at repo root AFTER!"
-          fi
 
       - name: Validate notebooks in external repo (add only)
         if: env.COOKBOOK_ACTION == 'add'
