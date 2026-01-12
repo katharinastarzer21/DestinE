@@ -35,8 +35,37 @@ jobs:
       - name: Export issue labels
         run: echo "ISSUE_LABELS=${{ join(github.event.issue.labels.*.name, ',') }}" >> $GITHUB_ENV
 
+      - name: Debug working directory + files
+        run: |
+          pwd
+          ls -la
+          echo "Find cookbooks.json:"
+          find . -maxdepth 3 -name "cookbooks.json" -print
+
+      - name: Show current cookbooks.json (before)
+        run: |
+          if [ -f cookbooks.json ]; then
+            echo "cookbooks.json exists at repo root"
+            cat cookbooks.json
+          else
+            echo "NO cookbooks.json at repo root!"
+          fi
       - name: Parse issue and update cookbooks.json
         run: python .github/scripts/parse_issue.py
+
+      - name: Show cookbooks.json (after)
+        run: |
+          echo "COOKBOOK_ACTION=$COOKBOOK_ACTION"
+          if [ -f cookbooks.json ]; then
+            echo "---- cookbooks.json AFTER ----"
+            cat cookbooks.json
+            echo "---- git status ----"
+            git status --porcelain
+            echo "---- diff ----"
+            git diff -- cookbooks.json || true
+          else
+            echo "NO cookbooks.json at repo root AFTER!"
+          fi
 
       - name: Validate notebooks in external repo (add only)
         if: env.COOKBOOK_ACTION == 'add'
