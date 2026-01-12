@@ -59,16 +59,6 @@ project:
       hidden: true
     - file: production/HOOK/Tutorial.ipynb
       hidden: true
-  - title: THIRD
-    file: galleries/THIRD.md
-    children:
-    - file: production/THIRD/notebooks/Tutorial.ipynb
-      hidden: true
-  - title: TEST
-    file: galleries/TEST.md
-    children:
-    - file: production/TEST/notebooks/template.ipynb
-      hidden: true
   - title: STACK
     file: galleries/STACK.md
     children:
@@ -125,10 +115,6 @@ project:
   - file: galleries_by_tag/tag-stack.md
     hidden: true
   - file: galleries_by_tag/tag-storage.md
-    hidden: true
-  - file: galleries_by_tag/tag-template.md
-    hidden: true
-  - file: galleries_by_tag/tag-test.md
     hidden: true
   - file: galleries_by_tag/tag-token.md
     hidden: true
