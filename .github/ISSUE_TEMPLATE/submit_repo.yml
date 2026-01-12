@@ -1,20 +1,28 @@
-name: "Add New Cookbook"
-description: "Submit a repository to be added to the gallery"
+name: Add external cookbook
+description: Request adding an external cookbook to the gallery (staging preview first).
+title: "[ADD] "
 labels: ["add-repo"]
-assignees: []
 body:
+  - type: markdown
+    attributes:
+      value: |
+        This will create a staging preview by updating `cookbooks.json`.
+        After review, apply label `promote-to-main` to promote to `main`.
+
   - type: input
     id: repo_url
     attributes:
-      label: "Repository URL"
-      description: "Paste the link to your repository"
-      placeholder: "https://github.com/username/repo"
+      label: Repository URL
+      description: GitHub HTTPS URL of the external cookbook repository
+      placeholder: https://github.com/org/repo.git
     validations:
       required: true
+
   - type: input
     id: root_path
     attributes:
-      label: "Cookbook Title in capital letters"
-      placeholder: "COOKBOOKNAME"
+      label: Cookbook Title in capital letters
+      description: Short folder/name identifier (e.g., HDA, HOOK, STACK, MYCOOKBOOK)
+      placeholder: MYCOOKBOOK
     validations:
       required: true
