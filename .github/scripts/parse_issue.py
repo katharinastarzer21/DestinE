@@ -104,6 +104,7 @@ def main():
 
     action = "add" if is_add else "remove"
 
+    # Export for later workflow steps
     if action == "add":
         write_env(REPO_URL=repo_url, ROOT_PATH=root_path, COOKBOOK_ACTION=action)
     else:
@@ -111,6 +112,7 @@ def main():
 
     registry = load_registry()
 
+    # Remove matching root_path entries (normalized match)
     before = len(registry)
     registry = [e for e in registry if norm(e.get("root_path")) != root_path]
     removed = before - len(registry)
@@ -118,6 +120,7 @@ def main():
     if action == "remove":
         print(f"Action=remove. Removed {removed} entries for root_path='{root_path}'.")
     else:
+        # Upsert
         registry.append({"repo_url": repo_url, "root_path": root_path})
         print(f"Action=add. Upserted entry for root_path='{root_path}'.")
 
