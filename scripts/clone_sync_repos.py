@@ -21,7 +21,8 @@ BASE_SUBFOLDERS = ["HDA", "HOOK", "STACK"]
 
 # Local registry for additional external cookbooks
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-REGISTRY = os.path.join(SCRIPT_DIR, "cookbooks.json")
+REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, os.pardir))
+REGISTRY = os.path.join(REPO_ROOT, "cookbooks.json")
 
 def run(cmd):
     print("➜", " ".join(cmd))
