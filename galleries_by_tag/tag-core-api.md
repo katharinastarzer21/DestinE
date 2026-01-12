@@ -26,9 +26,11 @@
 {button}`STAC <./tag-stac.md>`
 {button}`STACK <./tag-stack.md>`
 {button}`Storage <./tag-storage.md>`
+{button}`template <./tag-template.md>`
+{button}`Template <./tag-template.md>`
+{button}`test <./tag-test.md>`
 {button}`Token <./tag-token.md>`
 {button}`Workflow <./tag-workflow.md>`
-{button}`yolo <./tag-yolo.md>`
 
 <div style="display: flex; flex-direction: column; gap: 20px; max-width: 800px;">
 <div class="notebook-card" data-tags="HDA STAC Core API" style="display: flex; align-items: flex-start; border: 1px solid #cddff1; border-radius: 6px; padding: 14px 20px; background-color: #f9fbfe; box-shadow: 1px 1px 4px #dfeaf5;">

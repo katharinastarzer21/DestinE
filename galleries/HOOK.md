@@ -26,9 +26,11 @@
 {button}`STAC <../galleries_by_tag/tag-stac.md>`
 {button}`STACK <../galleries_by_tag/tag-stack.md>`
 {button}`Storage <../galleries_by_tag/tag-storage.md>`
+{button}`template <../galleries_by_tag/tag-template.md>`
+{button}`Template <../galleries_by_tag/tag-template.md>`
+{button}`test <../galleries_by_tag/tag-test.md>`
 {button}`Token <../galleries_by_tag/tag-token.md>`
 {button}`Workflow <../galleries_by_tag/tag-workflow.md>`
-{button}`yolo <../galleries_by_tag/tag-yolo.md>`
 
 <div style="display: flex; flex-direction: column; gap: 20px; max-width: 800px;">
 <div class="notebook-card" data-tags="Hook Authentication Token" style="display: flex; align-items: flex-start; border: 1px solid #cddff1; border-radius: 6px; padding: 14px 20px; background-color: #f9fbfe; box-shadow: 1px 1px 4px #dfeaf5;">
