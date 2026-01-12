@@ -64,8 +64,6 @@ project:
     children:
     - file: production/STACK/DEDL_StackService_Dask.ipynb
       hidden: true
-    - file: production/STACK/DEDL_StackService_TEST.ipynb
-      hidden: true
     - file: production/STACK/STACK-Dask-101.ipynb
       hidden: true
     - file: production/STACK/STACK-Python-Client-Dask.ipynb
@@ -121,8 +119,6 @@ project:
   - file: galleries_by_tag/tag-token.md
     hidden: true
   - file: galleries_by_tag/tag-workflow.md
-    hidden: true
-  - file: galleries_by_tag/tag-yolo.md
     hidden: true
 site:
   template: book-theme
