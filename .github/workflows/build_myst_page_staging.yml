@@ -4,6 +4,9 @@ on:
   push:
     branches: [staging]
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Preview External Cookbook (staging)"]
+    types: [completed]
 
 permissions:
   contents: write
@@ -16,11 +19,10 @@ env:
 jobs:
   build-and-deploy:
     if: >
-      github.event_name != 'push' ||
-      contains(github.event.head_commit.message, 'Update gallery')
+      (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success') &&
+      (github.event_name != 'push' || !contains(github.event.head_commit.message, 'Update gallery'))
+      
     runs-on: ubuntu-latest
-
-
     steps:
       - name: Checkout Gallery Repo (staging)
         uses: actions/checkout@v4
