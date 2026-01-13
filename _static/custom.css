@@ -16,6 +16,38 @@ button.theme{
   color-scheme: light !important;
 }
 
+/* Force light mode regardless of system/browser preference */
+html, :root, body {
+  color-scheme: light !important;
+}
+
+/* If the theme uses data-theme/classes, force them back to light */
+html[data-theme],
+html[data-theme="dark"],
+html.theme-dark,
+body.theme-dark,
+body.dark {
+  color-scheme: light !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html, :root, body {
+    color-scheme: light !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+  }
+
+  /* Häufige Theme-Flächen */
+  header, nav, main, footer, aside, section, article {
+    background: #ffffff !important;
+    color: #111827 !important;
+  }
+
+  a { color: #2563eb !important; }
+  code, pre { background: #f3f4f6 !important; color: #111827 !important; }
+}
+
+
 @font-face {
   font-family: 'Greycliff CF Bold';
   src: url('https://koenifra.github.io/GreycliffCF/GreycliffCF-Bold.woff2') format('woff2');
