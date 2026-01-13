@@ -6,13 +6,11 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
   issues: read
 
 jobs:
   promote:
     runs-on: ubuntu-latest
-
     if: >
       contains(fromJson('["katharinastarzer21","koenifra","serenaateum","danaele","christophreimer"]'), github.actor) &&
       contains(github.event.issue.labels.*.name, 'promote-to-main')
@@ -24,41 +22,15 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: Fetch staging
-        run: git fetch origin staging
-
-      - name: Create promote branch
+      - name: Bring cookbooks.json from staging
         run: |
-          BRANCH="promote-cookbooks-issue-${{ github.event.issue.number }}"
-          git checkout -b "$BRANCH"
-
-      - name: Copy cookbooks.json from staging
-        run: |
+          git fetch origin staging:refs/remotes/origin/staging
           git checkout origin/staging -- cookbooks.json
-          git status --porcelain
 
-      - name: Commit changes
+      - name: Commit and push to main
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add cookbooks.json
           git commit -m "Promote cookbooks.json from staging (issue #${{ github.event.issue.number }})" || exit 0
-
-      - name: Push promote branch
-        run: |
-          BRANCH="promote-cookbooks-issue-${{ github.event.issue.number }}"
-          git push origin "$BRANCH"
-
-      - name: Create pull request to main
-        uses: peter-evans/create-pull-request@v6
-        with:
-          branch: promote-cookbooks-issue-${{ github.event.issue.number }}
-          base: main
-          title: "Promote cookbooks.json from staging (issue #${{ github.event.issue.number }})"
-          body: |
-            This PR promotes **cookbooks.json** from `staging` to `main`.
-
-            - Approved via issue #${{ github.event.issue.number }}
-            - No other files changed
-
-          labels: promote-to-main
+          git push origin main
