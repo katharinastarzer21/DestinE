@@ -30,23 +30,6 @@ body.dark {
   color-scheme: light !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  html, :root, body {
-    color-scheme: light !important;
-    background: #ffffff !important;
-    color: #111827 !important;
-  }
-
-  /* Häufige Theme-Flächen */
-  header, nav, main, footer, aside, section, article {
-    background: #ffffff !important;
-    color: #111827 !important;
-  }
-
-  a { color: #2563eb !important; }
-  code, pre { background: #f3f4f6 !important; color: #111827 !important; }
-}
-
 
 @font-face {
   font-family: 'Greycliff CF Bold';
