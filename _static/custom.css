@@ -12,6 +12,9 @@ button.theme{
   margin-right: auto !important;  /* schiebt den Rest nach rechts */
 }
 
+:root {
+  color-scheme: light !important;
+}
 
 @font-face {
   font-family: 'Greycliff CF Bold';
