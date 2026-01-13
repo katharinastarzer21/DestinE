@@ -21,16 +21,6 @@ html, :root, body {
   color-scheme: light !important;
 }
 
-/* If the theme uses data-theme/classes, force them back to light */
-html[data-theme],
-html[data-theme="dark"],
-html.theme-dark,
-body.theme-dark,
-body.dark {
-  color-scheme: light !important;
-}
-
-
 @font-face {
   font-family: 'Greycliff CF Bold';
   src: url('https://koenifra.github.io/GreycliffCF/GreycliffCF-Bold.woff2') format('woff2');
@@ -71,7 +61,11 @@ h3, h4, h5, h6{
 
 body {
   font-family:'Greycliff CF', sans-serif;
-  /* color: #100F0F !important; */
+  color: #100F0F !important;
+}
+
+html {
+  color-scheme: light !important;
 }
 
 /* .bd-header {
