@@ -1,4 +1,4 @@
-name: MyST Deploy Staging
+name: MyST Deploy Staging (to Repo B)
 
 on:
   push:
@@ -12,19 +12,17 @@ permissions:
   contents: write
 
 env:
-  BASE_URL: /${{ github.event.repository.name }}
-  GALLERY_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
   BASE_REPO_BRANCH: staging
 
 jobs:
-  build-and-deploy:
+  build-and-push-to-repoB:
     if: >
       (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success') &&
       (github.event_name != 'push' || !contains(github.event.head_commit.message, 'Update gallery'))
-      
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Gallery Repo (staging)
+      - name: Checkout Repo A (staging)
         uses: actions/checkout@v4
         with:
           ref: staging
@@ -60,10 +58,29 @@ jobs:
       - name: Generate myst.yml and TOC
         run: python scripts/build_myst_yml.py
 
-      - name: Commit all changes
+      - name: Commit generated changes to staging (Repo A)
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add img/ production/ galleries/ galleries_by_tag/ myst.yml
           git commit -m "Update gallery" || echo "No changes to commit"
           git push origin staging
+
+      - name: Build MyST HTML site
+        run: myst build --html
+
+      # ---- DEPLOY to Repo B via SSH deploy key ----
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_PAGES_SSH_KEY }}
+
+      - name: Publish staging site to Repo B (gh-pages/staging)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.DEPLOY_PAGES_SSH_KEY }}
+          external_repository: katharinastarzer21/dest   # <-- Repo B
+          publish_branch: gh-pages
+          publish_dir: _build/html
+          destination_dir: staging
+          commit_message: "Deploy staging from Repo A @ ${{ github.sha }}"
