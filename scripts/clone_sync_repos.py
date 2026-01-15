@@ -5,21 +5,19 @@ import tempfile
 import json
 
 # Aggregate repo providing HDA / HOOK / STACK
-BASE_REPO = "https://github.com/katharinastarzer21/myst_DEDL_temp.git"
+BASE_REPO = os.getenv("BASE_REPO", "https://github.com/katharinastarzer21/myst_DEDL_temp.git")
 
 # Branch depends on gallery:
 #   staging gallery => "staging"
 #   main gallery    => "main"
-BASE_REPO_BRANCH = os.getenv("BASE_REPO_BRANCH")
+BASE_REPO_BRANCH = os.getenv("BASE_REPO_BRANCH", "main")
 
 BASE_CLONE_DIR = "cookbook-gallery"
 PRODUCTION_DIR = "production"
 CENTRAL_IMG = "img"
 
-# Sections coming from the aggregate repo
 BASE_SUBFOLDERS = ["HDA", "HOOK", "STACK"]
 
-# Local registry for additional external cookbooks
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, os.pardir))
 REGISTRY = os.path.join(REPO_ROOT, "cookbooks.json")
@@ -28,17 +26,14 @@ def run(cmd):
     print("➜", " ".join(cmd))
     subprocess.run(cmd, check=True)
 
-
 def clean_dir(path):
     if os.path.exists(path):
         shutil.rmtree(path)
-
 
 def copytree_replace(src, dst):
     if os.path.exists(dst):
         shutil.rmtree(dst)
     shutil.copytree(src, dst)
-
 
 def copy_images_into_central(repo_dir):
     src_img = os.path.join(repo_dir, "img")
@@ -56,7 +51,6 @@ def copy_images_into_central(repo_dir):
             shutil.copy2(s, d)
 
     print(f"Copied images from {src_img} → {CENTRAL_IMG}")
-
 
 def find_subfolder(repo_root, sub):
     candidates = [
@@ -92,7 +86,6 @@ def sync_base_sections():
 
     copy_images_into_central(BASE_CLONE_DIR)
 
-
 def sync_external_cookbooks():
     print("Looking for registry at:", REGISTRY)
     print("Exists:", os.path.exists(REGISTRY))
@@ -121,10 +114,7 @@ def sync_external_cookbooks():
                 print(f"Invalid entry in cookbooks.json: {it}")
                 continue
 
-            print(
-                f"Sync external cookbook: {root} "
-                f"from {repo_url} (branch: {branch or 'default'})"
-            )
+            print(f"Sync external cookbook: {root} from {repo_url} (branch: {branch or 'default'})")
 
             repo_tmp = os.path.join(tmp, root)
 
@@ -132,16 +122,12 @@ def sync_external_cookbooks():
             if branch:
                 clone_cmd += ["--single-branch", "--branch", branch]
             clone_cmd += [repo_url, repo_tmp]
-
             run(clone_cmd)
 
-            # root_path = TARGET folder name (like HDA / HOOK / STACK)
-            src_path = repo_tmp
             dst = os.path.join(PRODUCTION_DIR, root)
+            copytree_replace(repo_tmp, dst)
 
-            copytree_replace(src_path, dst)
-
-            # IMPORTANT: remove .git to avoid submodules
+            # remove .git
             git_dir = os.path.join(dst, ".git")
             if os.path.isdir(git_dir):
                 shutil.rmtree(git_dir)
@@ -154,28 +140,16 @@ def sync_external_cookbooks():
             if os.path.isdir(img_in_production):
                 shutil.rmtree(img_in_production)
 
-
-            # move images to central img/ folder
-            copy_images_into_central(repo_tmp)
-
-            # remove img folder from production copy
-            img_in_production = os.path.join(dst, "img")
-            if os.path.isdir(img_in_production):
-                shutil.rmtree(img_in_production)
-
     print("All external cookbooks synced.")
-
 
 def main():
     if os.path.exists(PRODUCTION_DIR):
         shutil.rmtree(PRODUCTION_DIR)
 
     os.makedirs(PRODUCTION_DIR, exist_ok=True)
-    sync_base_sections()        
-    sync_external_cookbooks() 
-
+    sync_base_sections()
+    sync_external_cookbooks()
     clean_dir(BASE_CLONE_DIR)
-
 
 if __name__ == "__main__":
     main()
