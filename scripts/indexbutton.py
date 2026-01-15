@@ -94,7 +94,7 @@ def update_file(file_path, buttons):
 if __name__ == "__main__":
     tags = collect_unique_tags()
 
-    buttons_block = make_buttons_block(tags, base_dir=".")
+    buttons_block = make_buttons_block(tags)
     update_file("index.md", buttons_block)
 
     for gallery_dir in GALLERY_DIRS:
