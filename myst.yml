@@ -68,6 +68,11 @@ project:
       hidden: true
     - file: production/STACK/STACK-Python-Client-Dask.ipynb
       hidden: true
+  - title: COOKBOOK
+    file: galleries/COOKBOOK.md
+    children:
+    - file: production/COOKBOOK/notebooks/template.ipynb
+      hidden: true
   - file: galleries_by_tag/tag-access-token.md
     hidden: true
   - file: galleries_by_tag/tag-authentication.md
@@ -116,10 +121,13 @@ project:
     hidden: true
   - file: galleries_by_tag/tag-storage.md
     hidden: true
+  - file: galleries_by_tag/tag-template.md
+    hidden: true
   - file: galleries_by_tag/tag-token.md
     hidden: true
   - file: galleries_by_tag/tag-workflow.md
     hidden: true
+  baseurl: /dest/staging
 site:
   template: book-theme
   options:
