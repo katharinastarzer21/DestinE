@@ -26,7 +26,7 @@ jobs:
           ref: staging
           fetch-depth: 0
 
-      - name: Dump Issue body to file (safe multiline)
+      - name: Dump Issue body
         run: |
           cat <<'EOF' > issue_body.txt
           ${{ github.event.issue.body }}
@@ -35,14 +35,10 @@ jobs:
       - name: Export issue labels
         run: echo "ISSUE_LABELS=${{ join(github.event.issue.labels.*.name, ',') }}" >> $GITHUB_ENV
 
-      - name: Debug event
-        run: |
-          echo "actor=${{ github.actor }}"
-          echo "action=${{ github.event.action }}"
-          echo "labels=${{ join(github.event.issue.labels.*.name, ',') }}"
+      - name: Set target branch (staging)
+        run: echo "TARGET_BRANCH=staging" >> $GITHUB_ENV
 
-
-      - name: Parse issue and update cookbooks.json
+      - name: Parse issue and update cookbooks.json (staging)
         run: python .github/scripts/parse_issue.py
 
       - name: Validate notebooks in external repo (add only)

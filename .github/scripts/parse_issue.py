@@ -1,11 +1,18 @@
 import os
 import json
 
-ISSUE_BODY_FILE = "issue_body.txt"
-REGISTRY = "cookbooks.json"
+ISSUE_BODY_FILE = os.getenv("ISSUE_BODY_FILE", "issue_body.txt")
+REGISTRY = os.getenv("REGISTRY_PATH", "cookbooks.json")  # repo root
+TARGET_BRANCH = (os.getenv("TARGET_BRANCH") or "").strip().lower()  # "staging" or "main"
+
+FIELDS = {
+    "Repository URL": "",
+    "Cookbook Title in capital letters": "",
+    "Branch for STAGING preview": "",
+    "Branch for MAIN (after promotion)": "",
+}
 
 def norm(s: str) -> str:
-    """Normalize strings for safe matching."""
     return (s or "").strip().upper()
 
 def load_issue_body() -> str:
@@ -13,34 +20,35 @@ def load_issue_body() -> str:
         return f.read()
 
 def parse_fields(body: str) -> dict:
-    # expects headings like:
-    # Repository URL
-    # Cookbook Title in capital letters
-    fields = {
-        "Repository URL": "",
-        "Cookbook Title in capital letters": "",
-    }
-
     lines = body.splitlines()
-    current_label = None
+    current = None
+    values = dict(FIELDS)
 
-    for line in lines:
-        line = line.strip().lstrip("#").strip()
-        if line in fields:
-            current_label = line
+    for raw in lines:
+        line = raw.strip().lstrip("#").strip()
+        if line in values:
+            current = line
             continue
-        if current_label and line:
-            fields[current_label] = line.strip()
-            current_label = None
+        if current and line:
+            values[current] = line.strip()
+            current = None
 
-    repo_url = (fields["Repository URL"] or "").strip()
-    root_path = (fields["Cookbook Title in capital letters"] or "").strip()
-    return {"repo_url": repo_url, "root_path": root_path}
+    repo_url = (values["Repository URL"] or "").strip()
+    root_path_raw = (values["Cookbook Title in capital letters"] or "").strip()
+    staging_branch = (values["Branch for STAGING preview"] or "").strip()
+    main_branch = (values["Branch for MAIN (after promotion)"] or "").strip()
+
+    return {
+        "repo_url": repo_url,
+        "root_path_raw": root_path_raw,
+        "root_path": norm(root_path_raw),
+        "staging_branch": staging_branch,
+        "main_branch": main_branch,
+    }
 
 def get_labels() -> set[str]:
     labels_raw = os.getenv("ISSUE_LABELS", "")
-    labels = {x.strip() for x in labels_raw.split(",") if x.strip()}
-    return labels
+    return {x.strip() for x in labels_raw.split(",") if x.strip()}
 
 def load_registry() -> list[dict]:
     if not os.path.exists(REGISTRY):
@@ -48,12 +56,9 @@ def load_registry() -> list[dict]:
     try:
         with open(REGISTRY, "r", encoding="utf-8") as f:
             data = json.load(f)
-        if isinstance(data, list):
-            return data
-        print("WARNING: cookbooks.json is not a list; resetting to [].")
-        return []
+        return data if isinstance(data, list) else []
     except Exception as e:
-        print(f"WARNING: Could not read cookbooks.json ({e}); resetting to [].")
+        print(f"WARNING: Could not read {REGISTRY} ({e}); using [].")
         return []
 
 def save_registry(registry: list[dict]) -> None:
@@ -69,64 +74,90 @@ def write_env(**kv) -> None:
         for k, v in kv.items():
             env_file.write(f"{k}={v}\n")
 
+def pick_branch(staging_branch: str, main_branch: str) -> str:
+    # Decide which branch to store into cookbooks.json
+    if TARGET_BRANCH == "main":
+        return (main_branch or "").strip()
+    # default to staging behavior
+    return (staging_branch or "").strip()
+
 def main():
+    if TARGET_BRANCH not in ("staging", "main"):
+        # be forgiving: if not set, assume staging (preview)
+        print(f"WARNING: TARGET_BRANCH='{TARGET_BRANCH}' not in (staging, main). Defaulting to 'staging'.")
+        # local variable only, don't overwrite env
+        chosen_target = "staging"
+    else:
+        chosen_target = TARGET_BRANCH
+
     body = load_issue_body()
-    print("Full Issue Body:")
-    print(body)
+    print("Full Issue Body:\n", body)
 
     fields = parse_fields(body)
-    repo_url = (fields["repo_url"] or "").strip()
-    root_path_raw = (fields["root_path"] or "").strip()
+    repo_url = fields["repo_url"]
+    root_path_raw = fields["root_path_raw"]
+    root_path = fields["root_path"]
+    staging_branch = fields["staging_branch"]
+    main_branch = fields["main_branch"]
 
-    root_path = norm(root_path_raw)
-
-    print("Extracted Fields:")
-    print(f"→ Repo URL  : {repo_url}")
-    print(f"→ Root Path : {root_path_raw}  (normalized: {root_path})")
+    print("Extracted:")
+    print("  repo_url        =", repo_url)
+    print("  root_path_raw   =", root_path_raw)
+    print("  root_path(norm) =", root_path)
+    print("  staging_branch  =", staging_branch)
+    print("  main_branch     =", main_branch)
+    print("  TARGET_BRANCH   =", chosen_target)
 
     if not root_path:
         raise ValueError("ERROR: Root Path could not be extracted. Aborting.")
 
     labels = get_labels()
-    print(f"ISSUE_LABELS: {sorted(labels)}")
+    print("ISSUE_LABELS:", sorted(labels))
 
     is_add = "add-repo" in labels
     is_remove = "remove-repo" in labels
 
-    # Safety: must be exactly one of them
     if is_add and is_remove:
         raise ValueError("ERROR: Both add-repo and remove-repo are set. Choose only one.")
     if not (is_add or is_remove):
         raise ValueError("ERROR: Neither add-repo nor remove-repo label found. Nothing to do.")
 
     if is_add and not repo_url:
-        raise ValueError("ERROR: REPO_URL is required for add-repo but is empty.")
+        raise ValueError("ERROR: Repository URL is required for add-repo but is empty.")
 
+    # Choose branch to write into cookbooks.json
+    branch_to_use = pick_branch(staging_branch, main_branch)
+
+    # Export env for later steps
     action = "add" if is_add else "remove"
-
-    # Export for later workflow steps
-    if action == "add":
-        write_env(REPO_URL=repo_url, ROOT_PATH=root_path, COOKBOOK_ACTION=action)
-    else:
-        write_env(ROOT_PATH=root_path, COOKBOOK_ACTION=action)
+    write_env(COOKBOOK_ACTION=action, ROOT_PATH=root_path)
+    if is_add:
+        write_env(REPO_URL=repo_url, COOKBOOK_BRANCH=branch_to_use)
 
     registry = load_registry()
 
-    # Remove matching root_path entries (normalized match)
     before = len(registry)
     registry = [e for e in registry if norm(e.get("root_path")) != root_path]
     removed = before - len(registry)
 
     if action == "remove":
         print(f"Action=remove. Removed {removed} entries for root_path='{root_path}'.")
-    else:
-        # Upsert
-        registry.append({"repo_url": repo_url, "root_path": root_path})
-        print(f"Action=add. Upserted entry for root_path='{root_path}'.")
+        save_registry(registry)
+        return
 
+    # Add/upsert entry
+    entry = {
+        "repo_url": repo_url,
+        "root_path": root_path,
+    }
+    # store branch only if provided (empty => default branch)
+    if branch_to_use:
+        entry["branch"] = branch_to_use
+
+    registry.append(entry)
     save_registry(registry)
 
-    print(f"Updated {REGISTRY}. Action: {action}")
+    print(f"Action=add. Upserted entry root_path='{root_path}' with branch='{branch_to_use or 'default'}'.")
     print("Registry root_paths now:", [norm(e.get("root_path")) for e in registry])
 
 if __name__ == "__main__":
