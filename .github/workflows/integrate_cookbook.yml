@@ -2,7 +2,7 @@ name: Preview External Cookbook (staging)
 
 on:
   issues:
-    types: [labeled, edited]
+    types: [labeled]
 
 permissions:
   contents: write
