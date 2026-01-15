@@ -1,1 +1,7 @@
-
+[
+  {
+    "repo_url": "https://github.com/destination-earth/DestinE-DataLake-NotebookTemplate.git",
+    "root_path": "TEST",
+    "branch": "main"
+  }
+]
