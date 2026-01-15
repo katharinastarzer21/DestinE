@@ -12,6 +12,10 @@ permissions:
   contents: write
 
 env:
+  REPO_B: dest
+  STAGING_PATH: staging
+  BASE_URL: /dest/staging
+  GALLERY_URL: https://katharinastarzer21.github.io/dest/staging/
   BASE_REPO_BRANCH: staging
 
 jobs:
