@@ -34,22 +34,16 @@ jobs:
 
       - name: Export issue labels
         run: echo "ISSUE_LABELS=${{ join(github.event.issue.labels.*.name, ',') }}" >> $GITHUB_ENV
-      - name: Prove which parse_issue.py is executed
-        run: |
-          echo "FILE HASH:"
-          sha256sum .github/scripts/parse_issue.py
-          echo "LOOK FOR OLD STRING:"
-          grep -n "gespeichert" .github/scripts/parse_issue.py || true
-          echo "LOOK FOR NEW STRING:"
-          grep -n "Action=remove" .github/scripts/parse_issue.py || true
-          echo "FIRST 60 LINES:"
-          sed -n '1,60p' .github/scripts/parse_issue.py
 
-      - name: Parse Issue body
-        id: parse_issue
+      - name: Debug event
         run: |
-          python .github/scripts/parse_issue.py --input-file issue_body.txt
+          echo "actor=${{ github.actor }}"
+          echo "action=${{ github.event.action }}"
+          echo "labels=${{ join(github.event.issue.labels.*.name, ',') }}"
 
+
+      - name: Parse issue and update cookbooks.json
+        run: python .github/scripts/parse_issue.py
 
       - name: Validate notebooks in external repo (add only)
         if: env.COOKBOOK_ACTION == 'add'

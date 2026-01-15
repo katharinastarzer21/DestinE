@@ -1,4 +1,4 @@
-name: MyST Deploy Staging (to Repo B)
+name: MyST Deploy Staging
 
 on:
   push:
@@ -12,6 +12,8 @@ permissions:
   contents: write
 
 env:
+  BASE_URL: /${{ github.event.repository.name }}
+  GALLERY_URL: https://${{ github.repository_owner }}.github.io/dest
   BASE_REPO_BRANCH: staging
 
 jobs:
