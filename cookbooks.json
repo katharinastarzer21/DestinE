@@ -1,12 +1,1 @@
-[
-  {
-    "repo_url": "https://github.com/destination-earth/DestinE-DataLake-NotebookTemplate.git",
-    "root_path": "TEST",
-    "branch": "main"
-  },
-  {
-    "repo_url": "https://github.com/katharinastarzer21/template_dedl_repository.git",
-    "root_path": "SECOND",
-    "branch": "staging"
-  }
-]
+
