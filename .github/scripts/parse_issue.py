@@ -114,13 +114,13 @@ def main():
     labels = get_labels()
     print("ISSUE_LABELS:", sorted(labels))
 
-    is_add = "add-repo" in labels
     is_remove = "remove-repo" in labels
+    is_add = ("add-repo" in labels) or ("promote-to-main" in labels)
 
     if is_add and is_remove:
-        raise ValueError("ERROR: Both add-repo and remove-repo are set. Choose only one.")
+        raise ValueError("ERROR: Both add/promote and remove-repo are set. Choose only one.")
     if not (is_add or is_remove):
-        raise ValueError("ERROR: Neither add-repo nor remove-repo label found. Nothing to do.")
+        raise ValueError("ERROR: No actionable label found (add-repo, remove-repo, promote-to-main). Nothing to do.")
 
     if is_add and not repo_url:
         raise ValueError("ERROR: Repository URL is required for add-repo but is empty.")
