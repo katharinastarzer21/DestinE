@@ -126,13 +126,12 @@ def main():
     else:
         raise ValueError("No actionable label found.")
 
-    # Choose branch to write into cookbooks.json
     branch_to_use = pick_branch(staging_branch, main_branch)
 
-    # Export env for later steps
-    action = "add" if is_add else "remove"
     write_env(COOKBOOK_ACTION=action, ROOT_PATH=root_path)
-    if is_add:
+    if action == "add":
+        if not repo_url:
+            raise ValueError("ERROR: Repository URL is required for add/promote but is empty.")
         write_env(REPO_URL=repo_url, COOKBOOK_BRANCH=branch_to_use)
 
     registry = load_registry()
@@ -146,12 +145,11 @@ def main():
         save_registry(registry)
         return
 
-    # Add/upsert entry
     entry = {
         "repo_url": repo_url,
         "root_path": root_path,
     }
-    # store branch only if provided (empty => default branch)
+
     if branch_to_use:
         entry["branch"] = branch_to_use
 
