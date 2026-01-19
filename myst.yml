@@ -59,11 +59,6 @@ project:
       hidden: true
     - file: production/HOOK/Tutorial.ipynb
       hidden: true
-  - title: SECOND
-    file: galleries/SECOND.md
-    children:
-    - file: production/SECOND/notebooks/template.ipynb
-      hidden: true
   - title: TEST
     file: galleries/TEST.md
     children:
