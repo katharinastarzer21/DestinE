@@ -118,12 +118,13 @@ def main():
     is_add = ("add-repo" in labels) or ("promote-to-main" in labels)
 
     if is_add and is_remove:
-        raise ValueError("ERROR: Both add/promote and remove-repo are set. Choose only one.")
-    if not (is_add or is_remove):
-        raise ValueError("ERROR: No actionable label found (add-repo, remove-repo, promote-to-main). Nothing to do.")
-
-    if is_add and not repo_url:
-        raise ValueError("ERROR: Repository URL is required for add-repo but is empty.")
+        action = "remove"
+    elif is_remove:
+        action = "remove"
+    elif is_add:
+        action = "add"
+    else:
+        raise ValueError("No actionable label found.")
 
     # Choose branch to write into cookbooks.json
     branch_to_use = pick_branch(staging_branch, main_branch)
