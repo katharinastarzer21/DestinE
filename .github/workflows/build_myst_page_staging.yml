@@ -84,4 +84,6 @@ jobs:
           external_repository: katharinastarzer21/dest
           publish_branch: gh-pages
           publish_dir: _build/html
+          keep_files: false
           commit_message: "Deploy staging from Repo A @ ${{ github.sha }}"
+
