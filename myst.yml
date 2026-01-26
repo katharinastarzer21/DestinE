@@ -3,7 +3,7 @@ project:
   title: DEDL Notebook Gallery
   toc:
   - file: index.md
-  - title: contribute
+  - title: Contribute
     file: contribute.md
   - title: HDA
     file: galleries/HDA.md
@@ -59,20 +59,12 @@ project:
       hidden: true
     - file: production/HOOK/Tutorial.ipynb
       hidden: true
-  - title: SECOND
-    file: galleries/SECOND.md
-    children:
-    - file: production/SECOND/notebooks/template.ipynb
-      hidden: true
-  - title: TEST
-    file: galleries/TEST.md
-    children:
-    - file: production/TEST/notebooks/template.ipynb
-      hidden: true
   - title: STACK
     file: galleries/STACK.md
     children:
     - file: production/STACK/DEDL_StackService_Dask.ipynb
+      hidden: true
+    - file: production/STACK/ExtremeDT_DataCube.ipynb
       hidden: true
     - file: production/STACK/STACK-Dask-101.ipynb
       hidden: true
@@ -125,8 +117,6 @@ project:
   - file: galleries_by_tag/tag-stack.md
     hidden: true
   - file: galleries_by_tag/tag-storage.md
-    hidden: true
-  - file: galleries_by_tag/tag-template.md
     hidden: true
   - file: galleries_by_tag/tag-token.md
     hidden: true
