@@ -49,13 +49,6 @@ jobs:
       - name: Sync notebooks from Lab + external cookbooks
         run: python scripts/clone_sync_repos.py
 
-      - name: Verify cloned LAB branch
-        run: |
-          cd cookbook-gallery
-          git branch --show-current || true
-          git log -1 --oneline
-
-
       - name: Generate gallery markdown files
         run: python scripts/generate_gallery_md.py
 
