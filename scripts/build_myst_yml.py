@@ -14,7 +14,7 @@ if BASE_URL and not BASE_URL.startswith("/"):
     
 toc = [
     {"file": "index.md"},
-    {"title": "contribute", 
+    {"title": "Contribute", 
      "file": "contribute.md"},
 ]
 
