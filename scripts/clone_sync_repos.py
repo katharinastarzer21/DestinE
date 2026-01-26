@@ -5,7 +5,7 @@ import tempfile
 import json
 
 # Aggregate repo providing HDA / HOOK / STACK
-BASE_REPO = os.getenv("BASE_REPO", "https://github.com/destination-earth/DestinE-DataLake-Lab.git")
+BASE_REPO = os.getenv("BASE_REPO", "https://github.com/katharinastarzer21/myst_DEDL_temp.git")
 
 # Branch depends on gallery:
 #   staging gallery => "staging"
