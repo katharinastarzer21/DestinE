@@ -1,51 +1,75 @@
 /* =========================================================
-   MyST / Docs CSS – Force LIGHT mode + custom styling
+   1) FORCE LIGHT MODE (keep current look, prevent dark flip)
    ========================================================= */
 
-/* -------------------------
-   1) Force LIGHT mode always
-   ------------------------- */
-
-/* Prefer light for built-in form controls, scrollbars, etc. */
+/* Always announce light UI to the browser */
 :root,
 html,
 body {
   color-scheme: light !important;
 }
 
-/* Override any dark preference from system/browser */
+/* If system prefers dark, still force light behavior */
 @media (prefers-color-scheme: dark) {
   :root,
   html,
   body {
     color-scheme: light !important;
+  }
+
+  /* If the theme toggles via attributes/classes, neutralize */
+  html[data-theme="dark"],
+  body[data-theme="dark"],
+  html.theme-dark,
+  body.theme-dark {
+    color-scheme: light !important;
+  }
+
+  /* Keep background light without overwriting your theme text colors */
+  body {
     background: #ffffff !important;
-    color: #2F3842 !important;
   }
 }
 
-/* If the theme uses attributes/classes to toggle dark mode */
+/* In case dark theme is forced via attribute/class even without media query */
 html[data-theme="dark"],
 body[data-theme="dark"],
 html.theme-dark,
 body.theme-dark {
   color-scheme: light !important;
   background: #ffffff !important;
-  color: #2F3842 !important;
 }
 
-/* -------------------------
-   2) Hide theme toggle button
-   ------------------------- */
+
+/* =========================================================
+   2) HIDE THE THEME TOGGLE BUTTONS
+   ========================================================= */
 
 button.theme-switch-button,
 button.theme {
   display: none !important;
 }
 
-/* -------------------------
-   3) Typography (Fonts + headings)
-   ------------------------- */
+
+/* =========================================================
+   3) HEADER / SEARCH TWEAKS
+   ========================================================= */
+
+/* Move search bar further left in header */
+.md-header__inner .md-search {
+  margin-left: 1rem !important;
+  margin-right: auto !important;
+}
+
+button[aria-haspopup="dialog"] {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+
+/* =========================================================
+   4) FONTS + TYPOGRAPHY
+   ========================================================= */
 
 @font-face {
   font-family: "Greycliff CF Bold";
@@ -65,7 +89,6 @@ body {
   font-family: "Greycliff CF", sans-serif;
 }
 
-/* Headings */
 h1 {
   font-family: "Greycliff CF Bold", sans-serif;
   font-weight: 900 !important;
@@ -90,52 +113,19 @@ h6 {
   font-size: 2em !important;
 }
 
-/* -------------------------
-   4) Header / search layout tweaks
-   ------------------------- */
 
-/* Move search bar further left in header */
-.md-header__inner .md-search {
-  margin-left: 1rem !important;
-  margin-right: auto !important;
-}
+/* =========================================================
+   5) COLOR OVERRIDES YOU ALREADY USE
+   ========================================================= */
 
-/* Align dialog button (search/settings) */
-button[aria-haspopup="dialog"] {
-  margin-left: 0 !important;
-  margin-right: auto !important;
-}
-
-/* Custom header height (used by some MyST layouts) */
-:root {
-  --custom-header-height: 85px;
-}
-
-/* Elements that use fixed heights in the header layout */
-div[class*="h-[60px]"] {
-  height: var(--custom-header-height) !important;
-}
-
-.fixed.xl\:article-grid {
-  top: var(--custom-header-height) !important;
-}
-
-img.h-9 {
-  height: calc(var(--custom-header-height) * 0.6) !important;
-}
-
-/* -------------------------
-   5) Colors / background overrides
-   ------------------------- */
-
-/* This selector existed in your CSS; keeping it as-is */
 .bg-white\/80 {
   background-color: #18324C !important;
 }
 
-/* -------------------------
-   6) Images
-   ------------------------- */
+
+/* =========================================================
+   6) IMAGES
+   ========================================================= */
 
 img[src*="EUMETSAT-icon"] {
   width: 100px !important;
@@ -145,39 +135,39 @@ img[src*="EUMETSAT-icon"] {
   margin-top: 2px;
 }
 
-/* -------------------------
-   7) Footer styling
-   ------------------------- */
+
+/* =========================================================
+   7) FOOTER
+   ========================================================= */
 
 footer.footer {
   background-color: #18324C !important;
   border-top: 1px solid #18324C !important;
 }
 
-/* Footer links */
-footer.footer a,
-footer.footer a:visited,
-footer.footer a:active {
+.footer a,
+.footer a:visited,
+.footer a:active {
   color: #DFEDFF !important;
   text-decoration: none;
 }
 
-footer.footer a:hover {
+.footer a:hover {
   text-decoration: underline;
 }
 
-/* Note: Your original CSS had nested rules with "&" which is not valid in plain CSS.
-   Rewritten here as normal selectors. */
+/* Your original .footer block rewritten without invalid "&" nesting */
 .footer {
   flex-shrink: 0;
   background: #18324C;
   color: white;
+
+  /* you had both 2rem and 3.5rem; keeping the final effective value */
   padding-left: 3.5rem;
   padding-right: 3.5rem;
 }
 
 .footer .outer-grid {
-  /* spacer, project description, spacer, link columns, spacer */
   grid-template-columns: 3fr 3fr 4fr;
   align-items: center;
   margin-bottom: 0rem;
@@ -196,9 +186,10 @@ footer.footer a:hover {
   text-decoration: underline;
 }
 
-/* -------------------------
-   8) Tags / pills
-   ------------------------- */
+
+/* =========================================================
+   8) TAGS / PILLS
+   ========================================================= */
 
 .tag,
 .launch {
@@ -210,17 +201,19 @@ footer.footer a:hover {
   font-size: 0.75em;
 }
 
-/* -------------------------
-   9) Containers / layout helpers
-   ------------------------- */
+
+/* =========================================================
+   9) LAYOUT HELPERS
+   ========================================================= */
 
 .container {
   overflow: hidden;
 }
 
-/* -------------------------
-   10) Filtering UI (your custom gallery)
-   ------------------------- */
+
+/* =========================================================
+   10) FILTER UI
+   ========================================================= */
 
 .filterDiv {
   float: left;
@@ -237,9 +230,10 @@ footer.footer a:hover {
   display: block;
 }
 
-/* -------------------------
-   11) Button-like links
-   ------------------------- */
+
+/* =========================================================
+   11) LINK BUTTONS
+   ========================================================= */
 
 a.button {
   display: inline-block;
@@ -260,4 +254,25 @@ a.button {
 a.button:hover {
   background-color: #e6f0fa;
   color: #003078;
+}
+
+
+/* =========================================================
+   12) CUSTOM HEADER HEIGHT TWEAKS
+   ========================================================= */
+
+:root {
+  --custom-header-height: 85px;
+}
+
+div[class*="h-[60px]"] {
+  height: var(--custom-header-height) !important;
+}
+
+.fixed.xl\:article-grid {
+  top: var(--custom-header-height) !important;
+}
+
+img.h-9 {
+  height: calc(var(--custom-header-height) * 0.6) !important;
 }
