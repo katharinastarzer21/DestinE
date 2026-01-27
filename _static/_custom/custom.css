@@ -1,0 +1,263 @@
+/* =========================================================
+   MyST / Docs CSS – Force LIGHT mode + custom styling
+   ========================================================= */
+
+/* -------------------------
+   1) Force LIGHT mode always
+   ------------------------- */
+
+/* Prefer light for built-in form controls, scrollbars, etc. */
+:root,
+html,
+body {
+  color-scheme: light !important;
+}
+
+/* Override any dark preference from system/browser */
+@media (prefers-color-scheme: dark) {
+  :root,
+  html,
+  body {
+    color-scheme: light !important;
+    background: #ffffff !important;
+    color: #2F3842 !important;
+  }
+}
+
+/* If the theme uses attributes/classes to toggle dark mode */
+html[data-theme="dark"],
+body[data-theme="dark"],
+html.theme-dark,
+body.theme-dark {
+  color-scheme: light !important;
+  background: #ffffff !important;
+  color: #2F3842 !important;
+}
+
+/* -------------------------
+   2) Hide theme toggle button
+   ------------------------- */
+
+button.theme-switch-button,
+button.theme {
+  display: none !important;
+}
+
+/* -------------------------
+   3) Typography (Fonts + headings)
+   ------------------------- */
+
+@font-face {
+  font-family: "Greycliff CF Bold";
+  src: url("https://koenifra.github.io/GreycliffCF/GreycliffCF-Bold.woff2")
+    format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Greycliff CF";
+  src: url("https://koenifra.github.io/GreycliffCF/GreycliffCF-Regular.woff2")
+    format("woff2");
+  font-display: swap;
+}
+
+body {
+  font-family: "Greycliff CF", sans-serif;
+}
+
+/* Headings */
+h1 {
+  font-family: "Greycliff CF Bold", sans-serif;
+  font-weight: 900 !important;
+  color: #0073E6 !important;
+  font-size: 3em !important;
+}
+
+h2 {
+  font-family: "Greycliff CF", sans-serif;
+  font-weight: 700 !important;
+  color: #2F3842 !important;
+  font-size: 2.5em !important;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Greycliff CF", sans-serif;
+  font-weight: 700 !important;
+  color: #2F3842 !important;
+  font-size: 2em !important;
+}
+
+/* -------------------------
+   4) Header / search layout tweaks
+   ------------------------- */
+
+/* Move search bar further left in header */
+.md-header__inner .md-search {
+  margin-left: 1rem !important;
+  margin-right: auto !important;
+}
+
+/* Align dialog button (search/settings) */
+button[aria-haspopup="dialog"] {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Custom header height (used by some MyST layouts) */
+:root {
+  --custom-header-height: 85px;
+}
+
+/* Elements that use fixed heights in the header layout */
+div[class*="h-[60px]"] {
+  height: var(--custom-header-height) !important;
+}
+
+.fixed.xl\:article-grid {
+  top: var(--custom-header-height) !important;
+}
+
+img.h-9 {
+  height: calc(var(--custom-header-height) * 0.6) !important;
+}
+
+/* -------------------------
+   5) Colors / background overrides
+   ------------------------- */
+
+/* This selector existed in your CSS; keeping it as-is */
+.bg-white\/80 {
+  background-color: #18324C !important;
+}
+
+/* -------------------------
+   6) Images
+   ------------------------- */
+
+img[src*="EUMETSAT-icon"] {
+  width: 100px !important;
+  height: auto !important;
+  float: left !important;
+  margin-right: 8px;
+  margin-top: 2px;
+}
+
+/* -------------------------
+   7) Footer styling
+   ------------------------- */
+
+footer.footer {
+  background-color: #18324C !important;
+  border-top: 1px solid #18324C !important;
+}
+
+/* Footer links */
+footer.footer a,
+footer.footer a:visited,
+footer.footer a:active {
+  color: #DFEDFF !important;
+  text-decoration: none;
+}
+
+footer.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Note: Your original CSS had nested rules with "&" which is not valid in plain CSS.
+   Rewritten here as normal selectors. */
+.footer {
+  flex-shrink: 0;
+  background: #18324C;
+  color: white;
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+
+.footer .outer-grid {
+  /* spacer, project description, spacer, link columns, spacer */
+  grid-template-columns: 3fr 3fr 4fr;
+  align-items: center;
+  margin-bottom: 0rem;
+}
+
+.footer .outer-grid li {
+  list-style: none;
+}
+
+.footer a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------
+   8) Tags / pills
+   ------------------------- */
+
+.tag,
+.launch {
+  display: inline-block;
+  background-color: #e6f0fa;
+  border-radius: 10px;
+  padding: 3px 10px;
+  margin: 2px;
+  font-size: 0.75em;
+}
+
+/* -------------------------
+   9) Containers / layout helpers
+   ------------------------- */
+
+.container {
+  overflow: hidden;
+}
+
+/* -------------------------
+   10) Filtering UI (your custom gallery)
+   ------------------------- */
+
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/* -------------------------
+   11) Button-like links
+   ------------------------- */
+
+a.button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 6px;
+  border-radius: 6px;
+  border: 1px solid #cddff1;
+  background-color: #f9fbfe;
+  color: #1d70b8;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 1px 1px 3px #e0eaf5;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+a.button:hover {
+  background-color: #e6f0fa;
+  color: #003078;
+}
