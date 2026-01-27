@@ -1,24 +1,3 @@
-/* Always force LIGHT theme – override prefers-color-scheme */
-@media (prefers-color-scheme: dark) {
-  :root, html, body {
-    color-scheme: light !important;
-  }
-
-  /* If the theme uses data attributes or classes for dark mode, neutralize them */
-  html[data-theme="dark"],
-  body[data-theme="dark"],
-  html.theme-dark,
-  body.theme-dark {
-    color-scheme: light !important;
-  }
-
-  /* Optional: brute-force background/text so it can't flip */
-  body {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
-}
-
 button.theme-switch-button {
     display: none !important;
 }
@@ -33,14 +12,6 @@ button.theme{
   margin-right: auto !important;  /* schiebt den Rest nach rechts */
 }
 
-:root {
-  color-scheme: light !important;
-}
-
-/* Force light mode regardless of system/browser preference */
-html, :root, body {
-  color-scheme: light !important;
-}
 
 @font-face {
   font-family: 'Greycliff CF Bold';
@@ -82,11 +53,7 @@ h3, h4, h5, h6{
 
 body {
   font-family:'Greycliff CF', sans-serif;
-}
-
-
-html {
-  color-scheme: light !important;
+  /* color: #100F0F !important; */
 }
 
 /* .bd-header {
@@ -187,7 +154,6 @@ footer.footer {
 .show {
   display: block;
 }
-
 
 a.button {
   display: inline-block;
