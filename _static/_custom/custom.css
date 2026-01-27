@@ -1,64 +1,36 @@
-/* =========================================================
-   1) FORCE LIGHT MODE (keep current look, prevent dark flip)
-   ========================================================= */
 
-/* Always announce light UI to the browser */
-:root,
-html,
-body {
-  color-scheme: light !important;
+button.theme-switch-button {
+    display: none !important;
 }
 
-/* If system prefers dark, still force light behavior */
-@media (prefers-color-scheme: dark) {
-  :root,
-  html,
-  body {
-    color-scheme: light !important;
-  }
-
-  /* If the theme toggles via attributes/classes, neutralize */
-  html[data-theme="dark"],
-  body[data-theme="dark"],
-  html.theme-dark,
-  body.theme-dark {
-    color-scheme: light !important;
-  }
-
-  /* Keep background light without overwriting your theme text colors */
-  body {
-    background: #ffffff !important;
-  }
+button.theme{
+    display: none !important;
 }
 
-/* In case dark theme is forced via attribute/class even without media query */
-html[data-theme="dark"],
-body[data-theme="dark"],
-html.theme-dark,
-body.theme-dark {
-  color-scheme: light !important;
-  background: #ffffff !important;
-}
-
-
-/* =========================================================
-   2) HIDE THE THEME TOGGLE BUTTONS
-   ========================================================= */
-
-button.theme-switch-button,
-button.theme {
-  display: none !important;
-}
-
-
-/* =========================================================
-   3) HEADER / SEARCH TWEAKS
-   ========================================================= */
-
-/* Move search bar further left in header */
+/* Verschiebt die Suchleiste weiter nach links im Header */
 .md-header__inner .md-search {
-  margin-left: 1rem !important;
-  margin-right: auto !important;
+  margin-left: 1rem !important;   /* verringere ggf. weiter */
+  margin-right: auto !important;  /* schiebt den Rest nach rechts */
+}
+
+:root {
+  color-scheme: light !important;
+}
+
+/* Force light mode regardless of system/browser preference */
+html, :root, body {
+  color-scheme: light !important;
+}
+
+@font-face {
+  font-family: 'Greycliff CF Bold';
+  src: url('https://koenifra.github.io/GreycliffCF/GreycliffCF-Bold.woff2') format('woff2');
+}
+
+
+@font-face {
+  font-family: 'Greycliff CF';
+  src: url('https://koenifra.github.io/GreycliffCF//GreycliffCF-Regular.woff2') format('woff2');
 }
 
 button[aria-haspopup="dialog"] {
@@ -67,78 +39,53 @@ button[aria-haspopup="dialog"] {
 }
 
 
-/* =========================================================
-   4) FONTS + TYPOGRAPHY
-   ========================================================= */
-
-@font-face {
-  font-family: "Greycliff CF Bold";
-  src: url("https://koenifra.github.io/GreycliffCF/GreycliffCF-Bold.woff2")
-    format("woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Greycliff CF";
-  src: url("https://koenifra.github.io/GreycliffCF/GreycliffCF-Regular.woff2")
-    format("woff2");
-  font-display: swap;
-}
-
-body {
-  font-family: "Greycliff CF", sans-serif;
-}
-
-h1 {
-  font-family: "Greycliff CF Bold", sans-serif;
+h1{
+  font-family:'Greycliff CF Bold', sans-serif;
   font-weight: 900 !important;
   color: #0073E6 !important;
   font-size: 3em !important;
 }
 
-h2 {
-  font-family: "Greycliff CF", sans-serif;
+
+h2 { font-family:'Greycliff CF', sans-serif;
   font-weight: 700 !important;
   color: #2F3842 !important;
-  font-size: 2.5em !important;
-}
+  font-size: 2.5em !important;}
 
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Greycliff CF", sans-serif;
+h3, h4, h5, h6{
+  font-family:'Greycliff CF', sans-serif;
   font-weight: 700 !important;
   color: #2F3842 !important;
   font-size: 2em !important;
 }
 
 
-/* =========================================================
-   5) COLOR OVERRIDES YOU ALREADY USE
-   ========================================================= */
+body {
+  font-family:'Greycliff CF', sans-serif;
+}
+
+
+html {
+  color-scheme: light !important;
+}
+
+/* .bd-header {
+    background-color: var(--header-blue);
+} */
 
 .bg-white\/80 {
   background-color: #18324C !important;
 }
 
 
-/* =========================================================
-   6) IMAGES
-   ========================================================= */
-
 img[src*="EUMETSAT-icon"] {
-  width: 100px !important;
-  height: auto !important;
-  float: left !important;
-  margin-right: 8px;
-  margin-top: 2px;
+    width: 100px !important;
+    height: auto !important;
+    float: left !important;
+    margin-right: 8px;
+    margin-top: 2px;
 }
 
-
-/* =========================================================
-   7) FOOTER
-   ========================================================= */
 
 footer.footer {
   background-color: #18324C !important;
@@ -156,42 +103,15 @@ footer.footer {
   text-decoration: underline;
 }
 
-/* Your original .footer block rewritten without invalid "&" nesting */
-.footer {
-  flex-shrink: 0;
-  background: #18324C;
-  color: white;
-
-  /* you had both 2rem and 3.5rem; keeping the final effective value */
-  padding-left: 3.5rem;
-  padding-right: 3.5rem;
+.tag {
+  display: inline-block;
+  background-color: #e6f0fa;
+  border-radius: 10px;
+  padding: 3px 10px;
+  margin: 2px;
+  font-size: 0.75em;
 }
 
-.footer .outer-grid {
-  grid-template-columns: 3fr 3fr 4fr;
-  align-items: center;
-  margin-bottom: 0rem;
-}
-
-.footer .outer-grid li {
-  list-style: none;
-}
-
-.footer a {
-  color: white !important;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-
-/* =========================================================
-   8) TAGS / PILLS
-   ========================================================= */
-
-.tag,
 .launch {
   display: inline-block;
   background-color: #e6f0fa;
@@ -201,19 +121,37 @@ footer.footer {
   font-size: 0.75em;
 }
 
+.footer {
+  flex-shrink: 0;
+  background: #18324C;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
-/* =========================================================
-   9) LAYOUT HELPERS
-   ========================================================= */
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  & .outer-grid {
+    /* spacer, project description, spacer, link columns, spacer */
+    grid-template-columns: 3fr 3fr 4fr;
+    align-items: center;
+    margin-bottom: 0rem;
+
+    & li {
+      list-style: none;
+    }
+  }
+  .footer a {
+  color: white !important;
+  text-decoration: none;
+}
+  .footer a:hover {
+  text-decoration: underline;
+}
+}
 
 .container {
   overflow: hidden;
 }
-
-
-/* =========================================================
-   10) FILTER UI
-   ========================================================= */
 
 .filterDiv {
   float: left;
@@ -223,17 +161,13 @@ footer.footer {
   line-height: 100px;
   text-align: center;
   margin: 2px;
-  display: none;
+  display: none; 
 }
 
 .show {
   display: block;
 }
 
-
-/* =========================================================
-   11) LINK BUTTONS
-   ========================================================= */
 
 a.button {
   display: inline-block;
@@ -256,13 +190,9 @@ a.button:hover {
   color: #003078;
 }
 
-
-/* =========================================================
-   12) CUSTOM HEADER HEIGHT TWEAKS
-   ========================================================= */
-
 :root {
   --custom-header-height: 85px;
+  color-scheme: light;
 }
 
 div[class*="h-[60px]"] {
