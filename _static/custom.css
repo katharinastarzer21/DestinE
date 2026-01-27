@@ -183,7 +183,7 @@ footer.footer {
   /* Optional: brute-force background/text so it can't flip */
   body {
     background: #ffffff !important;
-    color: #2F3842 !important;
+    color: #000000 !important;
   }
 }
 
