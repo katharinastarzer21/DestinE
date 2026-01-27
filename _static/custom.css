@@ -1,3 +1,40 @@
+:root,
+html,
+body {
+  color-scheme: light !important;
+}
+
+/* If system prefers dark, still force light behavior */
+@media (prefers-color-scheme: dark) {
+  :root,
+  html,
+  body {
+    color-scheme: light !important;
+  }
+
+  /* If the theme toggles via attributes/classes, neutralize */
+  html[data-theme="dark"],
+  body[data-theme="dark"],
+  html.theme-dark,
+  body.theme-dark {
+    color-scheme: light !important;
+  }
+
+  /* Keep background light without overwriting your theme text colors */
+  body {
+    background: #ffffff !important;
+  }
+}
+
+/* In case dark theme is forced via attribute/class even without media query */
+html[data-theme="dark"],
+body[data-theme="dark"],
+html.theme-dark,
+body.theme-dark {
+  color-scheme: light !important;
+  background: #ffffff !important;
+}
+
 button.theme-switch-button {
     display: none !important;
 }
