@@ -166,6 +166,26 @@ footer.footer {
 .show {
   display: block;
 }
+/* Always force LIGHT theme – override prefers-color-scheme */
+@media (prefers-color-scheme: dark) {
+  :root, html, body {
+    color-scheme: light !important;
+  }
+
+  /* If the theme uses data attributes or classes for dark mode, neutralize them */
+  html[data-theme="dark"],
+  body[data-theme="dark"],
+  html.theme-dark,
+  body.theme-dark {
+    color-scheme: light !important;
+  }
+
+  /* Optional: brute-force background/text so it can't flip */
+  body {
+    background: #ffffff !important;
+    color: #2F3842 !important;
+  }
+}
 
 a.button {
   display: inline-block;
