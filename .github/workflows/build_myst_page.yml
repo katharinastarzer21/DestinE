@@ -48,6 +48,23 @@ jobs:
       - name: Sync notebooks from Lab + external cookbooks
         run: python scripts/clone_sync_repos.py
 
+      - name: Debug outputs after sync (PNG count)
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          nb = pathlib.Path("production/HDA/EODAG/HDA-EODAG-full-version.ipynb")
+          data = json.loads(nb.read_text(encoding="utf-8"))
+          png = 0
+          widget = 0
+          for c in data.get("cells", []):
+            for o in c.get("outputs", []):
+              d = o.get("data", {})
+              if "image/png" in d: png += 1
+              if "application/vnd.jupyter.widget-view+json" in d: widget += 1
+          print("PNG outputs:", png)
+          print("Widget outputs:", widget)
+          PY
+
       - name: Generate gallery markdown files
         run: python scripts/generate_gallery_md.py
 
