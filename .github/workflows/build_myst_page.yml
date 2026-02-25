@@ -84,6 +84,9 @@ jobs:
           git add img/ production/ galleries/ galleries_by_tag/ myst.yml
           git commit -m "Update gallery" || echo "No changes"
           git push origin main
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
 
       - name: Build MyST HTML site
         run: myst build --html
