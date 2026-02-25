@@ -48,23 +48,6 @@ jobs:
       - name: Sync notebooks from Lab + external cookbooks
         run: python scripts/clone_sync_repos.py
 
-      - name: Debug outputs after sync (PNG count)
-        run: |
-          python - <<'PY'
-          import json, pathlib
-          nb = pathlib.Path("production/HDA/EODAG/HDA-EODAG-full-version.ipynb")
-          data = json.loads(nb.read_text(encoding="utf-8"))
-          png = 0
-          widget = 0
-          for c in data.get("cells", []):
-            for o in c.get("outputs", []):
-              d = o.get("data", {})
-              if "image/png" in d: png += 1
-              if "application/vnd.jupyter.widget-view+json" in d: widget += 1
-          print("PNG outputs:", png)
-          print("Widget outputs:", widget)
-          PY
-
       - name: Generate gallery markdown files
         run: python scripts/generate_gallery_md.py
 
@@ -77,6 +60,18 @@ jobs:
       - name: Generate myst.yml and TOC
         run: python scripts/build_myst_yml.py
 
+      - name: Build HTML Assets
+        run: myst build --html
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_build/html'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      
       - name: Commit all changes
         run: |
           git config user.name "github-actions"
@@ -84,18 +79,3 @@ jobs:
           git add img/ production/ galleries/ galleries_by_tag/ myst.yml
           git commit -m "Update gallery" || echo "No changes"
           git push origin main
-          
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Build MyST HTML site
-        run: myst build --html
-
-      - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _build/html
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
-        id: deployment
