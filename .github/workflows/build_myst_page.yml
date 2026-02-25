@@ -39,6 +39,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18.x
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
 
       - name: Install dependencies
         run: |
@@ -66,12 +69,11 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: './_build/html'
-      - name: Debug plot assets in build
+
+      - name: Debug image src paths
         run: |
-          echo "PNG files in build:"
-          find _build/html -type f -name "*.png" | head -n 50
-          echo "Any <img> tags:"
-          grep -R --line-number "<img" _build/html | head -n 30 || true
+          echo "Sample references to build/*.png in HTML:"
+          grep -R --line-number -E "build/[^\"']+\.png" _build/html | head -n 20 || true
 
       - name: Deploy to GitHub Pages
         id: deployment
