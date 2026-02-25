@@ -66,16 +66,13 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: './_build/html'
+      - name: Debug plot assets in build
+        run: |
+          echo "PNG files in build:"
+          find _build/html -type f -name "*.png" | head -n 50
+          echo "Any <img> tags:"
+          grep -R --line-number "<img" _build/html | head -n 30 || true
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-      
-      - name: Commit all changes
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add img/ production/ galleries/ galleries_by_tag/ myst.yml
-          git commit -m "Update gallery" || echo "No changes"
-          git push origin main
