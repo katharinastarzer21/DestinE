@@ -46,6 +46,23 @@ jobs:
 
       - name: Sync notebooks from Lab + external cookbooks
         run: python scripts/clone_sync_repos.py
+        
+      - name: Debug notebook outputs (this notebook)
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          nb = pathlib.Path("production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.METOP.AVHRRL1.ipynb")  # <-- Pfad ggf. anpassen
+          data = json.loads(nb.read_text(encoding="utf-8"))
+          cells_with_outputs = sum(1 for c in data.get("cells", []) if c.get("outputs"))
+          png = 0
+          for c in data.get("cells", []):
+            for o in c.get("outputs", []):
+              d = o.get("data", {})
+              if "image/png" in d:
+                png += 1
+          print("cells_with_outputs:", cells_with_outputs)
+          print("png_outputs:", png)
+          PY
 
       - name: Generate gallery markdown files
         run: python scripts/generate_gallery_md.py
