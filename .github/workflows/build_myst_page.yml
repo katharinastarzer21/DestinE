@@ -42,7 +42,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install pyyaml nbformat
-          npm install -g mystmd
+          npm install -g mystmd@v1.6.7
 
       - name: Sync notebooks from Lab + external cookbooks
         run: python scripts/clone_sync_repos.py
