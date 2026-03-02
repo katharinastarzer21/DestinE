@@ -122,7 +122,7 @@ project:
     hidden: true
   - file: galleries_by_tag/tag-workflow.md
     hidden: true
-  baseurl: /DestinE
+ # baseurl: /DestinE
 site:
   template: book-theme
   options:
