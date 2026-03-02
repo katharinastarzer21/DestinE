@@ -63,17 +63,14 @@ jobs:
       - name: Generate myst.yml and TOC
         run: python scripts/build_myst_yml.py
 
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
       - name: Build HTML Assets
         run: myst build --html
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './_build/html'
-
-      - name: Debug image src paths
-        run: |
-          echo "Sample references to build/*.png in HTML:"
-          grep -R --line-number -E "build/[^\"']+\.png" _build/html | head -n 20 || true
+        env:
+          BASE_URL: ${{ steps.pages.outputs.base_path }}
 
       - name: Deploy to GitHub Pages
         id: deployment
