@@ -49,7 +49,7 @@ config = {
     "project": {
         "title": "DEDL Notebook Gallery",
         "toc": toc,
-        "baseurl": BASE_URL,
+   #     "baseurl": BASE_URL,
     },
     "site": {
         "template": "book-theme",
