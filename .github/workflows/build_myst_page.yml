@@ -81,6 +81,11 @@ jobs:
         env:
           BASE_URL: ${{ steps.pages.outputs.base_path }}
 
+      - name: Debug deployment fingerprint
+        run: |
+          echo "BUILD_FINGERPRINT=$(date -u +%Y%m%d-%H%M%S)" >> _build/html/build_fingerprint.txt
+          ls -la _build/html | head
+
       - name: Debug notebook outputs (this notebook)
         run: |
           python - <<'PY'
