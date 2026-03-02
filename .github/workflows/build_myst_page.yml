@@ -81,6 +81,9 @@ jobs:
         env:
           BASE_URL: ${{ steps.pages.outputs.base_path }}
 
+      - name: Show mystmd version
+        run: myst --version
+
       - name: Debug deployment fingerprint
         run: |
           echo "BUILD_FINGERPRINT=$(date -u +%Y%m%d-%H%M%S)" >> _build/html/build_fingerprint.txt
