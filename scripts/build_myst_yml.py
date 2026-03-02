@@ -54,7 +54,7 @@ config = {
     "site": {
         "template": "book-theme",
         "options": {
-    #        "style": "_static/custom.css",
+            "style": "_static/custom.css",
             "favicon": "img/EUMETSAT-icon.ico",
             "logo": "img/logo_bar.png",
             "hide_footer_links": True,
