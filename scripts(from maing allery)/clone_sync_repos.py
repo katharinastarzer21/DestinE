@@ -5,7 +5,7 @@ import tempfile
 import json
 import urllib.request
 
-BASE_REPO = "https://github.com/destination-earth/DestinE-DataLake-Lab.git"
+BASE_REPO = "https://github.com/katharinastarzer21/myst_DEDL_temp.git"
 BASE_REPO_BRANCH = "main"         
 BASE_CLONE_DIR = "cookbook-gallery"
 PRODUCTION_DIR = "production"

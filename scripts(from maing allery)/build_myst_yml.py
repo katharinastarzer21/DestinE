@@ -50,6 +50,7 @@ config = {
         "title": "DEDL Notebook Gallery",
         "toc": toc,
         "baseurl": BASE_URL,
+        "jupyter": True
     },
     "site": {
         "template": "book-theme",
