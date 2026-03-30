@@ -48,9 +48,9 @@ config = {
     "version": 1,
     "project": {
         "title": "DEDL Notebook Gallery",
-        "toc": toc,
-        "baseurl": BASE_URL,
-        "jupyter": True
+        "github": "katharinastarzer21/DestinE",
+        "jupyter": True,
+        "toc": toc
     },
     "site": {
         "template": "book-theme",

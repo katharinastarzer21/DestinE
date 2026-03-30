@@ -1,0 +1,10 @@
+jupyterlab
+notebook
+ipython
+ipywidgets
+matplotlib
+xarray
+requests
+tqdm
+packaging
+destinelab
