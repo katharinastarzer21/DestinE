@@ -8,7 +8,7 @@ PRODUCTION_ROOT = "production"
 main_sections = [d for d in os.listdir(PRODUCTION_ROOT) if os.path.isdir(os.path.join(PRODUCTION_ROOT, d))]
 
 BASE_URL = os.getenv("BASE_URL", "").rstrip("/")
-# optional safety: ensure it starts with /
+
 if BASE_URL and not BASE_URL.startswith("/"):
     BASE_URL = "/" + BASE_URL
     
@@ -48,8 +48,9 @@ config = {
     "version": 1,
     "project": {
         "title": "DEDL Notebook Gallery",
-        "toc": toc,
-   #     "baseurl": BASE_URL,
+        "github": "katharinastarzer21/DestinE",
+        "jupyter": True,
+        "toc": toc
     },
     "site": {
         "template": "book-theme",
