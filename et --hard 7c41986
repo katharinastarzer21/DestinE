@@ -1,0 +1,505 @@
+[33m273fdc4[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m new reqiremnts file
+[33md9a463b[m add widgets
+[33mfd7ce3e[m add widgets
+[33m5001c57[m add widgets
+[33m48d5c13[m change to myst_dedl_temp
+[33m2bd9924[m debug
+[33m7a1c0c9[m debug
+[33m6848016[m debug
+[33me0e7d68[m debug
+[33m846f2c3[m debug
+[33m50ba19e[m debug
+[33m2a12370[m debug
+[33mad1e698[m debug
+[33m3769985[m debg img
+[33mc09e204[m debg img
+[33m584b625[m debg img
+[33me69b49f[m debg img
+[33m947d488[m debg img
+[33m5b600a8[m debugg workflo
+[33me304966[m debugg workflo
+[33mb2d574d[m debugg workflo
+[33m64b8cd8[m debugg workflo
+[33m72156f3[m debugg workflo
+[33mddafeab[m light theme
+[33m7426eae[m light theme
+[33m244d597[m light theme
+[33m40c245f[m light theme
+[33mec6bc1a[m light theme
+[33m9fa3df2[m light theme
+[33m7e49680[m light theme
+[33m35d2247[m light theme
+[33m1a3943b[m light theme
+[33macee487[m light theme
+[33mfbba89e[m light theme
+[33m3dfce47[m light theme
+[33m3fdf7bb[m light theme
+[33mcd35808[m change base repo url
+[33m6bd201b[m change base repo url
+[33m4c77049[m change base repo url
+[33mcd5ff00[m Update gallery
+[33m2ab8008[m Promote external cookbook to main (issue #52)
+[33mf095d8c[m Update gallery
+[33mc7439a8[m Promote external cookbook to main (issue #52)
+[33m9fc20f7[m Update gallery
+[33m3a8460b[m keep_files: false
+[33m12174d3[m change to real lab repo
+[33m0b1a8fe[m change gallery url path
+[33m1752b3d[m change gallery url path
+[33mc969f12[m change gallery url path
+[33md9d7aec[m change parse issue
+[33m9c1409f[m change parse issue
+[33m7c3ac5f[m change parse issue
+[33m71363da[m change promote to main
+[33m386ce36[m Update gallery
+[33m5e0830a[m Promote cookbooks.json from staging (issue #52)
+[33mde42b9e[m both brnaches in issue template
+[33me77ab54[m env in staging workflow
+[33m96823ba[m Merge branch 'main' of https://github.com/katharinastarzer21/DestinE
+[33m0172d4a[m env in staging workflow
+[33m5f8ea6e[m Update gallery
+[33meddf6cf[m index_button
+[33m68892a0[m index_button
+[33m2e38de6[m genrate_galleries link
+[33m194cbc7[m build_myst_yml
+[33m3989df6[m chnage workflows to push staging in repo B
+[33mf2914a1[m chnage workflows to push staging in repo B
+[33mf002a10[m light mode
+[33m4cf07db[m light mode
+[33m5b50b6b[m light mode
+[33md238291[m light mode
+[33m70b5f18[m add remove label
+[33m5ec2f09[m add remove label
+[33m1d49cf6[m add remove label
+[33m0220add[m add remove label
+[33m8031a45[m change clone repo
+[33m347de39[m change myst deploy staging
+[33mfb89a6d[m change myst deploy staging
+[33me464458[m integrate cookbook changes
+[33mdc15375[m integrate cookbook changes
+[33m69274e0[m integrate cookbook changes
+[33m29e5fae[m integrate cookbook changes
+[33m18a255a[m change cookboks path
+[33m5393cb3[m Merge pull request #48 from katharinastarzer21/staging
+[33md2b0348[m Update cookbook.json from issue #46
+[33m0216354[m Update gallery
+[33mab3e70c[m Update gallery
+[33m64b1b0f[m cchange issue template to gallery
+[33mf08cd3e[m delete workflows
+[33m4f7cc90[m new
+[33m886044b[m new
+[33m092cb82[m cookbook json in this repo
+[33med134bf[m cookbook json in this repo
+[33mac146a3[m cookbook json in this repo
+[33ma1008e0[m cookbook json in this repo
+[33m559c665[m cookbook json in this repo
+[33m7c81f27[m cookbook json in this repo
+[33m21417d5[m cookbook json in this repo
+[33m7f49cf6[m cookbook json in this repo
+[33m6d660b9[m Update gallery images
+[33ma3c28e7[m add production
+[33me2881c5[m myst.yml
+[33m5990402[m gallery
+[33ma0b473f[m Merge pull request #33 from katharinastarzer21/staging
+[33mffc1b28[m Add Netlify deploy workflow
+[33m799feab[m Add Netlify deploy workflow
+[33mab4a81d[m Add Netlify deploy workflow
+[33me4f63f2[m Add Netlify deploy workflow
+[33m1719f47[m Add Netlify deploy workflow
+[33mdd26c4f[m new brnach
+[33mc7cba0b[m myst.yml
+[33me663ef1[m gallery
+[33mae8dc55[m myst.yml
+[33m517f923[m gallery
+[33m0213f19[m myst.yml
+[33m268f460[m gallery
+[33mee7d3d0[m Update gallery images
+[33m89288b2[m as gallery in destinE
+[33m59207c1[m as gallery in destinE
+[33m1e47690[m as gallery in destinE
+[33m43e6e8c[m as gallery in destinE
+[33m32ccba3[m as gallery in destinE
+[33m58a44bb[m as gallery in destinE
+[33m1365990[m as gallery in destinE
+[33mc3eab21[m as gallery in destinE
+[33m787c357[m as gallery in destinE
+[33m08cfc32[m as gallery in destinE
+[33m561ee3d[m as gallery in destinE
+[33m7d4e023[m as gallery in destinE
+[33m9adf6f0[m as gallery in destinE
+[33m3165b12[m as gallery in destinE
+[33m6f487c1[m as gallery in destinE
+[33meb15424[m as gallery in destinE
+[33mbad3fec[m as gallery in destinE
+[33m65940cb[m as gallery in destinE
+[33m3d5b3cc[m yaml change
+[33mc479ac9[m 🔄 Auto-update from GitHub Action
+[33mca87870[m 🔄 Auto-update from GitHub Action
+[33mbd147fd[m yaml change
+[33m3d2f911[m change path
+[33m288cc0e[m change path
+[33m19cf6ae[m change path
+[33md2aba73[m test
+[33m57ffdea[m test
+[33mf530b70[m test
+[33m231825b[m test
+[33mb0172d8[m test
+[33m3fe6f7c[m random test
+[33m4ce3a1a[m 🔄 Auto-update from GitHub Action
+[33m3fc1511[m deletee xample
+[33me42769c[m 🔄 Auto-update from GitHub Action
+[33m6e9be3f[m 🔁 Update site content after issue integration
+[33m26211a9[m new integrate cookbook
+[33m02c13f2[m delete eample folders
+[33mc262316[m delete eample folders
+[33m512b139[m 🔄 Auto-update from GitHub Action
+[33m9988df8[m delete eample folders
+[33m05a0efb[m delete eample folders
+[33m50252ce[m 🔄 Auto-update from GitHub Action
+[33m7e86c14[m delete eample folders
+[33m14edc9b[m delete eample folders
+[33m1116754[m delete eample folders
+[33m120db57[m from myst_DEDL_temp
+[33m506840f[m delete folder
+[33m8a0fe5b[m delete folder
+[33m0be8cd0[m 🔄 Auto-update from GitHub Action
+[33m1aa1378[m delete folder
+[33m76becf3[m 🔄 Auto-update from GitHub Action
+[33m5b330a8[m new hidden
+[33md4065f1[m change integrate notebook workflow
+[33mabe0bbd[m change integrate notebook workflow
+[33m0b073df[m include inn buidld workflow
+[33m0469d2e[m include inn buidld workflow
+[33m7a13e41[m 🔄 Auto-update from GitHub Action
+[33m40340ba[m new try
+[33m4e77418[m new test
+[33m9922353[m new test
+[33m8bf9156[m new test
+[33m96088ef[m new test
+[33m54a426e[m new test
+[33mcd727e5[m new test
+[33m3933b8b[m new test
+[33m8534101[m new test
+[33mb1a8141[m new test
+[33mc78a753[m new workflow
+[33mbd392d6[m new workflow
+[33md27604d[m new css
+[33mc123c72[m new css
+[33ma8fe9dc[m 🔁 Update site content after issue integration
+[33m8ec5248[m new css
+[33m2319ae3[m 🔁 Update site content after issue integration
+[33maefa862[m new css
+[33m366754a[m new clone link
+[33m8b114ae[m 🔄 Auto-update from GitHub Action
+[33m20ac036[m delete example new contribute page
+[33md113b92[m Merge pull request #26 from katharinastarzer21/Adjustings
+[33m6695eb6[m Small changes in index and contributing.md
+[33m6b061b8[m Merge pull request #25 from katharinastarzer21/index2
+[33m4c84241[m Merge branch 'main' into index2
+[33mf9e444f[m Adjusting the index.md 2
+[33m6be2c29[m 🔄 Auto-update from GitHub Action
+[33m28285c4[m Merge pull request #24 from katharinastarzer21/index
+[33m8c2a3a2[m Adjusting the index.md
+[33m9b7ca54[m 🔄 Auto-update from GitHub Action
+[33mfd104c8[m 🔁 Update site content after issue integration
+[33mc12585d[m 🔄 Auto-update from GitHub Action
+[33mf115735[m delete example
+[33m642cfd8[m new contribute page
+[33mc12dda9[m 🔁 Update site content after issue integration
+[33md2f384a[m 🔄 Auto-update from GitHub Action
+[33m556d3af[m buttons in every gallery
+[33m9cbcf16[m buttons in every gallery
+[33m7d97dbc[m minor design changes
+[33m5dc90bb[m 🔄 Auto-update from GitHub Action
+[33m2b23794[m delete unnecessary workflow
+[33m9686d62[m change index button
+[33m7de75b1[m change file name
+[33mbf73443[m delete example
+[33m3213a02[m delete example
+[33m9c74130[m 🔄 Auto-update from GitHub Action
+[33m5d044a2[m delete example
+[33m377bf80[m 🔄 Auto-update from GitHub Action
+[33m82b519a[m major workflow update, clone sync
+[33md7ed81d[m update(myst) test and index
+[33md92a6bd[m 🔄 Auto-update from GitHub Action
+[33m3a100e4[m update(myst) test and index
+[33md9d372b[m 🔁 Update site content after issue integration
+[33m1d4d815[m 🔄 Auto-update from GitHub Action
+[33m7d1d8c1[m update(myst) test and index
+[33m22cc753[m 🔄 Auto-update from GitHub Action
+[33m80b95ef[m update(myst) test and index
+[33mc3171dd[m 🔁 Update site content after issue integration
+[33me0b80f7[m new template
+[33m44c325d[m new template
+[33me1f3325[m 🔄 Auto-update from GitHub Action
+[33m5d96002[m add contribute side
+[33m6755f4f[m 🔄 Auto-update from GitHub Action
+[33mab54b36[m new myst build
+[33m0d5524f[m 🔄 Auto-update from GitHub Action
+[33m5b2bf0b[m new myst build
+[33m6238640[m new myst build
+[33mdda65d1[m 🔄 Auto-update from GitHub Action
+[33m9eceedf[m new myst build
+[33m2cbb8e9[m new contribute side
+[33m6414490[m add contributer side
+[33m0b800dd[m 🔄 Auto-update from GitHub Action
+[33m4782db5[m adapt index page
+[33m6e4cf1c[m adapt index page
+[33m9ba4bb3[m adapt index page
+[33mec306b4[m 🔄 Auto-update from GitHub Action
+[33m426ed75[m adapt index page
+[33m3d3f569[m adapt button
+[33m633f1ed[m adapt button
+[33m7700fa6[m adapt button
+[33m173badc[m adapt button
+[33m223467e[m adapt button
+[33mdabe6ba[m adapt button
+[33mdd949eb[m adapt button
+[33m2c7f4ae[m adapt button
+[33m4fa0559[m adapt button
+[33mcb7dc16[m adapt button
+[33m47cc768[m adapt button
+[33m6f6f4ab[m adapt button
+[33m2d79a2e[m adapt button
+[33m52d07e2[m adapt button
+[33m5d94715[m adapt button
+[33me7150cf[m adapt button
+[33m1e08d79[m adapt header
+[33mccfda78[m adapt header
+[33mec756d8[m adapt header
+[33m517f4a2[m adapt footer
+[33mbc896e9[m change header
+[33m2ffeb67[m change header
+[33m734c8f4[m change header
+[33m04f11c6[m change header
+[33m511c17e[m change header
+[33m15ab857[m change header
+[33md57443b[m 🔄 Auto-update from GitHub Action
+[33m462df16[m test for inex
+[33mf42d977[m test for inex
+[33m9e2ec69[m test for inex
+[33m429f5f9[m test for inex
+[33mde42572[m test for inex
+[33m40c83f4[m test for inex
+[33m595db33[m test for inex
+[33m3d1a3df[m 🔄 Auto-update from GitHub Action
+[33mb676638[m clone repo anpassen
+[33m4477262[m clone repo anpassen
+[33me3d8714[m change action
+[33m2a20939[m change action
+[33m9330f82[m change action
+[33m0c90739[m change action
+[33md19a57d[m change action
+[33mdc988f8[m change action
+[33md757514[m change action
+[33mcfbff6f[m change action
+[33m4fc5fec[m change action
+[33m0f788f2[m change action
+[33m12f6da2[m change action
+[33m90b712f[m change action
+[33m709aa78[m change action
+[33m96af69a[m remove json
+[33ma861c7e[m remove json
+[33med4b930[m update production
+[33m61663c5[m update production
+[33m81c7462[m update production
+[33m6331ab8[m update production
+[33m55f8f6e[m update production
+[33md672a60[m update production
+[33md1ba333[m update production
+[33m700f83a[m add slash
+[33mf229266[m add slash
+[33m07f6c54[m clean up
+[33m56c8f8e[m everything new
+[33m0eef21e[m everything new
+[33m7729c1f[m everything new
+[33m0d8f892[m everything new
+[33m8f71b53[m everything new
+[33m8321b8b[m everything new
+[33m718ae38[m everything new
+[33m3ff4be1[m everything new
+[33m0bdc1c7[m everything new
+[33m14d35e8[m everything new
+[33m9c61411[m everything new
+[33mbdc89e2[m everything new
+[33m5765761[m everything new
+[33m7c94f29[m everything new
+[33m08395dd[m everything new
+[33mb9f2faa[m everything new
+[33mec766e3[m everything new
+[33ma1df255[m new branch with buttons
+[33mf6c16eb[m everything new
+[33mc3b154c[m everything new
+[33mb7065d4[m everything new
+[33m692fbee[m everything new
+[33mb1ddaed[m everything new
+[33m9b2e66a[m everything new
+[33mdd00788[m everything new
+[33m7041dfb[m everything new
+[33m2bddece[m everything new
+[33m9c1ce1e[m everything new
+[33m1a72643[m Add HEALPix Cookbook (#225)
+[33m2439922[m Add eo-datascience-cookbook to cookbook_gallery.txt (#224)
+[33ma4d6b8c[m Update cookbook gallery (#217)
+[33ma22b1e3[m try this again (#222)
+[33m3bb7d25[m Added esgf-cookbook to the gallery (#219)
+[33m7a5b3b8[m Add paleoPCA-cookbook (#215)
+[33m117c4d6[m Remove prettier (#214)
+[33m28135c0[m Bump peter-evans/create-pull-request from 6 to 7 (#213)
+[33mfdbed06[m Add ocean-bgc-cookbook to cookbook gallery (#212)
+[33mc1cc880[m Fix 3D-tag not working (#210)
+[33m2370c4b[m Update cookbook gallery (#197)
+[33me91753a[m Bump peter-evans/create-or-update-comment from 3 to 4 (#188)
+[33m4a9c80d[m Bump peter-evans/find-comment from 2 to 3 (#189)
+[33mb872d3b[m Fix dropdown gallery filtering (#208)
+[33mfec19d9[m Reverse name order when building author list (#206)
+[33m94aba6a[m Move new card creation outside of else block (#204)
+[33m9214820[m Remove unsightly ========= (#205)
+[33m4ce228d[m Change button to point to guide (#203)
+[33m6c214ef[m Update footer-menu.html (#193)
+[33md31ebdb[m Start using the updated theme (#194)
+[33m1298724[m Bump peter-evans/create-pull-request from 5 to 6 (#190)
+[33m5a4b19f[m Update cookbook_gallery.txt (#186)
+[33md9ce91b[m Bump actions/setup-python from 4 to 5 (#183)
+[33mc05ec3e[m Bump actions/upload-artifact from 3 to 4 (#184)
+[33m6886c6d[m Bump actions/download-artifact from 3 to 4 (#185)
+[33md5d3767[m Update cookbook_gallery.txt (#182)
+[33m94a78fe[m Update cookbook_gallery.txt (#180)
+[33mb7fe361[m Update cookbook gallery (#177)
+[33m6dc6961[m Update cookbook_gallery.txt (#166)
+[33m38fd751[m Bump tibdex/github-app-token from 1 to 2 (#173)
+[33m50d1044[m Bump actions/checkout from 3 to 4 (#172)
+[33m94c711b[m Update footer-menu.html (#170)
+[33m8367131[m Update conf.py with blog link (#171)
+[33ma36e86f[m Add Gridding Cookbook to the gallery (#159)
+[33md09920a[m Update collect-user-submission.py (#167)
+[33m71b26af[m Update cookbook gallery per #143 (#144)
+[33m2a45081[m Update cookbook gallery (#137)
+[33m0a576b0[m Display DOI badges on gallery (#163)
+[33m755bb14[m Fix nightly build badge links (#160)
+[33m42317b8[m Update update-cookbook-gallery.yaml (#154)
+[33mcf375b9[m Add ERA5_interactive-cookbook to gallery (#152)
+[33m183df79[m use citation and gallery_info files if can (#149)
+[33ma739ec3[m trivial change to force rebuild (#148)
+[33m7750005[m Add nightly-build status badge (#147)
+[33m9839ee8[m Switch workflows to resuable cookbook infrastructure (#145)
+[33m37634b7[m Gridding-Cookbook seems to be breaking the Cookbook Gallery Deployment (#142)
+[33mac98e17[m Bump dawidd6/action-download-artifact from 2.26.1 to 2.27.0 (#130)
+[33m009ab6f[m Bump peter-evans/create-or-update-comment from 2 to 3 (#127)
+[33mc33ad37[m Bump peter-evans/create-pull-request from 4 to 5 (#128)
+[33m00ac892[m Bump dawidd6/action-download-artifact from 2.26.0 to 2.26.1 (#129)
+[33m7e18311[m Bump peaceiris/actions-gh-pages from 3.9.2 to 3.9.3 (#126)
+[33m8f6703f[m Update cookbook gallery (#120)
+[33m610600b[m Update cookbook gallery (#122)
+[33mdb3b097[m Update cookbook gallery (#123)
+[33m89e004f[m Bump dawidd6/action-download-artifact from 2.25.0 to 2.26.0 (#116)
+[33m5b99571[m Generate and use token from GH App (#114)
+[33m953c422[m Bump dawidd6/action-download-artifact from 2.24.3 to 2.25.0 (#115)
+[33m9c9d8c7[m Update subtext (#113)
+[33m6be05eb[m Add Landsat ML cookbook to gallery (#112)
+[33md27ae17[m Bump peaceiris/actions-gh-pages from 3.9.1 to 3.9.2 (#111)
+[33m33ed73e[m Bump dawidd6/action-download-artifact from 2.24.2 to 2.24.3 (#110)
+[33md4a0d1b[m Bump peaceiris/actions-gh-pages from 3.9.0 to 3.9.1 (#109)
+[33m9349a14[m Fix broken link to contributors guide (#107)
+[33ma316cd8[m Update cookbook gallery per #78 (#79)
+[33m21d9234[m grab binder link from config (#103)
+[33me4b3c79[m Add redirect notice for Radar Cookbook (#101)
+[33m164ee21[m Finish migration and renaming of this repo (#100)
+[33me8cb648[m Transferring (#99)
+[33m7e80cac[m Bump dawidd6/action-download-artifact from 2.24.0 to 2.24.2 (#97)
+[33mfad553e[m Bump actions/download-artifact from 2 to 3 (#93)
+[33m086edf2[m Bump peter-evans/find-comment from 1 to 2 (#92)
+[33mb3feb3c[m Bump peter-evans/create-or-update-comment from 1 to 2 (#91)
+[33mfe614ae[m Bump actions/upload-artifact from 2 to 3 (#90)
+[33m9330c68[m Bump peaceiris/actions-gh-pages from 3.8.0 to 3.9.0 (#95)
+[33m2064a5d[m Bump dawidd6/action-download-artifact from 2.23.0 to 2.24.0 (#94)
+[33mc266fa2[m Bump dawidd6/action-download-artifact from 2.21.1 to 2.23.0 (#89)
+[33m36aab21[m Change Binder link from 2i2c to Mybinder (#88)
+[33ma1f00cd[m Removing some cookbooks from the gallery (#84)
+[33m964f15f[m repository unexpected input (#70)
+[33m1ac5ab0[m Delete cookbook-submission-input.txt
+[33m02cb1ce[m Update .gitignore
+[33mf762546[m Update cookbook gallery (#69)
+[33mc798897[m make right string more specific (#71)
+[33m9a54dcf[m New Google Analytics ID
+[33m5653fd3[m add repository
+[33m4f7183b[m Update update-cookbook-gallery.yaml
+[33m10cff4a[m try github.pat
+[33m51bb831[m make resemble peter-evans docs
+[33me9200d5[m Update gallery with CESM LENS cookbook (#67)
+[33mf28fd88[m trying simple method
+[33m3899d86[m add if statement to grant forks access to application id
+[33m2105a76[m use actions/checkout@v3
+[33m97eebee[m extra p in ppeter
+[33md3360dc[m try different token method (#66)
+[33m392d345[m change name of token
+[33m46bae2e[m change repo-token to github_token (#65)
+[33md5b6921[m Permissions add Repo Token (#64)
+[33m35f48fc[m Update update-cookbook-gallery.yaml (#63)
+[33mba302b0[m Bump peter-evans/create-pull-request from 3 to 4 (#61)
+[33m0cbae4f[m Bump actions/setup-python from 2 to 4 (#60)
+[33m6c989e2[m Update CNAME (#59)
+[33m36f2ccc[m add education group to owners of txt file (#57)
+[33m4273a09[m Fix preview link (#53)
+[33me10662a[m Update actions to preview on GitHub Pages (#51)
+[33m9b19ac3[m add additional comments area
+[33m7127a5b[m Use a text file for Cookbooks gallery landing page subtext (#49)
+[33m7899ee7[m strip repo and add contributor's link (#47)
+[33m638467e[m Update update-cookbook-gallery.yaml
+[33m8730d84[m Updating get user submissions action (#44)
+[33m09481ab[m Update cookbook_gallery_generator.py
+[33m2c82d7e[m Update update-cookbook-gallery.yaml
+[33m92f1bc4[m Update and rename update-cookbook-gallery.md to yaml (#42)
+[33me371e95[m Add debug output
+[33m0d1ab48[m Remove debug job
+[33m2849f3a[m Fix bug in debug section :-)
+[33m0f1f461[m Add debug job
+[33me173d93[m Attempt to fix if conditional (1)
+[33maa2cb72[m Update issue templates
+[33me677028[m Use GH actions to open PR from issue template (#36)
+[33mb071e31[m Merge branch 'repos' into main
+[33mf9d4ae1[m fix title
+[33m072d8e3[m Grabbing info from Config file with simple yaml (#33)
+[33me2c7c28[m link to issue template
+[33m2edbcc2[m Update issue templates
+[33m972316c[m Delete custom.md
+[33m3796ceb[m Update issue templates
+[33md99c4cf[m Update issue templates
+[33m0916b2c[m add submit cookbook to bar
+[33m687c9a0[m use simple yaml
+[33m60dd709[m Remove unused CMIP6 thumbnail
+[33me5e2508[m added all cookbooks
+[33m3df5216[m add rob's notebook
+[33m64549b0[m add roses's notebook
+[33m63f1968[m Merge branch 'main' into repos
+[33m136fea0[m grab info from conf
+[33mb7a04e8[m Auto generating YAML file to include all Cookbook Repos (#30)
+[33m234fe79[m Merge branch 'main' into repos
+[33mc34cc84[m fix thumbnail path
+[33m0d7572b[m rm authors
+[33ma71f851[m add tags
+[33m5bfa42e[m grab github url and url from yaml
+[33md554dc9[m get descrition from json file
+[33mc1c4089[m Add CMIP6 Cookbook to gallery (#31)
+[33m525174f[m Add CMIP6 thumbnail
+[33m698bfca[m Fixed #217 - guidance on running cookbooks (#28)
+[33m6c5d03f[m some progress on dumping yaml
+[33m8680912[m generate yaml
+[33mea66d10[m generate yaml
+[33m8421081[m Simplify
+[33me077d27[m Add readthedocs config
+[33m4944270[m fx to grab repo names
+[33m7f7df1a[m Bump dawidd6/action-download-artifact from 2.14.1 to 2.21.1 (#26)
+[33m8165bff[m Bump actions/github-script from 4 to 6 (#9)
+[33m655aa01[m Bump actions/upload-artifact from 2 to 3 (#8)
+[33meddf4e8[m Bump actions/checkout from 2 to 3 (#7)
+[33m739b108[m Bump peter-evans/find-comment from 1 to 2 (#6)
+[33mba2fde1[m Bump styfle/cancel-workflow-action from 0.9.1 to 0.10.0 (#5)
+[33m7f79df6[m Bump peter-evans/create-or-update-comment from 1 to 2 (#4)
+[33m68b6639[m Add Status Badges to gallery cards (#14)
+[33m7f9a264[m update cookbook link info (#11)
+[33mdbf4b96[m Update README.md
+[33mc90425f[m build site in new repo (#3)
+[33m693b73a[m Update CNAME
+[33mc8651e2[m Create CNAME
+[33m5165e9b[m Initial commit
