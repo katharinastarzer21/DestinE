@@ -5,31 +5,24 @@ project:
   - file: index.md
   - title: Contribute
     file: contribute.md
-  - title: SECOND
-    file: galleries/SECOND.md
-    children:
-    - file: production/SECOND/notebooks/template.ipynb
-      hidden: true
-  - title: TESTCOOKBOOK
-    file: galleries/TESTCOOKBOOK.md
-    children:
-    - file: production/TESTCOOKBOOK/notebooks/template.ipynb
-      hidden: true
-  - title: HOOK
-    file: galleries/HOOK.md
-    children:
-    - file: production/HOOK/DEDL-Hook_access.ipynb
-      hidden: true
-    - file: production/HOOK/DEDL-Hook_data_harvest.ipynb
-      hidden: true
-    - file: production/HOOK/Tutorial.ipynb
-      hidden: true
-    - file: production/HOOK/test_staging.ipynb
-      hidden: true
   - title: HDA
     file: galleries/HDA.md
     children:
-    - file: production/HDA/PySTAC/HDA-PyStac-Client.ipynb
+    - file: production/HDA/DestinE_Digital_Twins/ClimateDT-ExtractLocationValues.ipynb
+      hidden: true
+    - file: production/HDA/DestinE_Digital_Twins/ClimateDT-ParameterPlotter.ipynb
+      hidden: true
+    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE-Series.ipynb
+      hidden: true
+    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE.ipynb
+      hidden: true
+    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES-Series.ipynb
+      hidden: true
+    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES.ipynb
+      hidden: true
+    - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-ParameterPlotter.ipynb
+      hidden: true
+    - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-dataAvailability.ipynb
       hidden: true
     - file: production/HDA/EUM_data/DEDL-HDA-EO.EUM.DAT.METOP.AVHRRL1.ipynb
       hidden: true
@@ -55,21 +48,23 @@ project:
       hidden: true
     - file: production/HDA/REST/HDA-REST-quick-start.ipynb
       hidden: true
-    - file: production/HDA/DestinE_Digital_Twins/ClimateDT-ExtractLocationValues.ipynb
+    - file: production/HDA/PySTAC/HDA-PyStac-Client.ipynb
       hidden: true
-    - file: production/HDA/DestinE_Digital_Twins/ClimateDT-ParameterPlotter.ipynb
+  - title: TESTCOOKBOOK
+    file: galleries/TESTCOOKBOOK.md
+    children:
+    - file: production/TESTCOOKBOOK/notebooks/template.ipynb
       hidden: true
-    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE-Series.ipynb
+  - title: HOOK
+    file: galleries/HOOK.md
+    children:
+    - file: production/HOOK/DEDL-Hook_access.ipynb
       hidden: true
-    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_CLIMATE.ipynb
+    - file: production/HOOK/DEDL-Hook_data_harvest.ipynb
       hidden: true
-    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES-Series.ipynb
+    - file: production/HOOK/Tutorial.ipynb
       hidden: true
-    - file: production/HDA/DestinE_Digital_Twins/DEDL-HDA-EO.ECMWF.DAT.DT_EXTREMES.ipynb
-      hidden: true
-    - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-ParameterPlotter.ipynb
-      hidden: true
-    - file: production/HDA/DestinE_Digital_Twins/ExtremeDT-dataAvailability.ipynb
+    - file: production/HOOK/test_staging.ipynb
       hidden: true
   - title: STACK
     file: galleries/STACK.md
@@ -79,6 +74,11 @@ project:
     - file: production/STACK/STACK-Dask-101.ipynb
       hidden: true
     - file: production/STACK/STACK-Python-Client-Dask.ipynb
+      hidden: true
+  - title: SECOND
+    file: galleries/SECOND.md
+    children:
+    - file: production/SECOND/notebooks/template.ipynb
       hidden: true
   - file: galleries_by_tag/tag-access-token.md
     hidden: true
