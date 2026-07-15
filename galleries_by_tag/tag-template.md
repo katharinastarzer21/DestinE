@@ -41,7 +41,7 @@
     <div style="margin: 6px 0;">
       <span class="tag">Template</span>
     </div>
-    <a href="../production/SECOND/notebooks/template.ipynb" style="text-decoration: none; color: #1d70b8; font-weight: bold;">View Notebook</a>
+    <a href="../production/TESTCOOKBOOK/notebooks/template.ipynb" style="text-decoration: none; color: #1d70b8; font-weight: bold;">View Notebook</a>
   </div>
 </div>
 <div class="notebook-card" data-tags="Template" style="display: flex; align-items: flex-start; border: 1px solid #cddff1; border-radius: 6px; padding: 14px 20px; background-color: #f9fbfe; box-shadow: 1px 1px 4px #dfeaf5;">
@@ -54,7 +54,7 @@
     <div style="margin: 6px 0;">
       <span class="tag">Template</span>
     </div>
-    <a href="../production/TESTCOOKBOOK/notebooks/template.ipynb" style="text-decoration: none; color: #1d70b8; font-weight: bold;">View Notebook</a>
+    <a href="../production/SECOND/notebooks/template.ipynb" style="text-decoration: none; color: #1d70b8; font-weight: bold;">View Notebook</a>
   </div>
 </div>
 </div>
